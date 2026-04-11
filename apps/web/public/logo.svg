@@ -1,16 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Outer Shield / Hexagon -->
-  <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#111827" stroke="#34D399" stroke-width="4" stroke-linejoin="round"/>
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Tactical Hexagon Frame -->
+  <path d="M256 20 L470 120 L470 392 L256 492 L42 392 L42 120 Z" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+  <path d="M256 40 L450 130 L450 382 L256 472 L62 382 L62 130 Z" fill="none" stroke="#1E293B" stroke-width="2"/>
   
-  <!-- Inner Protection Ring -->
-  <path d="M50 15 L80 30 L80 70 L50 85 L20 70 L20 30 Z" fill="none" stroke="#059669" stroke-width="2" stroke-opacity="0.5"/>
-  
-  <!-- Crescent and Star -->
-  <!-- Crescent -->
-  <path d="M48 35 A 15 15 0 1 0 48 65 A 18 18 0 1 1 48 35 Z" fill="#6EE7B7"/>
-  <!-- Star -->
-  <polygon points="65,45 61,54 52,54 58,60 55,69 65,63 75,69 72,60 78,54 69,54" fill="#6EE7B7" transform="scale(0.6) translate(40, 25)"/>
+  <!-- Corner "Bolts" -->
+  <circle cx="256" cy="20" r="6" fill="#475569"/>
+  <circle cx="470" cy="120" r="6" fill="#475569"/>
+  <circle cx="470" cy="392" r="6" fill="#475569"/>
+  <circle cx="256" cy="492" r="6" fill="#475569"/>
+  <circle cx="42" cy="392" r="6" fill="#475569"/>
+  <circle cx="42" cy="120" r="6" fill="#475569"/>
 
-  <!-- Offline/Signal Slash -->
-  <line x1="30" y1="70" x2="70" y2="30" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Inner HUD / Radar Rings -->
+  <circle cx="256" cy="256" r="180" stroke="#10B981" stroke-width="1" stroke-dasharray="10 20" stroke-opacity="0.3"/>
+  <circle cx="256" cy="256" r="160" stroke="#10B981" stroke-width="2" stroke-opacity="0.1"/>
+  
+  <!-- Tactical Compass Markings -->
+  <path d="M256 70 L256 90 M256 422 L256 442 M70 256 L90 256 M422 256 L442 256" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Central Turkish Sovereignty Core -->
+  <path d="M230 180 A 80 80 0 1 0 230 332 A 95 95 0 1 1 230 180 Z" fill="#10B981"/>
+  <path d="M330 220 L338 245 L365 245 L345 262 L352 288 L330 272 L308 288 L315 262 L295 245 L322 245 Z" fill="#10B981"/>
+
+  <!-- "OFFLINE" Strike - Tactical Red -->
+  <rect x="100" y="250" width="312" height="12" fill="#EF4444" transform="rotate(-45 256 256)" opacity="0.8"/>
+  <rect x="100" y="250" width="312" height="2" fill="#FCA5A5" transform="rotate(-45 256 256)" opacity="0.5"/>
 </svg>

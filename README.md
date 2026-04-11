@@ -1,5 +1,9 @@
 # PrepTürk
 
+<p align="center">
+  <img src="apps/web/public/logo.png" width="256" alt="PrepTürk Tactical Logo">
+</p>
+
 > **Türkiye's Sovereign Offline Preparedness Command Center**
 >
 > 🇹🇷 *Türkiye İçin Çevrimdışı Bilgi, Eğitim, Resmî Belge ve Dayanıklılık Sistemi*
