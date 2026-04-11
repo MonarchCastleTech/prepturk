@@ -103,7 +103,9 @@ const collapsibleSections: CollapsibleSection[] = [
     id: 'hayatta-kalma',
     title: 'Hayatta Kalma',
     items: [
+      { href: '/kislik-hazirlik', icon: Package, label: 'Kışlık Hazırlık & Tarım' },
       { href: '/su-aritma', icon: Droplets, label: 'Su Arıtma' },
+      { href: '/veterinerlik', icon: Activity, label: 'Kriz Veterinerliği' },
       { href: '/gida-saklama', icon: Package, label: 'Gıda Saklama' },
       { href: '/barinak-isinma', icon: HomeIcon, label: 'Barınak/Isınma' },
       { href: '/mesafe-tahmin', icon: Ruler, label: 'Mesafe Tahmini' },
@@ -116,6 +118,7 @@ const collapsibleSections: CollapsibleSection[] = [
     items: [
       { href: '/savas-durumu', icon: ShieldCheck, label: 'Savaş & Sivil Savunma' },
       { href: '/nukleer-tehlike', icon: Biohazard, label: 'KBRN & Nükleer Tehlike' },
+      { href: '/mahalle-savunmasi', icon: Shield, label: 'Mahalle Savunması' },
       { href: '/kronik-hastalik', icon: Activity, label: 'Kronik Hastalık' },
       { href: '/semptom-kontrol', icon: Brain, label: 'Semptom Kontrol' },
       { href: '/psikolojik-saglik', icon: HandHeart, label: 'Psikolojik Sağlık' },
@@ -137,6 +140,7 @@ const collapsibleSections: CollapsibleSection[] = [
     id: 'iletisim',
     title: 'İletişim',
     items: [
+      { href: '/dosya-paylasim', icon: QrCode, label: 'Digital Dead Drop' },
       { href: '/qr-mesaj', icon: QrCode, label: 'QR Mesaj' },
       { href: '/radyo-frekans', icon: Radio, label: 'Radyo Frekans' },
       { href: '/takas-rehberi', icon: Scale, label: 'Takas Rehberi' },

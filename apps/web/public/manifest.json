@@ -1,21 +1,17 @@
 {
-  "name": "prepturk | Türkiye Offline Komuta Merkezi",
-  "short_name": "PREPTURK",
-  "description": "Türkiye için offline bilgi, egitim, resmî belge ve dayaniklilik sistemi",
-  "start_url": "/",
+  "name": "PrepTürk",
+  "short_name": "PrepTürk",
+  "description": "Türkiye'nin Tam Bağımsız Çevrimdışı Hazırlık Komuta Merkezi",
+  "start_url": "/dashboard",
   "display": "standalone",
-  "background_color": "#1a1f2e",
-  "theme_color": "#22c55e",
-  "orientation": "portrait-primary",
+  "background_color": "#0F172A",
+  "theme_color": "#10B981",
   "icons": [
     {
-      "src": "/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
-  ],
-  "categories": ["education", "reference", "productivity"],
-  "lang": "tr",
-  "dir": "ltr"
+  ]
 }
