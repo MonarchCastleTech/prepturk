@@ -50,9 +50,19 @@ const statusCards = [
     detail: 'Qwen 0.5B (Ultra-Hafif) aktif durumda.',
   },
   {
-    label: 'Çevrimdışı Arşivler',
+    label: 'CBRN & Çevre Sensörleri',
     value: 'Aktif',
-    detail: 'Wikipedia ve WikiMed yerel olarak sunuluyor.',
+    detail: 'Hava kalitesi (PM2.5) ve Radyasyon takibi devrede.',
+  },
+  {
+    label: 'SDR Radyo',
+    value: 'Dinleniyor',
+    detail: 'NOAA uyduları ve TRT haber frekansları taranıyor.',
+  },
+  {
+    label: 'Meshtastic Ağ',
+    value: '3 Düğüm',
+    detail: 'Topluluk panosu ve QR mesajları yerel mesh ile senkronize.',
   },
 ];
 

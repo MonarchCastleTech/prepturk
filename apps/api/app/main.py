@@ -9,7 +9,7 @@ import os
 from app.core.config import get_settings
 from app.db.database import engine, Base
 from app.routes import auth, users, documents, search, sources, ingestion, review
-from app.routes import province_packs, notes, vault, ai_chat, maps, exports, settings, dashboard
+from app.routes import province_packs, notes, vault, ai_chat, maps, exports, settings, dashboard, hardware
 from app.security.auth import get_current_active_user
 
 settings = get_settings()

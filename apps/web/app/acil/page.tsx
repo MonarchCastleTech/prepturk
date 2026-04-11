@@ -105,6 +105,54 @@ export default function EmergencyPage() {
           </ol>
         </div>
       </section>
+
+      <section className="rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(30,17,20,0.95),rgba(17,12,15,0.95))] p-6 shadow-panel mt-6">
+        <div className="flex items-center gap-2 text-lg font-semibold text-white">
+          <ShieldAlert className="h-5 w-5 text-red-200" />
+          Hızlı İlk Yardım (Video Rehber)
+        </div>
+        <p className="mt-2 text-sm text-red-50/80 mb-4">
+          Cihazda önceden yüklü, yüksek oranda sıkıştırılmış (AV1) sessiz görsel döngüler. Ağ bağlantısı gerektirmez.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Heimlich Maneuver */}
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
+              <span className="text-nomad-slate text-xs absolute z-10">Heimlich.mp4</span>
+              {/* Placeholder for actual <video> tag */}
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
+            </div>
+            <div className="p-3">
+              <h4 className="text-white text-sm font-semibold">Heimlich Manevrası</h4>
+              <p className="text-xs text-red-50/60 mt-1">Boğulma durumunda karına bası uygulaması.</p>
+            </div>
+          </div>
+          
+          {/* Tourniquet */}
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
+              <span className="text-nomad-slate text-xs absolute z-10">Turnike_Uygulama.mp4</span>
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
+            </div>
+            <div className="p-3">
+              <h4 className="text-white text-sm font-semibold">Turnike Uygulaması</h4>
+              <p className="text-xs text-red-50/60 mt-1">Şiddetli kanamayı durdurma adımları.</p>
+            </div>
+          </div>
+
+          {/* CPR */}
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
+              <span className="text-nomad-slate text-xs absolute z-10">Kalp_Masaji_Ritim.mp4</span>
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
+            </div>
+            <div className="p-3">
+              <h4 className="text-white text-sm font-semibold">Kalp Masajı Ritmi (CPR)</h4>
+              <p className="text-xs text-red-50/60 mt-1">Doğru el pozisyonu ve bası hızı görseli.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
