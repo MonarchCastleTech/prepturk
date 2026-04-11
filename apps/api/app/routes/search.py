@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, and_, or_, text, case
 from typing import Optional
 import uuid
+from datetime import datetime
 
 from app.db.database import get_db
 from app.db.models import User, Document, Role, SourceManifest, IngestionRun, Note, ProvincePack, Setting
@@ -72,83 +73,60 @@ def _get_search_order_by(sort_by: str, normalized_query: str):
     return [relevance_rank, Document.created_at.desc(), Document.id.desc()]
 
 
+import httpx
+import asyncio
+from app.core.config import get_settings
+
+settings = get_settings()
+KIWIX_URL = os.getenv("KIWIX_URL", "http://kiwix:8080")
+
 @router.post("/", response_model=SearchResponse)
 async def search_documents(
     request: SearchRequest,
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_local_device_operator),
 ):
-    """Search documents using PostgreSQL full-text search with Turkish normalization."""
+    """Search documents using PostgreSQL full-text search and optional Kiwix archives."""
     normalized_query = normalize_turkish(request.query)
 
-    # Build the base WHERE clause
+    # 1. Sovereign Document Search (PostgreSQL)
     where_clauses = [Document.deleted_at.is_(None)]
-
     if request.official_only:
         where_clauses.append(Document.trust_level == "official")
     if request.child_safe:
         where_clauses.append(Document.child_safe == True)
 
-    # Apply filters with allowlist
     if request.filters:
         for field, value in request.filters.items():
-            if field not in ALLOWED_FILTER_FIELDS:
-                continue  # Silently ignore disallowed fields
-            if not hasattr(Document, field):
-                continue
-            if isinstance(value, list):
-                where_clauses.append(getattr(Document, field).in_(value))
-            else:
-                where_clauses.append(getattr(Document, field) == value)
+            if field in ALLOWED_FILTER_FIELDS and hasattr(Document, field):
+                if isinstance(value, list):
+                    where_clauses.append(getattr(Document, field).in_(value))
+                else:
+                    where_clauses.append(getattr(Document, field) == value)
 
-    # Escape wildcards in user input for ILIKE
     escaped_query = _escape_wildcard(request.query)
-
-    # Use PostgreSQL full-text search with tsvector
     search_clause = or_(
         Document.title.ilike(f"%{escaped_query}%", escape="\\"),
         Document.summary.ilike(f"%{escaped_query}%", escape="\\"),
-        Document.abstract.ilike(f"%{escaped_query}%", escape="\\"),
         text(
             "to_tsvector('turkish', COALESCE(documents.title, '') || ' ' || "
-            "COALESCE(documents.summary, '') || ' ' || "
-            "COALESCE(documents.abstract, '')) @@ plainto_tsquery('turkish', :query)"
+            "COALESCE(documents.summary, '')) @@ plainto_tsquery('turkish', :query)"
         ).bindparams(query=normalized_query),
     )
     where_clauses.append(search_clause)
 
-    # Count query
-    count_query = (
-        select(func.count(Document.id))
-        .where(and_(*where_clauses))
-    )
-    total_result = await db.execute(count_query)
-    total = total_result.scalar()
-
-    # Main query with deterministic sorting and highlighting
-    offset = (request.page - 1) * request.page_size
-    order_by_clauses = _get_search_order_by(request.sort_by, normalized_query)
-
     query = (
         select(Document)
         .where(and_(*where_clauses))
-        .order_by(*order_by_clauses)
-        .offset(offset)
+        .order_by(*_get_search_order_by(request.sort_by, normalized_query))
         .limit(request.page_size)
     )
 
     result = await db.execute(query)
-    documents = result.scalars().all()
+    db_documents = result.scalars().all()
 
-    # Build results with highlights
     results = []
-    for doc in documents:
-        highlight = None
-        if doc.title and request.query.lower() in normalize_turkish(doc.title).lower():
-            highlight = _highlight_text(doc.title, request.query)
-        elif doc.summary and request.query.lower() in normalize_turkish(doc.summary).lower():
-            highlight = _highlight_text(doc.summary[:200], request.query)
-
+    for doc in db_documents:
         results.append(
             SearchResult(
                 id=doc.id,
@@ -162,15 +140,44 @@ async def search_documents(
                 child_safe=doc.child_safe,
                 summary=doc.summary,
                 created_at=doc.created_at,
-                highlight=highlight,
+                highlight=_highlight_text(doc.summary or "", request.query) if doc.summary else None,
                 score=None,
             )
         )
 
+    # 2. Archive Search (Kiwix/Wikipedia) - Optional 'God Mode'
+    if not request.official_only:
+        try:
+            async with httpx.AsyncClient(timeout=1.5) as client:
+                kiwix_res = await client.get(f"{KIWIX_URL}/search", params={"q": request.query, "limit": 5})
+                if kiwix_res.status_code == 200:
+                    archive_data = kiwix_res.json()
+                    for item in archive_data.get("results", []):
+                        results.append(
+                            SearchResult(
+                                id=f"archive-{uuid.uuid4().hex[:8]}",
+                                title=item.get("title", "Arşiv Kaydı"),
+                                subtitle="Wikipedia / Kiwix",
+                                institution="Wikipedia Arşivi",
+                                category="Arşiv",
+                                trust_level="community",
+                                storage_mode="local",
+                                rights_status="public-read",
+                                child_safe=True,
+                                summary=item.get("description", ""),
+                                created_at=datetime.now(),
+                                highlight=item.get("description", ""),
+                                score=0.5,
+                            )
+                        )
+        except Exception:
+            pass # Fail silently if Kiwix is not running
+
+    total = len(results) # Simplified for combined search
     total_pages = max(1, (total + request.page_size - 1) // request.page_size)
 
     return SearchResponse(
-        results=results,
+        results=results[:request.page_size],
         total=total,
         page=request.page,
         page_size=request.page_size,

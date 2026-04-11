@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Phone, X, AlertTriangle, MapPin, Home, Shield } from 'lucide-react';
+import { X, AlertTriangle, Home, Shield } from 'lucide-react';
 
 const EMERGENCY_NUMBERS = [
   { number: '112', label: 'Acil Çağrı', labelEn: 'Emergency', color: 'bg-red-600', icon: AlertTriangle },

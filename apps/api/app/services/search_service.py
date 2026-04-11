@@ -48,8 +48,8 @@ class SearchService:
         logger.info("Search index built: %d entries", total)
         return total
 
-    def search(self, query: str, limit: int = 10, category: Optional[str] = None) -> list[dict]:
-        """Search across indexed content with relevance scoring."""
+    async def search(self, query: str, limit: int = 10, category: Optional[str] = None) -> list[dict]:
+        """Search across indexed content and optional Kiwix archives with relevance scoring."""
         if not self._index:
             self.build_index()
 
@@ -57,23 +57,50 @@ class SearchService:
         if not query_lower:
             return []
 
-        results = []
-        search_spaces = [self._index] if not category else {category: self._index.get(category, [])}
+        # 1. Local Sovereign Index Search
+        local_results = []
+        search_spaces = self._index if not category else {category: self._index.get(category, [])}
 
         for space_name, entries in search_spaces.items():
             for entry in entries:
                 score = self._score_entry(query_lower, entry)
                 if score > 0:
-                    results.append({
+                    local_results.append({
                         "id": entry["id"],
                         "category": space_name,
                         "path": entry["path"],
-                        "score": score,
+                        "score": score + 5.0, # Priority boost for sovereign data
+                        "trust_level": "official",
+                        "title": entry["id"].replace("-", " ").title(),
                         "preview": self._generate_preview(entry["content"], query_lower),
                     })
 
-        results.sort(key=lambda x: x["score"], reverse=True)
-        return results[:limit]
+        # 2. Kiwix (Wikipedia/WikiMed) Search - Optional & Async
+        kiwix_results = []
+        if not category or category == "archive":
+            try:
+                import httpx
+                async with httpx.AsyncClient(timeout=2.0) as client:
+                    response = await client.get(f"{KIWIX_URL}/search", params={"q": query, "limit": 5})
+                    if response.status_code == 200:
+                        data = response.json()
+                        for item in data.get("results", []):
+                            kiwix_results.append({
+                                "id": item.get("id"),
+                                "category": "archive",
+                                "path": item.get("url"),
+                                "score": 1.0, 
+                                "trust_level": "community",
+                                "title": item.get("title", "Arşiv Kaydı"),
+                                "preview": item.get("description", ""),
+                            })
+            except Exception as e:
+                logger.debug("Kiwix search unavailable: %s", e)
+
+        # Merge and Sort
+        all_results = local_results + kiwix_results
+        all_results.sort(key=lambda x: x["score"], reverse=True)
+        return all_results[:limit]
 
     def search_provinces(self, province_name: str) -> list[dict]:
         """Search specifically for province-related documents."""

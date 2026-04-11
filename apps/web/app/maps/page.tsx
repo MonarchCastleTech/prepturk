@@ -22,7 +22,8 @@ import {
   Trash2,
   ArrowLeft,
   ShieldCheck,
-  Globe
+  Globe,
+  Check
 } from 'lucide-react';
 
 const MapContainer = dynamic(() => import('react-leaflet').then((module) => module.MapContainer), { ssr: false });

@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AlertTriangle, Phone, MapPin, FileText, X, Shield } from 'lucide-react';
 import { useUiStore } from '../lib/stores';
-import { Button } from './ui/Button';
 import { cn } from '../lib/utils';
 
 const emergencyItems = [

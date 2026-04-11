@@ -9,6 +9,7 @@ import {
   Search,
   ShieldCheck,
   StickyNote,
+  Cpu,
 } from 'lucide-react';
 
 const quickAccessLinks = [

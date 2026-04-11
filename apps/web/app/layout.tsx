@@ -19,10 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen bg-nomad-bg font-sans text-foreground antialiased" 
         style={{ 
           fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-          // @ts-ignore
           '--font-plex-sans': 'system-ui, sans-serif',
           '--font-plex-mono': 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
-        }}
+        } as React.CSSProperties}
       >
         <script dangerouslySetInnerHTML={{
           __html: `

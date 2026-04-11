@@ -9,7 +9,7 @@ import { Input } from '../../components/ui/Input';
 import { 
   Droplets, Package, Pill, Battery, Fuel, Banknote, Plus, Trash2, 
   Minus, Printer, AlertTriangle, Check, X, Info, PackageSearch, ArrowLeft,
-  ChevronDown, ChevronUp
+  ChevronDown, ChevronUp, ChevronRight
 } from 'lucide-react';
 
 // Types

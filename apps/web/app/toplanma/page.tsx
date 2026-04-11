@@ -60,7 +60,7 @@ export default function ToplanmaPage() {
       return;
     }
 
-    let filtered = getAssemblyPoints(selectedProvince, selectedDistrict || undefined, selectedNeighborhood || undefined);
+    const filtered = getAssemblyPoints(selectedProvince, selectedDistrict || undefined, selectedNeighborhood || undefined);
     setResults(filtered);
     setDistances({});
   };

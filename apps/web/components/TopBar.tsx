@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Bell, Command, Menu, Search, Settings, Radio, Wifi, Battery } from 'lucide-react';
-import { useEasyModeStore, useUiStore } from '../lib/stores';
+import { Command, Menu, Search, Settings, Radio, Wifi, Battery } from 'lucide-react';
+import { useEasyModeStore, useUiStore, usePowerStore } from '../lib/stores';
 import { useTourStore } from '../lib/tour';
 import { cn } from '../lib/utils';
 import { Input } from './ui/Input';
@@ -18,7 +18,8 @@ interface TopBarProps {
 
 export default function TopBar({ mobileNavOpen = false, onMobileNavToggle }: TopBarProps) {
   const router = useRouter();
-  const { setCommandPaletteOpen, sidebarOpen, batteryLevel } = useUiStore();
+  const { setCommandPaletteOpen, sidebarOpen } = useUiStore();
+  const { batteryLevel, isCharging } = usePowerStore();
   const { isEasyMode } = useEasyModeStore();
   const { startTour } = useTourStore();
   const [localQuery, setLocalQuery] = useState('');

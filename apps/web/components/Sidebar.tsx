@@ -50,7 +50,6 @@ import {
   ShieldCheck,
   Snowflake,
   StickyNote,
-  Users,
 } from 'lucide-react';
 
 interface SectionItem {
@@ -234,8 +233,8 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
         {showLabels ? (
           <div className="min-w-0 space-y-2.5">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)]">
-                <Zap className="h-5 w-5 text-emerald-300" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)] overflow-hidden">
+                <Image src="/logo.svg" alt="PrepTürk Logo" width={28} height={28} className="object-contain" />
               </div>
               <div className="min-w-0">
                 <p className="shell-kicker">PrepTürk</p>
@@ -258,8 +257,8 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
             </div>
           </div>
         ) : (
-          <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)]">
-            <Zap className="h-5 w-5 text-emerald-300" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)] overflow-hidden">
+            <Image src="/logo.svg" alt="PrepTürk Logo" width={28} height={28} className="object-contain" />
           </div>
         )}
         <button
@@ -402,12 +401,6 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
           </div>
         ) : (
           <div className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-nomad-slate">PT</div>
-        )}
-      </div>
-    </aside>
-  );
-}
-nt-semibold uppercase tracking-[0.22em] text-nomad-slate">PT</div>
         )}
       </div>
     </aside>

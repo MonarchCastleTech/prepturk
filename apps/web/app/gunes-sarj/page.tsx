@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Sun, Battery, BatteryCharging, BatteryFull, Clock, Thermometer,
-  Cloud, CloudSun, CloudRain, Calendar, TrendingUp, MapPin, Info, Save, Trash2, ArrowLeft, Zap, Printer
+  Cloud, CloudSun, CloudRain, Calendar, TrendingUp, MapPin, Info, Save, Trash2, ArrowLeft, Zap, Printer, AlertTriangle
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
