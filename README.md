@@ -4,6 +4,10 @@
   <img src="apps/web/public/logo.png" width="256" alt="PrepTürk Tactical Logo">
 </p>
 
+<p align="center">
+  <a href="README.md">🇬🇧 English</a> | <a href="README.tr.md">🇹🇷 Türkçe</a> | <a href="README.ru.md">🇷🇺 Русский</a> | <a href="README.ar.md">🇸🇾 العربية</a>
+</p>
+
 > **Türkiye's Sovereign Offline Preparedness Command Center**
 >
 > 🇹🇷 *Türkiye İçin Çevrimdışı Bilgi, Eğitim, Resmî Belge ve Dayanıklılık Sistemi*
