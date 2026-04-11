@@ -1,0 +1,161 @@
+version: "3.9"
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: prepturk-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-prepturk}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-prepturk_password}
+      POSTGRES_DB: ${POSTGRES_DB:-prepturk}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    # Ports not exposed to host by default for security.
+    # To debug, uncomment the next line temporarily:
+    # ports:
+    #   - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-prepturk}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # Qdrant Vector Database
+  qdrant:
+    image: qdrant/qdrant:v1.8.4
+    container_name: prepturk-qdrant
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:-change-this-qdrant-key}
+    volumes:
+      - qdrant_data:/qdrant/storage
+    # Ports not exposed to host by default for security.
+    # ports:
+    #   - "127.0.0.1:6333:6333"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # FastAPI Backend
+  api:
+    build:
+      context: .
+      dockerfile: infra/docker/api.Dockerfile
+    container_name: prepturk-api
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      APP_SECRET_KEY: ${APP_SECRET_KEY:-dev-secret-key-change-in-production}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://prepturk:prepturk_password@db:5432/prepturk}
+      QDRANT_URL: ${QDRANT_URL:-http://qdrant:6333}
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-change-this-qdrant-key}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}  # LOCAL OLLAMA ONLY
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:7b-instruct}
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text:latest}
+      AI_PROVIDER: ${AI_PROVIDER:-ollama}
+      STORAGE_ROOT: /app/storage
+      LAN_MODE: ${LAN_MODE:-false}
+      AIRGAP_MODE: ${AIRGAP_MODE:-true}
+    volumes:
+      - ./storage:/app/storage
+      - ./content:/app/content
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # Worker / Ingestion
+  worker:
+    build:
+      context: .
+      dockerfile: infra/docker/worker.Dockerfile
+    container_name: prepturk-worker
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://prepturk:prepturk_password@db:5432/prepturk}
+      QDRANT_URL: ${QDRANT_URL:-http://qdrant:6333}
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-change-this-qdrant-key}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}  # LOCAL OLLAMA ONLY
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text:latest}
+      STORAGE_ROOT: /app/storage
+      OCR_ENABLED: ${OCR_ENABLED:-false}
+      OCR_LANGUAGE: ${OCR_LANGUAGE:-tur+eng}
+    volumes:
+      - ./storage:/app/storage
+      - ./content:/app/content
+      - ./data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # Next.js Frontend
+  web:
+    build:
+      context: .
+      dockerfile: infra/docker/web.Dockerfile
+    container_name: prepturk-web
+    environment:
+      NODE_ENV: ${APP_ENV:-development}
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      NEXT_PUBLIC_APP_NAME: ${APP_NAME:-prepturk}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # Caddy Reverse Proxy
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: prepturk-caddy
+    volumes:
+      - ./infra/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+      - api
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  prepturk-net:
+    driver: bridge

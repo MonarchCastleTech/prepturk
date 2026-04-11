@@ -1,0 +1,55 @@
+[project]
+name = "prepturk-api"
+version = "0.1.0"
+description = "PrepTurk Offline Command Center - API"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30.0",
+    "alembic>=1.14.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.17",
+    "httpx>=0.28.0",
+    "qdrant-client>=1.12.0",
+    "pypdf>=5.1.0",
+    "pymupdf>=1.24.14",
+    "trafilatura>=2.0.0",
+    "beautifulsoup4>=4.12.3",
+    "lxml>=5.3.0",
+    "pyyaml>=6.0.2",
+    "python-slugify>=8.0.4",
+    "aiofiles>=24.1.0",
+    "cryptography>=44.0.0",
+    "pyotp>=2.9.0",
+    "redis>=5.2.0",
+    "apscheduler>=3.10.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.28.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true

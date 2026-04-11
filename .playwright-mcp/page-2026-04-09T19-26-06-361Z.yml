@@ -1,0 +1,208 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e10]:
+            - paragraph [ref=e11]: PrepTurk
+            - paragraph [ref=e12]: Yerel bilgi ağı
+            - paragraph [ref=e13]: Belgeler, arama ve saha modülleri tek gezinme yapısında.
+        - generic [ref=e14]:
+          - generic [ref=e15]: Yerel
+          - generic [ref=e16]: Çevrimdışı
+      - button "Menüyü daralt veya genişlet" [ref=e17] [cursor=pointer]:
+        - img [ref=e18]
+    - navigation [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: Komuta
+          - list [ref=e24]:
+            - listitem [ref=e25]:
+              - link "Komuta Merkezi" [ref=e26] [cursor=pointer]:
+                - /url: /dashboard
+                - img [ref=e27]
+                - generic [ref=e32]: Komuta Merkezi
+            - listitem [ref=e33]:
+              - link "Yapay Zeka Asistanı" [ref=e34] [cursor=pointer]:
+                - /url: /ai-chat
+                - img [ref=e35]
+                - generic [ref=e37]: Yapay Zeka Asistanı
+            - listitem [ref=e38]:
+              - link "Kasa" [ref=e39] [cursor=pointer]:
+                - /url: /vault
+                - img [ref=e40]
+                - generic [ref=e42]: Kasa
+            - listitem [ref=e43]:
+              - link "Notlar" [ref=e44] [cursor=pointer]:
+                - /url: /notes
+                - img [ref=e45]
+                - generic [ref=e48]: Notlar
+            - listitem [ref=e49]:
+              - link "Yönetim" [ref=e50] [cursor=pointer]:
+                - /url: /admin
+                - img [ref=e51]
+                - generic [ref=e54]: Yönetim
+        - generic [ref=e55]:
+          - generic [ref=e56]: Bilgi ve Hazırlık
+          - list [ref=e57]:
+            - listitem [ref=e58]:
+              - link "Belge Kütüphanesi" [ref=e59] [cursor=pointer]:
+                - /url: /documents
+                - img [ref=e60]
+                - generic [ref=e63]: Belge Kütüphanesi
+            - listitem [ref=e64]:
+              - link "Komuta Araması" [ref=e65] [cursor=pointer]:
+                - /url: /search
+                - img [ref=e66]
+                - generic [ref=e69]: Komuta Araması
+            - listitem [ref=e70]:
+              - link "İl Envanteri" [ref=e71] [cursor=pointer]:
+                - /url: /province-packs
+                - img [ref=e72]
+                - generic [ref=e75]: İl Envanteri
+            - listitem [ref=e76]:
+              - link "Eğitim" [ref=e77] [cursor=pointer]:
+                - /url: /education
+                - img [ref=e78]
+                - generic [ref=e80]: Eğitim
+            - listitem [ref=e81]:
+              - link "Haritalar" [ref=e82] [cursor=pointer]:
+                - /url: /maps
+                - img [ref=e83]
+                - generic [ref=e85]: Haritalar
+            - listitem [ref=e86]:
+              - link "Toplanma Alanları" [ref=e87] [cursor=pointer]:
+                - /url: /toplanma
+                - img [ref=e88]
+                - generic [ref=e91]: Toplanma Alanları
+            - listitem [ref=e92]:
+              - link "Topluluk" [ref=e93] [cursor=pointer]:
+                - /url: /topluluk
+                - img [ref=e94]
+                - generic [ref=e99]: Topluluk
+            - listitem [ref=e100]:
+              - link "Sağlık Dosyası" [ref=e101] [cursor=pointer]:
+                - /url: /saglik
+                - img [ref=e102]
+                - generic [ref=e104]: Sağlık Dosyası
+            - listitem [ref=e105]:
+              - link "Sınav Merkezi" [ref=e106] [cursor=pointer]:
+                - /url: /sinav
+                - img [ref=e107]
+                - generic [ref=e110]: Sınav Merkezi
+        - generic [ref=e111]:
+          - generic [ref=e112]: Saha Modülleri
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - button "Hayatta Kalma" [ref=e115] [cursor=pointer]:
+                - generic [ref=e116]: Hayatta Kalma
+                - img [ref=e117]
+            - listitem [ref=e119]:
+              - button "Güvenlik" [ref=e120] [cursor=pointer]:
+                - generic [ref=e121]: Güvenlik
+                - img [ref=e122]
+            - listitem [ref=e124]:
+              - button "Enerji" [ref=e125] [cursor=pointer]:
+                - generic [ref=e126]: Enerji
+                - img [ref=e127]
+            - listitem [ref=e129]:
+              - button "İletişim" [ref=e130] [cursor=pointer]:
+                - generic [ref=e131]: İletişim
+                - img [ref=e132]
+            - listitem [ref=e134]:
+              - button "Planlama" [ref=e135] [cursor=pointer]:
+                - generic [ref=e136]: Planlama
+                - img [ref=e137]
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - paragraph [ref=e142]: Yerel durum
+        - paragraph [ref=e143]: Cihaz içi servisler ve temel modüller hazır.
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - paragraph [ref=e146]: indeks
+          - paragraph [ref=e147]:
+            - img [ref=e148]
+            - text: Yerel arama hazır
+        - generic [ref=e152]:
+          - paragraph [ref=e153]: model
+          - paragraph [ref=e154]:
+            - img [ref=e155]
+            - text: Qwen 0.5B hazır
+  - banner [ref=e158]:
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - generic [ref=e164]: Çevrimdışı
+            - generic [ref=e165]: Yerel indeks
+          - generic [ref=e166]:
+            - paragraph [ref=e167]: Komuta Aramasi
+            - paragraph [ref=e168]: Yerel indeks, filtreler ve guven oncelikli sonuclar ayni hatta toplaniyor.
+        - generic [ref=e169]:
+          - button "Komut paleti" [ref=e170] [cursor=pointer]:
+            - img [ref=e171]
+          - button "Bildirimler" [ref=e173] [cursor=pointer]:
+            - img [ref=e174]
+          - button "Kolay Modu ac (Easy Mode)" [ref=e177] [cursor=pointer]:
+            - img [ref=e178]
+          - button "Sistem turu" [ref=e181] [cursor=pointer]:
+            - img [ref=e182]
+      - generic [ref=e186]:
+        - img [ref=e187]
+        - textbox "AFAD planı, okul takvimi, ilaç prospektüsü ara" [ref=e190]
+        - generic [ref=e191]:
+          - img [ref=e192]
+          - text: K
+  - main [ref=e195]:
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - img [ref=e201]
+              - text: Komuta aramasi
+            - heading "Sorgu Durumu" [level=2] [ref=e206]
+            - paragraph [ref=e207]: Yerel indeks, guven filtresi ve sorgu sinyalleri ayni komuta yuzeyinde toplanir.
+          - generic [ref=e208]:
+            - button "Sadece Resmi Kaynaklar" [ref=e209] [cursor=pointer]:
+              - img [ref=e210]
+              - text: Sadece Resmi Kaynaklar
+            - button "Filtreleri goster" [ref=e213] [cursor=pointer]:
+              - img [ref=e214]
+              - text: Filtreleri goster
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - paragraph [ref=e217]: Sorgu ozeti
+            - paragraph [ref=e218]: "\"AFAD\" icin 0 eslesme hazir"
+            - paragraph [ref=e219]: Sonuclar guven ve icerik sinyaline gore siralanir
+          - generic [ref=e220]:
+            - paragraph [ref=e221]: Yerel indeks
+            - paragraph [ref=e222]: Anlik
+            - paragraph [ref=e223]: Sorgular baglanti olmadan cihaz ici veri uzerinde yurur
+          - generic [ref=e224]:
+            - paragraph [ref=e225]: Filtre yuku
+            - paragraph [ref=e226]: Temiz
+            - paragraph [ref=e227]: Kategori, kurum ve guven esikleri ayni anda uygulanir
+      - generic [ref=e228]:
+        - complementary [ref=e229]:
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - img [ref=e232]
+              - text: Filtre Raflari
+            - paragraph [ref=e236]: Sonuc alanini daraltip en guvenilir belge ve kurum kayitlarina hizli erisim saglayin.
+        - generic [ref=e237]:
+          - generic [ref=e239]:
+            - generic [ref=e242]:
+              - img [ref=e243]
+              - textbox "AFAD plani, TAMP, okul takvimi, ilac prospektusu ara" [ref=e246]: AFAD
+              - button "Aramayı temizle" [ref=e247] [cursor=pointer]:
+                - img [ref=e248]
+            - generic [ref=e251]:
+              - combobox [ref=e252]:
+                - option "Ilgi" [selected]
+                - option "En Yeni"
+                - option "Resmilik"
+              - img
+          - generic [ref=e260]: Turkce karakterler arama sirasinda normalize edilir. Yazim farklari ayni yerel indeks akisi icinde birlikte degerlendirilir.
+  - button "Acil durum numaralari ve yardim" [ref=e261] [cursor=pointer]: SOS

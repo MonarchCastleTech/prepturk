@@ -1,0 +1,41 @@
+id: ankara
+province_code: "06"
+province_name: Ankara
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Ankara ili afet hazirlik ve resmi kaynaklar paketi"
+region: "İç Anadolu"
+population: 5782285
+contacts:
+  afad:
+    name: "Ankara AFAD İl Müdürlüğü"
+    phone: "0312-4470000"
+    address: "Çankaya, Ankara"
+    website: "https://ankara.afad.gov.tr"
+  valilik:
+    name: "Ankara Valiliği"
+    phone: "0312-4102000"
+    website: "https://ankara.gov.tr"
+  saglik_il:
+    name: "Ankara İl Sağlık Müdürlüğü"
+    phone: "0312-4342700"
+    website: "https://ankaraism.saglik.gov.tr"
+  il_mem:
+    name: "Ankara İl Milli Eğitim Müdürlüğü"
+    phone: "0312-4152000"
+    website: "https://ankara.meb.gov.tr"
+emergency_notes:
+  - "Ankara deprem kuşağı üzerinde bulunan bir ildir."
+  - "Kizilay ve Çankaya bölgeleri yogun yerleşim alanlaridir."
+  - "Ankara'da çok sayida hastane ve saglik kurumu bulunmaktadir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

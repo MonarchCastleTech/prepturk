@@ -1,0 +1,25 @@
+{
+    admin off
+    servers {
+        max_header_size 10MB
+    }
+}
+
+http://localhost:80 {
+    encode gzip
+
+    # Frontend
+    handle /* {
+        reverse_proxy web:3000
+    }
+
+    # API
+    handle /api/* {
+        reverse_proxy api:8000
+    }
+
+    # Health
+    handle /health {
+        reverse_proxy api:8000
+    }
+}

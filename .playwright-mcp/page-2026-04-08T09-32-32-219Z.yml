@@ -1,0 +1,288 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]:
+            - img [ref=e8]
+            - generic [ref=e10]:
+              - paragraph [ref=e11]: PrepTürk terminali
+              - paragraph [ref=e12]: Komuta hattı
+              - paragraph [ref=e13]: Bağlantı olmadan çalışan bilgi ağı
+          - generic [ref=e14]:
+            - generic [ref=e15]: Yerel
+            - generic [ref=e16]: Çevrimdışı
+        - button "Menüyü daralt veya genişlet" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+      - navigation [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: Komuta
+            - list [ref=e24]:
+              - listitem [ref=e25]:
+                - link "Komuta Merkezi" [ref=e26] [cursor=pointer]:
+                  - /url: /dashboard
+                  - img [ref=e27]
+                  - generic [ref=e32]: Komuta Merkezi
+              - listitem [ref=e33]:
+                - link "Yapay Zeka Asistanı" [ref=e34] [cursor=pointer]:
+                  - /url: /ai-chat
+                  - img [ref=e35]
+                  - generic [ref=e37]: Yapay Zeka Asistanı
+              - listitem [ref=e38]:
+                - link "Kasa" [ref=e39] [cursor=pointer]:
+                  - /url: /vault
+                  - img [ref=e40]
+                  - generic [ref=e42]: Kasa
+              - listitem [ref=e43]:
+                - link "Notlar" [ref=e44] [cursor=pointer]:
+                  - /url: /notes
+                  - img [ref=e45]
+                  - generic [ref=e48]: Notlar
+              - listitem [ref=e49]:
+                - link "Yönetim" [ref=e50] [cursor=pointer]:
+                  - /url: /admin
+                  - img [ref=e51]
+                  - generic [ref=e54]: Yönetim
+          - generic [ref=e55]:
+            - generic [ref=e56]: Bilgi ve Hazırlık
+            - list [ref=e57]:
+              - listitem [ref=e58]:
+                - link "Belge Kütüphanesi" [ref=e59] [cursor=pointer]:
+                  - /url: /documents
+                  - img [ref=e60]
+                  - generic [ref=e63]: Belge Kütüphanesi
+              - listitem [ref=e64]:
+                - link "Komuta Araması" [ref=e65] [cursor=pointer]:
+                  - /url: /search
+                  - img [ref=e66]
+                  - generic [ref=e69]: Komuta Araması
+              - listitem [ref=e70]:
+                - link "İl Envanteri" [ref=e71] [cursor=pointer]:
+                  - /url: /province-packs
+                  - img [ref=e72]
+                  - generic [ref=e75]: İl Envanteri
+              - listitem [ref=e76]:
+                - link "Eğitim" [ref=e77] [cursor=pointer]:
+                  - /url: /education
+                  - img [ref=e78]
+                  - generic [ref=e80]: Eğitim
+              - listitem [ref=e81]:
+                - link "Haritalar" [ref=e82] [cursor=pointer]:
+                  - /url: /maps
+                  - img [ref=e83]
+                  - generic [ref=e85]: Haritalar
+              - listitem [ref=e86]:
+                - link "Toplanma Alanları" [ref=e87] [cursor=pointer]:
+                  - /url: /toplanma
+                  - img [ref=e88]
+                  - generic [ref=e91]: Toplanma Alanları
+              - listitem [ref=e92]:
+                - link "Topluluk" [ref=e93] [cursor=pointer]:
+                  - /url: /topluluk
+                  - img [ref=e94]
+                  - generic [ref=e99]: Topluluk
+              - listitem [ref=e100]:
+                - link "Sağlık Dosyası" [ref=e101] [cursor=pointer]:
+                  - /url: /saglik
+                  - img [ref=e102]
+                  - generic [ref=e104]: Sağlık Dosyası
+              - listitem [ref=e105]:
+                - link "Sınav Merkezi" [ref=e106] [cursor=pointer]:
+                  - /url: /sinav
+                  - img [ref=e107]
+                  - generic [ref=e110]: Sınav Merkezi
+          - generic [ref=e111]:
+            - generic [ref=e112]: Saha Modülleri
+            - list [ref=e113]:
+              - listitem [ref=e114]:
+                - button "Hayatta Kalma" [ref=e115] [cursor=pointer]:
+                  - generic [ref=e116]: Hayatta Kalma
+                  - img [ref=e117]
+              - listitem [ref=e119]:
+                - button "Güvenlik" [ref=e120] [cursor=pointer]:
+                  - generic [ref=e121]: Güvenlik
+                  - img [ref=e122]
+              - listitem [ref=e124]:
+                - button "Enerji" [ref=e125] [cursor=pointer]:
+                  - generic [ref=e126]: Enerji
+                  - img [ref=e127]
+              - listitem [ref=e129]:
+                - button "İletişim" [ref=e130] [cursor=pointer]:
+                  - generic [ref=e131]: İletişim
+                  - img [ref=e132]
+              - listitem [ref=e134]:
+                - button "Planlama" [ref=e135] [cursor=pointer]:
+                  - generic [ref=e136]: Planlama
+                  - img [ref=e137]
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - paragraph [ref=e142]: Yerel istasyon
+          - paragraph [ref=e143]: Kurulumla hazır komuta profili
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - paragraph [ref=e146]: indeks
+            - paragraph [ref=e147]:
+              - img [ref=e148]
+              - text: Yerel arama hazır
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: model
+            - paragraph [ref=e154]:
+              - img [ref=e155]
+              - text: Qwen 0.5B hazır
+    - banner [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - generic [ref=e164]: Çevrimdışı
+              - generic [ref=e165]: Yerel indeks
+              - generic [ref=e166]: Güvenilir yerel erişim
+            - generic [ref=e167]:
+              - paragraph [ref=e168]: Komuta üst kabuğu
+              - paragraph [ref=e169]: Belgeler, arama, sağlık ve sınav çalışma alanları aynı hatta hazır.
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - img [ref=e172]
+                - text: Resmi kaynak önceliği
+              - generic [ref=e175]:
+                - img [ref=e176]
+                - text: Yerel indeks hazır
+              - generic [ref=e180]:
+                - img [ref=e181]
+                - text: Qwen 0.5B hazır
+          - generic [ref=e184]:
+            - button "Komut paleti" [ref=e185] [cursor=pointer]:
+              - img [ref=e186]
+            - button "Bildirimler" [ref=e188] [cursor=pointer]:
+              - img [ref=e189]
+            - button "Kolay Modu ac (Easy Mode)" [ref=e192] [cursor=pointer]:
+              - img [ref=e193]
+            - button "Sistem turu" [ref=e196] [cursor=pointer]:
+              - img [ref=e197]
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - img [ref=e202]
+            - textbox "AFAD planı, okul takvimi, ilaç prospektüsü ara" [ref=e205]
+            - generic [ref=e206]:
+              - img [ref=e207]
+              - text: K
+          - paragraph [ref=e209]: "Sorgu örnekleri: TAMP, il acil numaraları, sınav takvimi, TİTCK KÜB."
+    - main [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - img [ref=e217]
+                - text: Yerel Sağlık Kayıtları
+              - generic [ref=e219]:
+                - heading "Sağlık Dosyası" [level=1] [ref=e220]
+                - paragraph [ref=e221]: Yerel sağlık özeti, ilaç planı, doktor kayıtları ve acil iletişim bilgileri tek dosyada tutulur.
+            - generic [ref=e222]:
+              - button "Yazdır" [ref=e223] [cursor=pointer]:
+                - img [ref=e224]
+                - text: Yazdır
+              - button "Kaydet" [ref=e228] [cursor=pointer]:
+                - img [ref=e229]
+                - text: Kaydet
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - paragraph [ref=e235]: Yerel sağlık özeti
+              - paragraph [ref=e236]: Kan grubu eklenmedi
+              - paragraph [ref=e237]: Kayıt bekliyor
+            - generic [ref=e238]:
+              - paragraph [ref=e239]: Acil iletişim halkası
+              - paragraph [ref=e240]: 0 kişi
+              - paragraph [ref=e241]: İlk aranacak yakın çevre kayıtları
+            - generic [ref=e242]:
+              - paragraph [ref=e243]: İlaç planı
+              - paragraph [ref=e244]: 0 kayıt
+              - paragraph [ref=e245]: Kayıt bekliyor
+        - generic [ref=e246]:
+          - button "Genel dosya" [ref=e247] [cursor=pointer]:
+            - img [ref=e248]
+            - text: Genel dosya
+          - button "İlaç planı" [ref=e251] [cursor=pointer]:
+            - img [ref=e252]
+            - text: İlaç planı
+          - button "İletişim ve doktorlar" [ref=e255] [cursor=pointer]:
+            - img [ref=e256]
+            - text: İletişim ve doktorlar
+        - generic [ref=e258]:
+          - generic [ref=e260]:
+            - heading "Temel sağlık bilgileri" [level=3] [ref=e262]:
+              - img [ref=e263]
+              - text: Temel sağlık bilgileri
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - text: Kan grubu
+                - combobox [ref=e267]:
+                  - option "Seçiniz" [selected]
+                  - option "A+"
+                  - option "A-"
+                  - option "B+"
+                  - option "B-"
+                  - option "AB+"
+                  - option "AB-"
+                  - option "O+"
+                  - option "O-"
+              - generic [ref=e268]:
+                - text: Alerjiler
+                - generic [ref=e269]:
+                  - button "Penisilin" [ref=e270] [cursor=pointer]
+                  - button "Aspirin" [ref=e271] [cursor=pointer]
+                  - button "Kontrast madde" [ref=e272] [cursor=pointer]
+                  - button "Lateks" [ref=e273] [cursor=pointer]
+                  - button "Arı sokması" [ref=e274] [cursor=pointer]
+                  - button "Yer fıstığı" [ref=e275] [cursor=pointer]
+                  - button "Süt ürünleri" [ref=e276] [cursor=pointer]
+                  - button "Yumurta" [ref=e277] [cursor=pointer]
+                  - button "Kabuklu deniz ürünleri" [ref=e278] [cursor=pointer]
+                  - button "Polen" [ref=e279] [cursor=pointer]
+                  - button "Toz akarı" [ref=e280] [cursor=pointer]
+                  - button "Diğer" [ref=e281] [cursor=pointer]
+                - generic [ref=e282]:
+                  - textbox "Özel kayıt ekle" [ref=e283]
+                  - button "Ekle" [ref=e284] [cursor=pointer]
+              - generic [ref=e285]:
+                - text: Kronik durumlar
+                - generic [ref=e286]:
+                  - button "Diyabet" [ref=e287] [cursor=pointer]
+                  - button "Hipertansiyon" [ref=e288] [cursor=pointer]
+                  - button "Astım" [ref=e289] [cursor=pointer]
+                  - button "KOAH" [ref=e290] [cursor=pointer]
+                  - button "Kalp yetmezliği" [ref=e291] [cursor=pointer]
+                  - button "Epilepsi" [ref=e292] [cursor=pointer]
+                  - button "Migren" [ref=e293] [cursor=pointer]
+                  - button "Hipotiroidi" [ref=e294] [cursor=pointer]
+                  - button "Böbrek yetmezliği" [ref=e295] [cursor=pointer]
+                  - button "Depresyon" [ref=e296] [cursor=pointer]
+                  - button "Anksiyete" [ref=e297] [cursor=pointer]
+                  - button "Diğer" [ref=e298] [cursor=pointer]
+                - generic [ref=e299]:
+                  - textbox "Özel kayıt ekle" [ref=e300]
+                  - button "Ekle" [ref=e301] [cursor=pointer]
+              - generic [ref=e302]:
+                - text: Ek notlar
+                - textbox "Operasyon sırasında bilinmesi gereken sağlık notları" [ref=e303]
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - heading "Hazır referans" [level=3] [ref=e307]:
+                - img [ref=e308]
+                - text: Hazır referans
+              - generic [ref=e310]:
+                - paragraph [ref=e311]: Dosyaya alerji, ilaç ve kritik iletişim kayıtları eklenmeden bırakılmamalıdır.
+                - paragraph [ref=e312]: Yazdırılmış sürüm aile bireylerinin erişebileceği bir noktada tutulmalıdır.
+                - paragraph [ref=e313]: Kan grubu ve sürekli ilaç alanları boşsa ilk fırsatta tamamlayın.
+            - generic [ref=e314]:
+              - generic [ref=e315]:
+                - heading "Doktor kayıtları" [level=3] [ref=e316]:
+                  - img [ref=e317]
+                  - text: Doktor kayıtları
+                - button "Ekle" [ref=e321] [cursor=pointer]:
+                  - img [ref=e322]
+                  - text: Ekle
+              - generic [ref=e324]: Doktor kaydı eklenmedi.
+    - button "Acil durum numaralari ve yardim" [ref=e325] [cursor=pointer]: SOS
+  - alert [ref=e326]

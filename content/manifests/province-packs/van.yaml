@@ -1,0 +1,49 @@
+id: van
+province_code: "65"
+province_name: Van
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Van ili afet hazirlik ve resmi kaynaklar paketi"
+region: "Dogu Anadolu"
+population: 1143806
+emergency_level: "high"
+sea_name: "Van Golu"
+contacts:
+  afad:
+    name: "Van AFAD Il Mudurlugu"
+    phone: "0432-2160000"
+    address: "Merkez, Van"
+    website: "https://van.afad.gov.tr"
+  valilik:
+    name: "Van Valiligi"
+    phone: "0432-2163000"
+    website: "https://van.gov.tr"
+  saglik_il:
+    name: "Van Il Saglik Mudurlugu"
+    phone: "0432-2164000"
+    website: "https://vansaglik.gov.tr"
+  il_mem:
+    name: "Van Il Milli Egitim Mudurlugu"
+    phone: "0432-2165000"
+    website: "https://van.meb.gov.tr"
+  buyuksehir:
+    name: "Van Buyuksehir Belediyesi"
+    phone: "0432-2166000"
+    website: "https://www.van.bel.tr"
+emergency_notes:
+  - "Van 2011 yilinda 7.2 buyuklugunde deprem yasamistir. Bolge aktif fay hatlari uzerinde yer almaktadir ve deprem riski devam etmektedir."
+  - "Van Golu cevresindeki yerlesimlerde olasi tsunami ve dalga etkilerine karsi onlem alinmalidir."
+  - "Dogu Anadolu bolgesinde ulasim kosullari zorlu oldugundan afet durumunda lojistik planlama onem tasir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+  - type: "lake_shore_risk_zones"
+    source: "imported"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

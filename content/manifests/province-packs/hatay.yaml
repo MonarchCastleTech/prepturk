@@ -1,0 +1,49 @@
+id: hatay
+province_code: "31"
+province_name: Hatay
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Hatay ili afet hazirlik ve resmi kaynaklar paketi"
+region: "Akdeniz"
+population: 1621652
+emergency_level: "very_high"
+sea_name: "Akdeniz"
+contacts:
+  afad:
+    name: "Hatay AFAD Il Mudurlugu"
+    phone: "0326-2210000"
+    address: "Antakya, Hatay"
+    website: "https://hatay.afad.gov.tr"
+  valilik:
+    name: "Hatay Valiligi"
+    phone: "0326-2213000"
+    website: "https://hatay.gov.tr"
+  saglik_il:
+    name: "Hatay Il Saglik Mudurlugu"
+    phone: "0326-2214000"
+    website: "https://hataysaglik.gov.tr"
+  il_mem:
+    name: "Hatay Il Milli Egitim Mudurlugu"
+    phone: "0326-2215000"
+    website: "https://hatay.meb.gov.tr"
+  buyuksehir:
+    name: "Hatay Buyuksehir Belediyesi"
+    phone: "0326-2216000"
+    website: "https://www.hatay.bel.tr"
+emergency_notes:
+  - "Hatay 6 Subat 2023 Kahramanmaras merkezli depremlerden en cok etkilenen illerden biridir. Bolgede ciddi altyapi hasari meydana gelmistir."
+  - "Deprem bolgesinde yeniden imar calismari devam etmektedir. Konteyner kentler ve gecici barinma alanlari aktif olarak kullanilmaktadir."
+  - "Sinir kapisina yakin konumu nedeniyle uluslararasi yardim lojistiginde onemli rol oynamaktadir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+  - type: "damage_assessment_zones"
+    source: "imported"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

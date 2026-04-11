@@ -1,0 +1,49 @@
+id: istanbul
+province_code: "34"
+province_name: Istanbul
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Istanbul ili afet hazirlik ve resmi kaynaklar paketi"
+region: "Marmara"
+population: 15462452
+emergency_level: "high"
+sea_name: "Marmara Denizi"
+contacts:
+  afad:
+    name: "Istanbul AFAD Il Mudurlugu"
+    phone: "0212-4470000"
+    address: "Fatih, Istanbul"
+    website: "https://istanbul.afad.gov.tr"
+  valilik:
+    name: "Istanbul Valiligi"
+    phone: "0212-4565000"
+    website: "https://istanbul.gov.tr"
+  saglik_il:
+    name: "Istanbul Il Saglik Mudurlugu"
+    phone: "0212-5192000"
+    website: "https://istanbulsaglik.gov.tr"
+  il_mem:
+    name: "Istanbul Il Milli Egitim Mudurlugu"
+    phone: "0212-4538000"
+    website: "https://istanbul.meb.gov.tr"
+  buyuksehir:
+    name: "Istanbul Buyuksehir Belediyesi"
+    phone: "0212-4494000"
+    website: "https://ibb.istanbul"
+emergency_notes:
+  - "Istanbul birinci derece deprem bolgesidir. Marmara Denizi uzerindeki Kuzey Anadolu Fay Hatti buyuk deprem riski tasmaktadir."
+  - "15 milyonu asan nufusuyla Turkiye'nin en kalabalik sehri olan Istanbul'da tahliye planlari onceden yapilmalidir."
+  - "Avrupa ve Anadolu yakalarini birbirine baglayan bogaz koprusi ve tuneller afet durumunda kritik onem tasir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+  - type: "ferry_terminals"
+    source: "imported"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Storage
+data/
+storage/
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+*.egg
+.eggs/
+
+# Next.js
+.next/
+out/
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# MinIO
+minio-data/
+
+# Qdrant
+qdrant_storage/
+
+# Backups
+backups/
+*.backup
+
+# Temporary
+tmp/
+temp/
+
+# OCR
+tesseract-data/
+
+# Vault
+vault-keys/

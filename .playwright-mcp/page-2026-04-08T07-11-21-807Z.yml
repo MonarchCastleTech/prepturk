@@ -1,0 +1,414 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]:
+            - img [ref=e8]
+            - generic [ref=e10]:
+              - paragraph [ref=e11]: PrepTurk device
+              - paragraph [ref=e12]: Command rail
+              - paragraph [ref=e13]: Knowledge that never goes offline
+          - generic [ref=e14]: YerelOffline
+        - button "Navigasyonu kapat" [ref=e15]:
+          - img [ref=e16]
+        - button "Menuyu toggleyin" [ref=e18]:
+          - img [ref=e19]
+      - navigation [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Komuta
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - link "Kontrol Merkezi" [ref=e27] [cursor=pointer]:
+                  - /url: /dashboard
+                  - img [ref=e28]
+                  - text: Kontrol Merkezi
+              - listitem [ref=e33]:
+                - link "AI Asistan" [ref=e34] [cursor=pointer]:
+                  - /url: /ai-chat
+                  - img [ref=e35]
+                  - text: AI Asistan
+              - listitem [ref=e37]:
+                - link "Kasa" [ref=e38] [cursor=pointer]:
+                  - /url: /vault
+                  - img [ref=e39]
+                  - text: Kasa
+              - listitem [ref=e41]:
+                - link "Notlar" [ref=e42] [cursor=pointer]:
+                  - /url: /notes
+                  - img [ref=e43]
+                  - text: Notlar
+              - listitem [ref=e46]:
+                - link "Yonetim" [ref=e47] [cursor=pointer]:
+                  - /url: /admin
+                  - img [ref=e48]
+                  - text: Yonetim
+          - generic [ref=e51]:
+            - generic [ref=e52]: Bilgi Erisimi
+            - list [ref=e53]:
+              - listitem [ref=e54]:
+                - link "Belge Akisi" [ref=e55] [cursor=pointer]:
+                  - /url: /documents
+                  - img [ref=e56]
+                  - text: Belge Akisi
+              - listitem [ref=e59]:
+                - link "Derin Arama" [ref=e60] [cursor=pointer]:
+                  - /url: /search
+                  - img [ref=e61]
+                  - text: Derin Arama
+              - listitem [ref=e64]:
+                - link "Il Paketleri" [ref=e65] [cursor=pointer]:
+                  - /url: /province-packs
+                  - img [ref=e66]
+                  - text: Il Paketleri
+              - listitem [ref=e69]:
+                - link "Egitim" [ref=e70] [cursor=pointer]:
+                  - /url: /education
+                  - img [ref=e71]
+                  - text: Egitim
+              - listitem [ref=e73]:
+                - link "Haritalar" [ref=e74] [cursor=pointer]:
+                  - /url: /maps
+                  - img [ref=e75]
+                  - text: Haritalar
+              - listitem [ref=e77]:
+                - link "Toplanma Alanlari" [ref=e78] [cursor=pointer]:
+                  - /url: /toplanma
+                  - img [ref=e79]
+                  - text: Toplanma Alanlari
+              - listitem [ref=e82]:
+                - link "Topluluk" [ref=e83] [cursor=pointer]:
+                  - /url: /topluluk
+                  - img [ref=e84]
+                  - text: Topluluk
+              - listitem [ref=e89]:
+                - link "Saglik" [ref=e90] [cursor=pointer]:
+                  - /url: /saglik
+                  - img [ref=e91]
+                  - text: Saglik
+              - listitem [ref=e93]:
+                - link "Sinav Hazirlik" [ref=e94] [cursor=pointer]:
+                  - /url: /sinav
+                  - img [ref=e95]
+                  - text: Sinav Hazirlik
+          - generic [ref=e98]:
+            - generic [ref=e99]: Saha Modulleri
+            - list [ref=e100]:
+              - listitem [ref=e101]:
+                - button "Hayatta Kalma" [ref=e102]:
+                  - text: Hayatta Kalma
+                  - img [ref=e103]
+              - listitem [ref=e105]:
+                - button "Guvenlik" [ref=e106]:
+                  - text: Guvenlik
+                  - img [ref=e107]
+              - listitem [ref=e109]:
+                - button "Enerji" [ref=e110]:
+                  - text: Enerji
+                  - img [ref=e111]
+              - listitem [ref=e113]:
+                - button "Iletisim" [ref=e114]:
+                  - text: Iletisim
+                  - img [ref=e115]
+              - listitem [ref=e117]:
+                - button "Planlama" [ref=e118]:
+                  - text: Planlama
+                  - img [ref=e119]
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - paragraph [ref=e124]: Yerel cihaz
+          - paragraph [ref=e125]: Paylasilan operator profili
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - paragraph [ref=e128]: index
+            - paragraph [ref=e129]:
+              - img [ref=e130]
+              - text: Offline arama acik
+          - generic [ref=e134]:
+            - paragraph [ref=e135]: mode
+            - paragraph [ref=e136]:
+              - img [ref=e137]
+              - text: Hazir komuta
+    - banner [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - button "Navigasyonu ac" [ref=e144]:
+              - img [ref=e145]
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - generic [ref=e148]: Offline
+                - generic [ref=e149]: Yerel indeks
+                - text: Trusted local retrieval
+              - generic [ref=e150]:
+                - paragraph [ref=e151]: Yerel bilgi komuta kabugu
+                - paragraph [ref=e152]: Arama, belgeler ve acil akislar ayni komuta satirinda hazir.
+              - generic [ref=e153]:
+                - generic [ref=e154]:
+                  - img [ref=e155]
+                  - text: Resmi kaynak onceligi
+                - generic [ref=e158]:
+                  - img [ref=e159]
+                  - text: Hizli erisim acik
+          - generic [ref=e163]:
+            - button "Komut paleti" [ref=e164]:
+              - img [ref=e165]
+            - button "Bildirimler" [ref=e167]:
+              - img [ref=e168]
+            - button "Kolay Modu ac (Easy Mode)" [ref=e171]:
+              - img [ref=e172]
+            - button "Sistem turu / Start tour" [ref=e175]:
+              - img [ref=e176]
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - img [ref=e181]
+            - textbox "AFAD plani, okul takvimi, ilac prospektusu ara" [ref=e184]
+            - generic [ref=e185]:
+              - img [ref=e186]
+              - text: K
+          - paragraph [ref=e188]: "Sorgu ornekleri: TAMP, il acil telefonlari, sinav takvimi, TITCK KUB."
+    - main [ref=e190]:
+      - generic [ref=e191]:
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - generic [ref=e196]:
+                - img [ref=e197]
+                - text: Komuta merkezi aktif
+              - generic [ref=e200]:
+                - img [ref=e201]
+                - text: Yerel indeks acik
+              - generic [ref=e203]:
+                - img [ref=e204]
+                - text: Saha uyarisi var
+            - generic [ref=e206]:
+              - paragraph [ref=e207]: Bilgi erisimi oncelikli
+              - heading "Yerel bilgi komuta merkezi" [level=1] [ref=e208]
+              - paragraph [ref=e209]: Resmi ve kurumsal kayitlara hizli erisim, tek cihaz profili ve bugunun kritik sinyalleri ayni operasyonal gorunumde bir arada.
+            - generic [ref=e210]:
+              - generic [ref=e213]:
+                - img [ref=e214]
+                - textbox "AFAD plani, okul takvimi, ilac prospektusu ara" [ref=e217]
+              - generic [ref=e218]:
+                - link "BELGELER Resmi kaynak kutuphanesini ac" [ref=e219] [cursor=pointer]:
+                  - /url: /documents
+                  - paragraph [ref=e220]: BELGELER
+                  - paragraph [ref=e221]: Resmi kaynak kutuphanesini ac
+                - link "ARAMA Kurum ve konu bazli tarama yap" [ref=e222] [cursor=pointer]:
+                  - /url: /search
+                  - paragraph [ref=e223]: ARAMA
+                  - paragraph [ref=e224]: Kurum ve konu bazli tarama yap
+                - link "IL PAKETLERI Yerel risk ve temas listelerini ac" [ref=e225] [cursor=pointer]:
+                  - /url: /province-packs
+                  - paragraph [ref=e226]: IL PAKETLERI
+                  - paragraph [ref=e227]: Yerel risk ve temas listelerini ac
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - paragraph [ref=e230]: Bugun
+                - paragraph [ref=e231]: 8 Nisan 2026 Çarşamba
+              - generic [ref=e232]:
+                - paragraph [ref=e233]: Yerel profil
+                - paragraph [ref=e234]: Tek cihaz / shared local profile
+              - generic [ref=e235]:
+                - paragraph [ref=e236]: Guvenilir akis
+                - paragraph [ref=e237]: Yeni bilgi kaydi bekleniyor
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - generic [ref=e240]:
+                - paragraph [ref=e241]: Komuta ozeti
+                - heading "Bilgi hazirlik durumu" [level=2] [ref=e242]
+              - img [ref=e243]
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - img [ref=e248]
+                - generic [ref=e251]:
+                  - paragraph [ref=e252]: Resmi pencere acik
+                  - paragraph [ref=e253]: Yeni resmi kayit bekleniyor.
+              - generic [ref=e254]:
+                - img [ref=e255]
+                - generic [ref=e257]:
+                  - paragraph [ref=e258]: Durum seridi
+                  - paragraph [ref=e259]: Kuvvetli yagis uyarisi
+              - generic [ref=e260]:
+                - img [ref=e261]
+                - generic [ref=e264]:
+                  - paragraph [ref=e265]: Operator notlari
+                  - paragraph [ref=e266]: Not kuyrugu temiz, yeni planlama icin hazir.
+              - generic [ref=e267]:
+                - button "Acil durum" [ref=e268]:
+                  - img [ref=e269]
+                  - text: Acil durum
+                - link "Belgeleri ac" [ref=e271] [cursor=pointer]:
+                  - /url: /documents
+                  - button "Belgeleri ac" [ref=e272]:
+                    - img [ref=e273]
+                    - text: Belgeleri ac
+        - generic [ref=e277]:
+          - generic [ref=e278]:
+            - img [ref=e279]
+            - generic [ref=e281]:
+              - paragraph [ref=e282]: Durum seridi
+              - paragraph [ref=e283]: "Kuvvetli yagis uyarisi: Marmara ve Ege bolgelerinde kuvvetli yagis bekleniyor. Sel ve su baskinlarina karsi hazir kalin."
+              - paragraph [ref=e284]: "MGM - Meteoroloji Genel Mudurlugu - Gecerlilik: 10 Nisan 2026"
+          - generic [ref=e285]:
+            - generic [ref=e286]:
+              - img [ref=e287]
+              - text: Uyari acik
+            - generic [ref=e289]:
+              - img [ref=e290]
+              - text: Ilac sirasi temiz
+            - generic [ref=e293]:
+              - img [ref=e294]
+              - text: Not kuyrugu temiz
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - img [ref=e299]
+            - heading "Bilgi erisimi" [level=2] [ref=e301]
+          - generic [ref=e302]:
+            - generic [ref=e303]:
+              - generic [ref=e304]:
+                - heading "Resmi ve kurumsal akislar" [level=3] [ref=e305]
+                - paragraph [ref=e306]: Kurum bazli bilgi hatlarini tek panelden ac ve sonrasinda derin aramaya gec.
+              - generic [ref=e308]:
+                - link "Belge deposu AFAD, MGM, MEB ve kurumsal kaynaklari tek akista ac. Resmi belge kutuphanesi" [ref=e309] [cursor=pointer]:
+                  - /url: /documents
+                  - generic [ref=e310]:
+                    - img [ref=e312]
+                    - generic [ref=e315]:
+                      - paragraph [ref=e316]: Belge deposu
+                      - paragraph [ref=e317]: AFAD, MGM, MEB ve kurumsal kaynaklari tek akista ac.
+                      - paragraph [ref=e318]: Resmi belge kutuphanesi
+                - link "Derin arama Yerel indeks uzerinde konu, kurum ve belge taramasi yap. Hizli arama ve filtre" [ref=e319] [cursor=pointer]:
+                  - /url: /search
+                  - generic [ref=e320]:
+                    - img [ref=e322]
+                    - generic [ref=e324]:
+                      - paragraph [ref=e325]: Derin arama
+                      - paragraph [ref=e326]: Yerel indeks uzerinde konu, kurum ve belge taramasi yap.
+                      - paragraph [ref=e327]: Hizli arama ve filtre
+                - link "Il paketleri Il bazli risk, iletisim ve hazirlik setlerini ac. Yerel hazirlik veri seti" [ref=e328] [cursor=pointer]:
+                  - /url: /province-packs
+                  - generic [ref=e329]:
+                    - img [ref=e331]
+                    - generic [ref=e334]:
+                      - paragraph [ref=e335]: Il paketleri
+                      - paragraph [ref=e336]: Il bazli risk, iletisim ve hazirlik setlerini ac.
+                      - paragraph [ref=e337]: Yerel hazirlik veri seti
+                - link "Egitim raflari Ders ve egitim kaynaklarina kesintisiz gecis sagla. MEB ve sinav icerikleri" [ref=e338] [cursor=pointer]:
+                  - /url: /education
+                  - generic [ref=e339]:
+                    - img [ref=e341]
+                    - generic [ref=e343]:
+                      - paragraph [ref=e344]: Egitim raflari
+                      - paragraph [ref=e345]: Ders ve egitim kaynaklarina kesintisiz gecis sagla.
+                      - paragraph [ref=e346]: MEB ve sinav icerikleri
+            - generic [ref=e347]:
+              - generic [ref=e349]:
+                - generic [ref=e350]:
+                  - heading "Son guvenilir kayitlar" [level=3] [ref=e351]
+                  - paragraph [ref=e352]: Komuta ekranina dusen son resmi veya kurumsal kaynaklar.
+                - link "Tumunu gor" [ref=e353] [cursor=pointer]:
+                  - /url: /documents
+                  - button "Tumunu gor" [ref=e354]:
+                    - text: Tumunu gor
+                    - img [ref=e355]
+              - generic [ref=e358]: Henuz bilgi kaydi yok.
+        - generic [ref=e359]:
+          - generic [ref=e360]:
+            - img [ref=e361]
+            - heading "Bugunun modulleri" [level=2] [ref=e363]
+          - generic [ref=e364]:
+            - generic [ref=e365]:
+              - generic [ref=e367]:
+                - generic [ref=e368]:
+                  - heading "Saglik izlemi" [level=3] [ref=e369]
+                  - paragraph [ref=e370]: Kayitli ilac akisi sakin durumda.
+                - img [ref=e372]
+              - link "Saglik profilini ac" [ref=e376] [cursor=pointer]:
+                - /url: /saglik
+                - button "Saglik profilini ac" [ref=e377]:
+                  - text: Saglik profilini ac
+                  - img [ref=e378]
+            - generic [ref=e380]:
+              - generic [ref=e382]:
+                - generic [ref=e383]:
+                  - heading "Sinav takibi" [level=3] [ref=e384]
+                  - paragraph [ref=e385]: Aktif sinav secimi bulunmuyor.
+                - img [ref=e387]
+              - link "Sinav sec" [ref=e391] [cursor=pointer]:
+                - /url: /sinav
+                - button "Sinav sec" [ref=e392]:
+                  - text: Sinav sec
+                  - img [ref=e393]
+            - generic [ref=e395]:
+              - generic [ref=e397]:
+                - generic [ref=e398]:
+                  - heading "Notlar ve hatirlatmalar" [level=3] [ref=e399]
+                  - paragraph [ref=e400]: Not akisi temiz, yeni giris icin hazir.
+                - img [ref=e402]
+              - generic [ref=e405]:
+                - generic [ref=e406]:
+                  - paragraph [ref=e407]: "0"
+                  - paragraph [ref=e408]: okunmamis not
+                - link "Yeni not ekle" [ref=e409] [cursor=pointer]:
+                  - /url: /notes
+                  - button "Yeni not ekle" [ref=e410]:
+                    - text: Yeni not ekle
+                    - img [ref=e411]
+        - generic [ref=e413]:
+          - generic [ref=e414]:
+            - img [ref=e415]
+            - heading "Hizli eylemler" [level=2] [ref=e417]
+          - generic [ref=e418]:
+            - link "Acil numaralar Kesintide de calisan hizli erisim listesi." [ref=e419] [cursor=pointer]:
+              - /url: /acil
+              - generic [ref=e421]:
+                - generic [ref=e422]:
+                  - img [ref=e424]
+                  - img [ref=e426]
+                - generic [ref=e428]:
+                  - paragraph [ref=e429]: Acil numaralar
+                  - paragraph [ref=e430]: Kesintide de calisan hizli erisim listesi.
+            - link "Saglik bilgileri Tek cihaz profiliyle yerel saglik ozeti." [ref=e431] [cursor=pointer]:
+              - /url: /saglik
+              - generic [ref=e433]:
+                - generic [ref=e434]:
+                  - img [ref=e436]
+                  - img [ref=e438]
+                - generic [ref=e440]:
+                  - paragraph [ref=e441]: Saglik bilgileri
+                  - paragraph [ref=e442]: Tek cihaz profiliyle yerel saglik ozeti.
+            - link "Ders calisma Gunluk odak ve sinav hazirligi." [ref=e443] [cursor=pointer]:
+              - /url: /sinav
+              - generic [ref=e445]:
+                - generic [ref=e446]:
+                  - img [ref=e448]
+                  - img [ref=e450]
+                - generic [ref=e452]:
+                  - paragraph [ref=e453]: Ders calisma
+                  - paragraph [ref=e454]: Gunluk odak ve sinav hazirligi.
+            - link "Notlar ve planlama Gunluk karar, gorev ve kisa saha notlari." [ref=e455] [cursor=pointer]:
+              - /url: /notes
+              - generic [ref=e457]:
+                - generic [ref=e458]:
+                  - img [ref=e460]
+                  - img [ref=e463]
+                - generic [ref=e465]:
+                  - paragraph [ref=e466]: Notlar ve planlama
+                  - paragraph [ref=e467]: Gunluk karar, gorev ve kisa saha notlari.
+    - button "Acil durum numaralari ve yardim" [ref=e468]: SOS
+    - generic [ref=e469]:
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - generic [ref=e473]: 1 / 6
+          - heading "PrepTurk'e Hos Geldiniz!" [level=3] [ref=e474]
+        - button "Turu atla" [ref=e475]:
+          - img [ref=e476]
+      - paragraph [ref=e479]: Sistem turu basliyor. Neler yapabileceginizi gosterelim.
+      - generic [ref=e480]:
+        - button "Atla" [ref=e481]
+        - button "Ileri" [ref=e483]:
+          - text: Ileri
+          - img [ref=e484]
+  - alert [ref=e486]

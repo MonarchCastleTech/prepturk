@@ -1,0 +1,42 @@
+[project]
+name = "prepturk-worker"
+version = "0.1.0"
+description = "PrepTurk Offline Command Center - Ingestion Worker"
+requires-python = ">=3.12"
+dependencies = [
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "httpx>=0.28.0",
+    "qdrant-client>=1.12.0",
+    "pypdf>=5.1.0",
+    "pymupdf>=1.24.14",
+    "trafilatura>=2.0.0",
+    "beautifulsoup4>=4.12.3",
+    "lxml>=5.3.0",
+    "pyyaml>=6.0.2",
+    "python-slugify>=8.0.4",
+    "aiofiles>=24.1.0",
+    "cryptography>=44.0.0",
+    "apscheduler>=3.10.4",
+    "tiktoken>=0.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

@@ -1,0 +1,49 @@
+id: izmir
+province_code: "35"
+province_name: Izmir
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Izmir ili afet hazirlik ve resmi kaynaklar paketi"
+region: "Ege"
+population: 4425789
+emergency_level: "high"
+sea_name: "Ege Denizi"
+contacts:
+  afad:
+    name: "Izmir AFAD Il Mudurlugu"
+    phone: "0232-4630000"
+    address: "Konak, Izmir"
+    website: "https://izmir.afad.gov.tr"
+  valilik:
+    name: "Izmir Valiligi"
+    phone: "0232-4636000"
+    website: "https://izmir.gov.tr"
+  saglik_il:
+    name: "Izmir Il Saglik Mudurlugu"
+    phone: "0232-4638000"
+    website: "https://izmirsaglik.gov.tr"
+  il_mem:
+    name: "Izmir Il Milli Egitim Mudurlugu"
+    phone: "0232-4637000"
+    website: "https://izmir.meb.gov.tr"
+  buyuksehir:
+    name: "Izmir Buyuksehir Belediyesi"
+    phone: "0232-2932000"
+    website: "https://www.izmir.bel.tr"
+emergency_notes:
+  - "Izmir aktif deprem bolgesinde yer almaktadir. 2020 Seferihisar depremi son yillardaki en buyuk deprem deneyimidir."
+  - "Ege kiyilarinda tsunami riski bulunmaktadir. Deniz kiyisindaki yerlesimler icin tahliye rotalari onceden belirlenmelidir."
+  - "Izmir liman kenti olmasi nedeniyle lojistik ve yardim dagitiminda stratejik oneme sahiptir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+  - type: "port_facilities"
+    source: "imported"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

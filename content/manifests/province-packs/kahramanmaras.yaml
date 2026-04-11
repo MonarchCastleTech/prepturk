@@ -1,0 +1,51 @@
+id: kahramanmaras
+province_code: "46"
+province_name: Kahramanmaras
+version: "1.0.0"
+generated_at: "2024-01-01T00:00:00Z"
+description_tr: "Kahramanmaras ili afet hazirlik ve resmi kaynaklar paketi"
+region: "Akdeniz"
+population: 1165894
+emergency_level: "very_high"
+sea_name: "Yok (ic bolge)"
+contacts:
+  afad:
+    name: "Kahramanmaras AFAD Il Mudurlugu"
+    phone: "0344-2210000"
+    address: "Merkez, Kahramanmaras"
+    website: "https://kahramanmaras.afad.gov.tr"
+  valilik:
+    name: "Kahramanmaras Valiligi"
+    phone: "0344-2213000"
+    website: "https://kahramanmaras.gov.tr"
+  saglik_il:
+    name: "Kahramanmaras Il Saglik Mudurlugu"
+    phone: "0344-2214000"
+    website: "https://kahramanmarassaglik.gov.tr"
+  il_mem:
+    name: "Kahramanmaras Il Milli Egitim Mudurlugu"
+    phone: "0344-2215000"
+    website: "https://kahramanmaras.meb.gov.tr"
+  buyuksehir:
+    name: "Kahramanmaras Buyuksehir Belediyesi"
+    phone: "0344-2216000"
+    website: "https://www.ksm.bel.tr"
+emergency_notes:
+  - "Kahramanmaras 6 Subat 2023 tarihinde meydana gelen 7.7 ve 7.6 buyuklugundeki depremlerin merkez ussu olmustur. Sehrin buyuk bolumu agir hasar almistir."
+  - "Deprem sonrasinda bolgede 11 ili kapsayan afet bolgesi ilan edilmistir. Yeniden imar sureci devam etmektedir."
+  - "Afet deneyimi nedeniyle bolgede afet bilinci yuksektir. Toplanma alanlari ve deprem konutlari planli sekilde konuslandirilmistir."
+included_maps:
+  - type: "province_boundary"
+    source: "local"
+  - type: "hospital_locations"
+    source: "imported"
+  - type: "emergency_assembly_areas"
+    source: "user_defined"
+  - type: "earthquake_epicenter"
+    source: "imported"
+  - type: "reconstruction_zones"
+    source: "imported"
+rights_manifest:
+  official_documents: "public-download"
+  institutional_documents: "public-read-limited-redistribution"
+  user_content: "user-owned"

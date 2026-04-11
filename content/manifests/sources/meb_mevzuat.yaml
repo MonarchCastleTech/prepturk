@@ -1,0 +1,16 @@
+name: meb_mevzuat
+base_url: "https://www.meb.gov.tr/mevzuat/"
+fetch_strategy: "html_sitemap"
+robots_note: "Resmî kurum, kamu tüzel kişiliği"
+rate_limit_per_minute: 10
+default_storage_mode: cached
+default_trust_level: official
+default_rights_status: public-read-limited-redistribution
+schedule: "0 3 * * 0"
+content_selectors:
+  mime_types: ["text/html", "application/pdf"]
+  file_patterns: ["*.pdf"]
+html_allowed: true
+pdf_allowed: true
+province_mapping: null
+language_default: tr

@@ -1,0 +1,148 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-backend:
+    name: Lint Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install uv
+          cd apps/api && uv sync --frozen
+      - name: Run ruff check
+        run: cd apps/api && uv run ruff check .
+      - name: Run ruff format check
+        run: cd apps/api && uv run ruff format --check .
+      - name: Run mypy
+        run: cd apps/api && uv run mypy .
+
+  lint-frontend:
+    name: Lint Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install dependencies
+        run: cd apps/web && npm ci
+      - name: Run ESLint
+        run: cd apps/web && npm run lint
+      - name: Run Prettier check
+        run: cd apps/web && npx prettier --check .
+
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: prepturk
+          POSTGRES_PASSWORD: prepturk_password
+          POSTGRES_DB: prepturk_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install uv
+          cd apps/api && uv sync --frozen
+      - name: Run tests with coverage
+        env:
+          DATABASE_URL: postgresql+asyncpg://prepturk:prepturk_password@localhost:5432/prepturk_test
+          APP_SECRET_KEY: test-secret-key
+          APP_ENV: testing
+        run: |
+          cd apps/api
+          uv run pytest tests/ -v --tb=short --cov=. --cov-report=xml
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: apps/api/coverage.xml
+          retention-days: 7
+
+  test-worker:
+    name: Test Worker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install uv
+          cd apps/worker && uv sync --frozen
+      - name: Run tests with coverage
+        run: |
+          cd apps/worker
+          uv run pytest tests/ -v --tb=short --cov=. --cov-report=xml
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: worker-coverage
+          path: apps/worker/coverage.xml
+          retention-days: 7
+
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install dependencies
+        run: cd apps/web && npm ci
+      - name: Run Jest
+        run: cd apps/web && npm test -- --watchAll=false --coverage
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-coverage
+          path: apps/web/coverage/
+          retention-days: 7
+
+  build-docker:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [lint-backend, lint-frontend]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -f infra/docker/api.Dockerfile .
+      - name: Build Worker image
+        run: docker build -f infra/docker/worker.Dockerfile .
+      - name: Build Web image
+        run: docker build -f infra/docker/web.Dockerfile .
+      - name: Verify docker compose
+        run: docker compose -f docker-compose.yml config

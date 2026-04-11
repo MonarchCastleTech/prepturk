@@ -1,0 +1,16 @@
+name: anayasa
+base_url: "https://www.anayasa.gov.tr/tr/mevzuat/anayasa/"
+fetch_strategy: "html_sitemap"
+robots_note: "Resmî kurum, kamu tüzel kişiliği"
+rate_limit_per_minute: 10
+default_storage_mode: mirrored
+default_trust_level: official
+default_rights_status: public-download
+schedule: "0 3 * * 0"  # Weekly Sunday 3AM
+content_selectors:
+  mime_types: ["text/html", "application/pdf"]
+  file_patterns: ["*.pdf"]
+html_allowed: true
+pdf_allowed: true
+province_mapping: null
+language_default: tr

@@ -1,0 +1,40 @@
+{
+  "trust_levels": [
+    {
+      "id": "official",
+      "name_tr": "Resmî",
+      "name_en": "Official",
+      "description_tr": "Bakanlik, baskanlik, AFAD, MEB, Saglik Bakanligi gibi resmî kurumlar",
+      "color": "#22c55e",
+      "icon": "shield-check",
+      "priority": 1
+    },
+    {
+      "id": "institutional",
+      "name_tr": "Kurumsal",
+      "name_en": "Institutional",
+      "description_tr": "Kamu kurumlari, belediyeler, üniversiteler",
+      "color": "#3b82f6",
+      "icon": "building-2",
+      "priority": 2
+    },
+    {
+      "id": "community",
+      "name_tr": "Topluluk",
+      "name_en": "Community",
+      "description_tr": "Küratörlü ancak resmî olmayan kaynaklar",
+      "color": "#f59e0b",
+      "icon": "users",
+      "priority": 3
+    },
+    {
+      "id": "personal",
+      "name_tr": "Kişisel",
+      "name_en": "Personal",
+      "description_tr": "Kullanici tarafindan yüklenen dosyalar",
+      "color": "#a855f7",
+      "icon": "file",
+      "priority": 4
+    }
+  ]
+}

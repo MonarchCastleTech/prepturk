@@ -1,0 +1,16 @@
+name: turkiye_deprem_tehlike_haritasi_hizmet
+base_url: "https://www.turkiye.gov.tr/afad-turkiye-deprem-tehlike-haritalari"
+fetch_strategy: "pointer_only"
+robots_note: "Hizmet portalı, isaretci + baslatma baglantısı"
+rate_limit_per_minute: 10
+default_storage_mode: pointer-only
+default_trust_level: official
+default_rights_status: pointer-only
+schedule: null
+content_selectors:
+  mime_types: ["text/html"]
+  file_patterns: []
+html_allowed: true
+pdf_allowed: false
+province_mapping: null
+language_default: tr

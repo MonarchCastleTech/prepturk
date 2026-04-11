@@ -1,0 +1,370 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "Project NOMAD Project NOMAD" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Project NOMAD" [ref=e7]
+          - generic [ref=e8]: Project NOMAD
+        - generic [ref=e9]:
+          - link "Features" [ref=e10] [cursor=pointer]:
+            - /url: /#features
+          - link "Use Cases" [ref=e11] [cursor=pointer]:
+            - /url: /#use-cases
+          - link "Hardware" [ref=e12] [cursor=pointer]:
+            - /url: /hardware
+          - link "Install" [ref=e13] [cursor=pointer]:
+            - /url: /install
+          - link "Community" [ref=e14] [cursor=pointer]:
+            - /url: /#community
+          - link "Press" [ref=e15] [cursor=pointer]:
+            - /url: /press
+          - link "Contact" [ref=e16] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e17]:
+          - link "GitHub stars" [ref=e18] [cursor=pointer]:
+            - /url: https://github.com/Crosstalk-Solutions/project-nomad
+            - img "GitHub stars" [ref=e19]
+          - link "Support the Project" [ref=e20] [cursor=pointer]:
+            - /url: /support
+            - img [ref=e21]
+          - link "Get Started" [ref=e23] [cursor=pointer]:
+            - /url: https://github.com/Crosstalk-Solutions/project-nomad
+            - text: Get Started
+            - img [ref=e24]
+    - generic [ref=e27]:
+      - img "Project NOMAD" [ref=e29]
+      - generic [ref=e31]:
+        - img [ref=e32]
+        - text: 100% Free & Open Source
+      - heading "Knowledge That Never Goes Offline" [level=1] [ref=e34]
+      - paragraph [ref=e35]: Wikipedia, AI, maps, and education tools running on your own hardware — completely free. No internet required.
+      - generic [ref=e36]:
+        - link "Get Project NOMAD Free on GitHub" [ref=e37] [cursor=pointer]:
+          - /url: https://github.com/Crosstalk-Solutions/project-nomad
+          - img [ref=e38]
+          - text: Get Project NOMAD Free on GitHub
+        - link "See What's Inside" [ref=e40] [cursor=pointer]:
+          - /url: "#features"
+          - text: See What's Inside
+          - img [ref=e41]
+      - img "NOMAD Command Center Dashboard — your central hub for offline knowledge, AI, maps, and education" [ref=e45]
+      - img [ref=e47]
+    - generic [ref=e50]:
+      - paragraph [ref=e51]: As Featured In
+      - generic [ref=e52]:
+        - link "ZDNet" [ref=e53] [cursor=pointer]:
+          - /url: /press
+        - link "Cybernews" [ref=e54] [cursor=pointer]:
+          - /url: /press
+        - link "Hacker News" [ref=e55] [cursor=pointer]:
+          - /url: /press
+        - link "DEV Community" [ref=e56] [cursor=pointer]:
+          - /url: /press
+        - link "Bitcoin News" [ref=e57] [cursor=pointer]:
+          - /url: /press
+        - link "dev.ua" [ref=e58] [cursor=pointer]:
+          - /url: /press
+      - paragraph [ref=e59]:
+        - link "View all coverage →" [ref=e60] [cursor=pointer]:
+          - /url: /press
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - heading "What is Project N.O.M.A.D.?" [level=2] [ref=e64]
+        - paragraph [ref=e65]: Node for Offline Media, Archives, and Data — a free, open source offline server you install on any computer. Download the content you want, and it works without internet — forever. Similar products cost hundreds of dollars. Project NOMAD is free.
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - img [ref=e69]
+          - heading "Offline Knowledge" [level=3] [ref=e71]
+          - paragraph [ref=e72]: Wikipedia, guides, medical references
+        - generic [ref=e73]:
+          - img [ref=e75]
+          - heading "Local AI" [level=3] [ref=e77]
+          - paragraph [ref=e78]: Run LLMs completely offline
+        - generic [ref=e79]:
+          - img [ref=e81]
+          - heading "Offline Maps" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Navigate without cell service
+        - generic [ref=e85]:
+          - img [ref=e87]
+          - heading "Education" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Khan Academy & courses offline
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - heading "Built For Those Who Prepare" [level=2] [ref=e94]
+        - paragraph [ref=e95]: Whether you're planning for emergencies or living off-grid, Project NOMAD has you covered.
+      - generic [ref=e96]:
+        - generic [ref=e98]:
+          - img [ref=e100]
+          - generic [ref=e102]:
+            - heading "Emergency Preparedness" [level=3] [ref=e103]
+            - paragraph [ref=e104]: When infrastructure fails, NOMAD keeps working. Medical references, survival guides, and encyclopedic knowledge — no internet required.
+        - generic [ref=e106]:
+          - img [ref=e108]
+          - generic [ref=e110]:
+            - heading "Off-Grid Living" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Cabin, RV, or sailboat — bring a complete library, AI assistant, and offline maps wherever you go. True digital independence.
+        - generic [ref=e114]:
+          - img [ref=e116]
+          - generic [ref=e119]:
+            - heading "Tech Enthusiasts" [level=3] [ref=e120]
+            - paragraph [ref=e121]: Run local LLMs, self-host your knowledge base, own your data. Built for beefy hardware and those who want full control.
+        - generic [ref=e123]:
+          - img [ref=e125]
+          - generic [ref=e127]:
+            - heading "Education" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Khan Academy, Wikipedia for Schools, and more — complete learning resources for families anywhere, even without connectivity.
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - heading "What's Inside" [level=2] [ref=e133]
+        - paragraph [ref=e134]: Project NOMAD bundles best-in-class open source tools into one cohesive system.
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - img "Content Explorer — browse and download Wikipedia, medical references, survival guides, and curated content collections" [ref=e139]
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - img [ref=e143]
+              - generic [ref=e145]:
+                - heading "Information Library" [level=3] [ref=e146]
+                - paragraph [ref=e147]: Powered by Kiwix
+            - paragraph [ref=e148]: Offline Wikipedia, Project Gutenberg, medical references, repair guides, and more — terabytes of human knowledge at your fingertips.
+        - generic [ref=e149]:
+          - img "AI Chat interface — have conversations with a local AI model, completely offline and private" [ref=e152]
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - img [ref=e156]
+              - generic [ref=e158]:
+                - heading "AI Assistant" [level=3] [ref=e159]
+                - paragraph [ref=e160]: Powered by Ollama
+            - paragraph [ref=e161]: Run powerful large language models completely offline. Chat, write, analyze, code — all without sending data anywhere.
+        - generic [ref=e162]:
+          - img "Offline maps viewer — navigate and explore detailed maps without internet or cell service" [ref=e165]
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - img [ref=e169]
+              - generic [ref=e172]:
+                - heading "Offline Maps" [level=3] [ref=e173]
+                - paragraph [ref=e174]: Powered by OpenStreetMap
+            - paragraph [ref=e175]: Full offline mapping with OpenStreetMap data. Navigate, plan routes, and explore terrain without any cell service.
+        - generic [ref=e176]:
+          - img "Easy Setup Wizard — choose capabilities like Information Library, Education Platform, and AI Assistant with one click" [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - img [ref=e183]
+              - generic [ref=e185]:
+                - heading "Education Platform" [level=3] [ref=e186]
+                - paragraph [ref=e187]: Powered by Kolibri
+            - paragraph [ref=e188]: Khan Academy courses, educational videos, interactive lessons — complete K-12 curriculum available offline.
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - heading "See It In Action" [level=2] [ref=e192]
+        - paragraph [ref=e193]: Watch the full walkthrough to see what Project NOMAD can do on your hardware.
+      - iframe [ref=e195]
+      - paragraph [ref=e196]:
+        - link "Browse all video guides" [ref=e197] [cursor=pointer]:
+          - /url: /guides
+          - text: Browse all video guides
+          - img [ref=e198]
+    - generic [ref=e201]:
+      - generic [ref=e202]:
+        - heading "Why Project NOMAD?" [level=2] [ref=e203]
+        - paragraph [ref=e204]: Other offline products charge hundreds and lock you into specific hardware. Project NOMAD runs on any PC you choose — with GPU-accelerated AI — for free.
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - generic [ref=e209]: Project NOMAD
+          - generic [ref=e210]: PrepperDisk
+          - generic [ref=e211]: Doom Box
+          - generic [ref=e212]: R.E.A.D.I.
+        - generic [ref=e213]:
+          - generic [ref=e214]: Price
+          - generic [ref=e215]: Free
+          - generic [ref=e216]: $199–$279
+          - generic [ref=e217]: $699
+          - generic [ref=e218]: $499
+        - generic [ref=e219]:
+          - generic [ref=e220]: AI Capability
+          - generic [ref=e221]: GPU-accelerated LLMs
+          - generic [ref=e222]: None
+          - generic [ref=e223]: Basic 7B model
+          - generic [ref=e224]: Basic 7B model
+        - generic [ref=e225]:
+          - generic [ref=e226]: Hardware
+          - generic [ref=e227]: Any PC you choose
+          - generic [ref=e228]: Raspberry Pi (locked)
+          - generic [ref=e229]: Raspberry Pi (locked)
+          - generic [ref=e230]: Raspberry Pi (locked)
+        - generic [ref=e231]:
+          - generic [ref=e232]: Content Library
+          - generic [ref=e233]: Full Wikipedia + curated collections
+          - generic [ref=e234]: Full Wikipedia + curated content
+          - generic [ref=e235]: Limited
+          - generic [ref=e236]: Limited
+        - generic [ref=e237]:
+          - generic [ref=e238]: Offline Maps
+          - generic [ref=e239]: OpenStreetMap (any region)
+          - generic [ref=e240]: OpenStreetMap (via IIAB)
+          - generic [ref=e241]: Basic
+          - generic [ref=e242]: None
+        - generic [ref=e243]:
+          - generic [ref=e244]: Education
+          - generic [ref=e245]: Full Khan Academy
+          - generic [ref=e246]: Khan Academy
+          - generic [ref=e247]: None
+          - generic [ref=e248]: None
+        - generic [ref=e249]:
+          - generic [ref=e250]: Open Source
+          - generic [ref=e251]: Yes (Apache 2.0)
+          - generic [ref=e252]: Partially (content is proprietary)
+          - generic [ref=e253]: "No"
+          - generic [ref=e254]: "No"
+        - generic [ref=e255]:
+          - generic [ref=e256]: Upgradeable
+          - generic [ref=e257]: "Yes"
+          - generic [ref=e258]: Yes (via web console)
+          - generic [ref=e259]: "No"
+          - generic [ref=e260]: "No"
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - heading "Built for Robust Hardware" [level=2] [ref=e265]
+        - paragraph [ref=e266]: NOMAD runs on serious hardware so you get serious AI. While other offline products are stuck on Raspberry Pis, NOMAD supports GPU-accelerated inference on models with real intelligence. Community builds range from refurbished desktops to GPU-powered rigs scoring 10 to 95 on the NOMAD Benchmark.
+        - paragraph [ref=e267]:
+          - text: Looking for something lightweight for a Raspberry Pi? Check out projects like
+          - link "Internet in a Box" [ref=e268] [cursor=pointer]:
+            - /url: https://internet-in-a-box.org/
+          - text: . Project NOMAD is for when you want the full experience.
+        - generic [ref=e269]:
+          - link "View Hardware Guide" [ref=e270] [cursor=pointer]:
+            - /url: /hardware
+            - text: View Hardware Guide
+            - img [ref=e271]
+          - link "See the Leaderboard" [ref=e273] [cursor=pointer]:
+            - /url: https://benchmark.projectnomad.us
+            - text: See the Leaderboard
+            - img [ref=e274]
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - heading "Recommended Specs" [level=3] [ref=e278]:
+            - img [ref=e279]
+            - text: Recommended Specs
+          - generic [ref=e281]:
+            - generic [ref=e282]:
+              - generic [ref=e283]: Processor
+              - generic [ref=e284]: AMD Ryzen 7 with Radeon graphics or Intel i7+
+            - generic [ref=e285]:
+              - generic [ref=e286]: Memory
+              - generic [ref=e287]: 32 GB RAM
+            - generic [ref=e288]:
+              - generic [ref=e289]: Graphics
+              - generic [ref=e290]: Integrated AMD Radeon 780M+, or dedicated NVIDIA GPU
+            - generic [ref=e291]:
+              - generic [ref=e292]: Storage
+              - generic [ref=e293]: 1 TB SSD
+          - paragraph [ref=e294]: Ubuntu or Debian-based Linux recommended. Windows support via Docker Desktop for development.
+        - img "System Benchmark — measure your NOMAD Score and compare with the community leaderboard" [ref=e296]
+    - generic [ref=e298]:
+      - heading "Install in 60 Seconds" [level=2] [ref=e299]
+      - paragraph [ref=e300]: Two commands on any Ubuntu or Debian machine. Project NOMAD handles the rest.
+      - generic [ref=e302]:
+        - generic [ref=e304]: $ curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/main/install/install_nomad.sh -o install_nomad.sh $ sudo bash install_nomad.sh
+        - button "Copy to clipboard" [ref=e305]:
+          - img [ref=e306]
+      - paragraph [ref=e308]:
+        - text: Requires Ubuntu 22.04+ or Debian 12+. Docker is installed automatically if needed.
+        - link "Full installation guide" [ref=e309] [cursor=pointer]:
+          - /url: /install
+    - generic [ref=e311]:
+      - heading "Ready to Go Offline?" [level=2] [ref=e312]
+      - paragraph [ref=e313]: Project NOMAD is free, open source, and ready to deploy. Get started in minutes with a single command.
+      - link "Get Project NOMAD Free on GitHub" [ref=e314] [cursor=pointer]:
+        - /url: https://github.com/Crosstalk-Solutions/project-nomad
+        - img [ref=e315]
+        - text: Get Project NOMAD Free on GitHub
+      - generic [ref=e319]: or
+      - generic [ref=e321]:
+        - heading "Get Project NOMAD Updates" [level=3] [ref=e322]
+        - paragraph [ref=e323]: New content packs, AI model recommendations, and hardware guides. No spam, unsubscribe anytime.
+        - generic [ref=e324]:
+          - textbox "your@email.com" [ref=e325]
+          - button "Subscribe" [ref=e326]
+    - generic [ref=e328]:
+      - heading "Project NOMAD is Free. Help Keep It That Way." [level=2] [ref=e329]
+      - paragraph [ref=e330]: No subscriptions, no paywalls. Project NOMAD is funded by the community that uses it.
+      - generic [ref=e331]:
+        - link "Support on Ko-fi" [ref=e332] [cursor=pointer]:
+          - /url: https://ko-fi.com/crosstalk
+          - img [ref=e333]
+          - text: Support on Ko-fi
+        - link "More ways to support" [ref=e335] [cursor=pointer]:
+          - /url: /support
+          - text: More ways to support
+          - img [ref=e336]
+    - generic [ref=e339]:
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - generic [ref=e342]:
+            - img "Project NOMAD" [ref=e343]
+            - generic [ref=e344]: Project NOMAD
+          - paragraph [ref=e345]: Node for Offline Media, Archives, and Data. Knowledge that never goes offline.
+          - heading "Find Us Online" [level=4] [ref=e346]
+          - generic [ref=e347]:
+            - link "GitHub" [ref=e348] [cursor=pointer]:
+              - /url: https://github.com/Crosstalk-Solutions/project-nomad
+              - img [ref=e349]
+            - link "Discord" [ref=e351] [cursor=pointer]:
+              - /url: https://discord.com/invite/crosstalksolutions
+              - img [ref=e352]
+            - link "YouTube" [ref=e354] [cursor=pointer]:
+              - /url: https://www.youtube.com/@CrosstalkSolutions
+              - img [ref=e355]
+            - link "TikTok" [ref=e358] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@projectnomad42
+              - img [ref=e359]
+            - link "Instagram" [ref=e361] [cursor=pointer]:
+              - /url: https://www.instagram.com/projectnomad42/
+              - img [ref=e362]
+        - generic [ref=e364]:
+          - heading "Get Started" [level=4] [ref=e365]
+          - list [ref=e366]:
+            - listitem [ref=e367]:
+              - link "Recommended Hardware" [ref=e368] [cursor=pointer]:
+                - /url: /hardware
+            - listitem [ref=e369]:
+              - link "Installation Guide" [ref=e370] [cursor=pointer]:
+                - /url: /install
+            - listitem [ref=e371]:
+              - link "Video Guides" [ref=e372] [cursor=pointer]:
+                - /url: /guides
+            - listitem [ref=e373]:
+              - link "Benchmark Leaderboard" [ref=e374] [cursor=pointer]:
+                - /url: https://benchmark.projectnomad.us
+        - generic [ref=e375]:
+          - heading "Project" [level=4] [ref=e376]
+          - list [ref=e377]:
+            - listitem [ref=e378]:
+              - link "Roadmap" [ref=e379] [cursor=pointer]:
+                - /url: https://roadmap.projectnomad.us
+            - listitem [ref=e380]:
+              - link "Press" [ref=e381] [cursor=pointer]:
+                - /url: /press
+            - listitem [ref=e382]:
+              - link "Volunteer" [ref=e383] [cursor=pointer]:
+                - /url: /volunteer
+            - listitem [ref=e384]:
+              - link "Support the Project" [ref=e385] [cursor=pointer]:
+                - /url: /support
+            - listitem [ref=e386]:
+              - link "Contact" [ref=e387] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e388]:
+              - link "Crosstalk Solutions" [ref=e389] [cursor=pointer]:
+                - /url: https://crosstalksolutions.com
+            - listitem [ref=e390]:
+              - link "Rogue Support" [ref=e391] [cursor=pointer]:
+                - /url: https://rogue.support
+      - generic [ref=e392]:
+        - paragraph [ref=e393]:
+          - text: Powered by
+          - link "Crosstalk Solutions" [ref=e394] [cursor=pointer]:
+            - /url: https://crosstalksolutions.com
+        - paragraph [ref=e395]: © 2026 Project NOMAD. Open source under Apache 2.0 License.
+  - alert [ref=e396]

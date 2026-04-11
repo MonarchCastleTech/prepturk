@@ -1,0 +1,71 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: Prep
+        - generic [ref=e7]: Türk
+        - generic [ref=e8]: Yerel Hazır
+      - generic [ref=e9]:
+        - paragraph [ref=e10]: PrepTürk
+        - paragraph [ref=e11]: PrepTürk'e Hoş Geldiniz!
+        - heading "Komuta Merkezi" [level=1] [ref=e12]
+        - paragraph [ref=e13]: Belgeler, eğitim modülleri, haritalar ve acil akışlar aynı komuta ekranında hazır.
+      - generic [ref=e14]:
+        - link "Bilgi Kütüphanesi Çevrimdışı kaynaklar Resmî belgeleri, hazırlık rehberlerini ve yerel bilgi arşivini tek rafta açın." [ref=e15] [cursor=pointer]:
+          - /url: /documents
+          - img [ref=e17]
+          - heading "Bilgi Kütüphanesi" [level=2] [ref=e19]
+          - paragraph [ref=e20]: Çevrimdışı kaynaklar
+          - paragraph [ref=e21]: Resmî belgeleri, hazırlık rehberlerini ve yerel bilgi arşivini tek rafta açın.
+        - link "Eğitim Platformu Öğrenme alanı Ders içeriklerini, çalışma desteklerini ve çevrimdışı eğitim araçlarını yönetin." [ref=e22] [cursor=pointer]:
+          - /url: /education
+          - img [ref=e24]
+          - heading "Eğitim Platformu" [level=2] [ref=e27]
+          - paragraph [ref=e28]: Öğrenme alanı
+          - paragraph [ref=e29]: Ders içeriklerini, çalışma desteklerini ve çevrimdışı eğitim araçlarını yönetin.
+        - link "Yapay Zekâ Asistanı Yerel erişim Belgelerden güvenilir yanıt alan ve cihaz içinde çalışan yardım katmanını başlatın." [ref=e30] [cursor=pointer]:
+          - /url: /ai-chat
+          - img [ref=e32]
+          - heading "Yapay Zekâ Asistanı" [level=2] [ref=e34]
+          - paragraph [ref=e35]: Yerel erişim
+          - paragraph [ref=e36]: Belgelerden güvenilir yanıt alan ve cihaz içinde çalışan yardım katmanını başlatın.
+        - link "Haritalar Saha görünümü Çevrimdışı haritaları, toplanma noktalarını ve konum temelli planları görüntüleyin." [ref=e37] [cursor=pointer]:
+          - /url: /maps
+          - img [ref=e39]
+          - heading "Haritalar" [level=2] [ref=e41]
+          - paragraph [ref=e42]: Saha görünümü
+          - paragraph [ref=e43]: Çevrimdışı haritaları, toplanma noktalarını ve konum temelli planları görüntüleyin.
+        - link "İl Paketleri Bölgesel setler İl bazlı risk notlarını, acil numaraları ve yerel hazırlık paketlerini açın." [ref=e44] [cursor=pointer]:
+          - /url: /province-packs
+          - img [ref=e46]
+          - heading "İl Paketleri" [level=2] [ref=e49]
+          - paragraph [ref=e50]: Bölgesel setler
+          - paragraph [ref=e51]: İl bazlı risk notlarını, acil numaraları ve yerel hazırlık paketlerini açın.
+        - link "Kolay Kurulum Cihaz ayarı Paylaşılan cihazı, modül durumlarını ve ilk açılış akışlarını tek noktadan düzenleyin." [ref=e52] [cursor=pointer]:
+          - /url: /setup
+          - img [ref=e54]
+          - heading "Kolay Kurulum" [level=2] [ref=e57]
+          - paragraph [ref=e58]: Cihaz ayarı
+          - paragraph [ref=e59]: Paylaşılan cihazı, modül durumlarını ve ilk açılış akışlarını tek noktadan düzenleyin.
+        - link "Sağlık Dosyası Yerel sağlık profili İlaçları, kronik bakım notlarını ve kritik sağlık bilgilerini hazır tutun." [ref=e60] [cursor=pointer]:
+          - /url: /saglik
+          - img [ref=e62]
+          - heading "Sağlık Dosyası" [level=2] [ref=e64]
+          - paragraph [ref=e65]: Yerel sağlık profili
+          - paragraph [ref=e66]: İlaçları, kronik bakım notlarını ve kritik sağlık bilgilerini hazır tutun.
+        - link "Notlar Operatör alanı Aile planlarını, kontrol listelerini ve kısa durum güncellemelerini kaydedin." [ref=e67] [cursor=pointer]:
+          - /url: /notes
+          - img [ref=e69]
+          - heading "Notlar" [level=2] [ref=e72]
+          - paragraph [ref=e73]: Operatör alanı
+          - paragraph [ref=e74]: Aile planlarını, kontrol listelerini ve kısa durum güncellemelerini kaydedin.
+        - link "Acil Durum Hızlı müdahale Acil numaraları, ilk adım prosedürlerini ve hızlı müdahale rehberini açın." [ref=e75] [cursor=pointer]:
+          - /url: /acil
+          - generic [ref=e76]:
+            - img [ref=e77]
+            - img [ref=e80]
+          - heading "Acil Durum" [level=2] [ref=e82]
+          - paragraph [ref=e83]: Hızlı müdahale
+          - paragraph [ref=e84]: Acil numaraları, ilk adım prosedürlerini ve hızlı müdahale rehberini açın.
+  - button "Acil durum numaralari ve yardim" [ref=e85] [cursor=pointer]: SOS
+  - alert [ref=e86]

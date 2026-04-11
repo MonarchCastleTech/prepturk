@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "id": "resmi-cekirdek",
+      "name_tr": "Resmî Çekirdek",
+      "name_en": "Official Core",
+      "description_tr": "Temel resmî belgeler ve anayasal metinler",
+      "icon": "landmark"
+    },
+    {
+      "id": "anayasa-ve-mevzuat",
+      "name_tr": "Anayasa ve Mevzuat",
+      "name_en": "Constitution & Legislation",
+      "description_tr": "Anayasa, kanunlar ve temel mevzuat",
+      "icon": "scale"
+    },
+    {
+      "id": "afet-ve-acil-durum",
+      "name_tr": "Afet ve Acil Durum",
+      "name_en": "Disaster & Emergency",
+      "description_tr": "Afet planlari, acil durum rehberleri",
+      "icon": "alert-triangle"
+    },
+    {
+      "id": "kbrn-ve-radyasyon",
+      "name_tr": "KBRN ve Radyasyon",
+      "name_en": "CBRN & Radiation",
+      "description_tr": "Kimyasal, biyolojik, radyolojik, nükleer bilgilier",
+      "icon": "radiation"
+    },
+    {
+      "id": "saglik-ve-ilk-yardim",
+      "name_tr": "Sağlık ve İlk Yardım",
+      "name_en": "Health & First Aid",
+      "description_tr": "Sağlik rehberleri ve ilk yardim bilgileri",
+      "icon": "heart-pulse"
+    },
+    {
+      "id": "ilac-ve-titck",
+      "name_tr": "İlaç ve TİTCK",
+      "name_en": "Drugs & TİTCK",
+      "description_tr": "İlaç bilgileri ve TİTCK KÜB/KT",
+      "icon": "pill"
+    },
+    {
+      "id": "egitim",
+      "name_tr": "Eğitim",
+      "name_en": "Education",
+      "description_tr": "MEB, EBA, OGM eğitim materyalleri",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "harita-hava-yol",
+      "name_tr": "Harita / Hava / Yol",
+      "name_en": "Map / Weather / Road",
+      "description_tr": "Haritalar, hava durumu, yol durumu",
+      "icon": "map"
+    },
+    {
+      "id": "kurum-rehberi",
+      "name_tr": "Kurum Rehberi",
+      "name_en": "Institutional Directory",
+      "description_tr": "Kurum ve kuruluş rehberleri",
+      "icon": "building-2"
+    },
+    {
+      "id": "din-ve-manevi-kaynaklar",
+      "name_tr": "Din ve Manevi Kaynaklar",
+      "name_en": "Religion & Spiritual Sources",
+      "description_tr": "Diyanet ve manevi kaynaklar",
+      "icon": "book-open"
+    },
+    {
+      "id": "kultur-ve-tarih",
+      "name_tr": "Kültür ve Tarih",
+      "name_en": "Culture & History",
+      "description_tr": "Kültürel ve tarihi belgeler",
+      "icon": "scroll"
+    },
+    {
+      "id": "gida-ve-guvenli-tuketim",
+      "name_tr": "Gıda ve Güvenli Tüketim",
+      "name_en": "Food & Safe Consumption",
+      "description_tr": "Gıda güvenliği ve tüketim uyarilari",
+      "icon": "apple"
+    },
+    {
+      "id": "kisisel-kasa",
+      "name_tr": "Kişisel Kasa",
+      "name_en": "Personal Vault",
+      "description_tr": "Kişisel şifreli belgeler",
+      "icon": "vault"
+    },
+    {
+      "id": "il-paketleri",
+      "name_tr": "İl Paketleri",
+      "name_en": "Province Packs",
+      "description_tr": "İl bazli afet ve hazirlik paketleri",
+      "icon": "map-pin"
+    },
+    {
+      "id": "notlar-ve-ciktilar",
+      "name_tr": "Notlar ve Çıktılar",
+      "name_en": "Notes & Outputs",
+      "description_tr": "Kullanici notlari ve çiktilar",
+      "icon": "sticky-note"
+    }
+  ]
+}

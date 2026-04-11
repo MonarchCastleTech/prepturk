@@ -1,0 +1,34 @@
+{
+  "rights_statuses": [
+    {
+      "id": "public-download",
+      "name_tr": "Herkese Açık İndirme",
+      "name_en": "Public Download",
+      "description_tr": "Yasal olarak indirilebilir ve saklanabilir"
+    },
+    {
+      "id": "public-read-limited-redistribution",
+      "name_tr": "Herkese Açık Okuma / Sınırlı Yeniden Dağıtım",
+      "name_en": "Public Read / Limited Redistribution",
+      "description_tr": "Okunabilir ancak yeniden dağıtım kısıtlı"
+    },
+    {
+      "id": "pointer-only",
+      "name_tr": "Yalnızca Gösterici",
+      "name_en": "Pointer Only",
+      "description_tr": "Yalnızca metadata ve orijinal URL, otomatik yeniden dağıtım yok"
+    },
+    {
+      "id": "unknown-review-needed",
+      "name_tr": "Bilinmiyor / İnceleme Gerekli",
+      "name_en": "Unknown / Review Needed",
+      "description_tr": "Hak durumu belirsiz, inceleme gerekli"
+    },
+    {
+      "id": "user-owned",
+      "name_tr": "Kullanıcı Sahipli",
+      "name_en": "User Owned",
+      "description_tr": "Kullanici tarafindan yüklenen, kullaniciya ait"
+    }
+  ]
+}

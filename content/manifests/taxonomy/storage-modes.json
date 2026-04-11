@@ -1,0 +1,28 @@
+{
+  "storage_modes": [
+    {
+      "id": "mirrored",
+      "name_tr": "Yansıtılmış",
+      "name_en": "Mirrored",
+      "description_tr": "Yasal olarak indirilebilir ve yerel olarak saklanabilir"
+    },
+    {
+      "id": "cached",
+      "name_tr": "Önbelleğe Alınmış",
+      "name_en": "Cached",
+      "description_tr": "Erişim kolaylığı için yerel önbellek"
+    },
+    {
+      "id": "pointer-only",
+      "name_tr": "Yalnızca Gösterici",
+      "name_en": "Pointer Only",
+      "description_tr": "Yalnızca metadata ve orijinal URL"
+    },
+    {
+      "id": "user-uploaded",
+      "name_tr": "Kullanıcı Yüklemesi",
+      "name_en": "User Uploaded",
+      "description_tr": "Kullanici tarafindan manuel olarak içe aktarilan dosyalar"
+    }
+  ]
+}

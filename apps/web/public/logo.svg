@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer Shield / Hexagon -->
+  <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="#111827" stroke="#34D399" stroke-width="4" stroke-linejoin="round"/>
+  
+  <!-- Inner Protection Ring -->
+  <path d="M50 15 L80 30 L80 70 L50 85 L20 70 L20 30 Z" fill="none" stroke="#059669" stroke-width="2" stroke-opacity="0.5"/>
+  
+  <!-- Crescent and Star -->
+  <!-- Crescent -->
+  <path d="M48 35 A 15 15 0 1 0 48 65 A 18 18 0 1 1 48 35 Z" fill="#6EE7B7"/>
+  <!-- Star -->
+  <polygon points="65,45 61,54 52,54 58,60 55,69 65,63 75,69 72,60 78,54 69,54" fill="#6EE7B7" transform="scale(0.6) translate(40, 25)"/>
+
+  <!-- Offline/Signal Slash -->
+  <line x1="30" y1="70" x2="70" y2="30" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+</svg>

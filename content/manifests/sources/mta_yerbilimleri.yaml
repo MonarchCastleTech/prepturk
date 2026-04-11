@@ -1,0 +1,17 @@
+name: mta_yerbilimleri
+base_url: "https://yerbilimleri.mta.gov.tr/"
+alternate_url: "https://yerbilimleri.mta.gov.tr/anasayfa.aspx"
+fetch_strategy: "html_page"
+robots_note: "Resmî kurum, izin verilen kapsamda isaretci veya onbellik"
+rate_limit_per_minute: 15
+default_storage_mode: cached
+default_trust_level: official
+default_rights_status: public-read-limited-redistribution
+schedule: "0 4 * * 0"
+content_selectors:
+  mime_types: ["text/html"]
+  file_patterns: []
+html_allowed: true
+pdf_allowed: false
+province_mapping: null
+language_default: tr
