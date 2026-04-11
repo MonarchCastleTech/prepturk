@@ -114,6 +114,8 @@ const collapsibleSections: CollapsibleSection[] = [
     id: 'guvenlik',
     title: 'Güvenlik',
     items: [
+      { href: '/savas-durumu', icon: ShieldCheck, label: 'Savaş & Sivil Savunma' },
+      { href: '/nukleer-tehlike', icon: Biohazard, label: 'KBRN & Nükleer Tehlike' },
       { href: '/kronik-hastalik', icon: Activity, label: 'Kronik Hastalık' },
       { href: '/semptom-kontrol', icon: Brain, label: 'Semptom Kontrol' },
       { href: '/psikolojik-saglik', icon: HandHeart, label: 'Psikolojik Sağlık' },
