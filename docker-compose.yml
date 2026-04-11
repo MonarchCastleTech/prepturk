@@ -124,6 +124,61 @@ services:
       NODE_ENV: ${APP_ENV:-development}
       NEXT_PUBLIC_API_URL: http://localhost:8000
       NEXT_PUBLIC_APP_NAME: ${APP_NAME:-prepturk}
+      # NOMAD Feature Flags
+      NEXT_PUBLIC_ENABLE_KOLIBRI: ${ENABLE_KOLIBRI:-false}
+      NEXT_PUBLIC_ENABLE_KIWIX: ${ENABLE_KIWIX:-false}
+      NEXT_PUBLIC_ENABLE_CYBERCHEF: ${ENABLE_CYBERCHEF:-false}
+      NEXT_PUBLIC_ENABLE_MAPS_LOCAL: ${ENABLE_MAPS_LOCAL:-false}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+  # Caddy Reverse Proxy
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: prepturk-caddy
+    volumes:
+      - ./infra/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+      - api
+    restart: unless-stopped
+    networks:
+      - prepturk-net
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  prepturk-net:
+    driver: bridge
+stopped
+    profiles: ["nomad"]
+    networks:
+      - prepturk-net
+
+  # Caddy Reverse Proxy
+  web:
+    build:
+      context: .
+      dockerfile: infra/docker/web.Dockerfile
+    container_name: prepturk-web
+    environment:
+      NODE_ENV: ${APP_ENV:-development}
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      NEXT_PUBLIC_APP_NAME: ${APP_NAME:-prepturk}
     ports:
       - "3000:3000"
     depends_on:

@@ -78,11 +78,11 @@ const readinessNavItems: SectionItem[] = [
   { href: '/search', icon: Search, label: 'Komuta Araması' },
   { href: '/province-packs', icon: FolderArchive, label: 'İl Envanteri' },
   { href: '/education', icon: BookOpen, label: 'Eğitim' },
+  { href: '/kolibri', icon: GraduationCap, label: 'Kolibri LMS' },
+  { href: '/wikipedia', icon: Database, label: 'Wikipedia' },
   { href: '/maps', icon: Map, label: 'Haritalar' },
+  { href: '/cyberchef', icon: Cpu, label: 'CyberChef' },
   { href: '/toplanma', icon: MapPin, label: 'Toplanma Alanları' },
-  { href: '/topluluk', icon: Users, label: 'Topluluk' },
-  { href: '/saglik', icon: Heart, label: 'Sağlık Dosyası' },
-  { href: '/sinav', icon: GraduationCap, label: 'Sınav Merkezi' },
 ];
 
 const easyNavItems: SectionItem[] = [

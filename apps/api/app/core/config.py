@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     # AI
     ai_provider: str = "ollama"
     ollama_base_url: str = "http://127.0.0.1:11434"  # LOCALHOST ONLY
-    ollama_model: str = "qwen2.5:7b-instruct"
+    ollama_model: str = "qwen2.5:0.5b-instruct"
     ollama_embedding_model: str = "nomic-embed-text:latest"
     openai_api_key: str = ""  # NOT USED -- offline only
     openai_base_url: str = ""  # NOT USED -- offline only

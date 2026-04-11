@@ -47,12 +47,12 @@ const statusCards = [
   {
     label: 'Yapay Zeka Modeli',
     value: 'Etkin',
-    detail: 'Cihaz içi asistan yanıtları yerel bağlamla çalışıyor.',
+    detail: 'Qwen 0.5B (Ultra-Hafif) aktif durumda.',
   },
   {
-    label: 'Acil Durum Akışı',
-    value: 'Hazır',
-    detail: 'Kritik numaralar ve prosedür bağlantıları aktif.',
+    label: 'Çevrimdışı Arşivler',
+    value: 'Aktif',
+    detail: 'Wikipedia ve WikiMed yerel olarak sunuluyor.',
   },
 ];
 
@@ -70,10 +70,10 @@ const summaryCards = [
     icon: FolderArchive,
   },
   {
-    title: 'Saha Modülleri',
-    metric: '05',
-    detail: 'Harita, acil durum ve takip panelleri aktif durumda.',
-    icon: ShieldCheck,
+    title: 'Sistem Performansı',
+    metric: 'Hafif',
+    detail: 'Düşük kaynak kullanımı (Raspberry Pi / Laptop uyumlu).',
+    icon: Cpu,
   },
 ];
 
@@ -82,25 +82,25 @@ export default function DashboardPage() {
     <main className="space-y-6 text-white">
       <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(22rem,30rem)] xl:items-start">
         <div className="max-w-3xl">
-          <p className="shell-kicker">Genel Bakış</p>
+          <p className="shell-kicker">Sovereign Command</p>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Komuta Merkezi</h1>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
-            Temel modüllere hızlı geçiş, çekirdek servis görünümü ve kritik operasyon akışları tek
-            bir çalışma yüzeyinde toplanıyor. Çevrimdışı ve güvenli.
+            Temel modüllere hızlı geçiş, çekirdek servis görünümü ve NOMAD-tier büyük veri arşivleri tek
+            bir çalışma yüzeyinde toplanıyor.
           </p>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
           <div className="rounded-[1.5rem] border border-white/8 bg-black/20 px-4 py-4">
-            <p className="shell-muted-label">Gündem</p>
+            <p className="shell-muted-label">Sistem Önerisi</p>
             <p className="mt-2 text-sm leading-6 text-slate-200">
-              Belgeler, arama ve saha modülleri tek merkezde senkronize edildi.
+              Cihazınız "Hafif" profil için optimize edildi. Akıcı bir deneyim için 0.5B AI modeli kullanılıyor.
             </p>
           </div>
-          <div className="rounded-[1.5rem] border border-emerald-400/15 bg-emerald-400/8 px-4 py-4">
-            <p className="shell-muted-label">Öncelik</p>
-            <p className="mt-2 text-sm leading-6 text-emerald-100">
-              Ağ bağlantısı olmadan tüm kritik verilere kesintisiz erişim sağlayın.
+          <div className="rounded-[1.5rem] border border-amber-400/15 bg-amber-400/8 px-4 py-4">
+            <p className="shell-muted-label">Dikkat</p>
+            <p className="mt-2 text-sm leading-6 text-amber-100">
+              Wikipedia arşivi etkinleştirildi (~30GB). Disk alanı kullanımını izleyin.
             </p>
           </div>
         </div>

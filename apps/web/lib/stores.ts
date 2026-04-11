@@ -151,6 +151,11 @@ interface SetupState {
   aiModelProfile: string;
   contentPacks: string[];
   provincePack: string | null;
+  // NOMAD additions
+  enableWikipedia: boolean;
+  enableKolibri: boolean;
+  enableCyberChef: boolean;
+  enableLocalMaps: boolean;
   completedAt: string | null;
   setStep: (s: number) => void;
   next: () => void;
@@ -163,6 +168,10 @@ interface SetupState {
   setAiModelProfile: (v: string) => void;
   setContentPacks: (v: string[]) => void;
   setProvincePack: (v: string | null) => void;
+  setEnableWikipedia: (v: boolean) => void;
+  setEnableKolibri: (v: boolean) => void;
+  setEnableCyberChef: (v: boolean) => void;
+  setEnableLocalMaps: (v: boolean) => void;
   markCompleted: () => void;
 }
 
@@ -176,9 +185,13 @@ export const useSetupStore = create<SetupState>((set) => ({
   aiModelProfile: 'local',
   contentPacks: ['mevzuat', 'egitim'],
   provincePack: null,
+  enableWikipedia: false,
+  enableKolibri: false,
+  enableCyberChef: false,
+  enableLocalMaps: false,
   completedAt: null,
   setStep: (s) => set({ step: s }),
-  next: () => set((s) => ({ step: Math.min(s.step + 1, 8) })),
+  next: () => set((s) => ({ step: Math.min(s.step + 1, 9) })),
   prev: () => set((s) => ({ step: Math.max(s.step - 1, 1) })),
   setLanguage: (v) => set({ language: v }),
   setHostname: (v) => set({ hostname: v }),
@@ -188,6 +201,10 @@ export const useSetupStore = create<SetupState>((set) => ({
   setAiModelProfile: (v) => set({ aiModelProfile: v }),
   setContentPacks: (v) => set({ contentPacks: v }),
   setProvincePack: (v) => set({ provincePack: v }),
+  setEnableWikipedia: (v) => set({ enableWikipedia: v }),
+  setEnableKolibri: (v) => set({ enableKolibri: v }),
+  setEnableCyberChef: (v) => set({ enableCyberChef: v }),
+  setEnableLocalMaps: (v) => set({ enableLocalMaps: v }),
   markCompleted: () => set({ completedAt: new Date().toISOString() }),
 }));
 

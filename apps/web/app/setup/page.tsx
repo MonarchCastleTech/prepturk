@@ -18,32 +18,39 @@ const steps = [
   { num: 4, label: 'Depolama' },
   { num: 5, label: 'Yapay Zekâ' },
   { num: 6, label: 'İçerik' },
-  { num: 7, label: 'İl İçeriği' },
-  { num: 8, label: 'Özet' },
+  { num: 7, label: 'Arşivler' },
+  { num: 8, label: 'İl İçeriği' },
+  { num: 9, label: 'Özet' },
 ];
 
 const modules = [
-  { id: 'documents', label: 'Belge Yonetimi', desc: 'Mevzuat ve dokuman arşivi' },
-  { id: 'search', label: 'Tam Metin Arama', desc: 'Turkce karakter destekli arama' },
+  { id: 'documents', label: 'Belge Yönetimi', desc: 'Mevzuat ve doküman arşivi' },
+  { id: 'search', label: 'Tam Metin Arama', desc: 'Türkçe karakter destekli arama' },
   { id: 'ai', label: 'AI Asistan', desc: 'Yerel RAG destekli asistan' },
-  { id: 'education', label: 'Egitim Rafi', desc: 'Ilkokul, lise kaynaklari' },
-  { id: 'maps', label: 'Haritalar', desc: 'Cevrimdisi harita goruntuleyici' },
-  { id: 'vault', label: 'Kisisel Kasa', desc: 'Sifreli dosya depolama' },
-  { id: 'notes', label: 'Notlar', desc: 'Acil durum notlari' },
-  { id: 'province-packs', label: 'İl Paketleri', desc: 'Kurulumla gelen il içerikleri' },
+  { id: 'education', label: 'Eğitim Rafı', desc: 'İlkokul, lise kaynakları' },
+  { id: 'maps', label: 'Haritalar', desc: 'Çevrimdışı harita görüntüleyici' },
+  { id: 'vault', label: 'Kişisel Kasa', desc: 'Şifreli dosya depolama' },
+  { id: 'kolibri', label: 'Kolibri LMS', desc: 'Profesyonel eğitim platformu' },
+  { id: 'cyberchef', label: 'CyberChef', desc: 'Veri işleme araçları' },
 ];
 
 const storageOptions = [
   { id: '10gb', label: '10 GB', desc: 'Temel mevzuat' },
   { id: '50gb', label: '50 GB', desc: 'Mevzuat + belgeler' },
   { id: '200gb', label: '200 GB', desc: 'Tam arşiv' },
-  { id: 'unlimited', label: 'Sinirsiz', desc: 'Tum icerikler' },
+  { id: 'unlimited', label: 'Sınırsız', desc: 'Tüm içerikler' },
 ];
 
 const aiProfiles = [
-  { id: 'local', label: 'Yerel Dengeli', desc: 'Tamamen çevrimdışı, günlük kullanım için dengeli profil' },
-  { id: 'hybrid', label: 'Yerel Güçlü', desc: 'Geniş belge taraması için daha güçlü yerel profil' },
-  { id: 'cloud', label: 'Yerel Hızlı', desc: 'Düşük donanımda daha hızlı çalışan yerel profil' },
+  { id: 'nano', label: 'Ultra Hafif (0.5B)', desc: 'Raspberry Pi ve eski cihazlar için (Örn: Qwen 0.5B)' },
+  { id: 'local', label: 'Yerel Dengeli (1.5B)', desc: 'Günlük kullanım için ideal (Örn: Qwen 1.5B)' },
+  { id: 'strong', label: 'Yerel Güçlü (7B+)', desc: 'Güçlü PC ve GPU sahipleri için (Örn: Qwen 7B)' },
+];
+
+const archives = [
+  { id: 'wikipedia', label: 'Wikipedia (TR)', desc: 'Tüm Wikipedia arşivi (~30GB+)', nomad: true },
+  { id: 'wikimed', label: 'WikiMed', desc: 'Çevrimdışı tıp ansiklopedisi (~5GB)', nomad: true },
+  { id: 'gutenberg', label: 'Gutenberg', desc: 'Binlerce ücretsiz e-kitap (~10GB)', nomad: true },
 ];
 
 const contentPacks = [
@@ -268,6 +275,39 @@ export default function SetupPage() {
       case 7:
         return (
           <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Büyük Veri & Arşivler</h3>
+            <p className="text-sm text-nomad-slate">
+              Bu arşivler yüksek disk alanı gerektirir. İhtiyacınız olanları seçin.
+            </p>
+            <div className="space-y-3">
+              {archives.map((arc) => {
+                const active = arc.id === 'wikipedia' ? store.enableWikipedia : arc.id === 'wikimed' ? true : false; // For now simplified
+                const toggle = () => {
+                  if (arc.id === 'wikipedia') store.setEnableWikipedia(!store.enableWikipedia);
+                };
+                return (
+                  <button
+                    key={arc.id}
+                    onClick={toggle}
+                    className={`w-full p-4 rounded-lg border-2 text-left transition-colors flex items-center justify-between ${
+                      (arc.id === 'wikipedia' ? store.enableWikipedia : true) ? 'border-nomad-green bg-nomad-green/10' : 'border-nomad-border'
+                    }`}
+                  >
+                    <div>
+                      <div className="text-sm font-medium">{arc.label}</div>
+                      <div className="text-xs text-nomad-slate">{arc.desc}</div>
+                    </div>
+                    {(arc.id === 'wikipedia' ? store.enableWikipedia : true) && <Check className="h-4 w-4 text-nomad-green" />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+
+      case 8:
+        return (
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold">İl İçeriğini Etkinleştir</h3>
             <p className="text-sm text-nomad-slate">
               Şehrinize ait içerik kurulumla birlikte hazır gelir. Kullanmak istediğiniz ili seçin.
@@ -303,32 +343,25 @@ export default function SetupPage() {
           </div>
         );
 
-      case 8:
+      case 9:
         return (
           <div className="space-y-6 text-center">
             <CheckCircle className="h-16 w-16 text-nomad-green mx-auto" />
             <h3 className="text-xl font-semibold">Cihaz Hazırlığı Özeti</h3>
             <div className="text-left space-y-2 text-sm bg-nomad-bg p-4 rounded-lg border border-nomad-border">
-              <div className="flex justify-between"><span className="text-nomad-slate">Dil:</span><span>{store.language === 'tr' ? 'Turkce' : 'English'}</span></div>
-              <div className="flex justify-between"><span className="text-nomad-slate">Hostname:</span><span>{store.hostname}</span></div>
+              <div className="flex justify-between"><span className="text-nomad-slate">Dil:</span><span>{store.language === 'tr' ? 'Türkçe' : 'English'}</span></div>
               <div className="flex justify-between"><span className="text-nomad-slate">Ag modu:</span><span>{store.lanAccess ? 'LAN' : 'Yerel'}</span></div>
-              <div className="flex justify-between"><span className="text-nomad-slate">Moduller:</span><span>{selectedModules.length} adet</span></div>
+              <div className="flex justify-between"><span className="text-nomad-slate">Modüller:</span><span>{selectedModules.length} adet</span></div>
               <div className="flex justify-between"><span className="text-nomad-slate">Depolama:</span><span>{store.storageLimit}</span></div>
-              <div className="flex justify-between"><span className="text-nomad-slate">Yapay zekâ:</span><span>{store.aiModelProfile === 'local' ? 'Yerel Dengeli' : store.aiModelProfile === 'hybrid' ? 'Yerel Güçlü' : 'Yerel Hızlı'}</span></div>
-              <div className="flex justify-between"><span className="text-nomad-slate">İçerik:</span><span>{selectedPacks.length} alan</span></div>
+              <div className="flex justify-between"><span className="text-nomad-slate">Yapay zekâ:</span><span>{store.aiModelProfile}</span></div>
+              <div className="flex justify-between"><span className="text-nomad-slate">Wikipedia:</span><span>{store.enableWikipedia ? 'Yüklenecek' : 'Atlanacak'}</span></div>
               {store.provincePack && (
                 <div className="flex justify-between"><span className="text-nomad-slate">İl İçeriği:</span><span>{provinces.find(p => p.code === store.provincePack)?.name}</span></div>
-              )}
-              {store.completedAt && (
-                <div className="flex justify-between">
-                  <span className="text-nomad-slate">Tamamlanma:</span>
-                  <span>{new Date(store.completedAt).toLocaleString('tr-TR')}</span>
-                </div>
               )}
             </div>
             <Button onClick={handleFinish} size="lg" className="w-full">
               <Zap className="h-4 w-4 mr-2" />
-              Hazirligi Tamamla ve Ana Sayfaya Don
+              Hazırlığı Tamamla ve Başlat
             </Button>
           </div>
         );
@@ -345,9 +378,9 @@ export default function SetupPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Zap className="h-6 w-6 text-nomad-green" />
-              <CardTitle>Kurulum Sihirbazi</CardTitle>
+              <CardTitle>Kurulum Sihirbazı</CardTitle>
             </div>
-            <span className="text-sm text-nomad-slate">{store.step} / 8</span>
+            <span className="text-sm text-nomad-slate">{store.step} / 9</span>
           </div>
 
           <div className="flex items-center gap-1">
@@ -373,12 +406,12 @@ export default function SetupPage() {
               onClick={() => store.step > 1 ? store.prev() : router.push('/')}
             >
               <ChevronLeft className="h-4 w-4 mr-1" />
-              {store.step === 1 ? 'Ana Sayfaya Don' : 'Geri'}
+              {store.step === 1 ? 'Ana Sayfaya Dön' : 'Geri'}
             </Button>
 
-            {store.step < 8 && (
+            {store.step < 9 && (
               <Button onClick={() => store.next()}>
-                Ileri
+                İleri
                 <ChevronRight className="h-4 w-4 ml-1" />
               </Button>
             )}
