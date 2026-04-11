@@ -1,148 +1,95 @@
-# PrepTürk
+# PrepTürk: The Sovereign Preparedness Stack
 
 <p align="center">
-  <img src="apps/web/public/logo.png" width="256" alt="PrepTürk Tactical Logo">
+  <img src="apps/web/public/logo.png" width="320" alt="PrepTürk Tactical Command Center Logo">
 </p>
 
 <p align="center">
   <a href="README.md">🇬🇧 English</a> | <a href="README.tr.md">🇹🇷 Türkçe</a> | <a href="README.ru.md">🇷🇺 Русский</a> | <a href="README.ar.md">🇸🇾 العربية</a>
 </p>
 
-> **Türkiye's Sovereign Offline Preparedness Command Center**
->
-> 🇹🇷 *Türkiye İçin Çevrimdışı Bilgi, Eğitim, Resmî Belge ve Dayanıklılık Sistemi*
->
-> _Assume the grid will fail. Own your data. Protect your community._
+---
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
-[![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-blue.svg)](https://www.postgresql.org/)
-[![Offline-First](https://img.shields.io/badge/Airgapped-Ready-orange.svg)](#offline-first-design)
+## 🛡️ Executive Summary
+
+**PrepTürk** is a high-availability, airgapped intelligence and survival orchestration platform engineered for the Republic of Türkiye’s unique geographic and geopolitical risk profile. Unlike cloud-dependent solutions, PrepTürk is a **sovereign technical stack** designed to operate in environments with **zero internet connectivity**, power instability, and total infrastructure collapse.
+
+It transforms consumer-grade hardware (Raspberry Pi, Laptops, Home Servers) into a hardened Command Center, housing verified government protocols, a local Large Language Model (LLM), and real-world hardware integrations for radio and mesh networking.
 
 ---
 
-## 🛑 The Problem
+## 🛰️ Technical Domains
 
-When a major crisis hits—like the devastating 2023 earthquakes—the digital infrastructure we take for granted vanishes. Cell towers fail. Government portals drop offline. Critical response protocols become inaccessible exactly when they are needed most. Communities are left blind, unable to find neighborhood assembly points, critical first-aid procedures, or official disaster response plans. 
+### 1. Intelligence & Sovereign AI
+*   **Local RAG (Retrieval-Augmented Generation)**: Powered by **Ollama**, PrepTürk runs optimized LLMs (Qwen 0.5B to 7B) locally. It answers queries by citing its own local library of 36+ verified Turkish government sources.
+*   **Semantic Search**: High-performance vector indexing via **Qdrant** allows for natural language search across thousands of pages of legislation and emergency manuals without an index server.
+*   **Multilingual Support**: Fully localized in Turkish, English, Russian, and Arabic to support all residents and displaced persons in crisis zones.
 
-## 🛡️ The Solution
+### 2. Physical Layer & Hardware Integration
+*   **SDR (Software-Defined Radio)**: Native interface for RTL-SDR dongles. Automatically scans and logs emergency frequencies (TRT FM, AFAD alerts) and decodes NOAA satellite weather imagery.
+*   **LoRa Mesh (Meshtastic)**: Integrated mesh networking allows nodes to sync community boards and SOS signals over the airwaves (up to 10km) when cell towers fail.
+*   **CBRN & Environmental Sensors**: Real-time logging for radiation (Geiger), air quality (PM2.5), and climate data via local sensor arrays.
+*   **Local Whisper**: 100% private, on-device voice-to-text. No audio data ever hits the cloud.
 
-**PrepTürk** is an uncompromising, offline-first intelligence and survival platform engineered specifically for Türkiye's risk profile. It is not a cloud service. It is a sovereign command center that runs entirely on your own hardware. 
+### 3. Tactical Emergency Operations
+*   **Civil Defense Protocols**: Verified AFAD "Siyah Alarm" (CBRN) and "Kırmızı Alarm" (Air Raid) procedures.
+*   **Medical Triage**: A conservative symptom checker and emergency first-aid library containing hyper-compressed video loops for high-adrenaline maneuvers (CPR, Heimlich, Tourniquet).
+*   **Hyper-Local Mapping**: Integrated **Tileserver-GL** serving vector map tiles directly from the local disk, ensuring navigation works without a single packet from the internet.
 
-Once synced, PrepTürk requires **zero internet connection** to provide:
-*   Instant access to official government guidelines (AFAD, Ministry of Health, MEB).
-*   AI-powered semantic search across local document repositories.
-*   Lifesaving medical and survival protocols tailored for Turkish realities.
-*   Educational resources to maintain continuity for children during prolonged outages.
-*   A cryptographic, private vault for your family's critical documents.
-
-Put it on a Raspberry Pi in a go-bag, a home server, or an old laptop. When the grid goes down, PrepTürk stays up.
-
----
-
-## ⚡ Core Capabilities
-
-PrepTürk provides a cohesive, unified dashboard encompassing **45 unique features** across 6 critical operational domains. 
-
-### 1. Emergency & Crisis Command
-*   **Zero-Latency SOS**: Instantly surfaces critical offline procedures and numbers (112, 110, 155, 156, 177).
-*   **Procedural Checklists**: Actionable, step-by-step responses for Earthquakes, Fires, Floods, and CBRN threats.
-*   **Assembly Points**: Hyper-local mapping of official gathering areas for all 81 provinces.
-
-### 2. Verified Health & Medical Intelligence
-*   **Strict Provenance**: All medical advice is mirrored strictly from official Turkish Ministry of Health (Sağlık Bakanlığı) and AFAD sources.
-*   **Symptom Checker**: A conservative triage engine designed to identify *when to call 112*, not to diagnose. 
-*   **Chronic Condition Management**: Detailed emergency protocols for Diabetes, Hypertension, Asthma, and more.
-
-### 3. Survival & Resource Management
-*   **Resource Calculators**: Accurately predict solar panel yields and battery runtimes based on your local province.
-*   **Sustenance Guides**: Water purification methods and traditional Turkish food preservation techniques.
-*   **Inventory Tracking**: Monitor your household stockpiles (water, fuel, medication) with visual depletion alerts.
-
-### 4. Sovereign AI Assistant (Local LLM)
-*   **100% Airgapped**: Powered by Ollama. Your queries never leave your device.
-*   **RAG Integration**: The assistant answers questions by cross-referencing your locally stored official documents and cites its sources.
-*   **Safety Guardrails**: Hardcoded to refuse medical diagnoses and aggressively prioritize official protocols during emergencies.
-
-### 5. Education & Continuity
-*   **Uninterrupted Learning**: Hosts mirrored MEB textbook catalogs and interactive materials.
-*   **Exam Readiness**: Integrated study timers and countdowns for LGS, YKS, and KPSS.
-*   **Child-Safe Mode**: A specialized UI that simplifies language and curates content for younger users during stressful events.
-
-### 6. Personal Encrypted Vault
-*   **AES-256-GCM Security**: Store your family's deeds, IDs, and financial records in a locally encrypted enclave.
-*   **Printable Go-Packs**: Generate physical paper backups of your emergency plans and child ID cards in one click.
+### 4. Logistics & Continuity
+*   **Digital Dead Drop**: PWA-based file sharing via high-density QR packages and Ad-Hoc Wi-Fi hotspots.
+*   **Resource Management**: Advanced inventory tracking with depletion alerts and solar yield calculators calibrated for the 81 provinces of Türkiye.
+*   **Traditional Resilience**: A specialized module for Anatolian preservation techniques (Tarhana, Salça, Pekmez) and provincial agricultural calendars.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ The Stack
 
-PrepTürk is built on a resilient, modern tech stack designed for extreme portability and low resource footprint.
-
-*   **Frontend**: Next.js 15 (React 19) — Provides a fast, app-like experience with robust caching and offline PWA capabilities.
-*   **Backend**: FastAPI (Python 3.12) — High-performance asynchronous API handling document ingestion, search, and AI orchestration.
-*   **Database**: PostgreSQL 16 — Manages user roles, document metadata, and full-text search (FTS).
-*   **Vector Search**: Qdrant — Enables blazing-fast semantic search and RAG capabilities.
-*   **Local AI**: Ollama — Runs optimized LLMs (e.g., `qwen2.5:7b-instruct`) locally on CPU or GPU.
-*   **Deployment**: Fully containerized via Docker Compose for one-click deployment across Linux, macOS, and Windows.
-
----
-
-## 🔒 OPSEC & Security Model
-
-We treat your data and security with the utmost paranoia.
-
-*   **Airgap Mode**: A strict `AIRGAP_MODE` configuration completely disables all outbound network requests from the backend workers.
-*   **Network Isolation**: The API enforces an aggressive `Content-Security-Policy (CSP)` preventing the browser from calling out to external analytics, fonts, or tracking scripts.
-*   **Local Fonts Only**: No reliance on Google Fonts. The UI uses native system fonts to ensure flawless rendering offline.
-*   **No Telemetry**: Next.js telemetry is permanently disabled.
-*   **Zero-Trust Setup**: Requires secure password configuration out of the box; JWT auth with optional TOTP 2FA.
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 15 (React 19) | Hardened PWA with Service Worker Caching |
+| **API** | FastAPI (Python 3.12) | Asynchronous High-Throughput Command Layer |
+| **Database** | PostgreSQL 16 | Relational metadata and user roles |
+| **Vector DB** | Qdrant | Semantic indexing and similarity search |
+| **AI Engine** | Ollama | Local LLM & Embedding orchestration |
+| **Reverse Proxy** | Caddy | Automatic internal HTTPS and static serving |
 
 ---
 
-## 🚀 Quick Start
+## 🔒 OPSEC & Hardening
 
-**Minimum Requirements:** 4GB RAM, 2-core CPU, 20GB Storage. (16GB RAM recommended for Local AI features).
+PrepTürk is built on a **Paranoid-by-Default** security model:
+*   **Airgap Enforcement**: A software-level lock prevents all outbound network requests from backend workers.
+*   **Telemetry Stripping**: All Next.js and external analytics are removed.
+*   **Local Font Stack**: Zero reliance on Google Fonts or external CDNs to prevent rendering stalls.
+*   **Encrypted Vault**: Family documents are stored in an AES-256-GCM encrypted local enclave.
 
-### 1. Clone & Configure
+---
+
+## 🚀 Deployment
+
+### Prerequisites
+*   **Hardware**: 4GB RAM minimum (16GB recommended for AI).
+*   **Software**: Docker & Docker Compose.
+
+### Quick Launch
 ```bash
-git clone https://github.com/your-org/prepturk.git
+git clone https://github.com/akgularda/prepturk.git
 cd prepturk
-cp .env.example .env
-```
-*Edit `.env` to set your `APP_SECRET_KEY` and database passwords.*
-
-### 2. Deploy
-```bash
 docker compose up -d
 ```
-
-### 3. Initialize
-Navigate to `http://localhost:3000` to complete the initial setup wizard, create your admin account, and trigger the first local sync of official documents.
+*Access the Command Center at `http://localhost:3000`.*
 
 ---
 
-## 🤝 Contributing
-
-PrepTürk is an open-source project dedicated to the resilience of the Turkish people. We welcome contributions to adapters, province packs, UI improvements, and documentation.
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/amazing-feature`).
-3. Commit your changes (`git commit -m 'feat: Add amazing feature'`).
-4. Push to the branch (`git push origin feature/amazing-feature`).
-5. Open a Pull Request.
-
----
-
-## ⚖️ License & Disclaimer
+## ⚖️ License & Responsibility
 
 **PrepTürk** is licensed under the [AGPL-3.0 License](LICENSE).
 
-**DISCLAIMER:** This software is provided for informational and preparedness purposes only. It is **NOT** a replacement for official emergency services, professional medical advice, or government directives. In any emergency in Türkiye, **always call 112** and follow the instructions of AFAD and local authorities. 
+**IMPORTANT**: This platform is a supplementary tool. In any emergency within the Republic of Türkiye, **always prioritize official government directives**. Contact **112** for all emergencies. This software is provided "as is" without warranty of any kind.
 
 ---
 <p align="center">
-  <i>Deprem bölgelerindeki vatandaşlarımıza adanmıştır.</i><br>
-  <b>Türkiye için, Türkiye'den.</b>
+  <i>"Assume nothing will be there when you need it. Own the infrastructure of your survival."</i><br>
+  <b>Dedicated to the resilience of the people of Türkiye.</b>
 </p>
