@@ -1,0 +1,210 @@
+[
+  {
+    "route": "/dashboard",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/dashboard\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/documents",
+    "status": 500,
+    "h1": "Build Error",
+    "nav": false,
+    "placeholder": false
+  },
+  {
+    "route": "/search",
+    "status": 500,
+    "h1": "Build Error",
+    "nav": false,
+    "placeholder": false
+  },
+  {
+    "route": "/ai-chat",
+    "status": 500,
+    "h1": "Build Error",
+    "nav": false,
+    "placeholder": false
+  },
+  {
+    "route": "/education",
+    "status": 500,
+    "h1": "Build Error",
+    "nav": false,
+    "placeholder": false
+  },
+  {
+    "route": "/maps",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/maps\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/acil",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/acil\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/toplanma",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/toplanma\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/sablonlar",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/sablonlar\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/su-aritma",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/su-aritma\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/saglik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/saglik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/kronik-hastalik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/kronik-hastalik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/semptom-kontrol",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/semptom-kontrol\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/psikolojik-saglik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/psikolojik-saglik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/pandemi-hazirlik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/pandemi-hazirlik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/gida-saklama",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/gida-saklama\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/barinak-isinma",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/barinak-isinma\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/mesafe-tahmin",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/mesafe-tahmin\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/yildiz-navigasyon",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/yildiz-navigasyon\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/hazirlik-zaman-cizelgesi",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/hazirlik-zaman-cizelgesi\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/mevsim-hazirlik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/mevsim-hazirlik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/sehir-koy",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/sehir-koy\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/dusuk-guc",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/dusuk-guc\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/gunes-sarj",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/gunes-sarj\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/guc-hesaplayici",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/guc-hesaplayici\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/envanter",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/envanter\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/radyo-frekans",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/radyo-frekans\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/qr-mesaj",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/qr-mesaj\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/topluluk-kaynak",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/topluluk-kaynak\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/takas-rehberi",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/takas-rehberi\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/veri-senkronizasyon",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/veri-senkronizasyon\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/topluluk",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/topluluk\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/sinav",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/sinav\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/cocuk-aktivite",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/cocuk-aktivite\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/cocuk-kimlik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/cocuk-kimlik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/guvenlik-planlama",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/guvenlik-planlama\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/emp-hazirlik",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/emp-hazirlik\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/vault",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/vault\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/settings",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/settings\", waiting until \"load\"\n"
+  },
+  {
+    "route": "/admin",
+    "status": "ERROR",
+    "error": "Page.goto: Timeout 5000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/admin\", waiting until \"load\"\n"
+  }
+]

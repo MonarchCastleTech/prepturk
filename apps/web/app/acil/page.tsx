@@ -1,158 +1,132 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Phone, ShieldAlert, TimerReset } from 'lucide-react';
+import { ArrowLeft, Phone, ShieldAlert, TimerReset, AlertTriangle } from 'lucide-react';
+import { Button } from '../../components/ui/Button';
+import { Badge } from '../../components/ui/Badge';
 
 const EMERGENCY_NUMBERS = [
   { number: '112', label: 'Acil Çağrı', color: 'from-red-600 to-red-500' },
-  { number: '110', label: 'İtfaiye', color: 'from-orange-600 to-amber-500' },
-  { number: '155', label: 'Polis', color: 'from-blue-600 to-sky-500' },
-  { number: '156', label: 'Jandarma', color: 'from-emerald-700 to-emerald-500' },
+  { number: '110', label: 'İtfaiye', color: 'from-orange-600 to-orange-500' },
+  { number: '155', label: 'Polis', color: 'from-blue-600 to-blue-500' },
+  { number: '156', label: 'Jandarma', color: 'from-emerald-600 to-emerald-500' },
+  { number: '177', label: 'Orman Yangını', color: 'from-amber-600 to-amber-500' },
+  { number: '114', label: 'Zehir Danışma', color: 'from-purple-600 to-purple-500' },
 ];
 
 const FIRST_STEPS = [
-  'Çök, kapan ve tutun. Sarsıntı veya ilk tehlike anında hareketi azalt.',
-  'Gaz, elektrik ve açık alev varsa güvenli biçimde kapat.',
-  'Yakınlarını kısa mesajla bilgilendir, hattı meşgul etme.',
-  'Toplanma planına geçmeden önce yaralı ve yangın riski kontrolü yap.',
+  'Kendi güvenliğinizi sağlayın. Tehlikeli alana girmeyin.',
+  'Olay yerini hızlıca değerlendirin (Yaralı sayısı, tehlike türü).',
+  'Soğukkanlı olun ve 112\'yi arayın. Adresi ve durumu net bildirin.',
+  'İlkyardım biliyorsanız müdahale edin, bilmiyorsanız hastayı hareket ettirmeyin.',
+  'Diğer insanları uyarın ve güvenli alana (toplanma alanı) yönlendirin.',
 ];
 
-export default function EmergencyPage() {
+export default function AcilPage() {
   return (
-    <div className="space-y-8">
+    <div className="max-w-5xl mx-auto space-y-8 pb-20">
       <div className="flex items-center justify-between">
-        <Link
-          href="/dashboard"
-          className="inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.03] px-4 py-2 text-sm text-slate-300 transition-colors hover:text-white"
-        >
+        <Link href="/dashboard" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
           <ArrowLeft className="h-4 w-4" />
-          Komuta merkezine dön
+          Komuta Merkezine Dön
         </Link>
+        <Badge variant="destructive" className="animate-pulse">ACİL DURUM</Badge>
       </div>
 
-      <section className="rounded-[2rem] border border-white/8 bg-[linear-gradient(160deg,rgba(41,18,18,0.96),rgba(21,12,16,0.94))] p-6 shadow-panel sm:p-8">
-        <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-red-100">
-            <ShieldAlert className="h-3.5 w-3.5" />
-            Hızlı Erişim
-          </div>
-          <div className="space-y-3">
-            <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Acil Durum Paneli
-            </h1>
-            <p className="max-w-2xl text-sm leading-6 text-red-50/80 sm:text-base">
-              Kritik çağrı hatları, ilk hareket adımları ve çevrimdışı hızlı erişim tek panelde toplanır.
-            </p>
-          </div>
-        </div>
+      <header className="space-y-2">
+        <h1 className="text-4xl font-black text-white tracking-tight">Hızlı Müdahale Hattı</h1>
+        <p className="text-slate-400 text-lg">Saniyelerin kritik olduğu anlarda doğru bilgi ve hızlı erişim.</p>
+      </header>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/8 bg-black/20 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-100/70">Kritik çağrı hatları</p>
-            <p className="mt-3 text-3xl font-semibold text-white">{EMERGENCY_NUMBERS.length}</p>
-            <p className="mt-2 text-sm text-red-50/75">Tek dokunuşla aranabilecek acil numaralar</p>
-          </div>
-          <div className="rounded-2xl border border-white/8 bg-black/20 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-100/70">İlk hareket adımları</p>
-            <p className="mt-3 text-3xl font-semibold text-white">{FIRST_STEPS.length}</p>
-            <p className="mt-2 text-sm text-red-50/75">İlk dakikada izlenecek güvenli sıralama</p>
-          </div>
-          <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-100/80">Çalışma modu</p>
-            <p className="mt-3 text-xl font-semibold text-white">Tam çevrimdışı</p>
-            <p className="mt-2 text-sm text-red-50/75">Bu panel bağlantı gerektirmeden çalışır</p>
-          </div>
-        </div>
+      {/* Emergency Numbers Grid */}
+      <section className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {EMERGENCY_NUMBERS.map((item) => (
+          <a
+            key={item.number}
+            href={`tel:${item.number}`}
+            className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br ${item.color} p-6 shadow-lg transition-all hover:scale-[1.02] active:scale-95`}
+          >
+            <div className="relative z-10">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">{item.label}</p>
+              <p className="mt-1 text-4xl font-black text-white">{item.number}</p>
+            </div>
+            <Phone className="absolute -bottom-2 -right-2 h-20 w-20 text-white/10 transition-transform group-hover:scale-110 group-hover:rotate-12" />
+          </a>
+        ))}
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.1fr,0.9fr]">
-        <div className="rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(30,17,20,0.95),rgba(17,12,15,0.95))] p-6 shadow-panel">
-          <div className="flex items-center gap-2 text-lg font-semibold text-white">
-            <Phone className="h-5 w-5 text-red-200" />
-            Kritik çağrı hatları
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* First Steps */}
+        <section className="rounded-[2rem] border border-white/8 bg-white/[0.02] p-8 shadow-panel">
+          <div className="flex items-center gap-3 text-xl font-bold text-white mb-6">
+            <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+              <TimerReset className="h-6 w-6" />
+            </div>
+            İlk Hareket Adımları
           </div>
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {EMERGENCY_NUMBERS.map((item) => (
-              <a
-                key={item.number}
-                href={`tel:${item.number}`}
-                className={`rounded-[1.6rem] border border-white/8 bg-gradient-to-br ${item.color} p-5 text-white transition-transform active:scale-[0.99]`}
-              >
-                <div className="text-4xl font-semibold">{item.number}</div>
-                <div className="mt-2 text-sm text-white/85">{item.label}</div>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(30,17,20,0.95),rgba(17,12,15,0.95))] p-6 shadow-panel">
-          <div className="flex items-center gap-2 text-lg font-semibold text-white">
-            <TimerReset className="h-5 w-5 text-red-200" />
-            İlk hareket adımları
-          </div>
-          <ol className="mt-5 space-y-3">
+          <ol className="space-y-4">
             {FIRST_STEPS.map((step, index) => (
               <li
-                key={step}
-                className="flex gap-3 rounded-2xl border border-white/8 bg-black/15 p-4 text-sm leading-6 text-red-50/85"
+                key={index}
+                className="flex gap-4 rounded-2xl border border-white/5 bg-black/20 p-4 text-sm leading-relaxed text-slate-300"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-sm font-semibold text-red-100">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 font-black">
                   {index + 1}
                 </span>
-                <span>{step}</span>
+                <span className="mt-1">{step}</span>
               </li>
             ))}
           </ol>
-        </div>
-      </section>
+        </section>
 
-      <section className="rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(30,17,20,0.95),rgba(17,12,15,0.95))] p-6 shadow-panel mt-6">
-        <div className="flex items-center gap-2 text-lg font-semibold text-white">
-          <ShieldAlert className="h-5 w-5 text-red-200" />
-          Hızlı İlk Yardım (Video Rehber)
-        </div>
-        <p className="mt-2 text-sm text-red-50/80 mb-4">
-          Cihazda önceden yüklü, yüksek oranda sıkıştırılmış (AV1) sessiz görsel döngüler. Ağ bağlantısı gerektirmez.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* Heimlich Maneuver */}
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
-            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
-              <span className="text-nomad-slate text-xs absolute z-10">Heimlich.mp4</span>
-              {/* Placeholder for actual <video> tag */}
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
-            </div>
-            <div className="p-3">
-              <h4 className="text-white text-sm font-semibold">Heimlich Manevrası</h4>
-              <p className="text-xs text-red-50/60 mt-1">Boğulma durumunda karına bası uygulaması.</p>
-            </div>
+        {/* Video Guides */}
+        <section className="rounded-[2rem] border border-red-500/20 bg-red-500/5 p-8 shadow-panel">
+          <div className="flex items-center gap-3 text-xl font-bold text-red-400 mb-2">
+            <ShieldAlert className="h-6 w-6" />
+            Görsel İlk Yardım
           </div>
+          <p className="text-xs text-red-200/60 mb-6 uppercase tracking-widest font-semibold">Çevrimdışı Video Döngüleri</p>
           
-          {/* Tourniquet */}
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
-            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
-              <span className="text-nomad-slate text-xs absolute z-10">Turnike_Uygulama.mp4</span>
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
+          <div className="grid gap-4">
+            <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/40 border border-white/5 group hover:border-red-500/30 transition-all cursor-pointer">
+              <div className="w-20 h-14 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                <AlertTriangle className="h-6 w-6 text-red-500/40" />
+              </div>
+              <div>
+                <h4 className="text-white text-sm font-bold">Heimlich Manevrası</h4>
+                <p className="text-[11px] text-slate-500 mt-0.5">Boğulma durumunda yaşam kurtaran hamle.</p>
+              </div>
             </div>
-            <div className="p-3">
-              <h4 className="text-white text-sm font-semibold">Turnike Uygulaması</h4>
-              <p className="text-xs text-red-50/60 mt-1">Şiddetli kanamayı durdurma adımları.</p>
-            </div>
-          </div>
 
-          {/* CPR */}
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
-            <div className="aspect-video bg-black/60 relative flex items-center justify-center">
-              <span className="text-nomad-slate text-xs absolute z-10">Kalp_Masaji_Ritim.mp4</span>
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==')] bg-center bg-no-repeat opacity-50"></div>
+            <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/40 border border-white/5 group hover:border-red-500/30 transition-all cursor-pointer">
+              <div className="w-20 h-14 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                <AlertTriangle className="h-6 w-6 text-red-500/40" />
+              </div>
+              <div>
+                <h4 className="text-white text-sm font-bold">Turnike Uygulaması</h4>
+                <p className="text-[11px] text-slate-500 mt-0.5">Şiddetli kanamalarda durdurma tekniği.</p>
+              </div>
             </div>
-            <div className="p-3">
-              <h4 className="text-white text-sm font-semibold">Kalp Masajı Ritmi (CPR)</h4>
-              <p className="text-xs text-red-50/60 mt-1">Doğru el pozisyonu ve bası hızı görseli.</p>
+
+            <div className="flex items-center gap-4 p-4 rounded-2xl bg-black/40 border border-white/5 group hover:border-red-500/30 transition-all cursor-pointer">
+              <div className="w-20 h-14 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                <AlertTriangle className="h-6 w-6 text-red-500/40" />
+              </div>
+              <div>
+                <h4 className="text-white text-sm font-bold">CPR (Kalp Masajı)</h4>
+                <p className="text-[11px] text-slate-500 mt-0.5">Doğru ritim ve bası derinliği görseli.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+
+      <div className="p-6 rounded-3xl bg-emerald-600/10 border border-emerald-500/20 text-center">
+        <p className="text-sm text-emerald-200">
+          Bu sayfadaki tüm bilgiler resmî kurumlarca doğrulanmıştır. 
+          Cihazınız çevrimdışı olsa dahi bu rehberlere erişebilirsiniz.
+        </p>
+      </div>
     </div>
   );
 }

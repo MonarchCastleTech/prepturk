@@ -374,22 +374,22 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
         {showLabels ? (
           <div className="space-y-3 rounded-[1.2rem] border border-white/8 bg-white/[0.02] p-3">
             <div>
-              <p className="shell-muted-label">Yerel durum</p>
-              <p className="mt-1 text-sm text-white">Cihaz içi servisler ve temel modüller hazır.</p>
+              <p className="shell-muted-label">Yerel Durum</p>
+              <p className="mt-1 text-sm text-white">Cihaz içi servisler hazır.</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
-                <p className="shell-value">indeks</p>
-                <p className="mt-1 flex items-center gap-2 text-sm text-slate-200">
-                  <Database className="h-4 w-4 text-sky-300" />
-                  Yerel arama hazır
+                <p className="shell-value text-[10px]">İndeks</p>
+                <p className="mt-1 flex items-center gap-2 text-[11px] text-slate-200">
+                  <Database className="h-3.5 w-3.5 text-sky-300" />
+                  Hazır
                 </p>
               </div>
               <div className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
-                <p className="shell-value">model</p>
-                <p className="mt-1 flex items-center gap-2 text-sm text-slate-200">
-                  <Cpu className="h-4 w-4 text-emerald-300" />
-                  Qwen 0.5B hazır
+                <p className="shell-value text-[10px]">Model</p>
+                <p className="mt-1 flex items-center gap-2 text-[11px] text-slate-200">
+                  <Cpu className="h-3.5 w-3.5 text-emerald-300" />
+                  0.5B
                 </p>
               </div>
             </div>
