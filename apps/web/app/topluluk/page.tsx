@@ -90,10 +90,10 @@ function saveJSON(key: string, data: unknown) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-const FAMILY_ROLES = ['anne', 'baba', 'cocuk', 'buyukanne', 'buyukbaba', 'diger'];
-const CONDITION_OPTIONS = ['yasli', 'engelli', 'kronik hastalik', 'hamile', 'bebek', 'hareket kisitliligi'];
-const RESOURCE_TYPES = ['jenerator', 'motorlu testere', 'il yardim cantasi', 'battaniye', 'su', 'gida', 'el feneri', 'radyo', 'ilac'];
-const MEETING_POINT_OPTIONS = ['Ev on', 'Okul bahcesi', 'Mahalle toplama alani', 'En yakin hastane', 'Park', 'Cami avlusu'];
+const FAMILY_ROLES = ['anne', 'baba', 'çocuk', 'büyükanne', 'büyükbaba', 'diğer'];
+const CONDITION_OPTIONS = ['yaşlı', 'engelli', 'kronik hastalık', 'hamile', 'bebek', 'hareket kısıtlılığı'];
+const RESOURCE_TYPES = ['jeneratör', 'motorlu testere', 'ilk yardım çantası', 'battaniye', 'su', 'gıda', 'el feneri', 'radyo', 'ilaç'];
+const MEETING_POINT_OPTIONS = ['Ev önü', 'Okul bahçesi', 'Mahalle toplama alanı', 'En yakın hastane', 'Park', 'Cami avlusu'];
 
 const EMPTY_FAMILY_PLAN: FamilyPlan = {
   members: [],
@@ -137,7 +137,7 @@ function FamilyEmergencyPlanTab() {
 
   const addMember = () => {
     updatePlan({
-      members: [...plan.members, { id: generateId(), name: '', role: 'cocuk', phone: '', schoolWorkAddress: '' }],
+      members: [...plan.members, { id: generateId(), name: '', role: 'çocuk', phone: '', schoolWorkAddress: '' }],
     });
   };
 
@@ -185,14 +185,14 @@ function FamilyEmergencyPlanTab() {
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Home className="h-5 w-5 text-nomad-green" />
-            Aile Acil Durum Plani
+            Aile Acil Durum Planı
           </h2>
           <p className="text-nomad-slate text-sm">Family Emergency Plan</p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="h-4 w-4 mr-1" />
-            Yazdir
+            Yazdır
           </Button>
           <Button size="sm" onClick={handleSave} className="gap-1">
             <Save className="h-4 w-4" />
@@ -207,18 +207,18 @@ function FamilyEmergencyPlanTab() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
               <Users className="h-5 w-5 text-blue-400" />
-              Aile Uyeleri
+              Aile Üyeleri
             </CardTitle>
             <Button variant="outline" size="sm" onClick={addMember}>
               <Plus className="h-4 w-4 mr-1" />
-              Uye Ekle
+              Üye Ekle
             </Button>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
           {plan.members.length === 0 && (
             <p className="text-sm text-nomad-slate text-center py-4">
-              Henuz aile uyesi eklenmemis. Asagidaki butona tiklayarak ekleyin.
+              Henüz aile üyesi eklenmemiş. Aşağıdaki butona tıklayarak ekleyin.
             </p>
           )}
           {plan.members.map((member) => (
@@ -246,7 +246,7 @@ function FamilyEmergencyPlanTab() {
                   className="h-9 text-sm"
                 />
                 <Input
-                  placeholder="Okul/Is adresi"
+                  placeholder="Okul/İş adresi"
                   value={member.schoolWorkAddress}
                   onChange={(e) => updateMember(member.id, 'schoolWorkAddress', e.target.value)}
                   className="h-9 text-sm"
@@ -270,14 +270,14 @@ function FamilyEmergencyPlanTab() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MapPin className="h-5 w-5 text-amber-400" />
-            Toplanma Noktalari
+            Toplanma Noktaları
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {[
-            { label: 'Ev Toplanma Noktasi', field: 'homeMeetingPoint' as const, icon: Home },
-            { label: 'Okul Toplanma Noktasi', field: 'schoolMeetingPoint' as const, icon: Users },
-            { label: 'Mahalle Toplanma Noktasi', field: 'neighborhoodMeetingPoint' as const, icon: MapPin },
+            { label: 'Ev Toplanma Noktası', field: 'homeMeetingPoint' as const, icon: Home },
+            { label: 'Okul Toplanma Noktası', field: 'schoolMeetingPoint' as const, icon: Users },
+            { label: 'Mahalle Toplanma Noktası', field: 'neighborhoodMeetingPoint' as const, icon: MapPin },
             { label: 'Hastane', field: 'hospitalMeetingPoint' as const, icon: Heart },
           ].map(({ label, field, icon: Icon }) => (
             <div key={field} className="space-y-2">
@@ -290,7 +290,7 @@ function FamilyEmergencyPlanTab() {
                 onChange={(e) => updatePlan({ [field]: e.target.value })}
                 className="w-full h-10 rounded-md border border-nomad-border bg-nomad-surface px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
               >
-                <option value="">Seciniz...</option>
+                <option value="">Seçiniz...</option>
                 {MEETING_POINT_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>{opt}</option>
                 ))}
@@ -306,11 +306,11 @@ function FamilyEmergencyPlanTab() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-green-400" />
-              Acil Durum Iletisim Bilgileri
+              Acil Durum İletişim Bilgileri
             </CardTitle>
             <Button variant="outline" size="sm" onClick={addEmergencyContact}>
               <Plus className="h-4 w-4 mr-1" />
-              Iletisim Ekle
+              İletişim Ekle
             </Button>
           </div>
         </CardHeader>
@@ -324,7 +324,7 @@ function FamilyEmergencyPlanTab() {
                 className="h-9 text-sm flex-1"
               />
               <Input
-                placeholder="Yakinlik"
+                placeholder="Yakınlık"
                 value={contact.relation}
                 onChange={(e) => updateEmergencyContact(idx, 'relation', e.target.value)}
                 className="h-9 text-sm flex-1"
@@ -354,16 +354,16 @@ function FamilyEmergencyPlanTab() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-nomad-green" />
-              Plan Onizleme
+              Plan Önizleme
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div ref={printRef} className="bg-white text-black p-6 rounded-lg border-2 border-black">
               <div className="text-center border-b-2 border-black pb-3 mb-4">
-                <h1 className="text-xl font-bold">AILE ACIL DURUM PLANI</h1>
-                <p className="text-sm text-gray-600">PrepTurk - {new Date().toLocaleDateString('tr-TR')}</p>
+                <h1 className="text-xl font-bold">AİLE ACİL DURUM PLANI</h1>
+                <p className="text-sm text-gray-600">PrepTürk - {new Date().toLocaleDateString('tr-TR')}</p>
               </div>
-              <h2 className="font-bold text-sm mb-2">AILE UYELERI</h2>
+              <h2 className="font-bold text-sm mb-2">AİLE ÜYELERİ</h2>
               <table className="w-full text-xs mb-4 border">
                 <thead>
                   <tr className="border-b bg-gray-100">
@@ -393,7 +393,7 @@ function FamilyEmergencyPlanTab() {
               </ul>
               {plan.emergencyContacts.length > 0 && (
                 <>
-                  <h2 className="font-bold text-sm mb-2">ACIL ILTISIM</h2>
+                  <h2 className="font-bold text-sm mb-2">ACİL İLETİŞİM</h2>
                   <ul className="text-xs list-disc pl-5">
                     {plan.emergencyContacts.map((c, i) => (
                       <li key={i}>{c.name} ({c.relation}) - {c.phone}</li>
@@ -457,7 +457,7 @@ function NeighborhoodAidTab() {
 
   const addResource = () => {
     updateData({
-      resources: [...data.resources, { type: '', quantity: '', location: '', condition: 'Iyi' }],
+      resources: [...data.resources, { type: '', quantity: '', location: '', condition: 'İyi' }],
     });
   };
 
@@ -499,14 +499,14 @@ function NeighborhoodAidTab() {
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Users className="h-5 w-5 text-amber-400" />
-            Mahalle Dayanisma
+            Mahalle Dayanışma
           </h2>
           <p className="text-nomad-slate text-sm">Neighborhood Mutual Aid</p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="h-4 w-4 mr-1" />
-            Yazdir
+            Yazdır
           </Button>
           <Button size="sm" onClick={handleSave} className="gap-1">
             <Save className="h-4 w-4" />
@@ -521,18 +521,18 @@ function NeighborhoodAidTab() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
               <Heart className="h-5 w-5 text-red-400" />
-              Hassas Komsu Kaydi
+              Hassas Komşu Kaydı
             </CardTitle>
             <Button variant="outline" size="sm" onClick={addVulnerableNeighbor}>
               <Plus className="h-4 w-4 mr-1" />
-              Komsu Ekle
+              Komşu Ekle
             </Button>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
           {data.vulnerableNeighbors.length === 0 && (
             <p className="text-sm text-nomad-slate text-center py-4">
-              Henuce hassas komsu kaydi yok. Afet durumunda ozellikle yardima ihtiyac olan kisileri buraya kaydedin.
+              Henüz hassas komşu kaydı yok. Afet durumunda özellikle yardıma ihtiyaç olan kişileri buraya kaydedin.
             </p>
           )}
           {data.vulnerableNeighbors.map((neighbor) => (
@@ -572,14 +572,14 @@ function NeighborhoodAidTab() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Input
-                  placeholder="Acil iletisim kisisi"
+                  placeholder="Acil iletişim kişisi"
                   value={neighbor.emergencyContact}
                   onChange={(e) => updateVulnerableNeighbor(neighbor.id, 'emergencyContact', e.target.value)}
                   className="h-9 text-sm"
                 />
                 <div className="flex gap-2">
                   <Input
-                    placeholder="Acil iletisim telefon"
+                    placeholder="Acil iletişim telefon"
                     value={neighbor.emergencyPhone}
                     onChange={(e) => updateVulnerableNeighbor(neighbor.id, 'emergencyPhone', e.target.value)}
                     className="h-9 text-sm flex-1"
@@ -616,7 +616,7 @@ function NeighborhoodAidTab() {
         <CardContent className="space-y-3">
           {data.resources.length === 0 && (
             <p className="text-sm text-nomad-slate text-center py-4">
-              Mahallede mevcut kaynaklari buraya kaydedin (jenerator, il yardim cantasi, vb.)
+              Mahallede mevcut kaynakları buraya kaydedin (jeneratör, ilk yardım çantası, vb.)
             </p>
           )}
           {data.resources.map((res, idx) => (
@@ -627,7 +627,7 @@ function NeighborhoodAidTab() {
                   onChange={(e) => updateResource(idx, 'type', e.target.value)}
                   className="h-9 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
                 >
-                  <option value="">Kaynak turi...</option>
+                  <option value="">Kaynak türü...</option>
                   {RESOURCE_TYPES.map((t) => (
                     <option key={t} value={t}>{t}</option>
                   ))}
@@ -650,9 +650,9 @@ function NeighborhoodAidTab() {
                     onChange={(e) => updateResource(idx, 'condition', e.target.value)}
                     className="h-9 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green flex-1"
                   >
-                    <option value="Iyi">Iyi</option>
+                    <option value="İyi">İyi</option>
                     <option value="Orta">Orta</option>
-                    <option value="Kotu">Kotu</option>
+                    <option value="Kötü">Kötü</option>
                   </select>
                   <Button
                     variant="ghost"
@@ -679,14 +679,14 @@ function NeighborhoodAidTab() {
             </CardTitle>
             <Button variant="outline" size="sm" onClick={generateCheckInList}>
               <FileText className="h-4 w-4 mr-1" />
-              Liste Olustur
+              Liste Oluştur
             </Button>
           </div>
         </CardHeader>
         <CardContent>
           {data.checkInList.length === 0 && (
             <p className="text-sm text-nomad-slate text-center py-4">
-              Yukaridaki butona tiklayarak hassas komsular icin kontrol listesi olusturun.
+              Yukarıdaki butona tıklayarak hassas komşular için kontrol listesi oluşturun.
             </p>
           )}
           {data.checkInList.map((item, idx) => (
@@ -707,9 +707,9 @@ function NeighborhoodAidTab() {
                   className="h-8 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-nomad-green"
                 >
                   <option value="beklemede">Beklemede</option>
-                  <option value="guvenli">Guvenli</option>
-                  <option value="yardim gerekli">Yardim Gerekli</option>
-                  <option value="erisilemedi">Erisilemedi</option>
+                  <option value="guvenli">Güvenli</option>
+                  <option value="yardim gerekli">Yardım Gerekli</option>
+                  <option value="erisilemedi">Erişilemedi</option>
                 </select>
               </div>
             </div>
@@ -810,7 +810,7 @@ function BuildingDirectoryTab() {
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="h-4 w-4 mr-1" />
-            Yazdir
+            Yazdır
           </Button>
           <Button size="sm" onClick={handleSave} className="gap-1">
             <Save className="h-4 w-4" />
@@ -836,16 +836,16 @@ function BuildingDirectoryTab() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="space-y-1">
-              <label className="text-xs text-nomad-slate">Bina Yoneticisi</label>
+              <label className="text-xs text-nomad-slate">Bina Yöneticisi</label>
               <Input
-                placeholder="Yonetici adi"
+                placeholder="Yönetici adı"
                 value={building.buildingManager}
                 onChange={(e) => updateBuilding({ buildingManager: e.target.value })}
                 className="h-9 text-sm"
               />
             </div>
             <div className="space-y-1">
-              <label className="text-xs text-nomad-slate">Yonetici Telefonu</label>
+              <label className="text-xs text-nomad-slate">Yönetici Telefonu</label>
               <Input
                 placeholder="Telefon"
                 value={building.managerPhone}
@@ -874,14 +874,14 @@ function BuildingDirectoryTab() {
         <CardContent className="space-y-4">
           {building.apartments.length === 0 && (
             <p className="text-sm text-nomad-slate text-center py-4">
-              Henuz daire eklenmemis. Her daireyi ayri ayri kaydedin.
+              Henüz daire eklenmemiş. Her daireyi ayrı ayrı kaydedin.
             </p>
           )}
           {building.apartments.map((apt) => (
             <div key={apt.id} className="p-4 bg-nomad-bg rounded-lg border border-nomad-border space-y-3">
               <div className="flex items-center justify-between">
                 <Input
-                  placeholder="Daire No (orn: 1A, 2B)"
+                  placeholder="Daire No (örn: 1A, 2B)"
                   value={apt.apartmentNumber}
                   onChange={(e) => updateApartmentNumber(apt.id, e.target.value)}
                   className="h-9 text-sm max-w-[200px]"
@@ -921,7 +921,7 @@ function BuildingDirectoryTab() {
                     />
                     <div className="flex gap-2">
                       <Input
-                        placeholder="Saglik durumu"
+                        placeholder="Sağlık durumu"
                         value={res.medicalConditions}
                         onChange={(e) => updateResident(apt.id, rIdx, 'medicalConditions', e.target.value)}
                         className="h-8 text-sm flex-1"
@@ -949,18 +949,18 @@ function BuildingDirectoryTab() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Printer className="h-5 w-5 text-nomad-green" />
-              Acil Durum Iletisim Formu (Bina Lobby Icın)
+              Acil Durum İletişim Formu (Bina Lobisi İçin)
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div ref={printRef} className="bg-white text-black p-6 rounded-lg border-2 border-black">
               <div className="text-center border-b-2 border-black pb-3 mb-4">
-                <h1 className="text-xl font-bold">BINA ACIL DURUM ILTISIM FORMU</h1>
+                <h1 className="text-xl font-bold">BİNA ACİL DURUM İLETİŞİM FORMU</h1>
                 {building.buildingAddress && <p className="text-sm text-gray-600">{building.buildingAddress}</p>}
                 {building.buildingManager && (
-                  <p className="text-sm text-gray-600">Yonetici: {building.buildingManager} - {building.managerPhone}</p>
+                  <p className="text-sm text-gray-600">Yönetici: {building.buildingManager} - {building.managerPhone}</p>
                 )}
-                <p className="text-xs text-gray-500 mt-1">PrepTurk - {new Date().toLocaleDateString('tr-TR')}</p>
+                <p className="text-xs text-gray-500 mt-1">PrepTürk - {new Date().toLocaleDateString('tr-TR')}</p>
               </div>
               <table className="w-full text-xs border">
                 <thead>
@@ -968,7 +968,7 @@ function BuildingDirectoryTab() {
                     <th className="text-left p-1">Daire</th>
                     <th className="text-left p-1">Sakin</th>
                     <th className="text-left p-1">Telefon</th>
-                    <th className="text-left p-1">Saglik Notu</th>
+                    <th className="text-left p-1">Sağlık Notu</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1006,7 +1006,7 @@ export default function ToplulukPage() {
           <Users className="h-7 w-7 text-amber-400" />
           Topluluk / Community
         </h1>
-        <p className="text-nomad-slate text-sm">Aile, mahalle ve bina duzeyinde afet hazirlik planlamasi</p>
+        <p className="text-nomad-slate text-sm">Aile, mahalle ve bina düzeyinde afet hazırlık planlaması</p>
       </div>
 
       {/* Tab Selector */}

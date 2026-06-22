@@ -3,10 +3,10 @@
 import { useState, useCallback } from 'react';
 
 const HOMEWORK_SYSTEM_PROMPT =
-  'Sen bir ogretmensin. Ogrenciye cevabi dogrudan soyleme. Ipucu ver, yol goster, ama isini kendin yapma. Adim adim dusundur. Ogrencinin seviyesine uygun dil kullan. Asla dogrudan cevap verme, bunun yerine ogrenciyi dogru yone yonlendir. Sorular sorarak dusunmesini sagla.';
+  'Sen bir öğretmensin. Öğrenciye cevabı doğrudan söyleme. İpucu ver, yol göster, ama işini kendin yapma. Adım adım düşündür. Öğrencinin seviyesine uygun dil kullan. Asla doğrudan cevap verme, bunun yerine öğrenciyi doğru yöne yönlendir. Sorular sorarak düşünmesini sağla.';
 
 const DEFAULT_SYSTEM_PROMPT =
-  'Sen bir yardimci asistansin. Kullanicinin sorularini dogrudan ve net bir sekilde yanitla.';
+  'Sen bir yardımcı asistansın. Kullanıcının sorularını doğrudan ve net bir şekilde yanıtla.';
 
 interface HomeworkModeResult {
   isHomeworkMode: boolean;
@@ -20,26 +20,26 @@ function generateHintResponse(question: string): string {
   const lower = question.toLowerCase();
 
   if (lower.includes('nedir') || lower.includes('ne demek')) {
-    return `Bu soruyu cevaplamak icin oncelikle terimin gectigi bolumu tekrar oku. Terimin baglam icindeki anlamini dusun. Bana bu terimle ilgili bildiklerini yaz, birlikte degerlendirelim.`;
+    return `Bu soruyu cevaplamak için öncelikle terimin geçtiği bölümü tekrar oku. Terimin bağlam içindeki anlamını düşün. Bana bu terimle ilgili bildiklerini yaz, birlikte değerlendirelim.`;
   }
 
   if (lower.includes('nasıl') || lower.includes('nasil')) {
-    return `Bu tip sorularda oncelikle problemin ne istedigini belirlemelisin. Adimlari tek tek yaz. Ilk adim ne olmalidir? Onceki benzer sorulari dusun, hangi yontemi kullanmistin?`;
+    return `Bu tip sorularda öncelikle problemin ne istediğini belirlemelisin. Adımları tek tek yaz. İlk adım ne olmalıdır? Önceki benzer soruları düşün, hangi yöntemi kullanmıştın?`;
   }
 
   if (lower.includes('neden') || lower.includes('nicin') || lower.includes('niçin')) {
-    return `Sebep-sonuc iliskisi kurman gerekiyor. Oncelikle olaylari sirala. Her olayin bir onceki olayla baglantisi ne? Metinde hangi bilgiler bu baglantiyi acikliyor?`;
+    return `Sebep-sonuç ilişkisi kurman gerekiyor. Öncelikle olayları sırala. Her olayın bir önceki olayla bağlantısı ne? Metinde hangi bilgiler bu bağlantıyı açıklıyor?`;
   }
 
   if (lower.includes('hesapla') || lower.includes('bul') || lower.includes('coz')) {
-    return `Matematiksel problemlerde once verilenleri listele. Hangi formulu kullanman gerekebilir? Benzer ornekleri hatirla. once daha basit bir versiyonunu cozmeyi dene.`;
+    return `Matematiksel problemlerde önce verilenleri listele. Hangi formülü kullanman gerekebilir? Benzer örnekleri hatırla. Önce daha basit bir versiyonunu çözmeyi dene.`;
   }
 
   if (lower.includes('acikla') || lower.includes('anlat')) {
-    return `Aciklama yaparken once ana fikri belirle. Sonra destekleyici bilgileri sirala. Kendine su soruyu sor: "Bu konuyu bir arkadasima nasil anlatirim?" En onemli 3 noktayi yaz.`;
+    return `Açıklama yaparken önce ana fikri belirle. Sonra destekleyici bilgileri sırala. Kendine şu soruyu sor: "Bu konuyu bir arkadaşıma nasıl anlatırım?" En önemli 3 noktayı yaz.`;
   }
 
-  return `Bu soruyu cevaplamadan once, konuyla ilgili elinde hangi bilgiler var? Metni veya notlarini tekrar gozden gecir. Bana ne dusundugunu yaz, uzerinde birlikte calisalim.`;
+  return `Bu soruyu cevaplamadan önce, konuyla ilgili elinde hangi bilgiler var? Metni veya notlarını tekrar gözden geçir. Bana ne düşündüğünü yaz, üzerinde birlikte çalışalım.`;
 }
 
 export function useHomeworkMode(): HomeworkModeResult {
@@ -71,7 +71,7 @@ export function useHomeworkMode(): HomeworkModeResult {
     (question: string): string => {
       if (!isHomeworkMode) return question;
       const hint = generateHintResponse(question);
-      return `[ODEV MODU] Ogrenci sorusu: "${question}"\n\nOgretmen yonlendirmesi: ${hint}`;
+      return `[ÖDEV MODU] Öğrenci sorusu: "${question}"\n\nÖğretmen yönlendirmesi: ${hint}`;
     },
     [isHomeworkMode]
   );

@@ -37,18 +37,18 @@ interface QRMessage {
 }
 
 const STATUS_CONFIG: Record<Status, { label: string; labelEn: string; color: string; icon: string }> = {
-  guvendeyim: { label: 'Guvendeyim', labelEn: 'I am safe', color: 'bg-green-600', icon: '✓' },
-  'yardim-lazim': { label: 'Yardim Lazim', labelEn: 'Need help', color: 'bg-yellow-600', icon: '?' },
-  'bolge-guvenli': { label: 'Bolge Guvenli', labelEn: 'Area safe', color: 'bg-blue-600', icon: '◉' },
-  'acil-yardim': { label: 'Acil Yardim', labelEn: 'Emergency', color: 'bg-red-600', icon: '!!!' },
+  guvendeyim: { label: 'Güvendeyim', labelEn: 'I am safe', color: 'bg-green-600', icon: '✓' },
+  'yardim-lazim': { label: 'Yardım Lazım', labelEn: 'Need help', color: 'bg-yellow-600', icon: '?' },
+  'bolge-guvenli': { label: 'Bölge Güvenli', labelEn: 'Area safe', color: 'bg-blue-600', icon: '◉' },
+  'acil-yardim': { label: 'Acil Yardım', labelEn: 'Emergency', color: 'bg-red-600', icon: '!!!' },
   bilgi: { label: 'Bilgi', labelEn: 'Info', color: 'bg-gray-600', icon: 'i' },
 };
 
 const NEED_CONFIG: Record<Need, { label: string; labelEn: string; icon: typeof Droplets }> = {
   su: { label: 'Su', labelEn: 'Water', icon: Droplets },
   yiyecek: { label: 'Yiyecek', labelEn: 'Food', icon: Utensils },
-  ilac: { label: 'Ilac', labelEn: 'Medicine', icon: Pill },
-  barinak: { label: 'Barinak', labelEn: 'Shelter', icon: Home },
+  ilac: { label: 'İlaç', labelEn: 'Medicine', icon: Pill },
+  barinak: { label: 'Barınak', labelEn: 'Shelter', icon: Home },
   yok: { label: 'Yok', labelEn: 'None', icon: X },
 };
 
@@ -162,7 +162,7 @@ export default function QRMesajPage() {
       }, 2000);
     } catch (err) {
       console.error('Camera error:', err);
-      alert('Kamera erisimi saglanamadi. / Camera access denied.');
+      alert('Kamera erişimi sağlanamadı. / Camera access denied.');
     }
   }, []);
 
@@ -197,7 +197,7 @@ export default function QRMesajPage() {
           setMessages(deduped);
           saveMessages(deduped);
         } catch {
-          alert('Gecersiz dosya. / Invalid file.');
+          alert('Geçersiz dosya. / Invalid file.');
         }
       };
       reader.readAsText(file);
@@ -267,19 +267,19 @@ export default function QRMesajPage() {
         <section className="bg-nomad-surface rounded-xl border border-nomad-border p-5 mb-6 no-print">
           <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
             <Send className="h-5 w-5 text-nomad-green" />
-            Yeni Mesaj Olustur / Create Message
+            Yeni Mesaj Oluştur / Create Message
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-nomad-slate mb-1">
-                Gonderen / Sender
+                Gönderen / Sender
               </label>
               <input
                 className="input-field w-full"
                 value={sender}
                 onChange={(e) => setSender(e.target.value)}
-                placeholder="Adiniz / Your name"
+                placeholder="Adınız / Your name"
               />
             </div>
 
@@ -309,13 +309,13 @@ export default function QRMesajPage() {
                 className="input-field w-full"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="Mahalle, sehir / Neighborhood, city"
+                placeholder="Mahalle, şehir / Neighborhood, city"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-nomad-slate mb-1">
-                Ihtiyac / Need
+                İhtiyaç / Need
               </label>
               <select
                 className="input-field w-full"
@@ -338,7 +338,7 @@ export default function QRMesajPage() {
                 className="input-field w-full"
                 value={message}
                 onChange={(e) => setMessage(e.target.value.slice(0, 200))}
-                placeholder="Istege bagli mesaj / Optional message"
+                placeholder="İsteğe bağlı mesaj / Optional message"
                 rows={3}
               />
               <span className="text-xs text-nomad-slate">{message.length}/200</span>
@@ -346,7 +346,7 @@ export default function QRMesajPage() {
 
             <div>
               <label className="block text-sm font-medium text-nomad-slate mb-1">
-                Oncelik / Priority
+                Öncelik / Priority
               </label>
               <select
                 className="input-field w-full"
@@ -374,7 +374,7 @@ export default function QRMesajPage() {
             className="mt-4 btn-primary flex items-center gap-2"
           >
             <QrCode className="h-5 w-5" />
-            QR Kod Olustur / Generate QR
+            QR Kod Oluştur / Generate QR
           </button>
         </section>
 
@@ -382,7 +382,7 @@ export default function QRMesajPage() {
         {qrDataUrl && (
           <section className="bg-nomad-surface rounded-xl border border-nomad-border p-5 mb-6 text-center">
             <h2 className="text-lg font-semibold text-white mb-3">
-              Olusturulan QR Kod / Generated QR Code
+              Oluşturulan QR Kod / Generated QR Code
             </h2>
             <div className="inline-block bg-white p-4 rounded-lg">
               <ReactQRCode value={buildMessageJSON()} size={300} />
@@ -404,15 +404,15 @@ export default function QRMesajPage() {
             <div className="space-y-3">
               <button onClick={startScanner} className="btn-secondary flex items-center gap-2">
                 <Camera className="h-5 w-5" />
-                Kamerayi Baslat / Start Camera
+                Kamerayı Başlat / Start Camera
               </button>
               <p className="text-nomad-slate text-sm">
-                Kamerayi kullanarak QR kod tarayin / Use camera to scan QR codes
+                Kamerayı kullanarak QR kod tarayın / Use camera to scan QR codes
               </p>
 
               <div className="border-t border-nomad-border pt-3">
                 <p className="text-sm text-nomad-slate mb-2">
-                  Veya JSON yapistirin / Or paste JSON:
+                  Veya JSON yapıştırın / Or paste JSON:
                 </p>
                 <form onSubmit={handleManualScanInput} className="flex gap-2">
                   <input
@@ -421,7 +421,7 @@ export default function QRMesajPage() {
                     placeholder='{"sender":"Ali","status":"guvendeyim",...}'
                   />
                   <button type="submit" className="btn-primary">
-                    Coz / Decode
+                    Çöz / Decode
                   </button>
                 </form>
               </div>
@@ -442,7 +442,7 @@ export default function QRMesajPage() {
               </div>
               {scanResult && (
                 <div className="mt-3 bg-green-900/30 border border-green-700 rounded-lg p-3 text-sm text-green-300">
-                  <p className="font-semibold">Mesaj cozuldu / Message decoded:</p>
+                  <p className="font-semibold">Mesaj çözüldü / Message decoded:</p>
                   <pre className="mt-1 text-xs overflow-auto whitespace-pre-wrap">
                     {scanResult}
                   </pre>
@@ -456,16 +456,16 @@ export default function QRMesajPage() {
         <section className="bg-nomad-surface rounded-xl border border-nomad-border p-5 mb-6 no-print">
           <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
             <MessageSquare className="h-5 w-5 text-nomad-green" />
-            Ice/Disa Aktar / Import/Export
+            İçe/Dışa Aktar / Import/Export
           </h2>
           <div className="flex flex-wrap gap-3">
             <button onClick={exportAll} className="btn-secondary flex items-center gap-2">
               <Download className="h-5 w-5" />
-              Tumunu Disa Aktar / Export All
+              Tümünü Dışa Aktar / Export All
             </button>
             <button onClick={handleManualImport} className="btn-secondary flex items-center gap-2">
               <Upload className="h-5 w-5" />
-              Ice Aktar / Import
+              İçe Aktar / Import
             </button>
           </div>
         </section>
@@ -474,12 +474,12 @@ export default function QRMesajPage() {
         <section className="bg-nomad-surface rounded-xl border border-nomad-border p-5">
           <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
             <MessageSquare className="h-5 w-5 text-nomad-green" />
-            Mesaj Gecmisi / Message History ({messages.length})
+            Mesaj Geçmişi / Message History ({messages.length})
           </h2>
 
           {messages.length === 0 ? (
             <p className="text-nomad-slate text-center py-8">
-              Henuce mesaj yok / No messages yet
+              Henüz mesaj yok / No messages yet
             </p>
           ) : (
             <div className="space-y-3">
@@ -506,7 +506,7 @@ export default function QRMesajPage() {
                           {msg.priority === 'acil' && (
                             <span className="text-red-400 text-xs flex items-center gap-1">
                               <AlertTriangle className="h-3 w-3" />
-                              ACIL
+                              ACİL
                             </span>
                           )}
                         </div>
@@ -519,7 +519,7 @@ export default function QRMesajPage() {
                         {msg.need !== 'yok' && (
                           <p className="text-nomad-slate text-sm flex items-center gap-1">
                             <NeedIcon className="h-3 w-3" />
-                            Ihtiyac: {needCfg.label} ({needCfg.labelEn})
+                            İhtiyaç: {needCfg.label} ({needCfg.labelEn})
                           </p>
                         )}
                         {msg.message && (

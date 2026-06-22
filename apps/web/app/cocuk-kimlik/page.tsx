@@ -32,8 +32,8 @@ interface ChildCard {
 const STORAGE_KEY = 'prepturk:childCards';
 
 const BLOOD_TYPES = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
-const HAIR_COLORS = ['Siyah/Black', 'Kahverengi/Brown', 'Sari/Blonde', 'Kizil/Red', 'Gri/Gray'];
-const EYE_COLORS = ['Kahverengi/Brown', 'Mavi/Blue', 'Yesil/Green', 'Ela/Hazel', 'Siyah/Black', 'Gri/Gray'];
+const HAIR_COLORS = ['Siyah/Black', 'Kahverengi/Brown', 'Sarı/Blonde', 'Kızıl/Red', 'Gri/Gray'];
+const EYE_COLORS = ['Kahverengi/Brown', 'Mavi/Blue', 'Yeşil/Green', 'Ela/Hazel', 'Siyah/Black', 'Gri/Gray'];
 
 function loadCards(): ChildCard[] {
   if (typeof window === 'undefined') return [];
@@ -73,7 +73,7 @@ function printChildCard(child: ChildCard) {
     : `<div style="width:80px;height:100px;border:1px dashed #999;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999;">FOTO / PHOTO</div>`;
 
   const html = `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
-  <title>Cocuk Kimlik Karti - ${child.fullName}</title>
+  <title>Çocuk Kimlik Kartı - ${child.fullName}</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
     .card { width: 86mm; height: 54mm; border: 2px solid #000; padding: 8px; box-sizing: border-box; position: relative; page-break-inside: avoid; }
@@ -91,7 +91,7 @@ function printChildCard(child: ChildCard) {
   </style></head><body>
   <div class="card">
     <div class="header">
-      COPUK KIMLIK KARTI / CHILD ID CARD
+      ÇOCUK KİMLİK KARTI / CHILD ID CARD
       <div class="header-en">If found, please take to: ${child.meetingPoint || '_______________'}</div>
     </div>
     <div class="content">
@@ -99,12 +99,12 @@ function printChildCard(child: ChildCard) {
       <div class="info">
         <div class="info-row"><span class="label">Ad Soyad:</span> ${child.fullName}</div>
         <div class="info-row"><span class="label">Name:</span> ${child.fullNameEn || child.fullName}</div>
-        <div class="info-row"><span class="label">Dogum Tarihi:</span> ${child.dob || '___'}</div>
+        <div class="info-row"><span class="label">Doğum Tarihi:</span> ${child.dob || '___'}</div>
         <div class="info-row"><span class="label">Boy/Kilo:</span> ${child.height || '___'} / ${child.weight || '___'}</div>
-        <div class="info-row"><span class="label">Sac/Go:z:</span> ${child.hairColor || '___'} / ${child.eyeColor || '___'}</div>
+        <div class="info-row"><span class="label">Saç/Göz:</span> ${child.hairColor || '___'} / ${child.eyeColor || '___'}</div>
         <div class="info-row"><span class="label">Kan Grubu:</span> ${child.bloodType || '___'}</div>
         <div class="info-row"><span class="label">Alerji:</span> ${child.allergies || 'Yok/None'}</div>
-        <div class="info-row"><span class="label">Saglik:</span> ${child.medicalConditions || 'Yok/None'}</div>
+        <div class="info-row"><span class="label">Sağlık:</span> ${child.medicalConditions || 'Yok/None'}</div>
       </div>
     </div>
     <div class="emergency">
@@ -117,7 +117,7 @@ function printChildCard(child: ChildCard) {
   <div class="cut-line"></div>
   <div class="card">
     <div class="header">
-      COPUK KIMLIK KARTI (Yedek) / CHILD ID CARD (Backup)
+      ÇOCUK KİMLİK KARTI (Yedek) / CHILD ID CARD (Backup)
       <div class="header-en">If found, please take to: ${child.meetingPoint || '_______________'}</div>
     </div>
     <div class="content">
@@ -125,9 +125,9 @@ function printChildCard(child: ChildCard) {
       <div class="info">
         <div class="info-row"><span class="label">Ad Soyad:</span> ${child.fullName}</div>
         <div class="info-row"><span class="label">Name:</span> ${child.fullNameEn || child.fullName}</div>
-        <div class="info-row"><span class="label">Dogum Tarihi:</span> ${child.dob || '___'}</div>
+        <div class="info-row"><span class="label">Doğum Tarihi:</span> ${child.dob || '___'}</div>
         <div class="info-row"><span class="label">Boy/Kilo:</span> ${child.height || '___'} / ${child.weight || '___'}</div>
-        <div class="info-row"><span class="label">Sac/Go:z:</span> ${child.hairColor || '___'} / ${child.eyeColor || '___'}</div>
+        <div class="info-row"><span class="label">Saç/Göz:</span> ${child.hairColor || '___'} / ${child.eyeColor || '___'}</div>
         <div class="info-row"><span class="label">Kan Grubu:</span> ${child.bloodType || '___'}</div>
         <div class="info-row"><span class="label">Alerji:</span> ${child.allergies || 'Yok/None'}</div>
       </div>
@@ -197,9 +197,9 @@ export default function CocukKimlikPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Cocuk Kimlik Karti / Child ID Card</h1>
+        <h1 className="text-2xl font-bold">Çocuk Kimlik Kartı / Child ID Card</h1>
         <p className="text-nomad-slate text-sm mt-1">
-          Acil durumlar icin yazdirilabilir cocuk kimlik kartlari
+          Acil durumlar için yazdırılabilir çocuk kimlik kartları
         </p>
       </div>
 
@@ -209,7 +209,7 @@ export default function CocukKimlikPage() {
             <Info className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-blue-300">
-                Kart kredi karti boyutundadir (86mm x 54mm). Laminasyon yapin veya bantla kaplayin.
+                Kart kredi kartı boyutundadır (86mm x 54mm). Laminasyon yapın veya bantla kaplayın.
               </p>
               <p className="text-xs text-nomad-slate mt-1">
                 Card is credit card size (86mm x 54mm). Laminate or cover with tape for durability.
@@ -225,7 +225,7 @@ export default function CocukKimlikPage() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
               <IdCard className="h-5 w-5 text-nomad-green" />
-              {editingId ? 'Karti Duzenle / Edit Card' : 'Yeni Kart Olustur / Create New Card'}
+              {editingId ? 'Kartı Düzenle / Edit Card' : 'Yeni Kart Oluştur / Create New Card'}
             </CardTitle>
             {!editingId && (
               <Button size="sm" onClick={startNew}>
@@ -247,10 +247,10 @@ export default function CocukKimlikPage() {
                 )}
               </div>
               <div>
-                <label className="text-sm text-nomad-slate mb-1 block">Cocuk Fotografi / Photo</label>
+                <label className="text-sm text-nomad-slate mb-1 block">Çocuk Fotoğrafı / Photo</label>
                 <label className="inline-flex items-center gap-2 px-3 py-2 bg-nomad-surface border border-nomad-border rounded-md text-sm cursor-pointer hover:bg-nomad-border">
                   <Upload className="h-4 w-4" />
-                  Yukle / Upload
+                  Yükle / Upload
                   <input type="file" accept="image/*" className="hidden" onChange={handlePhotoUpload} />
                 </label>
               </div>
@@ -259,7 +259,7 @@ export default function CocukKimlikPage() {
             {/* Basic info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Ad Soyad (Turkce) *</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Ad Soyad (Türkçe) *</label>
                 <input
                   value={form.fullName}
                   onChange={(e) => update('fullName', e.target.value)}
@@ -277,7 +277,7 @@ export default function CocukKimlikPage() {
                 />
               </div>
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Dogum Tarihi / Date of Birth</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Doğum Tarihi / Date of Birth</label>
                 <input
                   type="date"
                   value={form.dob}
@@ -292,7 +292,7 @@ export default function CocukKimlikPage() {
                   onChange={(e) => update('bloodType', e.target.value)}
                   className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
                 >
-                  <option value="">Seciniz</option>
+                  <option value="">Seçiniz</option>
                   {BLOOD_TYPES.map(bt => <option key={bt} value={bt}>{bt}</option>)}
                 </select>
               </div>
@@ -315,24 +315,24 @@ export default function CocukKimlikPage() {
                 />
               </div>
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Sac Rengi / Hair Color</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Saç Rengi / Hair Color</label>
                 <select
                   value={form.hairColor}
                   onChange={(e) => update('hairColor', e.target.value)}
                   className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
                 >
-                  <option value="">Seciniz</option>
+                  <option value="">Seçiniz</option>
                   {HAIR_COLORS.map(hc => <option key={hc} value={hc}>{hc}</option>)}
                 </select>
               </div>
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Goz Rengi / Eye Color</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Göz Rengi / Eye Color</label>
                 <select
                   value={form.eyeColor}
                   onChange={(e) => update('eyeColor', e.target.value)}
                   className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
                 >
-                  <option value="">Seciniz</option>
+                  <option value="">Seçiniz</option>
                   {EYE_COLORS.map(ec => <option key={ec} value={ec}>{ec}</option>)}
                 </select>
               </div>
@@ -340,13 +340,13 @@ export default function CocukKimlikPage() {
 
             {/* Medical */}
             <div>
-              <label className="text-xs text-nomad-slate mb-1 block">Saglik Sorunlari / Medical Conditions</label>
+              <label className="text-xs text-nomad-slate mb-1 block">Sağlık Sorunları / Medical Conditions</label>
               <textarea
                 value={form.medicalConditions}
                 onChange={(e) => update('medicalConditions', e.target.value)}
                 className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
                 rows={2}
-                placeholder="Astim, diyabet, epilepsi..."
+                placeholder="Astım, diyabet, epilepsi..."
               />
             </div>
             <div>
@@ -356,7 +356,7 @@ export default function CocukKimlikPage() {
                 onChange={(e) => update('allergies', e.target.value)}
                 className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
                 rows={2}
-                placeholder="Fistik, penisilin..."
+                placeholder="Fıstık, penisilin..."
               />
             </div>
 
@@ -406,19 +406,19 @@ export default function CocukKimlikPage() {
               />
             </div>
             <div>
-              <label className="text-xs text-nomad-slate mb-1 block">Bulusma Noktasi / Meeting Point</label>
+              <label className="text-xs text-nomad-slate mb-1 block">Buluşma Noktası / Meeting Point</label>
               <input
                 value={form.meetingPoint}
                 onChange={(e) => update('meetingPoint', e.target.value)}
                 className="w-full p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm"
-                placeholder="Ornek: Park girisi, okul on..."
+                placeholder="Örnek: Park girişi, okul önü..."
               />
-              <p className="text-xs text-nomad-slate mt-1">Bulunursa buraya goturulsun / If found, please take to this location</p>
+              <p className="text-xs text-nomad-slate mt-1">Bulunursa buraya götürülsün / If found, please take to this location</p>
             </div>
 
             {/* Actions */}
             <div className="flex justify-end gap-2">
-              <Button variant="outline" size="sm" onClick={() => { setEditingId(null); setForm(emptyCard()); }}>Iptal</Button>
+              <Button variant="outline" size="sm" onClick={() => { setEditingId(null); setForm(emptyCard()); }}>İptal</Button>
               <Button size="sm" onClick={save}>Kaydet / Save</Button>
             </div>
           </CardContent>
@@ -428,7 +428,7 @@ export default function CocukKimlikPage() {
       {/* Saved Cards */}
       {cards.length > 0 && (
         <div>
-          <h2 className="text-lg font-bold mb-4">Kayitli Kartlar / Saved Cards ({cards.length})</h2>
+          <h2 className="text-lg font-bold mb-4">Kayıtlı Kartlar / Saved Cards ({cards.length})</h2>
           <div className="space-y-3">
             {cards.map(card => (
               <Card key={card.id} className="border-nomad-border">
@@ -453,10 +453,10 @@ export default function CocukKimlikPage() {
                     <div className="flex items-center gap-2">
                       <Button variant="outline" size="sm" onClick={() => printChildCard(card)}>
                         <Printer className="h-3 w-3 mr-1" />
-                        Yazdir
+                        Yazdır
                       </Button>
                       <Button variant="ghost" size="sm" onClick={() => startEdit(card)}>
-                        Duzenle
+                        Düzenle
                       </Button>
                       <Button variant="ghost" size="sm" onClick={() => remove(card.id)}>
                         <Trash2 className="h-4 w-4 text-red-400" />
@@ -474,11 +474,11 @@ export default function CocukKimlikPage() {
         <Card className="border-nomad-border">
           <CardContent className="pt-12 text-center">
             <IdCard className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-            <p className="text-nomad-slate mb-4">Henüz kimlik karti yok. Ilk kartinizi olusturun.</p>
+            <p className="text-nomad-slate mb-4">Henüz kimlik kartı yok. İlk kartınızı oluşturun.</p>
             <p className="text-xs text-nomad-slate mb-4">No ID cards yet. Create your first card.</p>
             <Button onClick={startNew}>
               <Plus className="h-4 w-4 mr-1" />
-              Yeni Kart Olustur
+              Yeni Kart Oluştur
             </Button>
           </CardContent>
         </Card>

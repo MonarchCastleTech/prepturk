@@ -25,17 +25,17 @@ const STORAGE_KEYS = [
 ];
 
 const KEY_LABELS: Record<string, { tr: string; en: string }> = {
-  'prepturk:healthProfile': { tr: 'Saglik Profili', en: 'Health Profile' },
-  'prepturk:familyPlan': { tr: 'Aile Plani', en: 'Family Plan' },
+  'prepturk:healthProfile': { tr: 'Sağlık Profili', en: 'Health Profile' },
+  'prepturk:familyPlan': { tr: 'Aile Planı', en: 'Family Plan' },
   'prepturk:neighborhood': { tr: 'Mahalle Verileri', en: 'Neighborhood Data' },
   'prepturk:buildingDirectory': { tr: 'Bina Rehberi', en: 'Building Directory' },
   'prepturk:inventory': { tr: 'Envanter', en: 'Inventory' },
-  'prepturk:qrMessages': { tr: 'QR Mesajlari', en: 'QR Messages' },
-  'prepturk:studyProgress': { tr: 'Calisma Ilerlemesi', en: 'Study Progress' },
+  'prepturk:qrMessages': { tr: 'QR Mesajları', en: 'QR Messages' },
+  'prepturk:studyProgress': { tr: 'Çalışma İlerlemesi', en: 'Study Progress' },
   'prepturk:notes': { tr: 'Notlar', en: 'Notes' },
-  'prepturk:communityResources': { tr: 'Topluluk Kaynaklari', en: 'Community Resources' },
-  'prepturk:solarSessions': { tr: 'Gunes Sarj Kayitlari', en: 'Solar Charging Logs' },
-  'prepturk:powerSetup': { tr: 'Guc Kurulumu', en: 'Power Setup' },
+  'prepturk:communityResources': { tr: 'Topluluk Kaynakları', en: 'Community Resources' },
+  'prepturk:solarSessions': { tr: 'Güneş Şarj Kayıtları', en: 'Solar Charging Logs' },
+  'prepturk:powerSetup': { tr: 'Güç Kurulumu', en: 'Power Setup' },
   'prepturk:checklistState': { tr: 'Kontrol Listesi', en: 'Checklist State' },
   'prepturk:chronicExpanded': { tr: 'Kronik Durum', en: 'Chronic Condition' },
 };
@@ -119,7 +119,7 @@ export default function VeriSenkronizasyonPage() {
             let dataSize = '';
             if (Array.isArray(val)) {
               type = 'array';
-              dataSize = `${val.length} oge`;
+              dataSize = `${val.length} öge`;
             } else if (typeof val === 'string') {
               type = 'string';
               dataSize = `${val.length} karakter`;
@@ -140,7 +140,7 @@ export default function VeriSenkronizasyonPage() {
         setStep('previewing');
         setError('');
       } catch {
-        setError('Dosya okunamadi. Gecerli bir JSON dosyasi sectiginizden emin olun.');
+        setError('Dosya okunamadı. Geçerli bir JSON dosyası seçtiğinizden emin olun.');
         setStep('error');
       }
     };
@@ -211,7 +211,7 @@ export default function VeriSenkronizasyonPage() {
           <Database className="h-7 w-7 text-nomad-green" />
           Veri Senkronizasyon
         </h1>
-        <p className="text-nomad-slate text-sm">P2P Data Synchronization -- USB Disa/Ice Aktarma</p>
+        <p className="text-nomad-slate text-sm">P2P Data Synchronization -- USB Dışa/İçe Aktarma</p>
       </div>
 
       {/* Offline indicator */}
@@ -219,7 +219,7 @@ export default function VeriSenkronizasyonPage() {
         <CardContent className="p-3 flex items-center gap-2 text-sm">
           <Shield className="h-4 w-4 text-nomad-green flex-shrink-0" />
           <span className="text-nomad-slate">
-            Tum veriler cihazinizda saklanir. USB ile baska cihaza aktarabilirsiniz.
+            Tüm veriler cihazınızda saklanır. USB ile başka cihaza aktarabilirsiniz.
           </span>
           <span className="text-nomad-slate text-xs">(All data stored locally -- transferable via USB)</span>
         </CardContent>
@@ -240,17 +240,17 @@ export default function VeriSenkronizasyonPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Download className="h-5 w-5 text-nomad-green" />
-              Tum Verileri Disa Aktar
+              Tüm Verileri Dışa Aktar
             </CardTitle>
             <CardDescription>Export All Data</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm text-nomad-slate">
-              Tum PrepTurk verilerinizi JSON dosyasi olarak indirin. Bu dosya baska bir cihaza aktarilabilir.
+              Tüm PrepTürk verilerinizi JSON dosyası olarak indirin. Bu dosya başka bir cihaza aktarılabilir.
             </p>
             <Button onClick={handleExport} className="w-full">
               <Download className="h-4 w-4 mr-2" />
-              Disa Aktar / Export
+              Dışa Aktar / Export
             </Button>
             {exportSize && (
               <p className="text-xs text-nomad-slate text-center">
@@ -265,17 +265,17 @@ export default function VeriSenkronizasyonPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Upload className="h-5 w-5 text-blue-400" />
-              Verileri Ice Aktar
+              Verileri İçe Aktar
             </CardTitle>
             <CardDescription>Import Data</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm text-nomad-slate">
-              Daha once disa aktarilan JSON dosyasini yukleyin ve verilerinizi geri yukleyin.
+              Daha önce dışa aktarılan JSON dosyasını yükleyin ve verilerinizi geri yükleyin.
             </p>
             <Button variant="outline" onClick={openImportDialog} className="w-full">
               <Upload className="h-4 w-4 mr-2" />
-              Dosya Sec / Select File
+              Dosya Seç / Select File
             </Button>
           </CardContent>
         </Card>
@@ -291,26 +291,26 @@ export default function VeriSenkronizasyonPage() {
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-sm text-nomad-slate">
-              Verilerinizi USB surucuye yedeklemek icin oncelikle disa aktarim yapin, sonra dosyayi USB'ye kopyalayin.
+              Verilerinizi USB sürücüye yedeklemek için öncelikle dışa aktarım yapın, sonra dosyayı USB'ye kopyalayın.
             </p>
             <div className="space-y-2">
-              <h4 className="text-sm font-medium text-foreground">Adimlar / Steps:</h4>
+              <h4 className="text-sm font-medium text-foreground">Adımlar / Steps:</h4>
               <ol className="space-y-1 text-sm text-nomad-slate">
                 <li className="flex items-start gap-2">
                   <span className="h-5 w-5 rounded-full bg-nomad-green/20 text-nomad-green flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
-                  <span>"Tum Verileri Disa Aktar" butonuna tiklayin</span>
+                  <span>"Tüm Verileri Dışa Aktar" butonuna tıklayın</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="h-5 w-5 rounded-full bg-nomad-green/20 text-nomad-green flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
-                  <span>Indirilen JSON dosyasini USB surucuye kopyalayin</span>
+                  <span>İndirilen JSON dosyasını USB sürücüye kopyalayın</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="h-5 w-5 rounded-full bg-nomad-green/20 text-nomad-green flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
-                  <span>USB'yi baska bir cihaza takin</span>
+                  <span>USB'yi başka bir cihaza takın</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="h-5 w-5 rounded-full bg-nomad-green/20 text-nomad-green flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
-                  <span>O cihazda "Verileri Ice Aktar" ile dosyayi yukleyin</span>
+                  <span>O cihazda "Verileri İçe Aktar" ile dosyayı yükleyin</span>
                 </li>
               </ol>
             </div>
@@ -328,11 +328,11 @@ export default function VeriSenkronizasyonPage() {
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-sm text-nomad-slate">
-              Seed Kit: Bir USB surucuye tum verileri yukleyin -- baska bir kullanici kendi PrepTurk'una yukleyebilir.
+              Seed Kit: Bir USB sürücüye tüm verileri yükleyin -- başka bir kullanıcı kendi PrepTürk'üne yükleyebilir.
             </p>
 
             <div className="space-y-2">
-              <h4 className="text-sm font-medium text-foreground">Icerik / Contents:</h4>
+              <h4 className="text-sm font-medium text-foreground">İçerik / Contents:</h4>
               <ul className="space-y-1 text-sm text-nomad-slate">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-3.5 w-3.5 text-nomad-green flex-shrink-0" />
@@ -348,19 +348,19 @@ export default function VeriSenkronizasyonPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-3.5 w-3.5 text-nomad-green flex-shrink-0" />
-                  <span>Acil durum dokumanlari</span>
+                  <span>Acil durum dokümanları</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-3.5 w-3.5 text-nomad-green flex-shrink-0" />
-                  <span>Saglik rehberleri</span>
+                  <span>Sağlık rehberleri</span>
                 </li>
               </ul>
             </div>
 
             <div className="p-3 bg-amber-950/30 border border-amber-800 rounded-lg">
               <p className="text-xs text-amber-200">
-                Seed Kit olusturmak icin tum verileri disa aktarin ve USB surucuye kaydedin.
-                Diger kullanicilar bu dosyayi kendi PrepTurk'larina ice aktarabilir.
+                Seed Kit oluşturmak için tüm verileri dışa aktarın ve USB sürücüye kaydedin.
+                Diğer kullanıcılar bu dosyayı kendi PrepTürk'lerine içe aktarabilir.
               </p>
             </div>
           </CardContent>
@@ -373,9 +373,9 @@ export default function VeriSenkronizasyonPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Eye className="h-5 w-5 text-blue-400" />
-              Ice Aktarma Onizleme / Import Preview
+              İçe Aktarma Önizleme / Import Preview
             </CardTitle>
-            <CardDescription>Asagidaki veriler ice aktarilacak</CardDescription>
+            <CardDescription>Aşağıdaki veriler içe aktarılacak</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Mode Selection */}
@@ -389,7 +389,7 @@ export default function VeriSenkronizasyonPage() {
                 }`}
               >
                 <ArrowRightLeft className="h-4 w-4 mx-auto mb-1" />
-                <div className="font-medium">Birlestir / Merge</div>
+                <div className="font-medium">Birleştir / Merge</div>
                 <div className="text-xs text-nomad-slate mt-1">Mevcut verileri koru + yenilerini ekle</div>
               </button>
               <button
@@ -401,8 +401,8 @@ export default function VeriSenkronizasyonPage() {
                 }`}
               >
                 <AlertTriangle className="h-4 w-4 mx-auto mb-1" />
-                <div className="font-medium">Degistir / Replace</div>
-                <div className="text-xs text-nomad-slate mt-1">Mevcut verilerin uzerine yaz</div>
+                <div className="font-medium">Değiştir / Replace</div>
+                <div className="text-xs text-nomad-slate mt-1">Mevcut verilerin üzerine yaz</div>
               </button>
             </div>
 
@@ -427,11 +427,11 @@ export default function VeriSenkronizasyonPage() {
 
             <div className="flex gap-2">
               <Button variant="outline" onClick={() => { setStep('idle'); setImportData(null); setImportPreview([]); }} className="flex-1">
-                Iptal
+                İptal
               </Button>
               <Button onClick={() => setConfirmDialog(true)} className="flex-1">
                 <Upload className="h-4 w-4 mr-2" />
-                Ice Aktar
+                İçe Aktar
               </Button>
             </div>
           </CardContent>
@@ -445,7 +445,7 @@ export default function VeriSenkronizasyonPage() {
             <div className="flex items-center gap-3">
               <Loader2 className="h-6 w-6 text-nomad-green animate-spin" />
               <div>
-                <p className="font-medium">Veriler ice aktariliyor...</p>
+                <p className="font-medium">Veriler içe aktarılıyor...</p>
                 <p className="text-sm text-nomad-slate">Importing data...</p>
               </div>
             </div>
@@ -455,7 +455,7 @@ export default function VeriSenkronizasyonPage() {
                 style={{ width: `${importProgress}%` }}
               />
             </div>
-            <p className="text-xs text-nomad-slate text-center">%{Math.round(importProgress)} tamamlandi</p>
+            <p className="text-xs text-nomad-slate text-center">%{Math.round(importProgress)} tamamlandı</p>
           </CardContent>
         </Card>
       )}
@@ -465,9 +465,9 @@ export default function VeriSenkronizasyonPage() {
         <Card className="border-nomad-green bg-nomad-green/10">
           <CardContent className="p-6 text-center space-y-2">
             <CheckCircle className="h-12 w-12 text-nomad-green mx-auto" />
-            <p className="text-lg font-semibold text-nomad-green">Islem basarili!</p>
+            <p className="text-lg font-semibold text-nomad-green">İşlem başarılı!</p>
             <p className="text-sm text-nomad-slate">
-              {exportSize ? `Disa aktirma tamamlandi. Dosya boyutu: ${exportSize}` : 'Ice aktarma tamamlandi. Verileriniz yuklendi.'}
+              {exportSize ? `Dışa aktarma tamamlandı. Dosya boyutu: ${exportSize}` : 'İçe aktarma tamamlandı. Verileriniz yüklendi.'}
             </p>
           </CardContent>
         </Card>
@@ -500,7 +500,7 @@ export default function VeriSenkronizasyonPage() {
               <p className="text-sm">
                 {importMode === 'merge'
                   ? 'Mevcut verileriniz korunacak ve yeni veriler eklenecek. Devam etmek istiyor musunuz?'
-                  : 'DIKKAT: Mevcut tum verileriniz silinecek ve yedek verilerle degistirilecek. Bu islem geri alinamaz!'}
+                  : 'DİKKAT: Mevcut tüm verileriniz silinecek ve yedek verilerle değiştirilecek. Bu işlem geri alınamaz!'}
               </p>
               <p className="text-xs text-nomad-slate">
                 {importMode === 'merge'
@@ -509,7 +509,7 @@ export default function VeriSenkronizasyonPage() {
               </p>
               <div className="flex gap-2">
                 <Button variant="outline" onClick={() => setConfirmDialog(false)} className="flex-1">
-                  Iptal / Cancel
+                  İptal / Cancel
                 </Button>
                 <Button variant={importMode === 'replace' ? 'destructive' : 'default'} onClick={handleImport} className="flex-1">
                   Onayla / Confirm
@@ -525,15 +525,15 @@ export default function VeriSenkronizasyonPage() {
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Nasil Calisir / How It Works</h4>
+            <h4 className="text-sm font-medium">Nasıl Çalışır / How It Works</h4>
           </div>
           <p className="text-sm text-nomad-slate">
-            PrepTurk tum verilerinizi tarayicinizin yerel deposunda (localStorage) saklar. Internet baglantisi olmadan da calisir.
-            "Disa Aktar" butonu tum verilerinizi bir JSON dosyasina paketler. Bu dosyayi USB, bluetooth veya herhangi bir yontemle
-            baska bir cihaza aktarabilirsiniz. "Ice Aktar" butonu ile baska bir cihazdan gelen JSON dosyasini yukleyebilirsiniz.
+            PrepTürk tüm verilerinizi tarayıcınızın yerel deposunda (localStorage) saklar. İnternet bağlantısı olmadan da çalışır.
+            "Dışa Aktar" butonu tüm verilerinizi bir JSON dosyasına paketler. Bu dosyayı USB, bluetooth veya herhangi bir yöntemle
+            başka bir cihaza aktarabilirsiniz. "İçe Aktar" butonu ile başka bir cihazdan gelen JSON dosyasını yükleyebilirsiniz.
           </p>
           <p className="text-xs text-nomad-slate">
-            (PrepTurk stores all data in your browser's localStorage. It works without internet. Export packs all data into a JSON file
+            (PrepTürk stores all data in your browser's localStorage. It works without internet. Export packs all data into a JSON file
             that can be transferred via USB, Bluetooth, or any method. Import loads JSON backups from other devices.)
           </p>
         </CardContent>

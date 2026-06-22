@@ -34,30 +34,30 @@ interface CommunityPost {
 const RESOURCE_TYPES: { value: ResourceType; label: string; icon: React.ReactNode }[] = [
   { value: 'water', label: 'Su / Water', icon: <TrendingUp className="h-4 w-4 text-blue-400" /> },
   { value: 'food', label: 'Yiyecek / Food', icon: <Package className="h-4 w-4 text-green-400" /> },
-  { value: 'generator', label: 'Jenerator / Generator', icon: <TrendingUp className="h-4 w-4 text-yellow-400" /> },
-  { value: 'tools', label: 'Araclar / Tools', icon: <Package className="h-4 w-4 text-gray-400" /> },
-  { value: 'shelter', label: 'Barinak / Shelter', icon: <Package className="h-4 w-4 text-cyan-400" /> },
-  { value: 'medication', label: 'Ilac / Medication', icon: <Package className="h-4 w-4 text-red-400" /> },
-  { value: 'fuel', label: 'Yakit / Fuel', icon: <TrendingUp className="h-4 w-4 text-orange-400" /> },
-  { value: 'medical', label: 'Tibbi Beceri / Medical Skills', icon: <HandHelping className="h-4 w-4 text-pink-400" /> },
-  { value: 'translation', label: 'Ceviri / Translation', icon: <HandHelping className="h-4 w-4 text-purple-400" /> },
+  { value: 'generator', label: 'Jeneratör / Generator', icon: <TrendingUp className="h-4 w-4 text-yellow-400" /> },
+  { value: 'tools', label: 'Araçlar / Tools', icon: <Package className="h-4 w-4 text-gray-400" /> },
+  { value: 'shelter', label: 'Barınak / Shelter', icon: <Package className="h-4 w-4 text-cyan-400" /> },
+  { value: 'medication', label: 'İlaç / Medication', icon: <Package className="h-4 w-4 text-red-400" /> },
+  { value: 'fuel', label: 'Yakıt / Fuel', icon: <TrendingUp className="h-4 w-4 text-orange-400" /> },
+  { value: 'medical', label: 'Tıbbi Beceri / Medical Skills', icon: <HandHelping className="h-4 w-4 text-pink-400" /> },
+  { value: 'translation', label: 'Çeviri / Translation', icon: <HandHelping className="h-4 w-4 text-purple-400" /> },
   { value: 'cooking', label: 'Yemek / Cooking', icon: <HandHelping className="h-4 w-4 text-amber-400" /> },
-  { value: 'childcare', label: 'Cocuk Bakimi / Childcare', icon: <HandHelping className="h-4 w-4 text-teal-400" /> },
+  { value: 'childcare', label: 'Çocuk Bakımı / Childcare', icon: <HandHelping className="h-4 w-4 text-teal-400" /> },
   { value: 'repair', label: 'Tamir / Repair', icon: <HandHelping className="h-4 w-4 text-indigo-400" /> },
-  { value: 'other', label: 'Diger / Other', icon: <Package className="h-4 w-4 text-nomad-slate" /> },
+  { value: 'other', label: 'Diğer / Other', icon: <Package className="h-4 w-4 text-nomad-slate" /> },
 ];
 
 const POST_TYPE_CONFIG: Record<PostType, { label: string; color: string; bgColor: string }> = {
   have: { label: 'Elimde Var / Have', color: 'text-green-300', bgColor: 'bg-green-900/30' },
-  need: { label: 'Ihtiyacim Var / Need', color: 'text-red-300', bgColor: 'bg-red-900/30' },
-  help: { label: 'Yardim Edebilirim / Can Help', color: 'text-blue-300', bgColor: 'bg-blue-900/30' },
+  need: { label: 'İhtiyacım Var / Need', color: 'text-red-300', bgColor: 'bg-red-900/30' },
+  help: { label: 'Yardım Edebilirim / Can Help', color: 'text-blue-300', bgColor: 'bg-blue-900/30' },
   info: { label: 'Bilgi / Information', color: 'text-amber-300', bgColor: 'bg-amber-900/30' },
 };
 
 const URGENCY_CONFIG: Record<Urgency, { label: string; color: string; icon: React.ReactNode }> = {
-  low: { label: 'Dusuk / Low', color: 'text-green-400', icon: <TrendingDown className="h-3 w-3" /> },
+  low: { label: 'Düşük / Low', color: 'text-green-400', icon: <TrendingDown className="h-3 w-3" /> },
   medium: { label: 'Orta / Medium', color: 'text-amber-400', icon: <Minus className="h-3 w-3" /> },
-  high: { label: 'Yuksek / High', color: 'text-orange-400', icon: <TrendingUp className="h-3 w-3" /> },
+  high: { label: 'Yüksek / High', color: 'text-orange-400', icon: <TrendingUp className="h-3 w-3" /> },
   critical: { label: 'Kritik / Critical', color: 'text-red-400', icon: <AlertTriangle className="h-3 w-3" /> },
 };
 
@@ -85,21 +85,21 @@ function savePosts(posts: CommunityPost[]) {
 
 function timeAgo(timestamp: number): string {
   const seconds = Math.floor((Date.now() - timestamp) / 1000);
-  if (seconds < 60) return 'Az once';
+  if (seconds < 60) return 'Az önce';
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes} dakika once`;
+  if (minutes < 60) return `${minutes} dakika önce`;
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours} saat once`;
+  if (hours < 24) return `${hours} saat önce`;
   const days = Math.floor(hours / 24);
-  return `${days} gun once`;
+  return `${days} gün önce`;
 }
 
 function timeRemaining(expiresAt: number): string {
   const remaining = expiresAt - Date.now();
-  if (remaining <= 0) return 'Suresi dolmus';
+  if (remaining <= 0) return 'Süresi doldu';
   const hours = Math.floor(remaining / 3600000);
   if (hours < 1) return '1 saatten az';
-  return `${hours} saat kaldi`;
+  return `${hours} saat kaldı`;
 }
 
 export default function ToplulukKaynakPage() {
@@ -205,18 +205,18 @@ export default function ToplulukKaynakPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Package className="h-7 w-7 text-nomad-green" />
-            Topluluk Kaynak Paylasim
+            Topluluk Kaynak Paylaşımı
           </h1>
           <p className="text-nomad-slate text-sm">Community Resource Sharing Board</p>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="h-4 w-4 mr-1" />
-            Yazdir
+            Yazdır
           </Button>
           <Button size="sm" onClick={() => setShowForm(true)}>
             <Plus className="h-4 w-4 mr-1" />
-            Ilan Ver
+            İlan Ver
           </Button>
         </div>
       </div>
@@ -225,12 +225,12 @@ export default function ToplulukKaynakPage() {
       {showForm && (
         <Card className="border-nomad-green/50 bg-nomad-green/5">
           <CardHeader>
-            <CardTitle>Yeni Ilan / New Post</CardTitle>
+            <CardTitle>Yeni İlan / New Post</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Post Type */}
             <div>
-              <label className="text-sm font-medium mb-2 block">Ilan Tipi / Post Type</label>
+              <label className="text-sm font-medium mb-2 block">İlan Tipi / Post Type</label>
               <div className="grid grid-cols-2 gap-2">
                 {(Object.entries(POST_TYPE_CONFIG) as [PostType, typeof POST_TYPE_CONFIG[PostType]][]).map(([type, config]) => (
                   <button
@@ -258,19 +258,19 @@ export default function ToplulukKaynakPage() {
                   value={authorName}
                   onChange={(e) => setAuthorName(e.target.value)}
                   className="w-full h-10 rounded-md border border-nomad-border bg-nomad-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
-                  placeholder="Adiniz"
+                  placeholder="Adınız"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium mb-1 block flex items-center gap-1">
-                  <Phone className="h-3 w-3" /> Iletisim / Contact
+                  <Phone className="h-3 w-3" /> İletişim / Contact
                 </label>
                 <input
                   type="text"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
                   className="w-full h-10 rounded-md border border-nomad-border bg-nomad-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
-                  placeholder="Telefon veya baska iletisim"
+                  placeholder="Telefon veya başka iletişim"
                 />
               </div>
               <div>
@@ -292,7 +292,7 @@ export default function ToplulukKaynakPage() {
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                   className="w-full h-10 rounded-md border border-nomad-border bg-nomad-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
-                  placeholder="Orn: 5 litre, 10 ekmek"
+                  placeholder="Örn: 5 litre, 10 ekmek"
                 />
               </div>
               <div>
@@ -331,7 +331,7 @@ export default function ToplulukKaynakPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium mb-1 block">Aciklama / Description</label>
+              <label className="text-sm font-medium mb-1 block">Açıklama / Description</label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -342,10 +342,10 @@ export default function ToplulukKaynakPage() {
             </div>
 
             <div className="flex gap-2">
-              <Button variant="outline" onClick={() => setShowForm(false)} className="flex-1">Iptal</Button>
+              <Button variant="outline" onClick={() => setShowForm(false)} className="flex-1">İptal</Button>
               <Button onClick={handleSubmit} className="flex-1">
                 <Plus className="h-4 w-4 mr-1" />
-                Yayinla
+                Yayınla
               </Button>
             </div>
           </CardContent>
@@ -365,7 +365,7 @@ export default function ToplulukKaynakPage() {
               onChange={(e) => setFilterType(e.target.value as PostType | 'all')}
               className="h-8 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground"
             >
-              <option value="all">Tum Tipler</option>
+              <option value="all">Tüm Tipler</option>
               {Object.entries(POST_TYPE_CONFIG).map(([key, config]) => (
                 <option key={key} value={key}>{config.label}</option>
               ))}
@@ -376,7 +376,7 @@ export default function ToplulukKaynakPage() {
               onChange={(e) => setFilterUrgency(e.target.value as Urgency | 'all')}
               className="h-8 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground"
             >
-              <option value="all">Tum Aciliyetler</option>
+              <option value="all">Tüm Aciliyetler</option>
               {Object.entries(URGENCY_CONFIG).map(([key, config]) => (
                 <option key={key} value={key}>{config.label}</option>
               ))}
@@ -387,7 +387,7 @@ export default function ToplulukKaynakPage() {
               onChange={(e) => setFilterResource(e.target.value as ResourceType | 'all')}
               className="h-8 rounded-md border border-nomad-border bg-nomad-surface px-2 text-xs text-foreground"
             >
-              <option value="all">Tum Kaynaklar</option>
+              <option value="all">Tüm Kaynaklar</option>
               {RESOURCE_TYPES.map((rt) => (
                 <option key={rt.value} value={rt.value}>{rt.label}</option>
               ))}
@@ -402,7 +402,7 @@ export default function ToplulukKaynakPage() {
               >
                 <option value="newest">En Yeni</option>
                 <option value="urgent">En Acil</option>
-                <option value="nearest">En Yakin</option>
+                <option value="nearest">En Yakın</option>
               </select>
             </div>
           </div>
@@ -412,7 +412,7 @@ export default function ToplulukKaynakPage() {
       {/* Posts Count */}
       <div className="flex items-center justify-between">
         <p className="text-sm text-nomad-slate">
-          {filteredPosts.length} ilan gosteriliyor / {posts.length} toplam
+          {filteredPosts.length} ilan gösteriliyor / {posts.length} toplam
         </p>
       </div>
 
@@ -422,8 +422,8 @@ export default function ToplulukKaynakPage() {
           <Card className="border-nomad-border">
             <CardContent className="p-8 text-center">
               <Search className="h-12 w-12 text-nomad-slate mx-auto mb-3" />
-              <p className="text-nomad-slate">Henuk ilan yok. "Ilan Ver" butonuna tiklayarak ilk ilani olusturun.</p>
-              <p className="text-xs text-nomad-slate mt-1">(No posts yet. Click "Ilan Ver" to create the first post.)</p>
+              <p className="text-nomad-slate">Henüz ilan yok. "İlan Ver" butonuna tıklayarak ilk ilanı oluşturun.</p>
+              <p className="text-xs text-nomad-slate mt-1">(No posts yet. Click "İlan Ver" to create the first post.)</p>
             </CardContent>
           </Card>
         ) : (
@@ -453,13 +453,13 @@ export default function ToplulukKaynakPage() {
                         {post.status === 'fulfilled' && (
                           <Badge className="bg-green-900/30 text-green-300 border-0 text-xs">
                             <CheckCircle className="h-3 w-3 mr-1" />
-                            Tamamlandi
+                            Tamamlandı
                           </Badge>
                         )}
                         {post.status === 'expired' && (
                           <Badge className="bg-gray-800/30 text-gray-400 border-0 text-xs">
                             <Clock className="h-3 w-3 mr-1" />
-                            Suresi dolmus
+                            Süresi doldu
                           </Badge>
                         )}
                         {resourceConfig && (
@@ -505,7 +505,7 @@ export default function ToplulukKaynakPage() {
                           className="h-7 text-xs"
                         >
                           <CheckCircle className="h-3 w-3 mr-1" />
-                          Tamamlandi
+                          Tamamlandı
                         </Button>
                         <Button
                           variant="ghost"
@@ -530,16 +530,16 @@ export default function ToplulukKaynakPage() {
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Nasil Calisir / How It Works</h4>
+            <h4 className="text-sm font-medium">Nasıl Çalışır / How It Works</h4>
           </div>
           <p className="text-sm text-nomad-slate">
-            Topluluk kaynak paylasim panosu, mahallenizdeki kaynaklari koordine etmenize yardimci olur.
-            "Elimde Var" ilanlari fazla kaynaklarinizi listeler. "Ihtiyacim Var" ilanlari ihtiyac duyulan kaynaklari gosterir.
-            "Yardim Edebilirim" ilanlari sunabildiginiz becerileri listeler. "Bilgi" ilanlari bolge durumunu paylasir.
+            Topluluk kaynak paylaşım panosu, mahallenizdeki kaynakları koordine etmenize yardımcı olur.
+            "Elimde Var" ilanları fazla kaynaklarınızı listeler. "İhtiyacım Var" ilanları ihtiyaç duyulan kaynakları gösterir.
+            "Yardım Edebilirim" ilanları sunabildiğiniz becerileri listeler. "Bilgi" ilanları bölge durumunu paylaşır.
           </p>
           <p className="text-xs text-nomad-slate">
-            Ilanlar 24 saat sonra otomatik olarak sona erer. "Durum Guncelle" ile ilanlari tamamlandi olarak isaretleyebilirsiniz.
-            Tum veriler yerel olarak saklanir (localStorage).
+            İlanlar 24 saat sonra otomatik olarak sona erer. "Durum Güncelle" ile ilanları tamamlandı olarak işaretleyebilirsiniz.
+            Tüm veriler yerel olarak saklanır (localStorage).
           </p>
         </CardContent>
       </Card>

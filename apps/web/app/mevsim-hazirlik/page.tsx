@@ -23,57 +23,57 @@ interface MonthData {
   checklist: ChecklistItem[];
 }
 
-const MONTH_NAMES = ['Ocak', 'Subat', 'Mart', 'Nisan', 'Mayis', 'Haziran', 'Temmuz', 'Agustos', 'Eylul', 'Ekim', 'Kasim', 'Aralik'];
+const MONTH_NAMES = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 
 function getMonthChecklist(month: number): string[] {
   const checklists: Record<number, string[]> = {
     0: [ // January
-      'Isitma yakiti kontrolu', 'Boru izolasyonu kontrolu', 'Kis acil durum kitini hazirla', 'Pilleri kontrol et',
-      'Kalin giysileri hazirla', 'Buz kiricilar hazir mi', 'Acil isitma alternatifleri (mum, battaniye)', 'Su donmasi onlemi',
+      'Isıtma yakıtı kontrolü', 'Boru izolasyonu kontrolü', 'Kış acil durum kitini hazırla', 'Pilleri kontrol et',
+      'Kalın giysileri hazırla', 'Buz kırıcılar hazır mı', 'Acil ısıtma alternatifleri (mum, battaniye)', 'Su donması önlemi',
     ],
     1: [ // February
-      'Isitma yakiti kontrolu', 'Boru izolasyonu', 'Ilkbahar planlamasi basla', 'Pilleri kontrol et',
-      'Kis acil durum kitini devam', 'Yedek isitma kaynaklari', 'Su deposu donma kontrolu', 'Ilaclari kontrol et',
+      'Isıtma yakıtı kontrolü', 'Boru izolasyonu', 'İlkbahar planlamasına başla', 'Pilleri kontrol et',
+      'Kış acil durum kitine devam', 'Yedek ısıtma kaynakları', 'Su deposu donma kontrolü', 'İlaçları kontrol et',
     ],
     2: [ // March
-      'Kis-ilkbahar gecisi hazirliklari', 'Sel riski degerlendirmesi', 'Acil durum malzemelerini yenile', 'Pilleri kontrol et',
-      'Yagmur suyu toplama hazirliklari', 'Disari su borularini kontrol et', 'Cati oluklarini temizle', 'Acil durum planini guncelle',
+      'Kış-ilkbahar geçişi hazırlıkları', 'Sel riski değerlendirmesi', 'Acil durum malzemelerini yenile', 'Pilleri kontrol et',
+      'Yağmur suyu toplama hazırlıkları', 'Dışarı su borularını kontrol et', 'Çatı oluklarını temizle', 'Acil durum planını güncelle',
     ],
     3: [ // April
-      'Ilkbahar hazirliklari', 'Sel bolgelerini kontrol et', 'Bahce planlamasi', 'Acil durum kitini guncelle',
-      'Ilac dolabini kontrol et', 'Su depolarini temizle', 'Cati ve cephe kontrolu', 'Yangin son durucu kontrolu',
+      'İlkbahar hazırlıkları', 'Sel bölgelerini kontrol et', 'Bahçe planlaması', 'Acil durum kitini güncelle',
+      'İlaç dolabını kontrol et', 'Su depolarını temizle', 'Çatı ve cephe kontrolü', 'Yangın söndürücü kontrolü',
     ],
     4: [ // May
-      'Siddetli hava hazirliklari', 'Cati kontrolu', 'Yaz icin su stokla', 'Sivrisinek koruma hazirla',
-      'Gunes koruma urunleri kontrol et', 'Su tuketimini artirmaya basla', 'Ilac stoklarini kontrol et', 'Alternatif su kaynaklari belirle',
+      'Şiddetli hava hazırlıkları', 'Çatı kontrolü', 'Yaz için su stokla', 'Sivrisinek koruma hazırla',
+      'Güneş koruma ürünleri kontrol et', 'Su tüketimini artırmaya başla', 'İlaç stoklarını kontrol et', 'Alternatif su kaynakları belirle',
     ],
     5: [ // June
-      'Sicaklik hazirliklari', 'Sogutma sistemlerini kontrol et', 'Gunes koruma hazirla', 'Su tuketimini artir',
-      'Gida saklama kontrolu (bozulma riski)', 'Elektrik sistemlerini kontrol et', 'Yangin son durucu kontrol et', 'Acil durum kitini sicak hava icin guncelle',
+      'Sıcaklık hazırlıkları', 'Soğutma sistemlerini kontrol et', 'Güneş koruma hazırla', 'Su tüketimini artır',
+      'Gıda saklama kontrolü (bozulma riski)', 'Elektrik sistemlerini kontrol et', 'Yangın söndürücü kontrol et', 'Acil durum kitini sıcak hava için güncelle',
     ],
     6: [ // July
-      'Orman yangini riski degerlendirmesi', 'Sicak carpmasi onleme', 'Su koruma uygulamalari', 'Gida sogutma onlemleri',
-      'Yangin cikis yollari belirle', 'Serin barinak alani hazirla', 'Elektrolit stokla', 'Gunes kremlerini kontrol et',
+      'Orman yangını riski değerlendirmesi', 'Sıcak çarpması önleme', 'Su koruma uygulamaları', 'Gıda soğutma önlemleri',
+      'Yangın çıkış yolları belirle', 'Serin barınak alanı hazırla', 'Elektrolit stokla', 'Güneş kremlerini kontrol et',
     ],
     7: [ // August
-      'Malzemeleri devam ettir', 'Sonbahar hazirliklarina basla', 'Su stoklarini kontrol et', 'Isitma sistemlerini planla',
-      'Okul hazirliklari', 'Ilac dolabini kontrol et', 'Acil durum planini guncelle', 'Pilleri yenile',
+      'Malzemeleri devam ettir', 'Sonbahar hazırlıklarına başla', 'Su stoklarını kontrol et', 'Isıtma sistemlerini planla',
+      'Okul hazırlıkları', 'İlaç dolabını kontrol et', 'Acil durum planını güncelle', 'Pilleri yenile',
     ],
     8: [ // September
-      'Okula donus hazirliklari', 'Sonbahar gecisi', 'Isitma sistemlerini kontrol et', 'Acil durum kitini yenile',
-      'Yagmur mevsimi hazirliklari', 'Borularda donma kontrolu', 'Yedek yakit stokla', 'Kalin battaniye ve giysileri cikar',
+      'Okula dönüş hazırlıkları', 'Sonbahar geçişi', 'Isıtma sistemlerini kontrol et', 'Acil durum kitini yenile',
+      'Yağmur mevsimi hazırlıkları', 'Borularda donma kontrolü', 'Yedek yakıt stokla', 'Kalın battaniye ve giysileri çıkar',
     ],
     9: [ // October
-      'Isitma sistemi bakimi', 'Kis hazirliklari', 'Malzemeleri yenile', 'Yakit stokla',
-      'Boru izolasyonu', 'Acil durum kitini yenile', 'Pilleri kontrol et', 'Kis lastikleri ve zincir hazirla',
+      'Isıtma sistemi bakımı', 'Kış hazırlıkları', 'Malzemeleri yenile', 'Yakıt stokla',
+      'Boru izolasyonu', 'Acil durum kitini yenile', 'Pilleri kontrol et', 'Kış lastikleri ve zincir hazırla',
     ],
     10: [ // November
-      'Kis hazirliklari tamamla', 'Yakit stokla', 'Boru izolasyonu tamamla', 'Acil durum kitini yenile',
-      'Isitma alternatifleri hazirla', 'Jenerator varsa kontrol et', 'Gida stoklarini artir', 'Su depolarini donmaya karsi koru',
+      'Kış hazırlıkları tamamla', 'Yakıt stokla', 'Boru izolasyonu tamamla', 'Acil durum kitini yenile',
+      'Isıtma alternatifleri hazırla', 'Jeneratör varsa kontrol et', 'Gıda stoklarını artır', 'Su depolarını donmaya karşı koru',
     ],
     11: [ // December
-      'Tam kis modu', 'Bayram hazirliklari', 'Topluluk kontrolleri', 'Isitma yakiti kontrolu',
-      'Acil durum kitini kontrol et', 'Pilleri yenile', 'Kalin giysileri hazirla', 'Komlari kontrol et',
+      'Tam kış modu', 'Bayram hazırlıkları', 'Topluluk kontrolleri', 'Isıtma yakıtı kontrolü',
+      'Acil durum kitini kontrol et', 'Pilleri yenile', 'Kalın giysileri hazırla', 'Komşuları kontrol et',
     ],
   };
   return checklists[month] || [];
@@ -105,18 +105,18 @@ function getWeatherIcon(month: number): React.ReactNode {
 
 function getWeatherDescription(month: number): string {
   const descs = [
-    'Soguk, karli bolgeler. Sıcaklık -10C ila 10C.',
-    'Soguk devam, kar riski. Sicaklık -5C ila 12C.',
-    'Kis-ilkbahar gecisi. Yagmur ve sel riski. Sicaklık 0C ila 18C.',
-    'Ilkbahar, yagmurlu. Sel riski artar. Sicaklık 5C ila 22C.',
-    'Ilık, yagmurlu. Siddetli hava riski. Sicaklık 10C ila 28C.',
-    'Sicak basliyor. Gunesli gunler artar. Sicaklık 15C ila 35C.',
-    'Cok sicak. Kuraklik ve orman yangini riski. Sicaklık 20C ila 40C+.',
-    'Sicak devam, sonbahara gecis basliyor. Sicaklık 18C ila 38C.',
-    'Serinliyor, yagmur artar. Ruzgarli gunler. Sicaklık 10C ila 28C.',
-    'Serin, yagmurlu. Isitma sistemlerini calistir. Sicaklık 5C ila 20C.',
-    'Soguyor, ilk don riski. Kis hazirliklari tamamla. Sicaklık 0C ila 15C.',
-    'Soguk, karli bolgeler. Tam kis modu. Sicaklık -10C ila 10C.',
+    'Soğuk, karlı bölgeler. Sıcaklık -10C ila 10C.',
+    'Soğuk devam, kar riski. Sıcaklık -5C ila 12C.',
+    'Kış-ilkbahar geçişi. Yağmur ve sel riski. Sıcaklık 0C ila 18C.',
+    'İlkbahar, yağmurlu. Sel riski artar. Sıcaklık 5C ila 22C.',
+    'Ilık, yağmurlu. Şiddetli hava riski. Sıcaklık 10C ila 28C.',
+    'Sıcak başlıyor. Güneşli günler artar. Sıcaklık 15C ila 35C.',
+    'Çok sıcak. Kuraklık ve orman yangını riski. Sıcaklık 20C ila 40C+.',
+    'Sıcak devam, sonbahara geçiş başlıyor. Sıcaklık 18C ila 38C.',
+    'Serinliyor, yağmur artar. Rüzgarlı günler. Sıcaklık 10C ila 28C.',
+    'Serin, yağmurlu. Isıtma sistemlerini çalıştır. Sıcaklık 5C ila 20C.',
+    'Soğuyor, ilk don riski. Kış hazırlıkları tamamla. Sıcaklık 0C ila 15C.',
+    'Soğuk, karlı bölgeler. Tam kış modu. Sıcaklık -10C ila 10C.',
   ];
   return descs[month] || '';
 }
@@ -171,14 +171,14 @@ export default function MevsimHazirlikPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Calendar className="h-7 w-7 text-nomad-green" />
-            Mevsim Hazirlik Takvimi
+            Mevsim Hazırlık Takvimi
           </h1>
           <p className="text-nomad-slate text-sm">Seasonal Preparedness Calendar</p>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <CheckSquare className="h-4 w-4 mr-1" />
-            Yazdir
+            Yazdır
           </Button>
           <Button size="sm" onClick={handleSave}>
             <Save className="h-4 w-4 mr-1" />
@@ -294,11 +294,11 @@ export default function MevsimHazirlikPage() {
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Nasil Kullani / How to Use</h4>
+            <h4 className="text-sm font-medium">Nasıl Kullanılır / How to Use</h4>
           </div>
           <p className="text-sm text-nomad-slate">
-            Her ay icin ozel hazirlik listesi vardir. O gune ait gorevleri tamamlayin ve notlar ekleyin.
-            Tum veriler yerel olarak saklanir (localStorage). Yazdir butonu ile kontrol listesini yazdirabilirsiniz.
+            Her ay için özel hazırlık listesi vardır. O aya ait görevleri tamamlayın ve notlar ekleyin.
+            Tüm veriler yerel olarak saklanır (localStorage). Yazdır butonu ile kontrol listesini yazdırabilirsiniz.
           </p>
         </CardContent>
       </Card>
@@ -308,18 +308,18 @@ export default function MevsimHazirlikPage() {
 
 function getMonthRisks(month: number): string[] {
   const risks: Record<number, string[]> = {
-    0: ['Don', 'Kar', 'Buzlanma', 'Soguk', 'Boru donmasi', 'Isitma arizasi'],
-    1: ['Don', 'Kar', 'Buzlanma', 'Soguk', 'Grip sezonu'],
-    2: ['Sel', 'Siddetli yagmur', 'Don', 'Ruzgar', 'Toprak kaymasi'],
-    3: ['Sel', 'Siddetli yagmur', 'Dolu', 'Ruzgar', 'Yildirim'],
-    4: ['Siddetli firtina', 'Dolu', 'Sel', 'Yildirim', 'Sicak hava baslamasi'],
-    5: ['Sicak carpmasi', 'Kuraklik', 'Orman yangini', 'Siddetli sicaklik'],
-    6: ['Orman yangini', 'Sicak carpmasi', 'Kuraklik', 'Su kitligi', 'Siddetli sicaklik'],
-    7: ['Sicak carpmasi', 'Orman yangini', 'Kuraklik', 'Ani firtina'],
-    8: ['Siddetli yagmur', 'Sel', 'Ruzgar', 'Sicakligin dusmesi'],
-    9: ['Soguk hava', 'Yagmur', 'Ruzgar', 'Ilk don riski', 'Sel'],
-    10: ['Don', 'Kar', 'Soguk', 'Buzlanma', 'Firtina'],
-    11: ['Don', 'Kar', 'Soguk', 'Buzlanma', 'Ulasim sorunlari'],
+    0: ['Don', 'Kar', 'Buzlanma', 'Soğuk', 'Boru donması', 'Isıtma arızası'],
+    1: ['Don', 'Kar', 'Buzlanma', 'Soğuk', 'Grip sezonu'],
+    2: ['Sel', 'Şiddetli yağmur', 'Don', 'Rüzgar', 'Toprak kayması'],
+    3: ['Sel', 'Şiddetli yağmur', 'Dolu', 'Rüzgar', 'Yıldırım'],
+    4: ['Şiddetli fırtına', 'Dolu', 'Sel', 'Yıldırım', 'Sıcak hava başlaması'],
+    5: ['Sıcak çarpması', 'Kuraklık', 'Orman yangını', 'Şiddetli sıcaklık'],
+    6: ['Orman yangını', 'Sıcak çarpması', 'Kuraklık', 'Su kıtlığı', 'Şiddetli sıcaklık'],
+    7: ['Sıcak çarpması', 'Orman yangını', 'Kuraklık', 'Ani fırtına'],
+    8: ['Şiddetli yağmur', 'Sel', 'Rüzgar', 'Sıcaklığın düşmesi'],
+    9: ['Soğuk hava', 'Yağmur', 'Rüzgar', 'İlk don riski', 'Sel'],
+    10: ['Don', 'Kar', 'Soğuk', 'Buzlanma', 'Fırtına'],
+    11: ['Don', 'Kar', 'Soğuk', 'Buzlanma', 'Ulaşım sorunları'],
   };
   return risks[month] || [];
 }

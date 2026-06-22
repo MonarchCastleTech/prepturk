@@ -1,19 +1,29 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Chrome from '../components/Chrome';
 import '../app/globals.css';
 
 export const metadata: Metadata = {
   title: 'PrepTürk | Çevrimdışı Bilgi Komuta Merkezi',
   description: 'Türkiye için çevrimdışı mevzuat, acil durum ve eğitim kaynakları komuta merkezi',
+  applicationName: 'PrepTürk',
   manifest: '/manifest.json',
+  icons: {
+    icon: '/logo.svg',
+    apple: '/logo.svg',
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: '#10B981',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr" className="dark">
       <head>
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
       </head>
       <body 
         className="min-h-screen bg-nomad-bg font-sans text-foreground antialiased" 

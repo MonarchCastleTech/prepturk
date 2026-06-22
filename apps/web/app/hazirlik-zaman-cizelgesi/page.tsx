@@ -64,19 +64,19 @@ const PHASES: PhaseData[] = [
     id: 'phase-1',
     title: 'Faz 1: Saat 0-24',
     titleEn: 'Phase 1: Hours 0-24',
-    subtitle: 'ACIL / IMMEDIATE',
+    subtitle: 'ACİL / IMMEDIATE',
     subtitleEn: 'IMMEDIATE',
     icon: Zap,
     iconColor: 'text-red-400',
     items: [
       {
-        heading: 'Guvenlik Kontrolleri / Safety Checks',
+        heading: 'Güvenlik Kontrolleri / Safety Checks',
         headingEn: 'Safety Checks',
         points: [
-          'Gaz ve elektrik vanalarini kontrol et ve gerekirse kapat',
-          'Yapisal hasar olup olmadigini kontrol et',
-          'Kirik cam ve dokenmis esyalari temizle',
-          'Yangin cikma riskine karsi evi kontrol et',
+          'Gaz ve elektrik vanalarını kontrol et ve gerekirse kapat',
+          'Yapısal hasar olup olmadığını kontrol et',
+          'Kırık cam ve dökülmüş eşyaları temizle',
+          'Yangın çıkma riskine karşı evi kontrol et',
         ],
         pointsEn: [
           'Check gas and electric valves, shut off if needed',
@@ -84,23 +84,23 @@ const PHASES: PhaseData[] = [
           'Clean broken glass and spilled items',
           'Check house for fire risk',
         ],
-        warnings: ['Gaz kokusu alirsan hemen disari cik ve 112\'yi ara'],
+        warnings: ['Gaz kokusu alırsan hemen dışarı çık ve 112\'yi ara'],
         warningsEn: ['If you smell gas, leave immediately and call 112'],
         checklist: [
-          { id: 'p1-gas', text: 'Gaz vanasi kontrol edildi', textEn: 'Gas valve checked' },
-          { id: 'p1-electric', text: 'Elektrik sigortasi kontrol edildi', textEn: 'Electric breaker checked' },
-          { id: 'p1-structural', text: 'Yapisal hasar kontrolu yapildi', textEn: 'Structural damage checked' },
-          { id: 'p1-fire', text: 'Yangin riski kontrol edildi', textEn: 'Fire risk checked' },
+          { id: 'p1-gas', text: 'Gaz vanası kontrol edildi', textEn: 'Gas valve checked' },
+          { id: 'p1-electric', text: 'Elektrik sigortası kontrol edildi', textEn: 'Electric breaker checked' },
+          { id: 'p1-structural', text: 'Yapısal hasar kontrolü yapıldı', textEn: 'Structural damage checked' },
+          { id: 'p1-fire', text: 'Yangın riski kontrol edildi', textEn: 'Fire risk checked' },
         ],
       },
       {
         heading: 'Su Toplama / Water Collection',
         headingEn: 'Water Collection',
         points: [
-          'Banyo kuvetini ve tum kaplarini suyla doldur',
-          'Sise sularini kontrol et',
-          'Su aritma yontemlerini hazirla (kaynatma, bleach)',
-          'Her kisi icin en az 3 litre icme suyu ayir',
+          'Banyo küvetini ve tüm kaplarını suyla doldur',
+          'Şişe sularını kontrol et',
+          'Su arıtma yöntemlerini hazırla (kaynatma, çamaşır suyu)',
+          'Her kişi için en az 3 litre içme suyu ayır',
         ],
         pointsEn: [
           'Fill bathtub and all containers with water',
@@ -109,20 +109,20 @@ const PHASES: PhaseData[] = [
           'Set aside at least 3 liters drinking water per person',
         ],
         checklist: [
-          { id: 'p1-bathtub', text: 'Kuvet dolduruldu', textEn: 'Bathtub filled' },
-          { id: 'p1-bottles', text: 'Sise sulari kontrol edildi', textEn: 'Bottled water checked' },
-          { id: 'p1-purify', text: 'Aritma malzemeleri hazir', textEn: 'Purification supplies ready' },
-          { id: 'p1-drinking', text: '3L/kisi icme suyu ayrildi', textEn: '3L/person drinking water set aside' },
+          { id: 'p1-bathtub', text: 'Küvet dolduruldu', textEn: 'Bathtub filled' },
+          { id: 'p1-bottles', text: 'Şişe suları kontrol edildi', textEn: 'Bottled water checked' },
+          { id: 'p1-purify', text: 'Arıtma malzemeleri hazır', textEn: 'Purification supplies ready' },
+          { id: 'p1-drinking', text: '3L/kişi içme suyu ayrıldı', textEn: '3L/person drinking water set aside' },
         ],
       },
       {
-        heading: 'Iletisim / Communication',
+        heading: 'İletişim / Communication',
         headingEn: 'Communication',
         points: [
           '112\'yi ara, durumu bildir',
-          'Aile uyeleriyle iletisim kur',
-          'Bolge toplama alanini belirle',
-          'Komsularla iletisime gec',
+          'Aile üyeleriyle iletişim kur',
+          'Bölge toplama alanını belirle',
+          'Komşularla iletişime geç',
         ],
         pointsEn: [
           'Call 112, report the situation',
@@ -131,21 +131,21 @@ const PHASES: PhaseData[] = [
           'Reach out to neighbors',
         ],
         checklist: [
-          { id: 'p1-112', text: '112 arandi', textEn: 'Called 112' },
-          { id: 'p1-family', text: 'Aile ile iletisim kuruldu', textEn: 'Contacted family' },
-          { id: 'p1-meetup', text: 'Toplasma alani belirlendi', textEn: 'Gathering point determined' },
-          { id: 'p1-neighbors', text: 'Komsularla iletisim', textEn: 'Contacted neighbors' },
+          { id: 'p1-112', text: '112 arandı', textEn: 'Called 112' },
+          { id: 'p1-family', text: 'Aile ile iletişim kuruldu', textEn: 'Contacted family' },
+          { id: 'p1-meetup', text: 'Toplaşma alanı belirlendi', textEn: 'Gathering point determined' },
+          { id: 'p1-neighbors', text: 'Komşularla iletişim', textEn: 'Contacted neighbors' },
         ],
       },
       {
-        heading: 'Acil Durum Cantasi / Emergency Kit',
+        heading: 'Acil Durum Çantası / Emergency Kit',
         headingEn: 'Emergency Kit',
         points: [
-          'El feneri ve yedek pilleri hazirla',
-          'Ilk yardim cantasini kontrol et',
-          'Onemli belgeleri (kimlik, sigorta) cantaya koy',
-          'Nakit para hazirla (ATM calismayabilir)',
-          'Acil durum cantasini al ve hazir tut',
+          'El feneri ve yedek pilleri hazırla',
+          'İlk yardım çantasını kontrol et',
+          'Önemli belgeleri (kimlik, sigorta) çantaya koy',
+          'Nakit para hazırla (ATM çalışmayabilir)',
+          'Acil durum çantasını al ve hazır tut',
         ],
         pointsEn: [
           'Prepare flashlight and spare batteries',
@@ -155,18 +155,18 @@ const PHASES: PhaseData[] = [
           'Take emergency bag and keep ready',
         ],
         checklist: [
-          { id: 'p1-flashlight', text: 'El feneri ve piller hazir', textEn: 'Flashlight and batteries ready' },
-          { id: 'p1-firstaid', text: 'Ilk yardim cantasi kontrol edildi', textEn: 'First aid kit checked' },
-          { id: 'p1-docs', text: 'Onemli belgeler cantada', textEn: 'Important documents in bag' },
-          { id: 'p1-cash', text: 'Nakit para hazir', textEn: 'Cash ready' },
-          { id: 'p1-bag', text: 'Acil durum cantasi hazir', textEn: 'Emergency bag ready' },
+          { id: 'p1-flashlight', text: 'El feneri ve piller hazır', textEn: 'Flashlight and batteries ready' },
+          { id: 'p1-firstaid', text: 'İlk yardım çantası kontrol edildi', textEn: 'First aid kit checked' },
+          { id: 'p1-docs', text: 'Önemli belgeler çantada', textEn: 'Important documents in bag' },
+          { id: 'p1-cash', text: 'Nakit para hazır', textEn: 'Cash ready' },
+          { id: 'p1-bag', text: 'Acil durum çantası hazır', textEn: 'Emergency bag ready' },
         ],
       },
     ],
   },
   {
     id: 'phase-2',
-    title: 'Faz 2: Gun 2-3',
+    title: 'Faz 2: Gün 2-3',
     titleEn: 'Phase 2: Days 2-3',
     subtitle: 'SU RASYONLAMASI / WATER RATIONING',
     subtitleEn: 'WATER RATIONING',
@@ -174,13 +174,13 @@ const PHASES: PhaseData[] = [
     iconColor: 'text-blue-400',
     items: [
       {
-        heading: 'Su Yonetimi / Water Management',
+        heading: 'Su Yönetimi / Water Management',
         headingEn: 'Water Management',
         points: [
-          'Su rasyonlamasi basla: kisi basi 3L icme + 2L temizlik',
-          'Yagmur suyu toplamak icin kaplar hazirla',
-          'Elleri yikamak icin az su kullan (6 saniye kurali)',
-          'Tuvalete sifon calismazsa kova suyu kullan',
+          'Su rasyonlaması başlat: kişi başı 3L içme + 2L temizlik',
+          'Yağmur suyu toplamak için kaplar hazırla',
+          'Elleri yıkamak için az su kullan (6 saniye kuralı)',
+          'Tuvalete sifon çalışmazsa kova suyu kullan',
         ],
         pointsEn: [
           'Start water rationing: 3L drinking + 2L cleaning per person',
@@ -188,22 +188,22 @@ const PHASES: PhaseData[] = [
           'Use minimal water for hand washing (6 second rule)',
           'Use bucket water for toilet if flush does not work',
         ],
-        warnings: ['Kirli su icme, mutlaka kaynat veya arit'],
+        warnings: ['Kirli su içme, mutlaka kaynat veya arıt'],
         warningsEn: ['Do not drink dirty water, always boil or purify'],
         checklist: [
-          { id: 'p2-ration', text: 'Su rasyonlamasi basladi', textEn: 'Water rationing started' },
-          { id: 'p2-rain', text: 'Yagmur suyu toplama hazir', textEn: 'Rainwater collection ready' },
-          { id: 'p2-toilet', text: 'Tuvalet icin kova hazir', textEn: 'Bucket ready for toilet' },
+          { id: 'p2-ration', text: 'Su rasyonlaması başladı', textEn: 'Water rationing started' },
+          { id: 'p2-rain', text: 'Yağmur suyu toplama hazır', textEn: 'Rainwater collection ready' },
+          { id: 'p2-toilet', text: 'Tuvalet için kova hazır', textEn: 'Bucket ready for toilet' },
         ],
       },
       {
-        heading: 'Gida Yonetimi / Food Management',
+        heading: 'Gıda Yönetimi / Food Management',
         headingEn: 'Food Management',
         points: [
-          'Yiyecek stoklarini kontrol et',
-          'Bozulabilirleri once tuket (et, sut urunleri)',
-          'Buzdolabini minimum ac',
-          'Konserve ve kuru gidalari koru',
+          'Yiyecek stoklarını kontrol et',
+          'Bozulabilirleri önce tüket (et, süt ürünleri)',
+          'Buzdolabını minimum aç',
+          'Konserve ve kuru gıdaları koru',
         ],
         pointsEn: [
           'Check food supplies',
@@ -212,19 +212,19 @@ const PHASES: PhaseData[] = [
           'Protect canned and dry foods',
         ],
         checklist: [
-          { id: 'p2-food-inventory', text: 'Gida stoku sayildi', textEn: 'Food inventory counted' },
-          { id: 'p2-perishables', text: 'Bozulabilirler once tuketildi', textEn: 'Perishables consumed first' },
-          { id: 'p2-fridge', text: 'Buzdolabi minimum aciliyor', textEn: 'Fridge opened minimally' },
+          { id: 'p2-food-inventory', text: 'Gıda stoku sayıldı', textEn: 'Food inventory counted' },
+          { id: 'p2-perishables', text: 'Bozulabilirler önce tüketildi', textEn: 'Perishables consumed first' },
+          { id: 'p2-fridge', text: 'Buzdolabı minimum açılıyor', textEn: 'Fridge opened minimally' },
         ],
       },
       {
         heading: 'Topluluk ve Finans / Community & Finance',
         headingEn: 'Community & Finance',
         points: [
-          'Komsularla iletisim kur, durum paylas',
-          'Nakit parayi hazirla (ATM calismayabilir)',
-          'Bolge muhtariyla iletisime gec',
-          'Takas icin degerli esyalari belirle',
+          'Komşularla iletişim kur, durum paylaş',
+          'Nakit parayı hazırla (ATM çalışmayabilir)',
+          'Bölge muhtarıyla iletişime geç',
+          'Takas için değerli eşyaları belirle',
         ],
         pointsEn: [
           'Contact neighbors, share situation',
@@ -233,30 +233,30 @@ const PHASES: PhaseData[] = [
           'Identify valuable items for barter',
         ],
         checklist: [
-          { id: 'p2-neighbors', text: 'Komsularla iletisim', textEn: 'Contacted neighbors' },
-          { id: 'p2-cash', text: 'Nakit para hazir', textEn: 'Cash ready' },
-          { id: 'p2-mukhtar', text: 'Muhtarla iletisim', textEn: 'Contacted muhtar' },
+          { id: 'p2-neighbors', text: 'Komşularla iletişim', textEn: 'Contacted neighbors' },
+          { id: 'p2-cash', text: 'Nakit para hazır', textEn: 'Cash ready' },
+          { id: 'p2-mukhtar', text: 'Muhtarla iletişim', textEn: 'Contacted muhtar' },
         ],
       },
     ],
   },
   {
     id: 'phase-3',
-    title: 'Faz 3: Gun 4-7',
+    title: 'Faz 3: Gün 4-7',
     titleEn: 'Phase 3: Days 4-7',
-    subtitle: 'GIDA VE HIJYEN / FOOD & HYGIENE',
+    subtitle: 'GIDA VE HİJYEN / FOOD & HYGIENE',
     subtitleEn: 'FOOD & HYGIENE',
     icon: Utensils,
     iconColor: 'text-amber-400',
     items: [
       {
-        heading: 'Gida Stratijisi / Food Strategy',
+        heading: 'Gıda Stratejisi / Food Strategy',
         headingEn: 'Food Strategy',
         points: [
-          'Once bozulabilirler, sonra konserve, sonra kuru gida tuket',
-          'Konserve acildiktan sonra hemen tuket',
-          'Kuru gidalari (pirinc, makarna, bulgur) rationla',
-          'Aci baharatlari az kullan (su ihtiyaci artirir)',
+          'Önce bozulabilirler, sonra konserve, sonra kuru gıda tüket',
+          'Konserve açıldıktan sonra hemen tüket',
+          'Kuru gıdaları (pirinç, makarna, bulgur) rasyonla',
+          'Acı baharatları az kullan (su ihtiyacını artırır)',
         ],
         pointsEn: [
           'Consume perishables first, then canned, then dry food',
@@ -264,22 +264,22 @@ const PHASES: PhaseData[] = [
           'Ration dry foods (rice, pasta, bulgur)',
           'Use spicy spices sparingly (increases water need)',
         ],
-        warnings: ['Sismis veya kokusuz gida tuketme, botulism riski'],
+        warnings: ['Şişmiş veya kokusuz gıda tüketme, botulizm riski'],
         warningsEn: ['Do not consume swollen or odorless food, botulism risk'],
         checklist: [
-          { id: 'p3-food-order', text: 'Gida tuketim sirasi belirlendi', textEn: 'Food consumption order determined' },
-          { id: 'p3-canned', text: 'Konserve yonetimi uygulamasi', textEn: 'Canned food management applied' },
-          { id: 'p3-dry', text: 'Kuru gida rasyonu basladi', textEn: 'Dry food rationing started' },
+          { id: 'p3-food-order', text: 'Gıda tüketim sırası belirlendi', textEn: 'Food consumption order determined' },
+          { id: 'p3-canned', text: 'Konserve yönetimi uygulaması', textEn: 'Canned food management applied' },
+          { id: 'p3-dry', text: 'Kuru gıda rasyonu başladı', textEn: 'Dry food rationing started' },
         ],
       },
       {
-        heading: 'Hijyen ve Saglik / Hygiene & Health',
+        heading: 'Hijyen ve Sağlık / Hygiene & Health',
         headingEn: 'Hygiene & Health',
         points: [
-          'El yikama kritik, hastalik hizla yayilir',
-          'Alkol bazli el dezenfektani kullan',
-          'Copleri disarida sakla, hayvanlardan uzak tut',
-          'Kisisel hijyene dikkat et',
+          'El yıkama kritik, hastalık hızla yayılır',
+          'Alkol bazlı el dezenfektanı kullan',
+          'Çöpleri dışarıda sakla, hayvanlardan uzak tut',
+          'Kişisel hijyene dikkat et',
         ],
         pointsEn: [
           'Hand washing is critical, disease spreads fast',
@@ -288,19 +288,19 @@ const PHASES: PhaseData[] = [
           'Pay attention to personal hygiene',
         ],
         checklist: [
-          { id: 'p3-hands', text: 'El yikama duzeni kuruldu', textEn: 'Hand washing routine established' },
-          { id: 'p3-sanitizer', text: 'Dezenfektan kullanimi', textEn: 'Sanitizer usage' },
-          { id: 'p3-trash', text: 'Cop yonetimi uygulamasi', textEn: 'Trash management applied' },
+          { id: 'p3-hands', text: 'El yıkama düzeni kuruldu', textEn: 'Hand washing routine established' },
+          { id: 'p3-sanitizer', text: 'Dezenfektan kullanımı', textEn: 'Sanitizer usage' },
+          { id: 'p3-trash', text: 'Çöp yönetimi uygulaması', textEn: 'Trash management applied' },
         ],
       },
       {
-        heading: 'Isinma ve Guvenlik / Heating & Security',
+        heading: 'Isınma ve Güvenlik / Heating & Security',
         headingEn: 'Heating & Security',
         points: [
-          'Guvenli isinma yontemleri uygula',
-          'CO zehirlenmesi riskine karsi havalandirma yap',
-          'Kapilari kilitle, degerli esyalari koru',
-          'Gece nobet sistemi kur (buyuk topluluklarda)',
+          'Güvenli ısınma yöntemleri uygula',
+          'CO zehirlenmesi riskine karşı havalandırma yap',
+          'Kapıları kilitle, değerli eşyaları koru',
+          'Gece nöbet sistemi kur (büyük topluluklarda)',
         ],
         pointsEn: [
           'Apply safe heating methods',
@@ -308,12 +308,12 @@ const PHASES: PhaseData[] = [
           'Lock doors, protect valuables',
           'Set up night watch system (in large groups)',
         ],
-        warnings: ['Karbonmonoks kokusuzdur! Bas agrisi, bulanti bas donmesi belirtileri'],
+        warnings: ['Karbonmonoksit kokusuzdur! Baş ağrısı, bulantı, baş dönmesi belirtileri'],
         warningsEn: ['Carbon monoxide is odorless! Headache, nausea, dizziness are symptoms'],
         checklist: [
-          { id: 'p3-heating', text: 'Guvenli isinma saglandi', textEn: 'Safe heating ensured' },
-          { id: 'p3-ventilation', text: 'Havalandirma kontrolu', textEn: 'Ventilation checked' },
-          { id: 'p3-security', text: 'Guvenlik onlemleri alindi', textEn: 'Security measures taken' },
+          { id: 'p3-heating', text: 'Güvenli ısınma sağlandı', textEn: 'Safe heating ensured' },
+          { id: 'p3-ventilation', text: 'Havalandırma kontrolü', textEn: 'Ventilation checked' },
+          { id: 'p3-security', text: 'Güvenlik önlemleri alındı', textEn: 'Security measures taken' },
         ],
       },
     ],
@@ -331,10 +331,10 @@ const PHASES: PhaseData[] = [
         heading: 'Topluluk Organizasyonu / Community Organization',
         headingEn: 'Community Organization',
         points: [
-          'Muhtar ve gonullulerle organizasyon kur',
-          'Gorev dagilimi yap (guvenlik, gida, su, saglik)',
-          'Duzenli toplantilar yap',
-          'Bilgi paylasim sistemi kur (pano, sozlu duyuru)',
+          'Muhtar ve gönüllülerle organizasyon kur',
+          'Görev dağılımı yap (güvenlik, gıda, su, sağlık)',
+          'Düzenli toplantılar yap',
+          'Bilgi paylaşım sistemi kur (pano, sözlü duyuru)',
         ],
         pointsEn: [
           'Organize with muhtar and volunteers',
@@ -344,19 +344,19 @@ const PHASES: PhaseData[] = [
         ],
         checklist: [
           { id: 'p4-org', text: 'Topluluk organizasyonu kuruldu', textEn: 'Community organization established' },
-          { id: 'p4-roles', text: 'Gorev dagilimi yapildi', textEn: 'Role assignments made' },
-          { id: 'p4-meetings', text: 'Duzenli toplantilar basladi', textEn: 'Regular meetings started' },
-          { id: 'p4-info', text: 'Bilgi paylasim sistemi aktif', textEn: 'Info sharing system active' },
+          { id: 'p4-roles', text: 'Görev dağılımı yapıldı', textEn: 'Role assignments made' },
+          { id: 'p4-meetings', text: 'Düzenli toplantılar başladı', textEn: 'Regular meetings started' },
+          { id: 'p4-info', text: 'Bilgi paylaşım sistemi aktif', textEn: 'Info sharing system active' },
         ],
       },
       {
-        heading: 'Su Kaynaklari / Water Sources',
+        heading: 'Su Kaynakları / Water Sources',
         headingEn: 'Water Sources',
         points: [
-          'Yagmur suyu toplama sistemleri kur',
-          'Suyu her zaman kaynat veya arit',
-          'Dogal su kaynaklarini belirle (dere, gol)',
-          'Ciy yogusturma yontemini dene (acil durumda)',
+          'Yağmur suyu toplama sistemleri kur',
+          'Suyu her zaman kaynat veya arıt',
+          'Doğal su kaynaklarını belirle (dere, göl)',
+          'Çiy yoğuşturma yöntemini dene (acil durumda)',
         ],
         pointsEn: [
           'Set up rainwater collection systems',
@@ -364,22 +364,22 @@ const PHASES: PhaseData[] = [
           'Identify natural water sources (stream, lake)',
           'Try dew condensation method (in emergencies)',
         ],
-        warnings: ['Dogal su kaynaklarini mutlaka arit'],
+        warnings: ['Doğal su kaynaklarını mutlaka arıt'],
         warningsEn: ['Always purify natural water sources'],
         checklist: [
-          { id: 'p4-rain', text: 'Yagmur suyu sistemi kuruldu', textEn: 'Rainwater system set up' },
-          { id: 'p4-purify', text: 'Su aritma surekli uygulanuyor', textEn: 'Water purification consistently applied' },
-          { id: 'p4-sources', text: 'Dogal su kaynaklari belirlendi', textEn: 'Natural water sources identified' },
+          { id: 'p4-rain', text: 'Yağmur suyu sistemi kuruldu', textEn: 'Rainwater system set up' },
+          { id: 'p4-purify', text: 'Su arıtma sürekli uygulanıyor', textEn: 'Water purification consistently applied' },
+          { id: 'p4-sources', text: 'Doğal su kaynakları belirlendi', textEn: 'Natural water sources identified' },
         ],
       },
       {
-        heading: 'Gida ve Saglik / Food & Health',
+        heading: 'Gıda ve Sağlık / Food & Health',
         headingEn: 'Food & Health',
         points: [
-          'Yerel tarim ve bahce aktiviteleri basla',
-          'Temel ilk yardim bilgisini uygula',
-          'Ilaclari stok kontrolu yap, rationla',
-          'Radyo dinle, resmi duyurulari takip et',
+          'Yerel tarım ve bahçe aktivitelerine başla',
+          'Temel ilk yardım bilgisini uygula',
+          'İlaçların stok kontrolünü yap, rasyonla',
+          'Radyo dinle, resmi duyuruları takip et',
         ],
         pointsEn: [
           'Start local farming and garden activities',
@@ -388,8 +388,8 @@ const PHASES: PhaseData[] = [
           'Listen to radio, follow official announcements',
         ],
         checklist: [
-          { id: 'p4-garden', text: 'Bahce aktiviteleri basladi', textEn: 'Garden activities started' },
-          { id: 'p4-meds', text: 'Ilaclari stok kontrolu', textEn: 'Medicine stock checked' },
+          { id: 'p4-garden', text: 'Bahçe aktiviteleri başladı', textEn: 'Garden activities started' },
+          { id: 'p4-meds', text: 'İlaçların stok kontrolü', textEn: 'Medicine stock checked' },
           { id: 'p4-radio', text: 'Radyo takibi aktif', textEn: 'Radio monitoring active' },
         ],
       },
@@ -405,13 +405,13 @@ const PHASES: PhaseData[] = [
     iconColor: 'text-emerald-400',
     items: [
       {
-        heading: 'Tarim ve Gida / Agriculture & Food',
+        heading: 'Tarım ve Gıda / Agriculture & Food',
         headingEn: 'Agriculture & Food',
         points: [
           'Mevsime uygun ekim yap (ilkbahar: domates, biber; sonbahar: lahana, pancar)',
-          'Hizli buyuyen sebzeler: marul, turp, ispanak (30-45 gun)',
-          'Takas ekonomisi: adil degerler belirle',
-          'Gida koruma yontemlerini uygula (kurutma, tuzlama, fermantasyon)',
+          'Hızlı büyüyen sebzeler: marul, turp, ıspanak (30-45 gün)',
+          'Takas ekonomisi: adil değerler belirle',
+          'Gıda koruma yöntemlerini uygula (kurutma, tuzlama, fermantasyon)',
         ],
         pointsEn: [
           'Plant according to season (spring: tomatoes, peppers; fall: cabbage, beets)',
@@ -420,20 +420,20 @@ const PHASES: PhaseData[] = [
           'Apply food preservation methods (drying, salting, fermentation)',
         ],
         checklist: [
-          { id: 'p5-planting', text: 'Mevsime uygun ekim yapildi', textEn: 'Season-appropriate planting done' },
+          { id: 'p5-planting', text: 'Mevsime uygun ekim yapıldı', textEn: 'Season-appropriate planting done' },
           { id: 'p5-barter', text: 'Takas sistemi kuruldu', textEn: 'Barter system established' },
-          { id: 'p5-preserve', text: 'Gida koruma uygulanıyor', textEn: 'Food preservation being applied' },
+          { id: 'p5-preserve', text: 'Gıda koruma uygulanıyor', textEn: 'Food preservation being applied' },
         ],
       },
       {
-        heading: 'Egitim ve Psikolojik Saglik / Education & Mental Health',
+        heading: 'Eğitim ve Psikolojik Sağlık / Education & Mental Health',
         headingEn: 'Education & Mental Health',
         points: [
-          'Cocuklar icin egitim aktiviteleri duzenle',
-          'Hikaye anlatma, sarkı soyleme, oyun oynama',
-          'Morali yuksek tut, umutlu ol',
-          'Topluluk aktiviteleri duzenle',
-          'Stres yonetimi tekniklerini uygula',
+          'Çocuklar için eğitim aktiviteleri düzenle',
+          'Hikaye anlatma, şarkı söyleme, oyun oynama',
+          'Morali yüksek tut, umutlu ol',
+          'Topluluk aktiviteleri düzenle',
+          'Stres yönetimi tekniklerini uygula',
         ],
         pointsEn: [
           'Organize educational activities for children',
@@ -443,19 +443,19 @@ const PHASES: PhaseData[] = [
           'Apply stress management techniques',
         ],
         checklist: [
-          { id: 'p5-kids', text: 'Cocuk aktiviteleri duzenlendi', textEn: 'Kids activities organized' },
-          { id: 'p5-morale', text: 'Topluluk morali yuksek', textEn: 'Community morale is high' },
+          { id: 'p5-kids', text: 'Çocuk aktiviteleri düzenlendi', textEn: 'Kids activities organized' },
+          { id: 'p5-morale', text: 'Topluluk morali yüksek', textEn: 'Community morale is high' },
           { id: 'p5-activities', text: 'Topluluk aktiviteleri aktif', textEn: 'Community activities active' },
         ],
       },
       {
-        heading: 'Devlet Yardimi / Government Aid',
+        heading: 'Devlet Yardımı / Government Aid',
         headingEn: 'Government Aid',
         points: [
-          'AFAD duyurularini takip et',
-          'Kizilay yardim dagitim noktalarini ogren',
-          'Valilik ve kaymakamlik duyurularini takip et',
-          'Yardim basvurularini yap',
+          'AFAD duyurularını takip et',
+          'Kızılay yardım dağıtım noktalarını öğren',
+          'Valilik ve kaymakamlık duyurularını takip et',
+          'Yardım başvurularını yap',
         ],
         pointsEn: [
           'Follow AFAD announcements',
@@ -464,9 +464,9 @@ const PHASES: PhaseData[] = [
           'Submit aid applications',
         ],
         checklist: [
-          { id: 'p5-afad', text: 'AFAD duyurulari takip ediliyor', textEn: 'AFAD announcements being followed' },
-          { id: 'p5-redcrescent', text: 'Kizilay noktasi belirlendi', textEn: 'Red Crescent point identified' },
-          { id: 'p5-application', text: 'Yardim basvurusu yapildi', textEn: 'Aid application submitted' },
+          { id: 'p5-afad', text: 'AFAD duyuruları takip ediliyor', textEn: 'AFAD announcements being followed' },
+          { id: 'p5-redcrescent', text: 'Kızılay noktası belirlendi', textEn: 'Red Crescent point identified' },
+          { id: 'p5-application', text: 'Yardım başvurusu yapıldı', textEn: 'Aid application submitted' },
         ],
       },
     ],
@@ -513,13 +513,13 @@ function PhaseCard({ phase }: { phase: PhaseData }) {
           </div>
           <button onClick={printPhase} className="btn-secondary flex items-center gap-2 no-print">
             <Printer className="h-4 w-4" />
-            Yazdir / Print
+            Yazdır / Print
           </button>
         </div>
         {totalChecks > 0 && (
           <div className="mt-3">
             <div className="flex items-center justify-between text-sm text-nomad-slate mb-1">
-              <span>Ilerleme / Progress</span>
+              <span>İlerleme / Progress</span>
               <span>{checkedCount}/{totalChecks}</span>
             </div>
             <div className="w-full bg-nomad-border rounded-full h-2">
@@ -633,7 +633,7 @@ export default function HazirlikZamanCizelgesiPage() {
       <div className="mx-auto max-w-4xl">
         <header className="mb-6">
           <h1 className="text-3xl font-bold text-nomad-green mb-1">
-            Hazirlik Zaman Cizelgesi
+            Hazırlık Zaman Çizelgesi
           </h1>
           <p className="text-nomad-slate text-sm">
             Extended Outage Timeline Planner -- what to expect and do during power outages
@@ -645,7 +645,7 @@ export default function HazirlikZamanCizelgesiPage() {
             <AlertTriangle className="h-5 w-5 text-amber-400 mt-0.5 shrink-0" />
             <div>
               <p className="text-amber-300 text-sm font-medium">
-                Bu cizelge genel rehberlik icindir. Gercek durumlarda kosullar degisebilir.
+                Bu çizelge genel rehberlik içindir. Gerçek durumlarda koşullar değişebilir.
               </p>
               <p className="text-amber-400 text-xs mt-1">
                 This timeline is for general guidance. Real conditions may vary.

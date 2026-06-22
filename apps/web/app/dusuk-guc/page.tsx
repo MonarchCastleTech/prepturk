@@ -10,12 +10,12 @@ import Link from 'next/link';
 
 // Emergency numbers for the "Before Battery Dies" summary
 const EMERGENCY_NUMBERS = [
-  { name: 'Acil Cagri', nameEn: 'Emergency Call', number: '112', icon: Phone, color: 'text-red-400' },
+  { name: 'Acil Çağrı', nameEn: 'Emergency Call', number: '112', icon: Phone, color: 'text-red-400' },
   { name: 'Polis', nameEn: 'Police', number: '155', icon: Shield, color: 'text-blue-400' },
-  { name: 'Itfaiye', nameEn: 'Fire Department', number: '110', icon: AlertTriangle, color: 'text-amber-400' },
+  { name: 'İtfaiye', nameEn: 'Fire Department', number: '110', icon: AlertTriangle, color: 'text-amber-400' },
   { name: 'Ambulans', nameEn: 'Ambulance', number: '112', icon: Heart, color: 'text-red-400' },
   { name: 'Jandarma', nameEn: 'Gendarmerie', number: '156', icon: Shield, color: 'text-blue-400' },
-  { name: 'Sahil Guvenlik', nameEn: 'Coast Guard', number: '158', icon: Shield, color: 'text-blue-400' },
+  { name: 'Sahil Güvenlik', nameEn: 'Coast Guard', number: '158', icon: Shield, color: 'text-blue-400' },
   { name: 'AFAD', nameEn: 'Disaster Authority', number: '112', icon: Users, color: 'text-nomad-green' },
 ];
 
@@ -52,13 +52,13 @@ function getBatteryTextColor(level: number): string {
 }
 
 function getEstimatedHours(level: number, charging: boolean): string {
-  if (charging) return 'Sarj oluyor -- sure yok';
+  if (charging) return 'Şarj oluyor -- süre yok';
   const drainRate = 12; // percent per hour typical usage
   const hours = (level / drainRate);
   const h = Math.floor(hours);
   const m = Math.round((hours - h) * 60);
-  if (h <= 0) return `${m} dakika kaldi`;
-  return `~${h} saat ${m} dakika tahmini sure`;
+  if (h <= 0) return `${m} dakika kaldı`;
+  return `~${h} saat ${m} dakika tahmini süre`;
 }
 
 function loadHealthProfile(): HealthProfile | null {
@@ -149,7 +149,7 @@ export default function DusukGucPage() {
     const now = formatNow();
 
     let html = `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
-    <title>PrepTurk - Kritik Bilgi Ozeti</title>
+    <title>PrepTürk - Kritik Bilgi Özeti</title>
     <style>
       body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #000; }
       h1 { font-size: 24px; border-bottom: 3px solid #000; padding-bottom: 10px; }
@@ -164,46 +164,46 @@ export default function DusukGucPage() {
       @media print { body { margin: 0; } }
     </style></head><body>`;
 
-    html += `<h1>PrepTurk -- Kritik Bilgi Ozeti</h1>`;
-    html += `<p>Olusturma tarihi: ${now}</p>`;
+    html += `<h1>PrepTürk -- Kritik Bilgi Özeti</h1>`;
+    html += `<p>Oluşturma tarihi: ${now}</p>`;
 
-    html += `<div class="emergency"><strong>ACIL NUMARALAR / EMERGENCY NUMBERS</strong><br>`;
-    html += `<span>112 Acil</span><span>155 Polis</span><span>110 Itfaiye</span><span>156 Jandarma</span><span>158 Sahil Guvenlik</span>`;
+    html += `<div class="emergency"><strong>ACİL NUMARALAR / EMERGENCY NUMBERS</strong><br>`;
+    html += `<span>112 Acil</span><span>155 Polis</span><span>110 İtfaiye</span><span>156 Jandarma</span><span>158 Sahil Güvenlik</span>`;
     html += `</div>`;
 
     if (health) {
-      html += `<h2>Saglik Profili / Health Profile</h2>`;
+      html += `<h2>Sağlık Profili / Health Profile</h2>`;
       html += `<table>`;
-      if (health.name) html += `<tr><th>Isim</th><td>${health.name}</td></tr>`;
+      if (health.name) html += `<tr><th>İsim</th><td>${health.name}</td></tr>`;
       if (health.bloodType) html += `<tr><th>Kan Grubu</th><td>${health.bloodType}</td></tr>`;
       if (health.allergies && health.allergies.length > 0) html += `<tr><th>Alerjiler</th><td>${health.allergies.join(', ')}</td></tr>`;
-      if (health.conditions && health.conditions.length > 0) html += `<tr><th>Rahatsizliklar</th><td>${health.conditions.join(', ')}</td></tr>`;
+      if (health.conditions && health.conditions.length > 0) html += `<tr><th>Rahatsızlıklar</th><td>${health.conditions.join(', ')}</td></tr>`;
       if (health.medications && health.medications.length > 0) {
-        html += `<tr><th>Ilaclar</th><td>${health.medications.map(m => `${m.name} (${m.dosage})`).join('; ')}</td></tr>`;
+        html += `<tr><th>İlaçlar</th><td>${health.medications.map(m => `${m.name} (${m.dosage})`).join('; ')}</td></tr>`;
       }
-      if (health.emergencyContact) html += `<tr><th>Acil Iletisim</th><td>${health.emergencyContact}</td></tr>`;
+      if (health.emergencyContact) html += `<tr><th>Acil İletişim</th><td>${health.emergencyContact}</td></tr>`;
       html += `</table>`;
     }
 
     if (family) {
-      html += `<h2>Aile Plani / Family Plan</h2>`;
+      html += `<h2>Aile Planı / Family Plan</h2>`;
       if (family.members && family.members.length > 0) {
-        html += `<table><tr><th>Isim</th><th>Yas</th><th>Telefon</th></tr>`;
+        html += `<table><tr><th>İsim</th><th>Yaş</th><th>Telefon</th></tr>`;
         family.members.forEach(m => {
           html += `<tr><td>${m.name}</td><td>${m.age}</td><td>${m.phone || '-'}</td></tr>`;
         });
         html += `</table>`;
       }
-      if (family.meetingPoint) html += `<p><strong>Bulusma Noktasi:</strong> ${family.meetingPoint}</p>`;
+      if (family.meetingPoint) html += `<p><strong>Buluşma Noktası:</strong> ${family.meetingPoint}</p>`;
     }
 
     if (assembly) {
-      html += `<h2>Toplanma Bolgesi / Assembly Point</h2>`;
+      html += `<h2>Toplanma Bölgesi / Assembly Point</h2>`;
       html += `<p><strong>${assembly}</strong></p>`;
     }
 
-    html += `<div class="warning"><strong>UYARI:</strong> Bu belge kritik bilgileri icerir. Guvenli bir yerde saklayin.</div>`;
-    html += `<div class="footer">PrepTurk -- Turkiye Offline Komuta Merkezi -- ${now}</div>`;
+    html += `<div class="warning"><strong>UYARI:</strong> Bu belge kritik bilgileri içerir. Güvenli bir yerde saklayın.</div>`;
+    html += `<div class="footer">PrepTürk -- Türkiye Offline Komuta Merkezi -- ${now}</div>`;
     html += `</body></html>`;
 
     setPrintData(html);
@@ -242,9 +242,9 @@ export default function DusukGucPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold">Dusuk Guc Modu / Low Power Mode</h1>
+        <h1 className="text-2xl font-bold">Düşük Güç Modu / Low Power Mode</h1>
         <p className="text-nomad-slate text-sm mt-1">
-          Pil durumunuzu izleyin ve kritik bilgileri pil bitmeden yazdirin
+          Pil durumunuzu izleyin ve kritik bilgileri pil bitmeden yazdırın
         </p>
       </div>
 
@@ -264,7 +264,7 @@ export default function DusukGucPage() {
             Pil Durumu / Battery Status
           </CardTitle>
           <CardDescription>
-            {batterySupported ? 'Pil API algilandi -- otomatik takip' : 'Pil API desteklenmiyor -- manuel deger'}
+            {batterySupported ? 'Pil API algılandı -- otomatik takip' : 'Pil API desteklenmiyor -- manuel değer'}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -274,7 +274,7 @@ export default function DusukGucPage() {
             <p className="text-nomad-slate text-sm mt-2">{estimatedTime}</p>
             {isCharging && (
               <Badge className="mt-2 bg-green-900 text-green-300 border-green-700">
-                <Zap className="h-3 w-3 mr-1" /> Sarj oluyor
+                <Zap className="h-3 w-3 mr-1" /> Şarj oluyor
               </Badge>
             )}
           </div>
@@ -320,7 +320,7 @@ export default function DusukGucPage() {
                 <Sun className="h-6 w-6 text-nomad-slate" />
               )}
               <div>
-                Dusuk Guc Modu
+                Düşük Güç Modu
                 <span className="block text-xs text-nomad-slate font-normal">Low Power Mode</span>
               </div>
             </div>
@@ -329,7 +329,7 @@ export default function DusukGucPage() {
               className={`relative w-14 h-7 rounded-full transition-colors duration-200 ${
                 isLowPower ? 'bg-nomad-green' : 'bg-nomad-border'
               }`}
-              aria-label={isLowPower ? 'Dusuk guc modunu kapat' : 'Dusuk guc modunu ac'}
+              aria-label={isLowPower ? 'Düşük güç modunu kapat' : 'Düşük güç modunu aç'}
             >
               <span
                 className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-200 ${
@@ -342,19 +342,19 @@ export default function DusukGucPage() {
         <CardContent>
           {isLowPower ? (
             <div className="space-y-3 text-sm text-nomad-slate">
-              <p className="text-nomad-green font-medium">Dusuk Guc Modu AKTIF</p>
+              <p className="text-nomad-green font-medium">Düşük Güç Modu AKTİF</p>
               <ul className="space-y-1">
-                <li className="flex items-center gap-2"><span className="text-red-400">x</span> AI sohbet devre disi</li>
+                <li className="flex items-center gap-2"><span className="text-red-400">x</span> AI sohbet devre dışı</li>
                 <li className="flex items-center gap-2"><span className="text-red-400">x</span> Haritalar gizlendi</li>
-                <li className="flex items-center gap-2"><span className="text-red-400">x</span> Gorseller karartildi</li>
+                <li className="flex items-center gap-2"><span className="text-red-400">x</span> Görseller karartıldı</li>
                 <li className="flex items-center gap-2"><span className="text-red-400">x</span> Animasyonlar durduruldu</li>
-                <li className="flex items-center gap-2"><span className="text-nomad-green">+</span> Siyah-beyaz renk scheme</li>
+                <li className="flex items-center gap-2"><span className="text-nomad-green">+</span> Siyah-beyaz renk şeması</li>
                 <li className="flex items-center gap-2"><span className="text-nomad-green">+</span> Sadece metin modu</li>
               </ul>
             </div>
           ) : (
             <p className="text-sm text-nomad-slate">
-              Dusuk Guc Modu, pil omrunuzu uzatmak icin agir ozellikleri devre disi birakir ve metin tabli gorsele gecer.
+              Düşük Güç Modu, pil ömrünüzü uzatmak için ağır özellikleri devre dışı bırakır ve metin tabanlı görsele geçer.
             </p>
           )}
         </CardContent>
@@ -368,18 +368,18 @@ export default function DusukGucPage() {
             Pil Bitmeden Once / Before Battery Dies
           </CardTitle>
           <CardDescription>
-            Kritik bilgileri tek bir yazdirilabilir sayfada olusturun
+            Kritik bilgileri tek bir yazdırılabilir sayfada oluşturun
           </CardDescription>
         </CardHeader>
         <CardContent>
           <p className="text-sm text-nomad-slate mb-4">
-            Asagidaki buton, acil numaralarinizi, saglik bilgilerinizi, aile planinizi ve toplanma bolgenizi iceren
-            yazdirilabilir bir ozet sayfa olusturur. Bu sayfayi pil bitmeden once yazdirin veya PDF olarak kaydedin.
+            Aşağıdaki buton, acil numaralarınızı, sağlık bilgilerinizi, aile planınızı ve toplanma bölgenizi içeren
+            yazdırılabilir bir özet sayfa oluşturur. Bu sayfayı pil bitmeden önce yazdırın veya PDF olarak kaydedin.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button onClick={generatePrintSummary} variant="destructive" size="lg">
               <Printer className="h-4 w-4 mr-2" />
-              Kritik Bilgi Ozetini Yazdir
+              Kritik Bilgi Özetini Yazdır
             </Button>
             <Button onClick={generatePrintSummary} variant="outline" size="lg">
               PDF Olarak Kaydet
@@ -388,12 +388,12 @@ export default function DusukGucPage() {
 
           {/* Preview of what will be printed */}
           <div className="mt-6 p-4 bg-nomad-bg rounded-lg border border-nomad-border">
-            <p className="text-xs text-nomad-slate mb-2">Yazdirilacak icerik onizlemesi:</p>
+            <p className="text-xs text-nomad-slate mb-2">Yazdırılacak içerik önizlemesi:</p>
             <ul className="text-sm space-y-1 text-foreground">
               <li>Acil numaralar (112, 155, 110, 156, 158)</li>
-              {loadHealthProfile() && <li>Saglik profili ozeti</li>}
-              {loadFamilyPlan() && <li>Aile plani ozeti</li>}
-              {loadAssemblyPoint() && <li>Toplanma bolgesi bilgisi</li>}
+              {loadHealthProfile() && <li>Sağlık profili özeti</li>}
+              {loadFamilyPlan() && <li>Aile planı özeti</li>}
+              {loadAssemblyPoint() && <li>Toplanma bölgesi bilgisi</li>}
               <li><span className="text-nomad-slate">(Varsa ek bilgiler dahil edilir)</span></li>
             </ul>
           </div>
@@ -434,17 +434,17 @@ export default function DusukGucPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-blue-400">
             <Info className="h-5 w-5" />
-            Pil Tasarrufu Ipuclari
+            Pil Tasarrufu İpuçları
           </CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 text-sm text-nomad-slate">
-            <li>Ekran parlakligini dusurun</li>
-            <li>Bluetooth ve WiFi kapatin (kullanmiyorsaniz)</li>
-            <li>Uygulamalari arka planda kapatma</li>
-            <li>Ucak modunu dusunun (sadece acil numaralar icin)</li>
-            <li>Gereksiz uygulamalari kapatın</li>
-            <li>Kritik bilgileri bu sayfadan yazdirin</li>
+            <li>Ekran parlaklığını düşürün</li>
+            <li>Bluetooth ve WiFi kapatın (kullanmıyorsanız)</li>
+            <li>Uygulamaları arka planda kapatın</li>
+            <li>Uçak modunu düşünün (sadece acil numaralar için)</li>
+            <li>Gereksiz uygulamaları kapatın</li>
+            <li>Kritik bilgileri bu sayfadan yazdırın</li>
           </ul>
         </CardContent>
       </Card>
@@ -455,10 +455,10 @@ export default function DusukGucPage() {
           <Button variant="outline" size="sm">Acil Numaralar</Button>
         </Link>
         <Link href="/saglik">
-          <Button variant="outline" size="sm">Saglik Bilgilerim</Button>
+          <Button variant="outline" size="sm">Sağlık Bilgilerim</Button>
         </Link>
         <Link href="/toplanma">
-          <Button variant="outline" size="sm">Toplanma Bolgesi</Button>
+          <Button variant="outline" size="sm">Toplanma Bölgesi</Button>
         </Link>
         <Link href="/dashboard">
           <Button variant="outline" size="sm">Dashboard</Button>

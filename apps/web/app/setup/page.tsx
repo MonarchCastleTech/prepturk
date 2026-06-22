@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '../../components/ui/Button';
-import { Input } from '../../components/ui/Input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { useSetupStore } from '../../lib/stores';
@@ -26,7 +25,7 @@ const steps = [
 const modules = [
   { id: 'documents', label: 'Belge Yönetimi', desc: 'Mevzuat ve doküman arşivi' },
   { id: 'search', label: 'Tam Metin Arama', desc: 'Türkçe karakter destekli arama' },
-  { id: 'ai', label: 'AI Asistan', desc: 'Yerel RAG destekli asistan' },
+  { id: 'ai', label: 'Yapay Zekâ Asistanı', desc: 'Yerel RAG destekli asistan' },
   { id: 'education', label: 'Eğitim Rafı', desc: 'İlkokul, lise kaynakları' },
   { id: 'maps', label: 'Haritalar', desc: 'Çevrimdışı harita görüntüleyici' },
   { id: 'vault', label: 'Kişisel Kasa', desc: 'Şifreli dosya depolama' },
@@ -54,16 +53,16 @@ const archives = [
 ];
 
 const contentPacks = [
-  { id: 'mevzuat', label: 'Resmi Mevzuat', desc: 'Kanun, yonetmelik, genelge' },
-  { id: 'egitim', label: 'Egitim Materyalleri', desc: 'MEB kaynaklari' },
-  { id: 'saglik', label: 'Saglik Rehberleri', desc: 'Acil tip bilgileri' },
-  { id: 'afet', label: 'Afet & Acil Durum', desc: 'Deprem, sel, yangin rehberleri' },
+  { id: 'mevzuat', label: 'Resmî Mevzuat', desc: 'Kanun, yönetmelik ve genelgeler' },
+  { id: 'egitim', label: 'Eğitim Materyalleri', desc: 'MEB kaynakları' },
+  { id: 'saglik', label: 'Sağlık Rehberleri', desc: 'Acil tıp bilgileri' },
+  { id: 'afet', label: 'Afet & Acil Durum', desc: 'Deprem, sel ve yangın rehberleri' },
 ];
 
 const provinces = [
-  { code: '34', name: 'Istanbul' },
+  { code: '34', name: 'İstanbul' },
   { code: '06', name: 'Ankara' },
-  { code: '35', name: 'Izmir' },
+  { code: '35', name: 'İzmir' },
   { code: '16', name: 'Bursa' },
   { code: '07', name: 'Antalya' },
   { code: '01', name: 'Adana' },
@@ -101,21 +100,20 @@ export default function SetupPage() {
       case 1:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Sistem Ayarlari</h3>
+            <h3 className="text-lg font-semibold">Dil ve Erişim</h3>
+            <p className="text-sm text-nomad-slate">
+              Birkaç hızlı tercihle başlayalım. Bu adımda hiçbir hesap oluşturulmaz; her şey cihazınızda kalır.
+            </p>
             <div>
-              <label className="block text-sm font-medium mb-1.5">Dil</label>
+              <label className="block text-sm font-medium mb-1.5">Uygulama Dili</label>
               <select
                 value={store.language}
                 onChange={(e) => store.setLanguage(e.target.value)}
                 className="w-full px-3 py-2 bg-nomad-surface border border-nomad-border rounded-lg text-foreground"
               >
-                <option value="tr">Turkce</option>
+                <option value="tr">Türkçe</option>
                 <option value="en">English</option>
               </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1.5">Sunucu Adresi</label>
-              <Input value={store.hostname} onChange={(e) => store.setHostname(e.target.value)} placeholder="localhost" />
             </div>
             <div className="flex gap-3">
               <button
@@ -126,8 +124,8 @@ export default function SetupPage() {
               >
                 <Monitor className="h-5 w-5 text-nomad-green" />
                 <div className="text-left">
-                  <div className="text-sm font-medium">Sadece Yerel</div>
-                  <div className="text-xs text-nomad-slate">127.0.0.1</div>
+                  <div className="text-sm font-medium">Sadece Bu Cihaz</div>
+                  <div className="text-xs text-nomad-slate">En basit ve en gizli seçenek</div>
                 </div>
               </button>
               <button
@@ -138,8 +136,8 @@ export default function SetupPage() {
               >
                 <Wifi className="h-5 w-5 text-nomad-blue" />
                 <div className="text-left">
-                  <div className="text-sm font-medium">LAN Erisimi</div>
-                  <div className="text-xs text-nomad-slate">192.168.x.x</div>
+                  <div className="text-sm font-medium">Ev Ağında Paylaş</div>
+                  <div className="text-xs text-nomad-slate">Ailenizdeki cihazlar da erişsin</div>
                 </div>
               </button>
             </div>
@@ -149,22 +147,22 @@ export default function SetupPage() {
       case 2:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Cihaz Profili</h3>
+            <h3 className="text-lg font-semibold">Tercihlerinizi Onaylayın</h3>
             <p className="text-sm text-nomad-slate">
-              Bu adim hesap olusturmaz; cihazin yerel ya da LAN modu, hostname ve dil ayarlari onaylanir.
+              Bu adım hesap oluşturmaz; yalnızca dil ve erişim tercihlerinizi onaylar. Tümü dilediğinizde değiştirilebilir.
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-lg border border-nomad-border bg-nomad-bg p-4">
                 <div className="text-xs uppercase tracking-wide text-nomad-slate">Dil</div>
-                <div className="text-sm font-medium">{store.language === 'tr' ? 'Turkce' : 'English'}</div>
+                <div className="text-sm font-medium">{store.language === 'tr' ? 'Türkçe' : 'English'}</div>
               </div>
               <div className="rounded-lg border border-nomad-border bg-nomad-bg p-4">
-                <div className="text-xs uppercase tracking-wide text-nomad-slate">Hostname</div>
-                <div className="text-sm font-medium">{store.hostname}</div>
+                <div className="text-xs uppercase tracking-wide text-nomad-slate">Erişim</div>
+                <div className="text-sm font-medium">{store.lanAccess ? 'Ev ağında paylaşım açık' : 'Sadece bu cihaz'}</div>
               </div>
               <div className="rounded-lg border border-nomad-border bg-nomad-bg p-4 sm:col-span-2">
-                <div className="text-xs uppercase tracking-wide text-nomad-slate">Ag Modu</div>
-                <div className="text-sm font-medium">{store.lanAccess ? 'LAN erisimi acik' : 'Sadece yerel calisma'}</div>
+                <div className="text-xs uppercase tracking-wide text-nomad-slate">Gizlilik</div>
+                <div className="text-sm font-medium">Tüm veriler çevrimdışı, yalnızca cihazınızda saklanır</div>
               </div>
             </div>
           </div>
@@ -173,8 +171,8 @@ export default function SetupPage() {
       case 3:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Modul Secimi</h3>
-            <p className="text-sm text-nomad-slate">Sisteminizde aktif olmasini istediginiz modulleri secin.</p>
+            <h3 className="text-lg font-semibold">Modül Seçimi</h3>
+            <p className="text-sm text-nomad-slate">Sisteminizde aktif olmasını istediğiniz modülleri seçin.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {modules.map((mod) => {
                 const active = selectedModules.includes(mod.id);
@@ -350,7 +348,7 @@ export default function SetupPage() {
             <h3 className="text-xl font-semibold">Cihaz Hazırlığı Özeti</h3>
             <div className="text-left space-y-2 text-sm bg-nomad-bg p-4 rounded-lg border border-nomad-border">
               <div className="flex justify-between"><span className="text-nomad-slate">Dil:</span><span>{store.language === 'tr' ? 'Türkçe' : 'English'}</span></div>
-              <div className="flex justify-between"><span className="text-nomad-slate">Ag modu:</span><span>{store.lanAccess ? 'LAN' : 'Yerel'}</span></div>
+              <div className="flex justify-between"><span className="text-nomad-slate">Ağ modu:</span><span>{store.lanAccess ? 'Ev ağı' : 'Yerel'}</span></div>
               <div className="flex justify-between"><span className="text-nomad-slate">Modüller:</span><span>{selectedModules.length} adet</span></div>
               <div className="flex justify-between"><span className="text-nomad-slate">Depolama:</span><span>{store.storageLimit}</span></div>
               <div className="flex justify-between"><span className="text-nomad-slate">Yapay zekâ:</span><span>{store.aiModelProfile}</span></div>

@@ -119,16 +119,16 @@ export default function VaultPage() {
             <p className="shell-kicker">Secure storage</p>
             <h1 className="mt-2 flex items-center gap-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               <Lock className="h-7 w-7 text-emerald-300" />
-              Kisisel Kasa
+              Kişisel Kasa
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
-              AES-256-GCM ile korunan yerel belge alani. Dosyalar cihaz uzerinde sifreli tutulur.
+              AES-256-GCM ile korunan yerel belge alanı. Dosyalar cihaz üzerinde şifreli tutulur.
             </p>
           </div>
 
           <div className="rounded-[1.4rem] border border-white/8 bg-black/20 px-4 py-4">
-            <p className="shell-muted-label">Sifreleme Durumu</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">Aktif: AES-256-GCM, yerel depolama, bagimsiz erisim.</p>
+            <p className="shell-muted-label">Şifreleme Durumu</p>
+            <p className="mt-2 text-sm leading-6 text-slate-200">Aktif: AES-256-GCM, yerel depolama, bağımsız erişim.</p>
           </div>
         </div>
       </section>
@@ -136,10 +136,10 @@ export default function VaultPage() {
       <div className="grid gap-6 xl:grid-cols-[23rem_minmax(0,1fr)]">
         <section className="rounded-[1.7rem] border border-white/8 bg-[linear-gradient(180deg,rgba(16,21,26,0.94),rgba(10,13,17,0.9))] p-5 shadow-panel sm:p-6">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-2xl font-semibold text-white">Dosya Yukleme</h2>
+            <h2 className="text-2xl font-semibold text-white">Dosya Yükleme</h2>
             <Button variant="outline" size="sm">
               <Share2 className="mr-1 h-4 w-4" />
-              Tumunu Disa Aktar
+              Tümünü Dışa Aktar
             </Button>
           </div>
 
@@ -157,7 +157,7 @@ export default function VaultPage() {
             }`}
           >
             <Upload className="mx-auto h-10 w-10 text-slate-400" />
-            <p className="mt-3 text-sm text-slate-300">Dosyayi surukleyip birakin veya secerek yukleyin.</p>
+            <p className="mt-3 text-sm text-slate-300">Dosyayı sürükleyip bırakın veya seçerek yükleyin.</p>
             <input
               ref={fileInputRef}
               type="file"
@@ -166,7 +166,7 @@ export default function VaultPage() {
             />
             <div className="mt-4 flex items-center justify-center">
               <Button onClick={() => fileInputRef.current?.click()} disabled={uploading}>
-                Dosya Sec
+                Dosya Seç
               </Button>
             </div>
 
@@ -200,7 +200,7 @@ export default function VaultPage() {
 
         <section className="rounded-[1.7rem] border border-white/8 bg-[linear-gradient(180deg,rgba(16,21,26,0.94),rgba(10,13,17,0.9))] p-5 shadow-panel sm:p-6">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-2xl font-semibold text-white">Kasa Akisi</h2>
+            <h2 className="text-2xl font-semibold text-white">Kasa Akışı</h2>
             <div className="hidden rounded-full border border-white/8 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-300 sm:inline-flex">
               Yerel depolama
             </div>
@@ -242,8 +242,8 @@ export default function VaultPage() {
           {filteredFiles.length === 0 ? (
             <div className="mt-5 rounded-[1.4rem] border border-dashed border-white/10 bg-black/15 px-6 py-14 text-center">
               <FileText className="mx-auto h-12 w-12 text-slate-500" />
-              <p className="mt-4 text-base font-semibold text-white">Kasada henuz dosya yok</p>
-              <p className="mt-2 text-sm text-slate-300">Dosya yuklediginizde yerel olarak sifrelenip burada listelenir.</p>
+              <p className="mt-4 text-base font-semibold text-white">Kasada henüz dosya yok</p>
+              <p className="mt-2 text-sm text-slate-300">Dosya yüklediğinizde yerel olarak şifrelenip burada listelenir.</p>
             </div>
           ) : (
             <div className="mt-5 space-y-3">

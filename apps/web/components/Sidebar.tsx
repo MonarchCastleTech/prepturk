@@ -66,13 +66,14 @@ interface CollapsibleSection {
 
 const commandNavItems: SectionItem[] = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Komuta Merkezi' },
-  { href: '/ai-chat', icon: MessageSquare, label: 'Yapay Zeka Asistanı' },
+  { href: '/ai-chat', icon: MessageSquare, label: 'Yapay Zekâ Asistanı' },
   { href: '/vault', icon: Shield, label: 'Kasa' },
   { href: '/notes', icon: StickyNote, label: 'Notlar' },
   { href: '/admin', icon: Settings, label: 'Yönetim' },
 ];
 
 const readinessNavItems: SectionItem[] = [
+  { href: '/hazirlik-skoru', icon: ShieldCheck, label: 'Hazırlık Skoru' },
   { href: '/documents', icon: FileText, label: 'Belge Kütüphanesi' },
   { href: '/search', icon: Search, label: 'Komuta Araması' },
   { href: '/province-packs', icon: FolderArchive, label: 'İl Envanteri' },
