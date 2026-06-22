@@ -38,140 +38,140 @@ function formatNow(): string {
 const TEMPLATES: Template[] = [
   {
     id: 'guvendeyim',
-    title: 'Guvendeyim',
+    title: 'Güvendeyim',
     titleEn: "I'm Safe",
     icon: Phone,
     iconColor: 'text-green-400',
-    description: 'Ailenize ve yakinlariniza guvende oldugunuzu bildirin',
+    description: 'Ailenize ve yakınlarınıza güvende olduğunuzu bildirin',
     fields: [
-      { key: 'isim', label: 'Isim', labelEn: 'Name', type: 'text', placeholder: 'Adiniz Soyadiniz' },
-      { key: 'konum', label: 'Konum', labelEn: 'Location', type: 'text', placeholder: 'Bulundugunuz yer' },
+      { key: 'isim', label: 'İsim', labelEn: 'Name', type: 'text', placeholder: 'Adınız Soyadınız' },
+      { key: 'konum', label: 'Konum', labelEn: 'Location', type: 'text', placeholder: 'Bulunduğunuz yer' },
       {
-        key: 'ihtiyac', label: 'Ihtiyac', labelEn: 'Need', type: 'select',
+        key: 'ihtiyac', label: 'İhtiyaç', labelEn: 'Need', type: 'select',
         options: [
-          { value: 'yok', label: 'Ihtiyacim yok' },
-          { value: 'su', label: 'Su lazim' },
-          { value: 'yiyecek', label: 'Yiyecek lazim' },
-          { value: 'ilac', label: 'Ilac lazim' },
-          { value: 'barinak', label: 'Barinak lazim' },
+          { value: 'yok', label: 'İhtiyacım yok' },
+          { value: 'su', label: 'Su lazım' },
+          { value: 'yiyecek', label: 'Yiyecek lazım' },
+          { value: 'ilac', label: 'İlaç lazım' },
+          { value: 'barinak', label: 'Barınak lazım' },
         ]
       },
-      { key: 'aileMesaj', label: 'Ailem icin Mesaj', labelEn: 'Message for family', type: 'text', placeholder: 'Ailenize mesajiniz...' },
+      { key: 'aileMesaj', label: 'Ailem için Mesaj', labelEn: 'Message for family', type: 'text', placeholder: 'Ailenize mesajınız...' },
     ],
     generate: (v) => {
-      return `GUVENDEYIM MESAJI
-Isim: ${v.isim || '[isim]'}
+      return `GÜVENDEYİM MESAJI
+İsim: ${v.isim || '[isim]'}
 Konumum: ${v.konum || '[yer]'}
-Ihtiyacim: ${v.ihtiyac || 'yok'}
+İhtiyacım: ${v.ihtiyac || 'yok'}
 Tarih: ${formatNow()}
 
-Ailem icin: ${v.aileMesaj || '[mesaj]'}`;
+Ailem için: ${v.aileMesaj || '[mesaj]'}`;
     },
     generatePrint: (v) => {
-      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Guvendeyim</title>
+      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Güvendeyim</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:28px;text-align:center;border:3px solid #22c55e;padding:16px;margin-bottom:20px;background:#f0fdf4}p{font-size:18px;line-height:1.8;margin:8px 0}.label{font-weight:bold}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
-<h1>GUVENDEYIM / I'M SAFE</h1>
-<p><span class="label">Isim:</span> ${v.isim || '[isim]'}</p>
+<h1>GÜVENDEYİM / I'M SAFE</h1>
+<p><span class="label">İsim:</span> ${v.isim || '[isim]'}</p>
 <p><span class="label">Konum:</span> ${v.konum || '[yer]'}</p>
-<p><span class="label">Ihtiyac:</span> ${v.ihtiyac || 'yok'}</p>
+<p><span class="label">İhtiyaç:</span> ${v.ihtiyac || 'yok'}</p>
 <p><span class="label">Tarih:</span> ${formatNow()}</p>
 <p><span class="label">Mesaj:</span> ${v.aileMesaj || '[mesaj]'}</p>
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
   {
     id: 'yardim',
-    title: 'Yardim Lazim',
+    title: 'Yardım Lazım',
     titleEn: 'Need Help',
     icon: AlertTriangle,
     iconColor: 'text-red-400',
-    description: 'Acil yardim cagrisi gonderin',
+    description: 'Acil yardım çağrısı gönderin',
     fields: [
-      { key: 'isim', label: 'Isim', labelEn: 'Name', type: 'text', placeholder: 'Adiniz Soyadiniz' },
-      { key: 'adres', label: 'Adres', labelEn: 'Address', type: 'text', placeholder: 'Acik adresiniz' },
+      { key: 'isim', label: 'İsim', labelEn: 'Name', type: 'text', placeholder: 'Adınız Soyadınız' },
+      { key: 'adres', label: 'Adres', labelEn: 'Address', type: 'text', placeholder: 'Açık adresiniz' },
       {
         key: 'durum', label: 'Durum', labelEn: 'Status', type: 'select',
         options: [
-          { value: 'yarali', label: 'Yarali var' },
+          { value: 'yarali', label: 'Yaralı var' },
           { value: 'mahsurum', label: 'Mahsurum' },
-          { value: 'saglik', label: 'Saglik sorunu' },
-          { value: 'bina-hasarli', label: 'Bina hasarli' },
+          { value: 'saglik', label: 'Sağlık sorunu' },
+          { value: 'bina-hasarli', label: 'Bina hasarlı' },
           { value: 'sel', label: 'Sel tehlikesi' },
         ]
       },
       {
-        key: 'ihtiyac', label: 'Ihtiyac', labelEn: 'Need', type: 'select',
+        key: 'ihtiyac', label: 'İhtiyaç', labelEn: 'Need', type: 'select',
         options: [
           { value: 'ambulance', label: 'Ambulans' },
           { value: 'arama-kurtarma', label: 'Arama Kurtarma' },
           { value: 'su', label: 'Su' },
-          { value: 'yardim-ekibi', label: 'Yardim Ekibi' },
+          { value: 'yardim-ekibi', label: 'Yardım Ekibi' },
         ]
       },
-      { key: 'kisiSayisi', label: 'Kisi Sayisi', labelEn: 'Number of people', type: 'text', placeholder: 'Etkilenen kisi sayisi' },
+      { key: 'kisiSayisi', label: 'Kişi Sayısı', labelEn: 'Number of people', type: 'text', placeholder: 'Etkilenen kişi sayısı' },
     ],
     generate: (v) => {
-      return `YARDIM CAGRISI
-Isim: ${v.isim || '[isim]'}
+      return `YARDIM ÇAĞRISI
+İsim: ${v.isim || '[isim]'}
 Konum: ${v.adres || '[adres]'}
 Durum: ${v.durum || '[durum]'}
-Ihtiyac: ${v.ihtiyac || '[ihtiyac]'}
-Kisi sayisi: ${v.kisiSayisi || '[sayi]'}`;
+İhtiyaç: ${v.ihtiyac || '[ihtiyac]'}
+Kişi sayısı: ${v.kisiSayisi || '[sayi]'}`;
     },
     generatePrint: (v) => {
-      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Yardim Cagrisi</title>
+      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Yardım Çağrısı</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:28px;text-align:center;border:3px solid #ef4444;padding:16px;margin-bottom:20px;background:#fef2f2}p{font-size:18px;line-height:1.8;margin:8px 0}.label{font-weight:bold}.urg{font-size:22px;text-align:center;padding:12px;background:#fee2e2;border:2px solid #ef4444;margin:16px 0}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
-<h1>YARDIM CAGRISI / HELP NEEDED</h1>
-<p><span class="label">Isim:</span> ${v.isim || '[isim]'}</p>
+<h1>YARDIM ÇAĞRISI / HELP NEEDED</h1>
+<p><span class="label">İsim:</span> ${v.isim || '[isim]'}</p>
 <p><span class="label">Konum:</span> ${v.adres || '[adres]'}</p>
 <p><span class="label">Durum:</span> ${v.durum || '[durum]'}</p>
-<p><span class="label">Ihtiyac:</span> ${v.ihtiyac || '[ihtiyac]'}</p>
-<p><span class="label">Kisi Sayisi:</span> ${v.kisiSayisi || '[sayi]'}</p>
-<div class="urg">ACIL -- 112&apos;YI ARAYIN</div>
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<p><span class="label">İhtiyaç:</span> ${v.ihtiyac || '[ihtiyac]'}</p>
+<p><span class="label">Kişi Sayısı:</span> ${v.kisiSayisi || '[sayi]'}</p>
+<div class="urg">ACİL -- 112&apos;YI ARAYIN</div>
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
   {
     id: 'kayip',
-    title: 'Kayip Raporu',
+    title: 'Kayıp Raporu',
     titleEn: 'Missing Person',
     icon: Search,
     iconColor: 'text-amber-400',
-    description: 'Kayip yakınlari icin rapor olusturun',
+    description: 'Kayıp yakınları için rapor oluşturun',
     fields: [
-      { key: 'isim', label: 'Kayip Isim', labelEn: 'Missing person name', type: 'text', placeholder: 'Kayip kisinin adi' },
-      { key: 'yas', label: 'Yas', labelEn: 'Age', type: 'text', placeholder: 'Yasi' },
+      { key: 'isim', label: 'Kayıp İsim', labelEn: 'Missing person name', type: 'text', placeholder: 'Kayıp kişinin adı' },
+      { key: 'yas', label: 'Yaş', labelEn: 'Age', type: 'text', placeholder: 'Yaşı' },
       { key: 'boy', label: 'Boy', labelEn: 'Height', type: 'text', placeholder: 'Boyu (cm)' },
-      { key: 'sacRengi', label: 'Sac Rengi', labelEn: 'Hair color', type: 'text', placeholder: 'Sac rengi' },
-      { key: 'sonYer', label: 'Son Goruldugu Yer', labelEn: 'Last seen location', type: 'text', placeholder: 'En son nerede goruldu' },
-      { key: 'sonZaman', label: 'Son Goruldugu Zaman', labelEn: 'Last seen time', type: 'text', placeholder: 'Ne zaman goruldu' },
-      { key: 'ozellikler', label: 'Ayirt Edici Ozellikler', labelEn: 'Distinguishing features', type: 'text', placeholder: 'Ozel isaretler, giysiler, vs.' },
-      { key: 'iletisim', label: 'Iletisim', labelEn: 'Contact', type: 'text', placeholder: 'Telefon numaraniz' },
+      { key: 'sacRengi', label: 'Saç Rengi', labelEn: 'Hair color', type: 'text', placeholder: 'Saç rengi' },
+      { key: 'sonYer', label: 'Son Görüldüğü Yer', labelEn: 'Last seen location', type: 'text', placeholder: 'En son nerede görüldü' },
+      { key: 'sonZaman', label: 'Son Görüldüğü Zaman', labelEn: 'Last seen time', type: 'text', placeholder: 'Ne zaman görüldü' },
+      { key: 'ozellikler', label: 'Ayırt Edici Özellikler', labelEn: 'Distinguishing features', type: 'text', placeholder: 'Özel işaretler, giysiler, vs.' },
+      { key: 'iletisim', label: 'İletişim', labelEn: 'Contact', type: 'text', placeholder: 'Telefon numaranız' },
     ],
     generate: (v) => {
       return `KAYIP RAPORU
-Isim: ${v.isim || '[isim]'}
-Yas: ${v.yas || '[yas]'}
+İsim: ${v.isim || '[isim]'}
+Yaş: ${v.yas || '[yas]'}
 Boy: ${v.boy || '[boy]'}
-Sac rengi: ${v.sacRengi || '[renk]'}
-Son goruldugu yer: ${v.sonYer || '[yer]'}
-Son goruldugu zaman: ${v.sonZaman || '[zaman]'}
-Ozellikler: ${v.ozellikler || '[ozellik]'}
-Iletisim: ${v.iletisim || '[tel]'}`;
+Saç rengi: ${v.sacRengi || '[renk]'}
+Son görüldüğü yer: ${v.sonYer || '[yer]'}
+Son görüldüğü zaman: ${v.sonZaman || '[zaman]'}
+Özellikler: ${v.ozellikler || '[ozellik]'}
+İletişim: ${v.iletisim || '[tel]'}`;
     },
     generatePrint: (v) => {
-      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Kayip Raporu</title>
+      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Kayıp Raporu</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:28px;text-align:center;border:3px solid #f59e0b;padding:16px;margin-bottom:20px;background:#fffbeb}p{font-size:16px;line-height:1.8;margin:6px 0}.label{font-weight:bold}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
 <h1>KAYIP RAPORU / MISSING PERSON</h1>
-<p><span class="label">Isim:</span> ${v.isim || '[isim]'}</p>
-<p><span class="label">Yas:</span> ${v.yas || '[yas]'}</p>
+<p><span class="label">İsim:</span> ${v.isim || '[isim]'}</p>
+<p><span class="label">Yaş:</span> ${v.yas || '[yas]'}</p>
 <p><span class="label">Boy:</span> ${v.boy || '[boy]'}</p>
-<p><span class="label">Sac Rengi:</span> ${v.sacRengi || '[renk]'}</p>
+<p><span class="label">Saç Rengi:</span> ${v.sacRengi || '[renk]'}</p>
 <p><span class="label">Son Yer:</span> ${v.sonYer || '[yer]'}</p>
 <p><span class="label">Son Zaman:</span> ${v.sonZaman || '[zaman]'}</p>
-<p><span class="label">Ozellikler:</span> ${v.ozellikler || '[ozellik]'}</p>
-<p><span class="label">Iletisim:</span> ${v.iletisim || '[tel]'}</p>
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<p><span class="label">Özellikler:</span> ${v.ozellikler || '[ozellik]'}</p>
+<p><span class="label">İletişim:</span> ${v.iletisim || '[tel]'}</p>
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
   {
@@ -180,178 +180,178 @@ Iletisim: ${v.iletisim || '[tel]'}`;
     titleEn: 'Building Damage',
     icon: Building,
     iconColor: 'text-orange-400',
-    description: 'Bina hasarini raporlayin',
+    description: 'Bina hasarını raporlayın',
     fields: [
       { key: 'adres', label: 'Adres', labelEn: 'Address', type: 'text', placeholder: 'Bina adresi' },
       {
         key: 'binaTipi', label: 'Bina Tipi', labelEn: 'Building type', type: 'select',
         options: [
           { value: 'beton', label: 'Betonarme' },
-          { value: 'tugla', label: 'Tugla' },
+          { value: 'tugla', label: 'Tuğla' },
           { value: 'ahsap', label: 'Ahşap' },
           { value: 'prefabrik', label: 'Prefabrik' },
         ]
       },
-      { key: 'katSayisi', label: 'Kat Sayisi', labelEn: 'Number of floors', type: 'text', placeholder: 'Bina kat sayisi' },
+      { key: 'katSayisi', label: 'Kat Sayısı', labelEn: 'Number of floors', type: 'text', placeholder: 'Bina kat sayısı' },
       {
         key: 'hasar', label: 'Hasar Durumu', labelEn: 'Damage level', type: 'select',
         options: [
-          { value: 'hafif', label: 'Hafif (catlaklar)' },
-          { value: 'orta', label: 'Orta (yapisal hasar)' },
-          { value: 'agir', label: 'Agir (kismi cokme)' },
-          { value: 'yikildi', label: 'Tam yikildi' },
+          { value: 'hafif', label: 'Hafif (çatlaklar)' },
+          { value: 'orta', label: 'Orta (yapısal hasar)' },
+          { value: 'agir', label: 'Ağır (kısmi çökme)' },
+          { value: 'yikildi', label: 'Tam yıkıldı' },
         ]
       },
       {
         key: 'tehlike', label: 'Tehlike', labelEn: 'Hazard', type: 'select',
         options: [
           { value: 'yok', label: 'Yok' },
-          { value: 'gaz', label: 'Gaz kacagi' },
+          { value: 'gaz', label: 'Gaz kaçağı' },
           { value: 'elektrik', label: 'Elektrik tehlikesi' },
-          { value: 'cokme', label: 'Cokme tehlikesi' },
+          { value: 'cokme', label: 'Çökme tehlikesi' },
           { value: 'gaz+elektrik', label: 'Gaz + Elektrik' },
         ]
       },
-      { key: 'icerde', label: 'Icerde Insan Var Mi?', labelEn: 'People inside?', type: 'select', options: [
+      { key: 'icerde', label: 'İçerde İnsan Var Mı?', labelEn: 'People inside?', type: 'select', options: [
         { value: 'evet', label: 'Evet' },
-        { value: 'hayir', label: 'Hayir' },
+        { value: 'hayir', label: 'Hayır' },
         { value: 'bilinmiyor', label: 'Bilinmiyor' },
       ]},
-      { key: 'icerdeSayi', label: 'Tahmini Sayi', labelEn: 'Estimated number', type: 'text', placeholder: 'Icerde tahmini kisi sayisi' },
+      { key: 'icerdeSayi', label: 'Tahmini Sayı', labelEn: 'Estimated number', type: 'text', placeholder: 'İçerde tahmini kişi sayısı' },
     ],
     generate: (v) => {
-      return `BINA HASAR RAPORU
+      return `BİNA HASAR RAPORU
 Adres: ${v.adres || '[adres]'}
-Bina tipi: ${v.binaTipi || '[beton/tugla/ahsap]'}
-Kat sayisi: ${v.katSayisi || '[sayi]'}
-Hasar: ${v.hasar || '[hafif/orta/agir/yikildi]'}
-Tehlike: ${v.tehlike || '[gaz/elektrik/cokme]'}
-Icerde insan: ${v.icerde || '[evet/hayir]'}${v.icerde === 'evet' ? ` -- Tahmini sayi: ${v.icerdeSayi || '?'}` : ''}`;
+Bina tipi: ${v.binaTipi || '[beton/tuğla/ahşap]'}
+Kat sayısı: ${v.katSayisi || '[sayı]'}
+Hasar: ${v.hasar || '[hafif/orta/ağır/yıkıldı]'}
+Tehlike: ${v.tehlike || '[gaz/elektrik/çökme]'}
+İçerde insan: ${v.icerde || '[evet/hayır]'}${v.icerde === 'evet' ? ` -- Tahmini sayı: ${v.icerdeSayi || '?'}` : ''}`;
     },
     generatePrint: (v) => {
       return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Hasar Raporu</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:24px;text-align:center;border:3px solid #f97316;padding:16px;margin-bottom:20px;background:#fff7ed}p{font-size:16px;line-height:1.8;margin:6px 0}.label{font-weight:bold}.danger{font-size:20px;text-align:center;padding:12px;background:#fee2e2;border:2px solid #ef4444;margin:16px 0}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
-<h1>BINA HASAR RAPORU</h1>
+<h1>BİNA HASAR RAPORU</h1>
 <p><span class="label">Adres:</span> ${v.adres || '[adres]'}</p>
 <p><span class="label">Bina Tipi:</span> ${v.binaTipi || '[tip]'}</p>
-<p><span class="label">Kat Sayisi:</span> ${v.katSayisi || '[sayi]'}</p>
+<p><span class="label">Kat Sayısı:</span> ${v.katSayisi || '[sayı]'}</p>
 <p><span class="label">Hasar:</span> ${v.hasar || '[durum]'}</p>
 <p><span class="label">Tehlike:</span> ${v.tehlike || '[tehlike]'}</p>
-<p><span class="label">Icerde Insan:</span> ${v.icerde || '[evet/hayir]'}</p>
-${v.icerde === 'evet' ? `<p><span class="label">Sayi:</span> ${v.icerdeSayi || '?'}</p>` : ''}
-<div class="danger">TEHLIKE: Gerekli onlemleri alin!</div>
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<p><span class="label">İçerde İnsan:</span> ${v.icerde || '[evet/hayır]'}</p>
+${v.icerde === 'evet' ? `<p><span class="label">Sayı:</span> ${v.icerdeSayi || '?'}</p>` : ''}
+<div class="danger">TEHLİKE: Gerekli önlemleri alın!</div>
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
   {
     id: 'saglik',
-    title: 'Saglik Talebi',
+    title: 'Sağlık Talebi',
     titleEn: 'Medical Request',
     icon: Heart,
     iconColor: 'text-pink-400',
-    description: 'Saglik yardimi talebi olusturun',
+    description: 'Sağlık yardımı talebi oluşturun',
     fields: [
-      { key: 'isim', label: 'Hasta Ismi', labelEn: 'Patient name', type: 'text', placeholder: 'Hastanin adi' },
-      { key: 'yas', label: 'Yas', labelEn: 'Age', type: 'text', placeholder: 'Hastanin yasi' },
+      { key: 'isim', label: 'Hasta İsmi', labelEn: 'Patient name', type: 'text', placeholder: 'Hastanın adı' },
+      { key: 'yas', label: 'Yaş', labelEn: 'Age', type: 'text', placeholder: 'Hastanın yaşı' },
       {
         key: 'durum', label: 'Aciliyet', labelEn: 'Urgency', type: 'select',
         options: [
-          { value: 'acil', label: 'ACIL (hayati tehlike)' },
+          { value: 'acil', label: 'ACİL (hayati tehlike)' },
           { value: 'orta', label: 'Orta (doktor gerekli)' },
-          { value: 'hafif', label: 'Hafif (ilk yardim yeterli)' },
+          { value: 'hafif', label: 'Hafif (ilk yardım yeterli)' },
         ]
       },
-      { key: 'belirtiler', label: 'Belirtiler', labelEn: 'Symptoms', type: 'text', placeholder: 'Hasta semptomlari' },
+      { key: 'belirtiler', label: 'Belirtiler', labelEn: 'Symptoms', type: 'text', placeholder: 'Hasta semptomları' },
       { key: 'alerji', label: 'Alerji', labelEn: 'Allergies', type: 'text', placeholder: 'Bilinen alerjiler' },
       { key: 'kanGrubu', label: 'Kan Grubu', labelEn: 'Blood type', type: 'text', placeholder: 'A+, B-, O+, vs.' },
-      { key: 'ilaclar', label: 'Kullanilan Ilaclar', labelEn: 'Current medications', type: 'text', placeholder: 'Halihazirda kullanilan ilaclar' },
-      { key: 'iletisim', label: 'Iletisim', labelEn: 'Contact', type: 'text', placeholder: 'Yakin telefon numarası' },
+      { key: 'ilaclar', label: 'Kullanılan İlaçlar', labelEn: 'Current medications', type: 'text', placeholder: 'Halihazırda kullanılan ilaçlar' },
+      { key: 'iletisim', label: 'İletişim', labelEn: 'Contact', type: 'text', placeholder: 'Yakın telefon numarası' },
     ],
     generate: (v) => {
-      return `SAGLIK YARDIM
+      return `SAĞLIK YARDIM
 Hasta: ${v.isim || '[isim]'}
-Yas: ${v.yas || '[yas]'}
+Yaş: ${v.yas || '[yas]'}
 Durum: ${v.durum || '[acil/orta/hafif]'}
 Belirtiler: ${v.belirtiler || '[belirtiler]'}
 Alerji: ${v.alerji || '[alerji]'}
 Kan grubu: ${v.kanGrubu || '[grup]'}
-Ilaclar: ${v.ilaclar || '[ilaclar]'}
-Iletisim: ${v.iletisim || '[tel]'}`;
+İlaçlar: ${v.ilaclar || '[ilaclar]'}
+İletişim: ${v.iletisim || '[tel]'}`;
     },
     generatePrint: (v) => {
-      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Saglik Talebi</title>
+      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Sağlık Talebi</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:24px;text-align:center;border:3px solid #ec4899;padding:16px;margin-bottom:20px;background:#fdf2f8}p{font-size:16px;line-height:1.8;margin:6px 0}.label{font-weight:bold}.critical{font-size:22px;text-align:center;padding:12px;background:#fee2e2;border:2px solid #ef4444;margin:16px 0}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
-<h1>SAGLIK YARDIM / MEDICAL REQUEST</h1>
+<h1>SAĞLIK YARDIM / MEDICAL REQUEST</h1>
 <p><span class="label">Hasta:</span> ${v.isim || '[isim]'}</p>
-<p><span class="label">Yas:</span> ${v.yas || '[yas]'}</p>
+<p><span class="label">Yaş:</span> ${v.yas || '[yas]'}</p>
 <p><span class="label">Durum:</span> ${v.durum || '[acil/orta/hafif]'}</p>
 <p><span class="label">Belirtiler:</span> ${v.belirtiler || '[belirtiler]'}</p>
 <p><span class="label">Alerji:</span> ${v.alerji || '[alerji]'}</p>
 <p><span class="label">Kan Grubu:</span> ${v.kanGrubu || '[grup]'}</p>
-<p><span class="label">Ilaclar:</span> ${v.ilaclar || '[ilaclar]'}</p>
-<p><span class="label">Iletisim:</span> ${v.iletisim || '[tel]'}</p>
-${v.durum === 'acil' ? '<div class="critical">ACIL -- HEMEN 112&apos;YI ARAYIN!</div>' : ''}
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<p><span class="label">İlaçlar:</span> ${v.ilaclar || '[ilaclar]'}</p>
+<p><span class="label">İletişim:</span> ${v.iletisim || '[tel]'}</p>
+${v.durum === 'acil' ? '<div class="critical">ACİL -- HEMEN 112&apos;YI ARAYIN!</div>' : ''}
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
   {
     id: 'bolge',
-    title: 'Bolgu Guvenli',
+    title: 'Bölge Güvenli',
     titleEn: 'Area Status',
     icon: MapPin,
     iconColor: 'text-cyan-400',
-    description: 'Bolgenizin guvenlik durumunu raporlayin',
+    description: 'Bölgenizin güvenlik durumunu raporlayın',
     fields: [
-      { key: 'bolge', label: 'Bolge', labelEn: 'Area', type: 'text', placeholder: 'Bolge/mahalle adi' },
+      { key: 'bolge', label: 'Bölge', labelEn: 'Area', type: 'text', placeholder: 'Bölge/mahalle adı' },
       {
         key: 'durum', label: 'Durum', labelEn: 'Status', type: 'select',
         options: [
-          { value: 'guvenli', label: 'Guvenli' },
+          { value: 'guvenli', label: 'Güvenli' },
           { value: 'tehlikeli', label: 'Tehlikeli' },
-          { value: 'erken-uyari', label: 'Erken uyari asamasinda' },
+          { value: 'erken-uyari', label: 'Erken uyarı aşamasında' },
         ]
       },
       {
-        key: 'altyapi', label: 'Altyapi Durumu', labelEn: 'Infrastructure', type: 'select',
+        key: 'altyapi', label: 'Altyapı Durumu', labelEn: 'Infrastructure', type: 'select',
         options: [
-          { value: 'calisiyor', label: 'Calisiyor' },
-          { value: 'hasarli', label: 'Hasarli' },
-          { value: 'coktu', label: 'Tamamen coktu' },
+          { value: 'calisiyor', label: 'Çalışıyor' },
+          { value: 'hasarli', label: 'Hasarlı' },
+          { value: 'coktu', label: 'Tamamen çöktü' },
         ]
       },
       {
-        key: 'ihtiyac', label: 'Bolge Ihtiyaci', labelEn: 'Area need', type: 'select',
+        key: 'ihtiyac', label: 'Bölge İhtiyacı', labelEn: 'Area need', type: 'select',
         options: [
-          { value: 'yok', label: 'Ihtiyac yok' },
-          { value: 'az', label: 'Az miktarda yardim gerekli' },
-          { value: 'cok', label: 'Cok acil yardim gerekli' },
+          { value: 'yok', label: 'İhtiyaç yok' },
+          { value: 'az', label: 'Az miktarda yardım gerekli' },
+          { value: 'cok', label: 'Çok acil yardım gerekli' },
         ]
       },
-      { key: 'yardimVarisi', label: 'Yardim Ulasiyor Mu?', labelEn: 'Help reaching?', type: 'select', options: [
+      { key: 'yardimVarisi', label: 'Yardım Ulaşıyor Mu?', labelEn: 'Help reaching?', type: 'select', options: [
         { value: 'evet', label: 'Evet' },
-        { value: 'hayir', label: 'Hayir' },
+        { value: 'hayir', label: 'Hayır' },
       ]},
     ],
     generate: (v) => {
-      return `BOLGE DURUMU
-Bolge: ${v.bolge || '[bolge]'}
-Durum: ${v.durum || '[guvenli/tehlikeli/erken uyari]'}
-Altyapi: ${v.altyapi || '[calisiyor/hasarli/coktu]'}
-Ihtiyac: ${v.ihtiyac || '[yok/az/cok]'}
-Yardim varisi: ${v.yardimVarisi || '[evet/hayir]'}
+      return `BÖLGE DURUMU
+Bölge: ${v.bolge || '[bolge]'}
+Durum: ${v.durum || '[güvenli/tehlikeli/erken uyarı]'}
+Altyapı: ${v.altyapi || '[çalışıyor/hasarlı/çöktü]'}
+İhtiyaç: ${v.ihtiyac || '[yok/az/çok]'}
+Yardım varışı: ${v.yardimVarisi || '[evet/hayır]'}
 Tarih: ${formatNow()}`;
     },
     generatePrint: (v) => {
-      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Bolge Durumu</title>
+      return `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Bölge Durumu</title>
 <style>body{font-family:Arial,sans-serif;max-width:500px;margin:30px auto;padding:20px;color:#000}h1{font-size:24px;text-align:center;border:3px solid #06b6d4;padding:16px;margin-bottom:20px;background:#ecfeff}p{font-size:16px;line-height:1.8;margin:6px 0}.label{font-weight:bold}.footer{margin-top:30px;font-size:12px;color:#666;text-align:center;border-top:1px solid #ccc;padding-top:8px}@media print{body{margin:0}}</style></head><body>
-<h1>BOLGE DURUMU / AREA STATUS</h1>
-<p><span class="label">Bolge:</span> ${v.bolge || '[bolge]'}</p>
+<h1>BÖLGE DURUMU / AREA STATUS</h1>
+<p><span class="label">Bölge:</span> ${v.bolge || '[bolge]'}</p>
 <p><span class="label">Durum:</span> ${v.durum || '[durum]'}</p>
-<p><span class="label">Altyapi:</span> ${v.altyapi || '[altyapi]'}</p>
-<p><span class="label">Ihtiyac:</span> ${v.ihtiyac || '[ihtiyac]'}</p>
-<p><span class="label">Yardim Ulasıyor:</span> ${v.yardimVarisi || '[evet/hayir]'}</p>
+<p><span class="label">Altyapı:</span> ${v.altyapi || '[altyapi]'}</p>
+<p><span class="label">İhtiyaç:</span> ${v.ihtiyac || '[ihtiyac]'}</p>
+<p><span class="label">Yardım Ulaşıyor:</span> ${v.yardimVarisi || '[evet/hayır]'}</p>
 <p><span class="label">Tarih:</span> ${formatNow()}</p>
-<div class="footer">PrepTurk -- ${formatNow()}</div></body></html>`;
+<div class="footer">PrepTürk -- ${formatNow()}</div></body></html>`;
     },
   },
 ];
@@ -415,9 +415,9 @@ export default function SablonlarPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold">Acil Mesaj Sablonları / Emergency Templates</h1>
+        <h1 className="text-2xl font-bold">Acil Mesaj Şablonları / Emergency Templates</h1>
         <p className="text-nomad-slate text-sm mt-1">
-          Onceden hazırlanmis mesaj sablonlarını doldurun, kopyalayin veya yazdirin
+          Önceden hazırlanmış mesaj şablonlarını doldurun, kopyalayın veya yazdırın
         </p>
       </div>
 
@@ -478,7 +478,7 @@ export default function SablonlarPage() {
                       onChange={(e) => handleFieldChange(currentTemplate.id, field.key, e.target.value)}
                       className="input-field w-full"
                     >
-                      <option value="">Seciniz...</option>
+                      <option value="">Seçiniz...</option>
                       {field.options.map((opt) => (
                         <option key={opt.value} value={opt.value}>{opt.label}</option>
                       ))}
@@ -500,7 +500,7 @@ export default function SablonlarPage() {
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
                 <FileText className="h-4 w-4" />
-                Mesaj Onizleme / Message Preview
+                Mesaj Önizleme / Message Preview
               </h4>
               <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border font-mono text-sm whitespace-pre-wrap leading-relaxed">
                 {getOutput(currentTemplate)}
@@ -528,7 +528,7 @@ export default function SablonlarPage() {
               </Button>
               <Button variant="outline" size="lg" onClick={() => printTemplate(currentTemplate)}>
                 <Printer className="h-4 w-4 mr-2" />
-                Yazdir
+                Yazdır
               </Button>
             </div>
 
@@ -536,7 +536,7 @@ export default function SablonlarPage() {
             <div className="p-3 bg-nomad-bg rounded-lg border border-nomad-border">
               <p className="text-xs text-nomad-slate flex items-center gap-2">
                 <Clipboard className="h-3 w-3" />
-                Ipucu: Mesaj onizleme bolgesinin ekran goruntusunu alarak WhatsApp veya SMS ile hizlica gonderebilirsiniz.
+                İpucu: Mesaj önizleme bölgesinin ekran görüntüsünü alarak WhatsApp veya SMS ile hızlıca gönderebilirsiniz.
               </p>
             </div>
           </CardContent>
@@ -549,7 +549,7 @@ export default function SablonlarPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MessageSquare className="h-5 w-5 text-nomad-green" />
-              Hızli Basvuru
+              Hızlı Başvuru
             </CardTitle>
           </CardHeader>
           <CardContent>

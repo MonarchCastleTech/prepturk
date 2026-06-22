@@ -45,100 +45,100 @@ const conditions: ConditionData[] = [
     nameEn: 'Diabetes',
     icon: <Droplets className="h-6 w-6 text-blue-400" />,
     dailyManagement: [
-      'Kan sekerinizi duzenli olcun (mumkunse gunde 4 kez)',
-      'Insulin ve ilaclarinizi duzenli kullanin',
-      'Karbonhidrat aliminizi kontrol altinda tutun',
-      'Bol su icin (gunde en az 2 litre)',
-      'Ayaklarinizi her gun kontrol edin',
-      'Duzenli ogun atlama',
+      'Kan şekerinizi düzenli ölçün (mümkünse günde 4 kez)',
+      'İnsulin ve ilaçlarınızı düzenli kullanın',
+      'Karbonhidrat alımınızı kontrol altında tutun',
+      'Bol su için (günde en az 2 litre)',
+      'Ayaklarınızı her gün kontrol edin',
+      'Düzenli öğün atlama',
     ],
     emergencySteps: [
-      'Insulin bitirse: Karbonhidrat alimini onemli olcude azaltin',
-      'Kan sekerinizi mumkun oldugunca sik olcun',
-      'Sivi alimini artirin (sekersiz icecekler)',
-      'Fiziksel aktiviteyi sinirlayin',
-      'Yakininzda biri varsa durumunuzu bildirin',
-      'Ilac yardim cagrilarini takip edin',
+      'İnsulin biterse: Karbonhidrat alımını önemli ölçüde azaltın',
+      'Kan şekerinizi mümkün olduğunca sık ölçün',
+      'Sıvı alımını artırın (şekersiz içecekler)',
+      'Fiziksel aktiviteyi sınırlayın',
+      'Yakınınızda biri varsa durumunuzu bildirin',
+      'İlaç yardım çağrılarını takip edin',
     ],
     warningSigns: [
-      'Titreme, terleme, kafanin karismasi, acikma hissi (Hipoglisemi)',
-      'Asiri susama, sik idrara cikma, bulanti (Hiperglisemi)',
-      'Gorus bulanikligi',
+      'Titreme, terleme, kafanın karışması, acıkma hissi (Hipoglisemi)',
+      'Aşırı susama, sık idrara çıkma, bulantı (Hiperglisemi)',
+      'Görüş bulanıklığı',
       'Halsizlik ve yorgunluk',
       'Nefeste meyve kokusu',
     ],
     whenToCall112: [
-      'Bilinc kaybi veya konusamama',
-      'Nobet gecirme',
-      'Siddetli kusma ve sivi alamama',
-      'Kan sekeri 300 mg/dL uzeri ve dusmuyorsa',
-      'Kan sekeri 70 mg/dL alti ve duzelmiyorsa',
+      'Bilinç kaybı veya konuşamama',
+      'Nöbet geçirme',
+      'Şiddetli kusma ve sıvı alamama',
+      'Kan şekeri 300 mg/dL üzeri ve düşmüyorsa',
+      'Kan şekeri 70 mg/dL altı ve düzelmiyorsa',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'WHO - Diabetes Guidelines'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'WHO - Diabetes Guidelines'],
     hypoglycemia: {
-      symptoms: ['Titreme', 'Terleme', 'Hizli kalp atisi', 'Kafanin karismasi', 'Acikma hissi', 'Bas donmesi', 'Halsizlik'],
-      treatment: ['15g hizli karbonhidrat verin (yarim bardak meyve suyu, 1 yemek kasigi bal/seker, 3-4 sekerleme)', '15 dakika bekleyin, tekrar olcun', '70 mg/dL altindaysa tekrar edin', 'Duzele kadar her 15 dakikada tekrarlayin'],
+      symptoms: ['Titreme', 'Terleme', 'Hızlı kalp atışı', 'Kafanın karışması', 'Acıkma hissi', 'Baş dönmesi', 'Halsizlik'],
+      treatment: ['15g hızlı karbonhidrat verin (yarım bardak meyve suyu, 1 yemek kaşığı bal/şeker, 3-4 şekerleme)', '15 dakika bekleyin, tekrar ölçün', '70 mg/dL altındaysa tekrar edin', 'Düzelene kadar her 15 dakikada tekrarlayın'],
     },
     hyperglycemia: {
-      symptoms: ['Asiri susama', 'Sik idrara cikma', 'Bulanik gorus', 'Bas agrisi', 'Bulantı', 'Halsizlik'],
-      action: ['Bol su icin', 'Insulin dozunu kontrol edin', 'Fiziksel aktivite yapin (kan sekeri cok yuksek degilse)', 'Doktora danisin'],
+      symptoms: ['Aşırı susama', 'Sık idrara çıkma', 'Bulanık görüş', 'Baş ağrısı', 'Bulantı', 'Halsizlik'],
+      action: ['Bol su için', 'İnsulin dozunu kontrol edin', 'Fiziksel aktivite yapın (kan şekeri çok yüksek değilse)', 'Doktora danışın'],
     },
     insulinStorage: [
-      'Buzdolabi yoksa: Serin, karanlik yerde saklayin',
-      'Maksimum 25C sicaklik',
-      'Acildiktan sonra 28 gun kullanilabilir',
-      'Direkt gunes isigindan uzak tutun',
-      'Asiri soguktan da koruyun (donme olmamali)',
+      'Buzdolabı yoksa: Serin, karanlık yerde saklayın',
+      'Maksimum 25C sıcaklık',
+      'Açıldıktan sonra 28 gün kullanılabilir',
+      'Direkt güneş ışığından uzak tutun',
+      'Aşırı soğuktan da koruyun (donma olmamalı)',
     ],
   },
   {
     id: 'hypertension',
-    nameTr: 'Hipertansiyon (Yuksek Tansiyon)',
+    nameTr: 'Hipertansiyon (Yüksek Tansiyon)',
     nameEn: 'High Blood Pressure',
     icon: <Activity className="h-6 w-6 text-red-400" />,
     dailyManagement: [
-      'Tuz tuketimini azaltin (gunde 5g altinda)',
-      'Stresi yonetin, rahatlamaya zaman ayirin',
-      'Duzenli fiziksel aktivite yapin',
-      'Tansiyonunuzu duzenli olcun',
+      'Tuz tüketimini azaltın (günde 5g altında)',
+      'Stresi yönetin, rahatlamaya zaman ayırın',
+      'Düzenli fiziksel aktivite yapın',
+      'Tansiyonunuzu düzenli ölçün',
       'Alkol ve sigaradan uzak durun',
-      'Ilaclarinizi duzenli kullanin',
+      'İlaçlarınızı düzenli kullanın',
     ],
     emergencySteps: [
-      'Ilac kesilirse: Tuz alimini onemli olcude azaltin',
+      'İlaç kesilirse: Tuz alımını önemli ölçüde azaltın',
       'Stresten uzak durun',
-      'Bas yuksek yatarak dinlenin',
-      'Derin nefes egzersizleri yapin',
-      'Kafein alimini kesin',
+      'Baş yüksek yatarak dinlenin',
+      'Derin nefes egzersizleri yapın',
+      'Kafein alımını kesin',
     ],
     warningSigns: [
-      'Siddetli bas agrisi',
-      'Gogus agrisi',
-      'Gorus degisiklikleri',
-      'Nefes darligi',
-      'Burun kanamasi',
-      'Bas donmesi ve sersemlik',
+      'Şiddetli baş ağrısı',
+      'Göğüs ağrısı',
+      'Görüş değişiklikleri',
+      'Nefes darlığı',
+      'Burun kanaması',
+      'Baş dönmesi ve sersemlik',
     ],
     whenToCall112: [
-      'Gogus agrisi ile birlikte siddetli bas agrisi',
-      'Gorus kaybi veya ciddi gorus bulanikligi',
-      'Konusma bozuklugu',
-      'Kol/bacakta kuvvet kaybi',
-      'Tansiyon 180/120 uzeri ve semptomlar varsa',
+      'Göğüs ağrısı ile birlikte şiddetli baş ağrısı',
+      'Görüş kaybı veya ciddi görüş bulanıklığı',
+      'Konuşma bozukluğu',
+      'Kol/bacakta kuvvet kaybı',
+      'Tansiyon 180/120 üzeri ve semptomlar varsa',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'WHO - Hypertension Guidelines'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'WHO - Hypertension Guidelines'],
     hypertensiveCrisis: [
-      'Tansiyon 180/120 uzeri -- acil durum!',
-      'Hemen 112 yi arayin',
-      'Sakin olun, yatin, bas yuksekte olsun',
-      'Mumkunse tansiyon ilaci alin',
-      'Yalniz birakilmayin',
+      'Tansiyon 180/120 üzeri -- acil durum!',
+      'Hemen 112 yi arayın',
+      'Sakin olun, yatın, baş yüksekte olsun',
+      'Mümkünse tansiyon ilacı alın',
+      'Yalnız bırakılmayın',
     ],
     naturalBPReduction: [
-      'Derin nefes: 4 saniye nefes alin, 6 saniye verin, 5 dakika tekrarlayin',
-      'Dinlenme: Sessiz, karanlik odada yatin',
-      'Ilık duş: Kan damarlarini genisletir',
-      'Papatya cayi: Hafif sakinlastirici etki',
+      'Derin nefes: 4 saniye nefes alın, 6 saniye verin, 5 dakika tekrarlayın',
+      'Dinlenme: Sessiz, karanlık odada yatın',
+      'Ilık duş: Kan damarlarını genişletir',
+      'Papatya çayı: Hafif sakinleştirici etki',
     ],
   },
   {
@@ -147,114 +147,114 @@ const conditions: ConditionData[] = [
     nameEn: 'Asthma',
     icon: <Wind className="h-6 w-6 text-cyan-400" />,
     dailyManagement: [
-      'Inhaler\'inizi her zaman yaninizda tasıyın',
-      'Tetikleyicilerden uzak durun (toz, duman, soguk hava)',
-      'Duzenli kontrol ilaclarini kullanin',
-      'Nefes egzersizleri yapin',
-      'Alerjenlerden kacinin',
+      'İnhaler\'inizi her zaman yanınızda taşıyın',
+      'Tetikleyicilerden uzak durun (toz, duman, soğuk hava)',
+      'Düzenli kontrol ilaçlarını kullanın',
+      'Nefes egzersizleri yapın',
+      'Alerjenlerden kaçının',
     ],
     emergencySteps: [
-      'Inhaler bitirse: Dik oturun, yavas derin nefes alin',
-      'Sakin kalmaya calisin -- panik nefes darligini artirir',
-      'Tetikleyicilerden uzaklasin',
-      'Sigara dumanı, toz, keskin koku ve soguk havadan kacinin',
-      'Buharlı nefes alma: Ilık su buhari ile nefes yolunu acin',
-      'Yakininizdan yardim isteyin',
+      'İnhaler biterse: Dik oturun, yavaş derin nefes alın',
+      'Sakin kalmaya çalışın -- panik nefes darlığını artırır',
+      'Tetikleyicilerden uzaklaşın',
+      'Sigara dumanı, toz, keskin koku ve soğuk havadan kaçının',
+      'Buharlı nefes alma: Ilık su buharı ile nefes yolunu açın',
+      'Yakınınızdan yardım isteyin',
     ],
     warningSigns: [
-      'Nefes almada zorluk artisi',
-      'Hirilti veya wheezing sesi',
-      'Gogus sikisikligi',
-      'Oksuruk nobetleri',
-      'Konusurken nefesin kesilmesi',
+      'Nefes almada zorluk artışı',
+      'Hırıltı veya wheezing sesi',
+      'Göğüs sıkışıklığı',
+      'Öksürük nöbetleri',
+      'Konuşurken nefesin kesilmesi',
     ],
     whenToCall112: [
       'Dudaklarda morarma',
-      'Konusamama (cumle kuramama)',
-      'Gogus ic cekilmeleri (kaburgalar arasi cekilme)',
-      'Inhaler etkisiz kaliyorsa',
-      'Bilinc bulanikligi',
+      'Konuşamama (cümle kuramama)',
+      'Göğüs iç çekilmeleri (kaburgalar arası çekilme)',
+      'İnhaler etkisiz kalıyorsa',
+      'Bilinç bulanıklığı',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'GINA - Global Initiative for Asthma'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'GINA - Global Initiative for Asthma'],
     inhalerSteps: [
-      'Inhaler\'i sallayin (5 saniye)',
-      'Agziniza yerlestirin, dudaklarinizi sikin',
-      'Nefes verin (inhaler\'i agziniza koyduktan sonra)',
-      'Inhaler\'e basin ve ayni anda derin nefes alin',
+      'İnhaler\'i sallayın (5 saniye)',
+      'Ağzınıza yerleştirin, dudaklarınızı sıkın',
+      'Nefes verin (inhaler\'i ağzınıza koyduktan sonra)',
+      'İnhaler\'e basın ve aynı anda derin nefes alın',
       '10 saniye nefesinizi tutun',
       'Gerekirse 1 dakika bekleyip tekrar edin',
     ],
     triggerAvoidance: [
-      'Barinak icinde: Tozlu alanlardan uzak durun',
-      'Duman, sigara, mangal dumanindan kacinin',
-      'Keskin kokulu temizlik urunleri kullanmayin',
-      'Soguk havada agzi ve burnu ortun',
-      'Toz akarlarina karsi maske takin',
+      'Barınak içinde: Tozlu alanlardan uzak durun',
+      'Duman, sigara, mangal dumanından kaçının',
+      'Keskin kokulu temizlik ürünleri kullanmayın',
+      'Soğuk havada ağzı ve burnu örtün',
+      'Toz akarlarına karşı maske takın',
     ],
-    steamBreathing: 'Bir kap ilık suya basinizi egip, uzerine havlu alarak 10-15 dakika buhar soluyun. Bu, nefes yollarini acmaya yardimci olur.',
+    steamBreathing: 'Bir kap ılık suya başınızı eğip, üzerine havlu alarak 10-15 dakika buhar soluyun. Bu, nefes yollarını açmaya yardımcı olur.',
   },
   {
     id: 'heart-disease',
-    nameTr: 'Kalp Hastaligi (Heart Disease)',
+    nameTr: 'Kalp Hastalığı (Heart Disease)',
     nameEn: 'Heart Disease',
     icon: <Heart className="h-6 w-6 text-rose-400" />,
     dailyManagement: [
-      'Ilaclarinizi duzenli kullanin',
-      'Dusuk tuzlu diyet uygulayin',
-      'Stresi azaltin',
-      'Hafif fiziksel aktivite yapin (doktor onayi ile)',
+      'İlaçlarınızı düzenli kullanın',
+      'Düşük tuzlu diyet uygulayın',
+      'Stresi azaltın',
+      'Hafif fiziksel aktivite yapın (doktor onayı ile)',
       'Kilonuzu takip edin',
       'Sigara ve alkolden uzak durun',
     ],
     emergencySteps: [
-      'Ilaclar mevcut degilse: Dinlenin, dusuk tuzlu diyet yapin, stresi azaltin',
-      'Her turlu fiziksel aktiviteyi birakin',
-      'Yari oturur pozisyonda dinlenin',
-      'Dar elbiseleri gevsetin',
-      'Temiz hava alin',
+      'İlaçlar mevcut değilse: Dinlenin, düşük tuzlu diyet yapın, stresi azaltın',
+      'Her türlü fiziksel aktiviteyi bırakın',
+      'Yarı oturur pozisyonda dinlenin',
+      'Dar elbiseleri gevşetin',
+      'Temiz hava alın',
     ],
     warningSigns: [
-      'Gogus baskisi veya agrisi',
-      'Kol agrisi (ozellikle sol)',
-      'Cene, boyun veya sirt agrisi',
+      'Göğüs baskısı veya ağrısı',
+      'Kol ağrısı (özellikle sol)',
+      'Çene, boyun veya sırt ağrısı',
       'Terleme',
       'Bulantı',
-      'Nefes darligi',
-      'Bas donmesi',
+      'Nefes darlığı',
+      'Baş dönmesi',
     ],
     whenToCall112: [
-      'Gogus agrisi 5 dakikadan fazla suruyorsa',
+      'Göğüs ağrısı 5 dakikadan fazla sürüyorsa',
       'Nefes alamama',
-      'Bilinc kaybi',
-      'Nabiz cok hizli veya cok yavas ise',
-      'Ani, siddetli halsizlik',
+      'Bilinç kaybı',
+      'Nabız çok hızlı veya çok yavaş ise',
+      'Ani, şiddetli halsizlik',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'WHO - Cardiovascular Guidelines'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'WHO - Cardiovascular Guidelines'],
     heartAttackSigns: [
-      'Goguste baski, sikisma veya agri (fil oturuyormus gibi)',
-      'Sol kola yayilan agri',
-      'Cene, boyun veya sirt agrisi',
-      'Soguk terleme',
+      'Göğüste baskı, sıkışma veya ağrı (fil oturuyormuş gibi)',
+      'Sol kola yayılan ağrı',
+      'Çene, boyun veya sırt ağrısı',
+      'Soğuk terleme',
       'Bulantı veya kusma',
-      'Nefes darligi',
-      'Ani bas donmesi',
+      'Nefes darlığı',
+      'Ani baş dönmesi',
     ],
     immediateAction: [
-      'HEMEN 112\'yi arayin',
-      'Mevcutsa aspirin cigneyin (300mg)',
-      'Yari oturur pozisyonda dinlenin',
-      'Dar giysileri gevsetin',
-      'Yalniz birakilmayin',
-      'Kapıyı acik birakin (saglik ekibi icin)',
+      'HEMEN 112\'yi arayın',
+      'Mevcutsa aspirin çiğneyin (300mg)',
+      'Yarı oturur pozisyonda dinlenin',
+      'Dar giysileri gevşetin',
+      'Yalnız bırakılmayın',
+      'Kapıyı açık bırakın (sağlık ekibi için)',
     ],
     cprBasics: [
-      'Hareketsiz ve nefes almıyorsa: Hemen 112\'yi arayin',
-      'Ellerinizi gogus ortasina yerlestirin',
-      'Dakikada 100-120 kez, 5-6 cm derinlikte basin',
-      'Her basin hizli ve guclu olsun',
-      'Gogus her basin arasinda tam olarak genislesin',
-      '30 basin, 2 kurtarma nefesi (egitimliyseniz)',
-      'Saglik ekibi gelene kadar devam edin',
+      'Hareketsiz ve nefes almıyorsa: Hemen 112\'yi arayın',
+      'Ellerinizi göğüs ortasına yerleştirin',
+      'Dakikada 100-120 kez, 5-6 cm derinlikte basın',
+      'Her bası hızlı ve güçlü olsun',
+      'Göğüs her bası arasında tam olarak genişlesin',
+      '30 bası, 2 kurtarma nefesi (eğitimliyseniz)',
+      'Sağlık ekibi gelene kadar devam edin',
     ],
   },
   {
@@ -263,113 +263,113 @@ const conditions: ConditionData[] = [
     nameEn: 'Epilepsy',
     icon: <Zap className="h-6 w-6 text-yellow-400" />,
     dailyManagement: [
-      'Ilaclarinizi duzenli kullanin -- hicbir zaman atlamayin',
-      'Duzenli uyku uyuyun (7-9 saat)',
-      'Stresi yonetin',
-      'Alkol ve uyusturucudan uzak durun',
-      'Tetikleyicilerinizi bilin ve kacinin',
+      'İlaçlarınızı düzenli kullanın -- hiçbir zaman atlamayın',
+      'Düzenli uyku uyuyun (7-9 saat)',
+      'Stresi yönetin',
+      'Alkol ve uyuşturucudan uzak durun',
+      'Tetikleyicilerinizi bilin ve kaçının',
     ],
     emergencySteps: [
-      'Nobet sirasinda: Bası koruyun, cevrede guvenligi saglayin',
-      'HICBIR ZAMAN hastayi tutmayin veya kisitlamayin',
-      'Agzina HICBIR sey koymayin',
-      'Cevredeki tehlikeli nesneleri uzaklastirin',
-      'Nobeti zamana alin',
-      'Yastik veya yumusak bir sey basinin altina koyun',
+      'Nöbet sırasında: Başı koruyun, çevrede güvenliği sağlayın',
+      'HİÇBİR ZAMAN hastayı tutmayın veya kısıtlamayın',
+      'Ağzına HİÇBİR şey koymayın',
+      'Çevredeki tehlikeli nesneleri uzaklaştırın',
+      'Nöbeti zamana alın',
+      'Yastık veya yumuşak bir şey başının altına koyun',
     ],
     warningSigns: [
       'Ani bakakalma, dalma',
-      'Kas kasilmalari veya titremeler',
-      'Gecici konusma bozuklugu',
-      'Gorus degisiklikleri',
-      'Gari koku veya tat hissi',
+      'Kas kasılmaları veya titremeler',
+      'Geçici konuşma bozukluğu',
+      'Görüş değişiklikleri',
+      'Garip koku veya tat hissi',
     ],
     whenToCall112: [
-      'Nobet 5 dakikadan uzun suruyorsa',
-      'Nobet bitince hasta uyaniyorsa',
-      'Arka arkaya nobet geciriyorsa',
-      'Nobet sirasinda yaralanma olursa',
-      'Ilk kez nobet geciriyorsa',
-      'Hamil bir kadin ise',
+      'Nöbet 5 dakikadan uzun sürüyorsa',
+      'Nöbet bitince hasta uyanıyorsa',
+      'Arka arkaya nöbet geçiriyorsa',
+      'Nöbet sırasında yaralanma olursa',
+      'İlk kez nöbet geçiriyorsa',
+      'Hamile bir kadın ise',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'ILAE - International League Against Epilepsy'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'ILAE - International League Against Epilepsy'],
     seizureProtection: [
-      'Basini korumak icin yumusak nesne koyun',
-      'Cevredeki keskin veya sert nesneleri uzaklastirin',
-      'Gozluk, saat gibi esyalarini cikarin',
-      'Yaka ve kravatı gevsetin',
-      'Etrafinda guvenli bir alan olusturun',
+      'Başını korumak için yumuşak nesne koyun',
+      'Çevredeki keskin veya sert nesneleri uzaklaştırın',
+      'Gözlük, saat gibi eşyalarını çıkarın',
+      'Yaka ve kravatı gevşetin',
+      'Etrafında güvenli bir alan oluşturun',
     ],
     afterSeizure: [
-      'Hastayi yan cevirin (recovery position)',
-      'Hastayla birlikte kalın, konusun',
-      'Nobetin ne kadar surdugunu kaydedin',
-      'Yaralanma var mi kontrol edin',
-      'Tamamen uyaniyana kadar yalniz birakmayin',
+      'Hastayı yan çevirin (recovery position)',
+      'Hastayla birlikte kalın, konuşun',
+      'Nöbetin ne kadar sürdüğünü kaydedin',
+      'Yaralanma var mı kontrol edin',
+      'Tamamen uyanana kadar yalnız bırakmayın',
       'Dinlenmesine izin verin',
     ],
     seizureEmergency: [
-      'Nobet 5 dakikayi gectiyse: 112\'yi arayin',
-      'Arka arkaya nobet geliyorsa: 112',
-      'Hasta uyanmiyorsa: 112',
+      'Nöbet 5 dakikayı geçtiyse: 112\'yi arayın',
+      'Arka arkaya nöbet geliyorsa: 112',
+      'Hasta uyanmıyorsa: 112',
       'Nefes almıyorsa: 112 + CPR',
     ],
   },
   {
     id: 'allergies',
-    nameTr: 'Alerji (Siddetli Alerjiler)',
+    nameTr: 'Alerji (Şiddetli Alerjiler)',
     nameEn: 'Severe Allergies',
     icon: <AlertCircle className="h-6 w-6 text-orange-400" />,
     dailyManagement: [
-      'Alerjenlerinizi bilin ve kacinin',
-      'EpiPen\'inizi her zaman yaninizda tasıyın',
-      'Alerji bilgilerinizi herkesin bilmesini saglayın',
-      'Antihistaminik ilaclarinizi yaninizda bulundurun',
-      'Gida etiketlerini dikkatlice okuyun',
+      'Alerjenlerinizi bilin ve kaçının',
+      'EpiPen\'inizi her zaman yanınızda taşıyın',
+      'Alerji bilgilerinizi herkesin bilmesini sağlayın',
+      'Antihistaminik ilaçlarınızı yanınızda bulundurun',
+      'Gıda etiketlerini dikkatlice okuyun',
     ],
     emergencySteps: [
-      'EpiPen mevcut degilse: Alerjeni uzaklastirin',
+      'EpiPen mevcut değilse: Alerjeni uzaklaştırın',
       'Mevcutsa antihistaminik verin',
-      'Hastayi yatin, bacaklari yukari kaldirin',
-      'Dar giysileri gevsetin',
-      'Yakininizdan yardim isteyin',
+      'Hastayı yatırın, bacakları yukarı kaldırın',
+      'Dar giysileri gevşetin',
+      'Yakınınızdan yardım isteyin',
     ],
     warningSigns: [
-      'Sisme (yuz, dudak, dil, bogaz)',
+      'Şişme (yüz, dudak, dil, boğaz)',
       'Nefes almada zorluk',
-      'Kizariklik ve kurdesen (hives)',
-      'Bas donmesi',
-      'Hizli veya zayif nabiz',
+      'Kızarıklık ve kurdeşen (hives)',
+      'Baş dönmesi',
+      'Hızlı veya zayıf nabız',
       'Bulantı veya kusma',
     ],
     whenToCall112: [
       'Nefes almada zorluk',
-      'Dil veya bogazda sisme',
-      'Bilinc kaybi',
-      'Hizli nabiz ve dusuk tansiyon',
-      'Anafilaksi suphesi -- HER ZAMAN 112\'yi arayin',
+      'Dil veya boğazda şişme',
+      'Bilinç kaybı',
+      'Hızlı nabız ve düşük tansiyon',
+      'Anafilaksi şüphesi -- HER ZAMAN 112\'yi arayın',
     ],
-    sources: ['Saglik Bakanligi', 'UZEM', 'WAO - World Allergy Organization'],
+    sources: ['Sağlık Bakanlığı', 'UZEM', 'WAO - World Allergy Organization'],
     allergenAvoidance: [
-      'Barinak icinde: Yiyecekleri kapalı kaplarda saklayın',
+      'Barınak içinde: Yiyecekleri kapalı kaplarda saklayın',
       'Tozlu alanlardan uzak durun',
-      'Bocek ve haşere ilaclarini dikkatli kullanın',
-      'Gida yardimlarinin icerigini kontrol edin',
-      'Ilac yardimlarinda alerji kontrolu yapin',
+      'Böcek ve haşere ilaçlarını dikkatli kullanın',
+      'Gıda yardımlarının içeriğini kontrol edin',
+      'İlaç yardımlarında alerji kontrolü yapın',
     ],
     anaphylaxisRecognition: [
-      'Deride: Kizariklik, kurdesen, kasinti, sisme',
-      'Solum: Nefes darligi, hirlti, bogazda sisme hissi',
-      'Dolasim: Hizli nabiz, dusuk tansiyon, bas donmesi',
-      'Sindirim: Bulantı, kusma, ishal, karin agrisi',
-      'NOT: Birden fazla sistem etkileniyorsa ANAFILAKSI -- HEMEN 112',
+      'Deride: Kızarıklık, kurdeşen, kaşıntı, şişme',
+      'Solunum: Nefes darlığı, hırıltı, boğazda şişme hissi',
+      'Dolaşım: Hızlı nabız, düşük tansiyon, baş dönmesi',
+      'Sindirim: Bulantı, kusma, ishal, karın ağrısı',
+      'NOT: Birden fazla sistem etkileniyorsa ANAFİLAKSİ -- HEMEN 112',
     ],
     emergencyPosition: [
-      'Hastayi duz yatin',
-      'Bacaklari 30-45 derece yukari kaldirin',
-      'Bas yan cevrilmis olsun (kusma varsa)',
-      'Nefes almakta zorlaniyorsa yari oturur pozisyonda tutun',
-      'Hastayi hareket ettirmeyin (gerekmedikce)',
+      'Hastayı düz yatırın',
+      'Bacakları 30-45 derece yukarı kaldırın',
+      'Baş yan çevrilmiş olsun (kusma varsa)',
+      'Nefes almakta zorlanıyorsa yarı oturur pozisyonda tutun',
+      'Hastayı hareket ettirmeyin (gerekmedikçe)',
     ],
   },
 ];
@@ -399,13 +399,13 @@ export default function ChronicConditionPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Heart className="h-7 w-7 text-red-400" />
-            Kronik Hastalik Acil Durum Planlari
+            Kronik Hastalık Acil Durum Planları
           </h1>
           <p className="text-nomad-slate text-sm">Chronic Condition Emergency Plans</p>
         </div>
         <Button variant="outline" size="sm" onClick={() => window.print()}>
           <Printer className="h-4 w-4 mr-1" />
-          Yazdir / Print
+          Yazdır / Print
         </Button>
       </div>
 
@@ -417,7 +417,7 @@ export default function ChronicConditionPage() {
             <div>
               <p className="font-bold text-red-300 text-lg">UYARI / WARNING</p>
               <p className="text-red-200 mt-1">
-                Bu bilgiler acil durum icindir -- doktor tavsiyesi degildir.
+                Bu bilgiler acil durum içindir -- doktor tavsiyesi değildir.
               </p>
               <p className="text-red-200/70 text-sm">
                 (This information is for emergency situations only -- it is not medical advice. Always consult a healthcare professional.)
@@ -431,7 +431,7 @@ export default function ChronicConditionPage() {
         <CardContent className="p-3 flex items-center gap-2 text-sm">
           <Info className="h-4 w-4 text-nomad-green flex-shrink-0" />
           <span className="text-nomad-slate">
-            Tum bilgiler Saglik Bakanligi, UZEM ve WHO kilavuzlarina dayanmaktadir.
+            Tüm bilgiler Sağlık Bakanlığı, UZEM ve WHO kılavuzlarına dayanmaktadır.
           </span>
         </CardContent>
       </Card>
@@ -467,7 +467,7 @@ export default function ChronicConditionPage() {
                     {[
                       { id: 'daily', label: 'Günlük Yönetim' },
                       { id: 'emergency', label: 'Acil Durum' },
-                      { id: 'warning', label: 'Uyari Isaretleri' },
+                      { id: 'warning', label: 'Uyarı İşaretleri' },
                       { id: 'call112', label: '112 Ne Zaman' },
                     ].map((section) => (
                       <button
@@ -503,7 +503,7 @@ export default function ChronicConditionPage() {
 
                         {condition.insulinStorage && (
                           <div className="mt-4 p-3 bg-blue-950/30 border border-blue-800 rounded-lg">
-                            <h5 className="font-semibold text-blue-300 text-sm mb-2">Insulin Saklama / Insulin Storage</h5>
+                            <h5 className="font-semibold text-blue-300 text-sm mb-2">İnsulin Saklama / Insulin Storage</h5>
                             <ul className="space-y-1">
                               {condition.insulinStorage.map((item, i) => (
                                 <li key={i} className="flex items-start gap-2 text-sm text-blue-200">
@@ -517,7 +517,7 @@ export default function ChronicConditionPage() {
 
                         {condition.hypoglycemia && (
                           <div className="mt-4 p-3 bg-amber-950/30 border border-amber-800 rounded-lg">
-                            <h5 className="font-semibold text-amber-300 text-sm mb-2">Hipoglisemi (Dusuk Kan Sekeri) / Hypoglycemia</h5>
+                            <h5 className="font-semibold text-amber-300 text-sm mb-2">Hipoglisemi (Düşük Kan Şekeri) / Hypoglycemia</h5>
                             <p className="text-xs text-amber-200 mb-1 font-medium">Belirtiler:</p>
                             <div className="flex flex-wrap gap-1 mb-2">
                               {condition.hypoglycemia.symptoms.map((s, i) => (
@@ -538,7 +538,7 @@ export default function ChronicConditionPage() {
 
                         {condition.hyperglycemia && (
                           <div className="mt-4 p-3 bg-red-950/30 border border-red-800 rounded-lg">
-                            <h5 className="font-semibold text-red-300 text-sm mb-2">Hiperglisemi (Yuksek Kan Sekeri) / Hyperglycemia</h5>
+                            <h5 className="font-semibold text-red-300 text-sm mb-2">Hiperglisemi (Yüksek Kan Şekeri) / Hyperglycemia</h5>
                             <p className="text-xs text-red-200 mb-1 font-medium">Belirtiler:</p>
                             <div className="flex flex-wrap gap-1 mb-2">
                               {condition.hyperglycemia.symptoms.map((s, i) => (
@@ -575,7 +575,7 @@ export default function ChronicConditionPage() {
 
                         {condition.naturalBPReduction && (
                           <div className="mt-4 p-3 bg-green-950/30 border border-green-800 rounded-lg">
-                            <h5 className="font-semibold text-green-300 text-sm mb-2">Dogal Tansiyon Düsürme / Natural BP Reduction</h5>
+                            <h5 className="font-semibold text-green-300 text-sm mb-2">Doğal Tansiyon Düşürme / Natural BP Reduction</h5>
                             <ul className="space-y-1">
                               {condition.naturalBPReduction.map((item, i) => (
                                 <li key={i} className="text-sm text-green-200 flex items-start gap-2">
@@ -589,14 +589,14 @@ export default function ChronicConditionPage() {
 
                         {condition.steamBreathing && (
                           <div className="mt-4 p-3 bg-cyan-950/30 border border-cyan-800 rounded-lg">
-                            <h5 className="font-semibold text-cyan-300 text-sm mb-2">Buharli Nefes / Steam Breathing</h5>
+                            <h5 className="font-semibold text-cyan-300 text-sm mb-2">Buharlı Nefes / Steam Breathing</h5>
                             <p className="text-sm text-cyan-200">{condition.steamBreathing}</p>
                           </div>
                         )}
 
                         {condition.inhalerSteps && (
                           <div className="mt-4 p-3 bg-cyan-950/30 border border-cyan-800 rounded-lg">
-                            <h5 className="font-semibold text-cyan-300 text-sm mb-2">Inhaler Kullanim / Inhaler Usage Steps</h5>
+                            <h5 className="font-semibold text-cyan-300 text-sm mb-2">İnhaler Kullanım / Inhaler Usage Steps</h5>
                             <ol className="space-y-1">
                               {condition.inhalerSteps.map((item, i) => (
                                 <li key={i} className="text-sm text-cyan-200 flex items-start gap-2">
@@ -629,7 +629,7 @@ export default function ChronicConditionPage() {
                       <div>
                         <h4 className="font-semibold text-red-300 flex items-center gap-2 mb-3">
                           <AlertTriangle className="h-4 w-4" />
-                          Acil Durum Adimlari / Emergency Steps
+                          Acil Durum Adımları / Emergency Steps
                         </h4>
                         <ol className="space-y-2">
                           {condition.emergencySteps.map((item, i) => (
@@ -642,7 +642,7 @@ export default function ChronicConditionPage() {
 
                         {condition.seizureProtection && (
                           <div className="mt-4 p-3 bg-yellow-950/30 border border-yellow-800 rounded-lg">
-                            <h5 className="font-semibold text-yellow-300 text-sm mb-2">Nobet Sirasinda Koruma / During Seizure Protection</h5>
+                            <h5 className="font-semibold text-yellow-300 text-sm mb-2">Nöbet Sırasında Koruma / During Seizure Protection</h5>
                             <ul className="space-y-1">
                               {condition.seizureProtection.map((item, i) => (
                                 <li key={i} className="text-sm text-yellow-200 flex items-start gap-2">
@@ -656,7 +656,7 @@ export default function ChronicConditionPage() {
 
                         {condition.afterSeizure && (
                           <div className="mt-4 p-3 bg-green-950/30 border border-green-800 rounded-lg">
-                            <h5 className="font-semibold text-green-300 text-sm mb-2">Nobet Sonrasi / After Seizure</h5>
+                            <h5 className="font-semibold text-green-300 text-sm mb-2">Nöbet Sonrası / After Seizure</h5>
                             <ul className="space-y-1">
                               {condition.afterSeizure.map((item, i) => (
                                 <li key={i} className="text-sm text-green-200 flex items-start gap-2">
@@ -672,7 +672,7 @@ export default function ChronicConditionPage() {
                           <div className="mt-4 p-3 bg-red-950/30 border border-red-800 rounded-lg">
                             <h5 className="font-semibold text-red-300 text-sm mb-2 flex items-center gap-2">
                               <Phone className="h-4 w-4" />
-                              Nobet Acil Durumlari / Seizure Emergencies
+                              Nöbet Acil Durumları / Seizure Emergencies
                             </h5>
                             <ul className="space-y-1">
                               {condition.seizureEmergency.map((item, i) => (
@@ -701,7 +701,7 @@ export default function ChronicConditionPage() {
 
                         {condition.immediateAction && (
                           <div className="mt-4 p-3 bg-orange-950/30 border border-orange-800 rounded-lg">
-                            <h5 className="font-semibold text-orange-300 text-sm mb-2">Aninda Aksiyon / Immediate Action</h5>
+                            <h5 className="font-semibold text-orange-300 text-sm mb-2">Anında Aksiyon / Immediate Action</h5>
                             <ol className="space-y-1">
                               {condition.immediateAction.map((item, i) => (
                                 <li key={i} className="text-sm text-orange-200 flex items-start gap-2">
@@ -715,7 +715,7 @@ export default function ChronicConditionPage() {
 
                         {condition.anaphylaxisRecognition && (
                           <div className="mt-4 p-3 bg-red-950/30 border border-red-800 rounded-lg">
-                            <h5 className="font-semibold text-red-300 text-sm mb-2">Anafilaksi Tanimlama / Anaphylaxis Recognition</h5>
+                            <h5 className="font-semibold text-red-300 text-sm mb-2">Anafilaksi Tanımlama / Anaphylaxis Recognition</h5>
                             <ul className="space-y-1">
                               {condition.anaphylaxisRecognition.map((item, i) => (
                                 <li key={i} className="text-sm text-red-200 flex items-start gap-2">
@@ -743,7 +743,7 @@ export default function ChronicConditionPage() {
 
                         {condition.triggerAvoidance && (
                           <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
-                            <h5 className="font-semibold text-gray-300 text-sm mb-2">Tetikleyicilerden Kacinma / Trigger Avoidance</h5>
+                            <h5 className="font-semibold text-gray-300 text-sm mb-2">Tetikleyicilerden Kaçınma / Trigger Avoidance</h5>
                             <ul className="space-y-1">
                               {condition.triggerAvoidance.map((item, i) => (
                                 <li key={i} className="text-sm text-gray-200 flex items-start gap-2">
@@ -757,7 +757,7 @@ export default function ChronicConditionPage() {
 
                         {condition.allergenAvoidance && (
                           <div className="mt-4 p-3 bg-gray-900/50 border border-gray-700 rounded-lg">
-                            <h5 className="font-semibold text-gray-300 text-sm mb-2">Alerjenden Kacinma / Allergen Avoidance</h5>
+                            <h5 className="font-semibold text-gray-300 text-sm mb-2">Alerjenden Kaçınma / Allergen Avoidance</h5>
                             <ul className="space-y-1">
                               {condition.allergenAvoidance.map((item, i) => (
                                 <li key={i} className="text-sm text-gray-200 flex items-start gap-2">
@@ -776,7 +776,7 @@ export default function ChronicConditionPage() {
                       <div>
                         <h4 className="font-semibold text-amber-300 flex items-center gap-2 mb-3">
                           <AlertCircle className="h-4 w-4" />
-                          Uyari Isaretleri / Warning Signs
+                          Uyarı İşaretleri / Warning Signs
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {condition.warningSigns.map((sign, i) => (
@@ -793,7 +793,7 @@ export default function ChronicConditionPage() {
                       <div>
                         <h4 className="font-semibold text-red-300 flex items-center gap-2 mb-3">
                           <Phone className="h-4 w-4" />
-                          112 Ne Zaman Aranmali / When to Call 112
+                          112 Ne Zaman Aranmalı / When to Call 112
                         </h4>
                         <div className="p-4 bg-red-950/40 border border-red-700 rounded-lg">
                           <p className="text-2xl font-bold text-red-300 text-center mb-4">112</p>
@@ -828,7 +828,7 @@ export default function ChronicConditionPage() {
       <Card className="border-nomad-border bg-nomad-bg">
         <CardContent className="p-4 text-center">
           <p className="text-sm text-nomad-slate">
-            Bu bilgiler resmi tibbi rehberlerden derlenmistir. Acil durumlarda her zaman once 112'yi arayin.
+            Bu bilgiler resmi tıbbi rehberlerden derlenmiştir. Acil durumlarda her zaman önce 112'yi arayın.
           </p>
           <p className="text-xs text-nomad-slate mt-1">
             Information compiled from official medical guidelines. In emergencies, always call 112 first.

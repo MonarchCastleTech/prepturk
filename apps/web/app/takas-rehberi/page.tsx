@@ -34,8 +34,8 @@ const BARTER_ITEMS: BarterItem[] = [
   { name: 'Su (1L)', nameEn: 'Water (1L)', baselinePriceTL: 5, waterEquivalent: 1, unit: '1L', icon: 'droplet' },
   { name: 'Ekmek (1kg)', nameEn: 'Bread (1kg)', baselinePriceTL: 10, waterEquivalent: 0.5, unit: '1kg', icon: 'wheat' },
   { name: 'Pirinç (1kg)', nameEn: 'Rice (1kg)', baselinePriceTL: 30, waterEquivalent: 0.167, unit: '1kg', icon: 'rice' },
-  { name: 'Yag (1L)', nameEn: 'Cooking Oil (1L)', baselinePriceTL: 60, waterEquivalent: 0.083, unit: '1L', icon: 'oil' },
-  { name: 'Seker (1kg)', nameEn: 'Sugar (1kg)', baselinePriceTL: 25, waterEquivalent: 0.2, unit: '1kg', icon: 'sugar' },
+  { name: 'Yağ (1L)', nameEn: 'Cooking Oil (1L)', baselinePriceTL: 60, waterEquivalent: 0.083, unit: '1L', icon: 'oil' },
+  { name: 'Şeker (1kg)', nameEn: 'Sugar (1kg)', baselinePriceTL: 25, waterEquivalent: 0.2, unit: '1kg', icon: 'sugar' },
   { name: 'Kibrit (1 kutu)', nameEn: 'Matches (1 box)', baselinePriceTL: 5, waterEquivalent: 1, unit: '1 kutu', icon: 'match' },
   { name: 'Pil (1 AA)', nameEn: 'Battery (1 AA)', baselinePriceTL: 15, waterEquivalent: 0.333, unit: '1 adet', icon: 'battery' },
   { name: 'Benzin (1L)', nameEn: 'Gasoline (1L)', baselinePriceTL: 40, waterEquivalent: 0.125, unit: '1L', icon: 'fuel' },
@@ -88,10 +88,10 @@ export default function TakasRehberiPage() {
 
   const tabs = [
     { id: 'reference' as const, label: 'Referans Fiyatlar' },
-    { id: 'calculator' as const, label: 'Hesaplayici' },
-    { id: 'log' as const, label: 'Fiyat Guncesi' },
-    { id: 'community' as const, label: 'Toplum Fiyatlari' },
-    { id: 'pledge' as const, label: 'Adil Takas Sozu' },
+    { id: 'calculator' as const, label: 'Hesaplayıcı' },
+    { id: 'log' as const, label: 'Fiyat Güncesi' },
+    { id: 'community' as const, label: 'Toplum Fiyatları' },
+    { id: 'pledge' as const, label: 'Adil Takas Sözü' },
   ];
 
   const addPriceLog = useCallback(() => {
@@ -135,7 +135,7 @@ export default function TakasRehberiPage() {
 
   const printPledge = () => {
     const html = `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
-    <title>Adil Takas Sozu</title>
+    <title>Adil Takas Sözü</title>
     <style>
       body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; color: #000; text-align: center; }
       h1 { font-size: 28px; border-bottom: 4px solid #000; padding-bottom: 12px; margin-bottom: 20px; }
@@ -145,28 +145,28 @@ export default function TakasRehberiPage() {
       .signature { margin-top: 40px; border-top: 2px solid #000; padding-top: 10px; display: inline-block; min-width: 200px; }
       @media print { body { margin: 20px; } }
     </style></head><body>
-    <h1>ADIL TAKAS SOZU</h1>
+    <h1>ADİL TAKAS SÖZÜ</h1>
     <p style="font-size:14px;color:#666;">FAIR TRADE PLEDGE</p>
     <div class="pledge">
       <p>Kriz dönemlerinde adil takas toplumun gücüdür.</p>
       <p><em>Fair trade is the strength of community during crisis.</em></p>
       <hr style="margin:16px 0;">
-      <p><strong>Soz veriyorum:</strong></p>
+      <p><strong>Söz veriyorum:</strong></p>
       <p style="text-align:left;margin-left:20px;">
-        - Istismar yapmayacagim / I will not exploit others<br>
-        - Adil fiyatlandirma kullanacagim / I will use fair pricing<br>
-        - Istismara izin vermeyecegim / I will not allow exploitation<br>
-        - Toplulugumu koruyacagim / I will protect my community<br>
-        - Paylasimci olacagim / I will be generous
+        - İstismar yapmayacağım / I will not exploit others<br>
+        - Adil fiyatlandırma kullanacağım / I will use fair pricing<br>
+        - İstismara izin vermeyeceğim / I will not allow exploitation<br>
+        - Topluluğumu koruyacağım / I will protect my community<br>
+        - Paylaşımcı olacağım / I will be generous
       </p>
     </div>
     <div class="warning">
-      UYARI: Kriz dönemlerinde adil takas önemlidir. Istismar yapmayin, istismara izin vermeyin.<br>
+      UYARI: Kriz dönemlerinde adil takas önemlidir. İstismar yapmayın, istismara izin vermeyin.<br>
       <em>WARNING: Fair trade is important during crisis. Do not exploit, do not allow exploitation.</em>
     </div>
-    <div class="signature">Imza / Signature: _________________</div>
+    <div class="signature">İmza / Signature: _________________</div>
     <div class="signature" style="margin-left:40px;">Tarih / Date: _________________</div>
-    <div class="footer">PrepTurk -- Topluluk Hazirlik Programi</div>
+    <div class="footer">PrepTürk -- Topluluk Hazırlık Programı</div>
     </body></html>`;
     const w = window.open('', '_blank');
     if (w) { w.document.write(html); w.document.close(); w.print(); }
@@ -177,7 +177,7 @@ export default function TakasRehberiPage() {
       <div>
         <h1 className="text-2xl font-bold">Takas Rehberi / Barter &amp; Trade Guide</h1>
         <p className="text-nomad-slate text-sm mt-1">
-          Kriz dönemleri icin adil takas fiyat referanslari
+          Kriz dönemleri için adil takas fiyat referansları
         </p>
       </div>
 
@@ -206,7 +206,7 @@ export default function TakasRehberiPage() {
             <div>
               <p className="text-lg font-bold text-amber-400">ADIL TAKAS UYARISI / FAIR TRADE WARNING</p>
               <p className="text-sm text-amber-300 mt-1">
-                Kriz dönemlerinde adil takas önemlidir. Istismar yapmayin, istismara izin vermeyin.
+                Kriz dönemlerinde adil takas önemlidir. İstismar yapmayın, istismara izin vermeyin.
               </p>
               <p className="text-xs text-nomad-slate mt-2">
                 Fair trade is important during crisis. Do not exploit, do not allow exploitation.
@@ -223,7 +223,7 @@ export default function TakasRehberiPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-nomad-green" />
-                Kriz Oncesi Baz Fiyatlar (2024 TL)
+                Kriz Öncesi Baz Fiyatlar (2024 TL)
               </CardTitle>
               <CardDescription>Pre-crisis baseline prices in Turkish Lira, 2024</CardDescription>
             </CardHeader>
@@ -237,7 +237,7 @@ export default function TakasRehberiPage() {
                     </div>
                     <p className="text-xs text-nomad-slate">{item.nameEn}</p>
                     <p className="text-lg font-bold text-nomad-green mt-2">{item.baselinePriceTL} TL</p>
-                    <p className="text-xs text-nomad-slate mt-1">Su esdegeri: {item.waterEquivalent <= 1 ? `1L su = ${(1/item.waterEquivalent).toFixed(1)} ${item.unit}` : `${item.waterEquivalent.toFixed(2)}L su = 1 ${item.unit}`}</p>
+                    <p className="text-xs text-nomad-slate mt-1">Su eşdeğeri: {item.waterEquivalent <= 1 ? `1L su = ${(1/item.waterEquivalent).toFixed(1)} ${item.unit}` : `${item.waterEquivalent.toFixed(2)}L su = 1 ${item.unit}`}</p>
                   </div>
                 ))}
               </div>
@@ -248,20 +248,20 @@ export default function TakasRehberiPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Scale className="h-5 w-5 text-blue-400" />
-                Adil Takas Oranlari / Fair Trade Ratios
+                Adil Takas Oranları / Fair Trade Ratios
               </CardTitle>
-              <CardDescription>Su baz degeri = 1 / Water as baseline = 1</CardDescription>
+              <CardDescription>Su baz değeri = 1 / Water as baseline = 1</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-nomad-border">
-                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Urun</th>
-                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">1L su karsiligi</th>
-                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">2L su karsiligi</th>
-                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">5L su karsiligi</th>
-                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">10L su karsiligi</th>
+                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Ürün</th>
+                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">1L su karşılığı</th>
+                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">2L su karşılığı</th>
+                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">5L su karşılığı</th>
+                      <th className="text-center py-2 px-2 text-nomad-slate font-medium">10L su karşılığı</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -292,7 +292,7 @@ export default function TakasRehberiPage() {
               <div className="mt-4 p-3 bg-blue-950/20 border border-blue-800/30 rounded-lg">
                 <p className="text-xs text-blue-300 flex items-start gap-2">
                   <Info className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                  Bu oranlar 2024 Türkiye fiyatlina göre hesaplanmistir. Kriz döneminde fiyatlar degisebilir ancak oranlar kabaca korunur.
+                  Bu oranlar 2024 Türkiye fiyatlarına göre hesaplanmıştır. Kriz döneminde fiyatlar değişebilir ancak oranlar kabaca korunur.
                 </p>
               </div>
             </CardContent>
@@ -304,13 +304,13 @@ export default function TakasRehberiPage() {
       {activeTab === 'calculator' && (
         <Card className="border-nomad-border">
           <CardHeader>
-            <CardTitle>Takas Hesaplayici / Trade Calculator</CardTitle>
-            <CardDescription>Bir urun karsiligi ne kadar baska urun alabileceginizi hesaplayin</CardDescription>
+            <CardTitle>Takas Hesaplayıcı / Trade Calculator</CardTitle>
+            <CardDescription>Bir ürün karşılığı ne kadar başka ürün alabileceğinizi hesaplayın</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
-                <label className="text-sm text-nomad-slate mb-1 block">Elinizdeki urun</label>
+                <label className="text-sm text-nomad-slate mb-1 block">Elinizdeki ürün</label>
                 <select
                   value={calcFrom}
                   onChange={(e) => setCalcFrom(parseInt(e.target.value))}
@@ -356,9 +356,9 @@ export default function TakasRehberiPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingDown className="h-5 w-5 text-orange-400" />
-              Fiyat Guncesi / Price Tracker
+              Fiyat Güncesi / Price Tracker
             </CardTitle>
-            <CardDescription>Kriz oncesi ve sirasindaki fiyat lari kay dedin</CardDescription>
+            <CardDescription>Kriz öncesi ve sırasındaki fiyatları kaydedin</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex flex-col sm:flex-row gap-3">
@@ -394,7 +394,7 @@ export default function TakasRehberiPage() {
                   <thead>
                     <tr className="border-b border-nomad-border">
                       <th className="text-left py-2 px-2 text-nomad-slate font-medium">Tarih</th>
-                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Urun</th>
+                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Ürün</th>
                       <th className="text-right py-2 px-2 text-nomad-slate font-medium">Fiyat</th>
                       <th className="text-left py-2 px-2 text-nomad-slate font-medium">Not</th>
                     </tr>
@@ -414,7 +414,7 @@ export default function TakasRehberiPage() {
             )}
 
             {priceLog.length === 0 && (
-              <p className="text-center text-nomad-slate py-8">Henüz fiyat kaydi yok. Yukaridan ilk kaydinizi ekleyin.</p>
+              <p className="text-center text-nomad-slate py-8">Henüz fiyat kaydı yok. Yukarıdan ilk kaydınızı ekleyin.</p>
             )}
           </CardContent>
         </Card>
@@ -428,7 +428,7 @@ export default function TakasRehberiPage() {
               <Users className="h-5 w-5 text-purple-400" />
               Topluluk Adil Fiyat Panosu / Community Fair Price Board
             </CardTitle>
-            <CardDescription>Mahalleniz icin referans fiyatlar belirleyin</CardDescription>
+            <CardDescription>Mahalleniz için referans fiyatlar belirleyin</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex flex-col sm:flex-row gap-3">
@@ -450,7 +450,7 @@ export default function TakasRehberiPage() {
               />
               <input
                 type="text"
-                placeholder="Kim anlasti"
+                placeholder="Kim anlaştı"
                 value={commAgreedBy}
                 onChange={(e) => setCommAgreedBy(e.target.value)}
                 className="p-2 bg-nomad-bg border border-nomad-border rounded-md text-sm flex-1"
@@ -463,10 +463,10 @@ export default function TakasRehberiPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-nomad-border">
-                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Urun</th>
+                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Ürün</th>
                       <th className="text-right py-2 px-2 text-nomad-slate font-medium">Fiyat</th>
                       <th className="text-left py-2 px-2 text-nomad-slate font-medium">Birim</th>
-                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Anlasan</th>
+                      <th className="text-left py-2 px-2 text-nomad-slate font-medium">Anlaşan</th>
                       <th className="text-left py-2 px-2 text-nomad-slate font-medium">Tarih</th>
                     </tr>
                   </thead>
@@ -494,23 +494,23 @@ export default function TakasRehberiPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Check className="h-5 w-5 text-nomad-green" />
-              Adil Takas Sozu / Fair Trade Pledge
+              Adil Takas Sözü / Fair Trade Pledge
             </CardTitle>
-            <CardDescription>Topluluk panolari icin yazdirilabilir poster</CardDescription>
+            <CardDescription>Topluluk panoları için yazdırılabilir poster</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="p-8 bg-nomad-bg rounded-lg border-2 border-nomad-green/50 text-center">
-              <h2 className="text-3xl font-bold mb-2">ADIL TAKAS SOZU</h2>
+              <h2 className="text-3xl font-bold mb-2">ADİL TAKAS SÖZÜ</h2>
               <p className="text-sm text-nomad-slate mb-6">FAIR TRADE PLEDGE</p>
               <div className="max-w-md mx-auto space-y-4 text-left">
-                <p className="text-lg"><strong>Soz veriyorum:</strong></p>
+                <p className="text-lg"><strong>Söz veriyorum:</strong></p>
                 <ul className="space-y-3">
                   {[
-                    'Istismar yapmayacagim / I will not exploit others',
-                    'Adil fiyatlandirma kullanacagim / I will use fair pricing',
-                    'Istismara izin vermeyecegim / I will not allow exploitation',
-                    'Toplumumu koruyacagim / I will protect my community',
-                    'Paylasimci olacagim / I will be generous',
+                    'İstismar yapmayacağım / I will not exploit others',
+                    'Adil fiyatlandırma kullanacağım / I will use fair pricing',
+                    'İstismara izin vermeyeceğim / I will not allow exploitation',
+                    'Toplumumu koruyacağım / I will protect my community',
+                    'Paylaşımcı olacağım / I will be generous',
                   ].map((line, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-nomad-green flex-shrink-0 mt-0.5" />
@@ -524,7 +524,7 @@ export default function TakasRehberiPage() {
                   Kriz dönemlerinde adil takas önemlidir.
                 </p>
                 <p className="text-sm text-amber-300 mt-1">
-                  Istismar yapmayin, istismara izin vermeyin.
+                  İstismar yapmayın, istismara izin vermeyin.
                 </p>
               </div>
             </div>
@@ -532,21 +532,21 @@ export default function TakasRehberiPage() {
             <div className="flex justify-center">
               <Button size="lg" onClick={printPledge}>
                 <Printer className="h-4 w-4 mr-2" />
-                Poster i Yazdir / Print Poster
+                Posteri Yazdır / Print Poster
               </Button>
             </div>
 
             <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
               <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                 <BookOpen className="h-4 w-4" />
-                Kullanim Talimatlari / Usage Instructions
+                Kullanım Talimatları / Usage Instructions
               </h4>
               <ul className="space-y-1 text-sm text-nomad-slate">
-                <li>- Poster i yazdirin ve topluluk panosuna asin</li>
+                <li>- Posteri yazdırın ve topluluk panosuna asın</li>
                 <li>- Print the poster and hang it on the community board</li>
-                <li>- Mahalle sakinlari ile adil fiyatlar konusunda anlasin</li>
+                <li>- Mahalle sakinleri ile adil fiyatlar konusunda anlaşın</li>
                 <li>- Agree on fair prices with neighborhood residents</li>
-                <li>- Herkesin bu sozu imzalamasi tesvik edin</li>
+                <li>- Herkesin bu sözü imzalamasını teşvik edin</li>
                 <li>- Encourage everyone to sign this pledge</li>
               </ul>
             </div>

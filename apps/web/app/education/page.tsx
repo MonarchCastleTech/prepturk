@@ -18,20 +18,20 @@ interface Material {
 }
 
 const mockMaterials: Material[] = [
-  { id: '1', title: 'Turkce Dil Bilgisi - 5. Sinif', level: 'ilkokul', subject: 'turkce', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Temel dil bilgisi kurallari, noktalama isaretleri.' },
-  { id: '2', title: 'Matematik - Temel Geometri', level: 'ortaokul', subject: 'matematik', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Acilar, ucgenler, dortgenler ve alan hesaplamalari.' },
-  { id: '3', title: 'Fizik - Kuvvet ve Hareket', level: 'lise', subject: 'fizik', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Newton kanunlari, serbest dusme, egik atis.' },
-  { id: '4', title: 'Tarih - Osmanli Imparatorlugu', level: 'ortaokul', subject: 'tarih', type: 'kaynak', offline: false, rightsStatus: 'public-read-limited-redistribution', description: "Kurulus'tan yikilisa Osmanli tarihi." },
-  { id: '5', title: 'Biyoloji - Hucre ve Bolunme', level: 'lise', subject: 'biyoloji', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Hucre yapisi, mitoz, mayoz bolunme.' },
-  { id: '6', title: 'Ataturk Ilke ve Inkilaplari', level: 'universite', subject: 'ataturk', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Zorunlu universite dersi kaynak kitabi.' },
+  { id: '1', title: 'Türkçe Dil Bilgisi - 5. Sınıf', level: 'ilkokul', subject: 'turkce', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Temel dil bilgisi kuralları, noktalama işaretleri.' },
+  { id: '2', title: 'Matematik - Temel Geometri', level: 'ortaokul', subject: 'matematik', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Açılar, üçgenler, dörtgenler ve alan hesaplamaları.' },
+  { id: '3', title: 'Fizik - Kuvvet ve Hareket', level: 'lise', subject: 'fizik', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Newton kanunları, serbest düşme, eğik atış.' },
+  { id: '4', title: 'Tarih - Osmanlı İmparatorluğu', level: 'ortaokul', subject: 'tarih', type: 'kaynak', offline: false, rightsStatus: 'public-read-limited-redistribution', description: "Kuruluş'tan yıkılışa Osmanlı tarihi." },
+  { id: '5', title: 'Biyoloji - Hücre ve Bölünme', level: 'lise', subject: 'biyoloji', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Hücre yapısı, mitoz, mayoz bölünme.' },
+  { id: '6', title: 'Atatürk İlke ve İnkılapları', level: 'universite', subject: 'ataturk', type: 'ders-kitabi', offline: true, rightsStatus: 'public-download', description: 'Zorunlu üniversite dersi kaynak kitabı.' },
 ];
 
 const levels = [
-  { id: 'all', label: 'Tum Seviyeler', icon: Users },
-  { id: 'ilkokul', label: 'Ilkokul', icon: BookOpen },
+  { id: 'all', label: 'Tüm Seviyeler', icon: Users },
+  { id: 'ilkokul', label: 'İlkokul', icon: BookOpen },
   { id: 'ortaokul', label: 'Ortaokul', icon: BookOpen },
   { id: 'lise', label: 'Lise', icon: GraduationCap },
-  { id: 'universite', label: 'Universite', icon: GraduationCap },
+  { id: 'universite', label: 'Üniversite', icon: GraduationCap },
 ];
 
 const subjects = ['turkce', 'matematik', 'fen', 'fizik', 'kimya', 'biyoloji', 'tarih', 'cografya', 'ataturk'];
@@ -52,8 +52,8 @@ export default function EducationPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Egitim Rafi</h1>
-        <p className="text-nomad-slate text-sm">Cevrimdisi egitim kaynaklari ve ders materyalleri</p>
+        <h1 className="text-2xl font-bold">Eğitim Rafı</h1>
+        <p className="text-nomad-slate text-sm">Çevrimdışı eğitim kaynakları ve ders materyalleri</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
@@ -114,7 +114,7 @@ export default function EducationPage() {
           {filtered.length === 0 ? (
             <div className="text-center py-16">
               <BookOpen className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-              <p className="text-nomad-slate">Bu filtrelerle eslesen materyal bulunamadi</p>
+              <p className="text-nomad-slate">Bu filtrelerle eşleşen materyal bulunamadı</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -127,18 +127,18 @@ export default function EducationPage() {
                         {material.offline ? (
                           <Badge variant="default" className="text-[10px]">
                             <CheckCircle className="h-2.5 w-2.5 mr-1" />
-                            Cevrimdisi
+                            Çevrimdışı
                           </Badge>
                         ) : (
                           <Badge variant="secondary" className="text-[10px]">
                             <Clock className="h-2.5 w-2.5 mr-1" />
-                            Senkronize Degil
+                            Senkronize Değil
                           </Badge>
                         )}
                         {material.rightsStatus === 'public-download' && (
                           <Badge variant="outline" className="text-[10px]">
                             <Shield className="h-2.5 w-2.5 mr-1" />
-                            Herkese Acik
+                            Herkese Açık
                           </Badge>
                         )}
                       </div>
@@ -153,7 +153,7 @@ export default function EducationPage() {
                       </div>
                       <Button variant="outline" size="sm">
                         <Download className="h-3.5 w-3.5 mr-1" />
-                        Indir
+                        İndir
                       </Button>
                     </div>
                   </CardContent>

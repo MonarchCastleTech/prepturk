@@ -24,143 +24,143 @@ interface DistanceMethod {
 const METHODS: DistanceMethod[] = [
   {
     id: 'step-counting',
-    name: 'Adim Sayma',
+    name: 'Adım Sayma',
     nameEn: 'Step Counting',
     icon: <Footprints className="h-7 w-7 text-nomad-green" />,
-    description: 'Yetiskin bir insanin ortalama adim uzunlugu 0.75 metredir. Adim sayinizi 0.75 ile carparak mesafeyi hesaplayabilirsiniz.',
+    description: 'Yetişkin bir insanın ortalama adım uzunluğu 0.75 metredir. Adım sayınızı 0.75 ile çarparak mesafeyi hesaplayabilirsiniz.',
     howTo: [
-      'Once kendi adim uzunlugunuzu olcun: 10 adim atin, toplam mesafeyi olcun, 10\'a bolun',
-      'Yururken adimlarinizi sayin',
-      'Adim sayisini adim uzunlugunuzla carpin',
-      'Ornek: 1000 adim x 0.75m = 750 metre',
+      'Önce kendi adım uzunluğunuzu ölçün: 10 adım atın, toplam mesafeyi ölçün, 10\'a bölün',
+      'Yürürken adımlarınızı sayın',
+      'Adım sayısını adım uzunluğunuzla çarpın',
+      'Örnek: 1000 adım x 0.75m = 750 metre',
     ],
-    formula: 'Mesafe (m) = Adim sayisi x Adim uzunlugu (ortalama 0.75m)',
-    practiceExercise: '100 adim atin ve mesafeyi olcun. Kendi adim uzunlugunuzu hesaplayin. Sonra 500 adim icin tahmin yapin ve kontrol edin.',
+    formula: 'Mesafe (m) = Adım sayısı x Adım uzunluğu (ortalama 0.75m)',
+    practiceExercise: '100 adım atın ve mesafeyi ölçün. Kendi adım uzunluğunuzu hesaplayın. Sonra 500 adım için tahmin yapın ve kontrol edin.',
     tips: [
-      'Degisik yuzeylerde adim uzunlugu degisir (yumusak zeminde kisalir)',
-      'Yorgunluk adim uzunlugunu kisaltir',
-      'Egitimli arazide adim uzunlugu degisir (yukari kisalir, asagi uzar)',
-      'Duzgun adimlarla yurumeye calisin',
+      'Değişik yüzeylerde adım uzunluğu değişir (yumuşak zeminde kısalır)',
+      'Yorgunluk adım uzunluğunu kısaltır',
+      'Eğimli arazide adım uzunluğu değişir (yukarı kısalır, aşağı uzar)',
+      'Düzgün adımlarla yürümeye çalışın',
     ],
-    accuracy: 'Duz zeminde %90+, egitimli arazide %70-80',
+    accuracy: 'Düz zeminde %90+, eğimli arazide %70-80',
   },
   {
     id: 'time-based',
-    name: 'Zaman Bazli Tahmin',
+    name: 'Zaman Bazlı Tahmin',
     nameEn: 'Time-Based Estimation',
     icon: <Clock className="h-7 w-7 text-blue-400" />,
-    description: 'Insanlarin yurume hizi degisir: duz yolda ~5 km/saat, yukari ~3 km/saat, asagi ~6 km/saat. Sure x hiz = mesafe.',
+    description: 'İnsanların yürüme hızı değişir: düz yolda ~5 km/saat, yukarı ~3 km/saat, aşağı ~6 km/saat. Süre x hız = mesafe.',
     howTo: [
-      'Yurume surenizi hesaplayin (dakika veya saat)',
-      'Arazi tipine gore hiz secin:',
-      '  - Duz yol: 5 km/saat (83 m/dakika)',
-      '  - Yukari yokuş: 3 km/saat (50 m/dakika)',
-      '  - Asagi yokuş: 6 km/saat (100 m/dakika)',
-      '  - Agir yuk: 3 km/saat',
-      '  - Kosma: 8-12 km/saat',
-      'Sure x hiz = mesafe',
+      'Yürüme sürenizi hesaplayın (dakika veya saat)',
+      'Arazi tipine göre hız seçin:',
+      '  - Düz yol: 5 km/saat (83 m/dakika)',
+      '  - Yukarı yokuş: 3 km/saat (50 m/dakika)',
+      '  - Aşağı yokuş: 6 km/saat (100 m/dakika)',
+      '  - Ağır yük: 3 km/saat',
+      '  - Koşma: 8-12 km/saat',
+      'Süre x hız = mesafe',
     ],
-    formula: 'Mesafe (km) = Hiz (km/saat) x Sure (saat)',
-    practiceExercise: '10 dakika duz yolda yuruyun. Mesafeyi hesaplayin: 10 dk x 83 m/dk = 830 metre. Olcumle kontrol edin.',
+    formula: 'Mesafe (km) = Hız (km/saat) x Süre (saat)',
+    practiceExercise: '10 dakika düz yolda yürüyün. Mesafeyi hesaplayın: 10 dk x 83 m/dk = 830 metre. Ölçümle kontrol edin.',
     tips: [
-      'Saat kullanmadan: kendi nabzinizi sayarak sureyi tahmin edin (normal nabiz: 60-100/dk)',
-      'Bir sarkı soyleyerek sure tutun (ortalama sarkı 3-4 dakika)',
-      'Kisa adimlarla 100 adim yaklasık 1 dakika surer',
-      'Mola surelerini de hesaba katin',
+      'Saat kullanmadan: kendi nabzınızı sayarak süreyi tahmin edin (normal nabız: 60-100/dk)',
+      'Bir şarkı söyleyerek süre tutun (ortalama şarkı 3-4 dakika)',
+      'Kısa adımlarla 100 adım yaklaşık 1 dakika sürer',
+      'Mola sürelerini de hesaba katın',
     ],
-    accuracy: 'Duzgun tempo ile %85-90',
+    accuracy: 'Düzgün tempo ile %85-90',
   },
   {
     id: 'thumb-jump',
-    name: 'Basparmak Atlatma',
+    name: 'Başparmak Atlatma',
     nameEn: 'Thumb-Jump Method',
     icon: <Eye className="h-7 w-7 text-purple-400" />,
-    description: 'Kolinizi uzatin, basparmaginizi uzak nesneye hizalayin. Gozlerinizi degistirerek basparmagin ne kadar kaydigini olcun.',
+    description: 'Kolunuzu uzatın, başparmağınızı uzak nesneye hizalayın. Gözlerinizi değiştirerek başparmağın ne kadar kaydığını ölçün.',
     howTo: [
-      'Kolinuzu onunuze dogru tam olarak uzatin',
-      'Basparmaginizi dik tutun',
-      'Bir gozunuzu kapatin ve basparmaginizi uzak bir nesneye hizalayin',
-      'Diger gozunuzu acin ve oncekini kapatin -- basparmak "atlayacak"',
-      'Basparmagin ne kadar kaydigini tahmin edin (nesne boyutuna gore)',
-      'Mesafe yaklasik: (Kol uzunlugu / Goz arası mesafe) x Nesnenin kayma mesafesi',
-      'Oransal: Kol uzunlugu ~60cm, goz arasi ~6cm, oran ~10x',
-      'Yani nesne 10 metre kaydiysa, mesafe yaklasik 100 metre',
+      'Kolunuzu önünüze doğru tam olarak uzatın',
+      'Başparmağınızı dik tutun',
+      'Bir gözünüzü kapatın ve başparmağınızı uzak bir nesneye hizalayın',
+      'Diğer gözünüzü açın ve öncekini kapatın -- başparmak "atlayacak"',
+      'Başparmağın ne kadar kaydığını tahmin edin (nesne boyutuna göre)',
+      'Mesafe yaklaşık: (Kol uzunluğu / Göz arası mesafe) x Nesnenin kayma mesafesi',
+      'Oransal: Kol uzunluğu ~60cm, göz arası ~6cm, oran ~10x',
+      'Yani nesne 10 metre kaydıysa, mesafe yaklaşık 100 metre',
     ],
-    formula: 'Mesafe = Kayma mesafesi x 10 (yaklasik oran)',
+    formula: 'Mesafe = Kayma mesafesi x 10 (yaklaşık oran)',
     tips: [
       'Alıştırma yaparak kendi oranınızı bulabilirsiniz',
-      'Bilinen boyuttaki nesneleri referans alin (araba ~4.5m, kapi ~2m)',
-      'Gece veya sisli hava de calismaz',
-      'Cok uzak mesafeler icin (1km+) daha az dogru',
+      'Bilinen boyuttaki nesneleri referans alın (araba ~4.5m, kapı ~2m)',
+      'Gece veya sisli havada çalışmaz',
+      'Çok uzak mesafeler için (1km+) daha az doğru',
     ],
     accuracy: 'Alıştırılmış kullanıcı %70-80, acemi %50-60',
   },
   {
     id: 'landmark-triangulation',
-    name: 'Yer Isle Ucgenleme',
+    name: 'Yer İşaretiyle Üçgenleme',
     nameEn: 'Landmark Triangulation',
     icon: <MapPin className="h-7 w-7 text-amber-400" />,
-    description: 'Iki bilinen yer isaretini kullanarak haritadaki konumunuzu tahmin edin.',
+    description: 'İki bilinen yer işaretini kullanarak haritadaki konumunuzu tahmin edin.',
     howTo: [
-      'En az iki tanidik yer isareti belirleyin (tepe, kule, bina)',
-      'Bu yer isaretlerinin haritadaki konumlarini bilin',
-      'Her yer isaretine gore yonunuzu belirleyin',
-      'Iki yonun kesistigi nokta sizin konumunuzdur',
-      'Harita uzerinde mesafeyi olcun',
+      'En az iki tanıdık yer işareti belirleyin (tepe, kule, bina)',
+      'Bu yer işaretlerinin haritadaki konumlarını bilin',
+      'Her yer işaretine göre yönünüzü belirleyin',
+      'İki yönün kesiştiği nokta sizin konumunuzdur',
+      'Harita üzerinde mesafeyi ölçün',
     ],
     tips: [
-      'Ucuncu bir yer isareti dogrulugu artırır',
-      'Pusula varsa daha hassas sonuc alirsiniz',
-      'Belirsiz yer isaretleri kullanmayın',
-      'Cok yakin veya cok uzak yer isaretleri dogruluğu azaltir',
+      'Üçüncü bir yer işareti doğruluğu artırır',
+      'Pusula varsa daha hassas sonuç alırsınız',
+      'Belirsiz yer işaretleri kullanmayın',
+      'Çok yakın veya çok uzak yer işaretleri doğruluğu azaltır',
     ],
-    accuracy: 'Iyi yer isaretleri ile %60-75',
+    accuracy: 'İyi yer işaretleri ile %60-75',
   },
   {
     id: 'sound-travel',
-    name: 'Ses Yolculugu',
+    name: 'Ses Yolculuğu',
     nameEn: 'Sound Travel Method',
     icon: <Volume2 className="h-7 w-7 text-cyan-400" />,
-    description: 'Ses havada ~343 m/s (saniyede ~343 metre) hizla ilerler. Yildirim-cakma arasi mesafe = saniye / 3 = km.',
+    description: 'Ses havada ~343 m/s (saniyede ~343 metre) hızla ilerler. Yıldırım-çakma arası mesafe = saniye / 3 = km.',
     howTo: [
-      'Cakma isigini gordugunuzde saymaya baslayin',
-      'Gokgurultusunu duyuncaya kadar sayin',
-      'Saniyeyi 3\'e bolun = km cinsinden mesafe',
-      'Ornek: 9 saniye / 3 = 3 km uzaklikta',
-      'Her 3 saniye yaklasik 1 km\'dir',
+      'Çakma ışığını gördüğünüzde saymaya başlayın',
+      'Gök gürültüsünü duyuncaya kadar sayın',
+      'Saniyeyi 3\'e bölün = km cinsinden mesafe',
+      'Örnek: 9 saniye / 3 = 3 km uzaklıkta',
+      'Her 3 saniye yaklaşık 1 km\'dir',
     ],
     formula: 'Mesafe (km) = Saniye / 3',
     tips: [
-      'Ruzgar sesin yonunu ve hizini etkiler',
-      'Sicak hava sesi daha hizli iletir',
-      'Bu yontem sadece yildirim icin degil, patlama gibi diger sesler icin de calisir',
-      'Eko (yankı) yaniltici olabilir',
+      'Rüzgar sesin yönünü ve hızını etkiler',
+      'Sıcak hava sesi daha hızlı iletir',
+      'Bu yöntem sadece yıldırım için değil, patlama gibi diğer sesler için de çalışır',
+      'Eko (yankı) yanıltıcı olabilir',
     ],
-    accuracy: '%85-95 (acik havada)',
+    accuracy: '%85-95 (açık havada)',
   },
   {
     id: 'visible-horizon',
-    name: 'Gorunen Ufuk',
+    name: 'Görünen Ufuk',
     nameEn: 'Visible Horizon',
     icon: <Target className="h-7 w-7 text-rose-400" />,
-    description: 'Deniz seviyesinde gorunen ufuk yaklasik 5 km uzakliktadir. Tepeden bakildikca yukselise gore artar.',
+    description: 'Deniz seviyesinde görünen ufuk yaklaşık 5 km uzaklıktadır. Tepeden bakıldıkça yükselişe göre artar.',
     howTo: [
       'Deniz seviyesinde duruyorsanız: ufuk ~5 km',
-      'Yukseklik arttikca ufuk uzaklasir:',
+      'Yükseklik arttıkça ufuk uzaklaşır:',
       '  - 1.5m boy (ayakta): ~4.4 km',
-      '  - 10m yukseklik: ~11.3 km',
-      '  - 50m yukseklik: ~25 km',
-      '  - 100m yukseklik: ~35.7 km',
-      '  - 500m yukseklik: ~80 km',
+      '  - 10m yükseklik: ~11.3 km',
+      '  - 50m yükseklik: ~25 km',
+      '  - 100m yükseklik: ~35.7 km',
+      '  - 500m yükseklik: ~80 km',
     ],
-    formula: 'Ufuk mesafesi (km) = 3.57 x yukselk (metre)',
+    formula: 'Ufuk mesafesi (km) = 3.57 x yükseklik (metre)',
     tips: [
-      'Atmosferik kosullar gorunurlugu etkiler',
-      'Sis, yagmur veya toz gorunurlugu azaltir',
-      'Cok net gunlerde ufuk daha uzak gorunur',
-      'Daglik bolgelerde bu yontem daha az ise yarar',
+      'Atmosferik koşullar görünürlüğü etkiler',
+      'Sis, yağmur veya toz görünürlüğü azaltır',
+      'Çok net günlerde ufuk daha uzak görünür',
+      'Dağlık bölgelerde bu yöntem daha az işe yarar',
     ],
-    accuracy: '%70-80 (hava kosullarina bagli)',
+    accuracy: '%70-80 (hava koşullarına bağlı)',
   },
 ];
 
@@ -202,7 +202,7 @@ export default function MesafeTahminPage() {
         </div>
         <Button variant="outline" size="sm" onClick={() => window.print()}>
           <Printer className="h-4 w-4 mr-1" />
-          Yazdir
+          Yazdır
         </Button>
       </div>
 
@@ -252,14 +252,14 @@ export default function MesafeTahminPage() {
                     <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
                       <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                         <Calculator className="h-4 w-4 text-nomad-green" />
-                        Hesaplayici / Calculator
+                        Hesaplayıcı / Calculator
                       </h4>
 
                       {selectedMethod === 'step-counting' && (
                         <div className="space-y-3">
                           <div className="grid grid-cols-2 gap-3">
                             <div>
-                              <label className="text-xs text-nomad-slate mb-1 block">Adim Sayisi</label>
+                              <label className="text-xs text-nomad-slate mb-1 block">Adım Sayısı</label>
                               <input
                                 type="number"
                                 value={stepCount}
@@ -269,7 +269,7 @@ export default function MesafeTahminPage() {
                               />
                             </div>
                             <div>
-                              <label className="text-xs text-nomad-slate mb-1 block">Adim Uzunlugu (m)</label>
+                              <label className="text-xs text-nomad-slate mb-1 block">Adım Uzunluğu (m)</label>
                               <input
                                 type="number"
                                 value={customStepLength}
@@ -307,10 +307,10 @@ export default function MesafeTahminPage() {
                                 onChange={(e) => setTerrain(e.target.value)}
                                 className="w-full h-9 rounded-md border border-nomad-border bg-nomad-surface px-3 text-sm text-foreground"
                               >
-                                <option value="flat">Duz yol (5 km/s)</option>
-                                <option value="uphill">Yukari yokuş (3 km/s)</option>
-                                <option value="downhill">Asagi yokuş (6 km/s)</option>
-                                <option value="loaded">Agir yuklu (3 km/s)</option>
+                                <option value="flat">Düz yol (5 km/s)</option>
+                                <option value="uphill">Yukarı yokuş (3 km/s)</option>
+                                <option value="downhill">Aşağı yokuş (6 km/s)</option>
+                                <option value="loaded">Ağır yüklü (3 km/s)</option>
                               </select>
                             </div>
                           </div>
@@ -325,7 +325,7 @@ export default function MesafeTahminPage() {
                       {selectedMethod === 'sound-travel' && (
                         <div className="space-y-3">
                           <div>
-                            <label className="text-xs text-nomad-slate mb-1 block">Saniye (cakma-gokgurultu)</label>
+                            <label className="text-xs text-nomad-slate mb-1 block">Saniye (çakma-gök gürültüsü)</label>
                             <input
                               type="number"
                               value={soundSeconds}
@@ -345,7 +345,7 @@ export default function MesafeTahminPage() {
                       {selectedMethod === 'visible-horizon' && (
                         <div className="space-y-3">
                           <div>
-                            <label className="text-xs text-nomad-slate mb-1 block">Yukselk (metre)</label>
+                            <label className="text-xs text-nomad-slate mb-1 block">Yükseklik (metre)</label>
                             <input
                               type="number"
                               value={heightMeters}
@@ -368,7 +368,7 @@ export default function MesafeTahminPage() {
                   <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
                     <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                       <BookOpen className="h-4 w-4 text-nomad-green" />
-                      Nasil Yapilir / How To
+                      Nasıl Yapılır / How To
                     </h4>
                     <ol className="space-y-2">
                       {method.howTo.map((step, i) => (
@@ -383,7 +383,7 @@ export default function MesafeTahminPage() {
                   {/* Formula */}
                   {method.formula && (
                     <div className="p-3 bg-blue-950/30 border border-blue-800 rounded-lg">
-                      <h4 className="text-sm font-semibold text-blue-300 mb-1">Formul / Formula</h4>
+                      <h4 className="text-sm font-semibold text-blue-300 mb-1">Formül / Formula</h4>
                       <p className="text-sm text-blue-200 font-mono">{method.formula}</p>
                     </div>
                   )}
@@ -398,7 +398,7 @@ export default function MesafeTahminPage() {
 
                   {/* Tips */}
                   <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
-                    <h4 className="text-sm font-semibold mb-3">Ipuclari / Tips</h4>
+                    <h4 className="text-sm font-semibold mb-3">İpuçları / Tips</h4>
                     <ul className="space-y-2">
                       {method.tips.map((tip, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm">
@@ -411,7 +411,7 @@ export default function MesafeTahminPage() {
 
                   {/* Accuracy */}
                   <div className="p-3 bg-amber-950/30 border border-amber-800 rounded-lg">
-                    <h4 className="text-sm font-semibold text-amber-300 mb-1">Dogruluk / Accuracy</h4>
+                    <h4 className="text-sm font-semibold text-amber-300 mb-1">Doğruluk / Accuracy</h4>
                     <p className="text-sm text-amber-200">{method.accuracy}</p>
                   </div>
                 </>
@@ -424,28 +424,28 @@ export default function MesafeTahminPage() {
       {/* Printable Reference Card */}
       <Card className="border-nomad-border bg-nomad-bg">
         <CardHeader>
-          <CardTitle>Referans Karti / Reference Card</CardTitle>
-          <CardDescription>Hizli basvuru icin -- yazdirip yaninizda tasıyabilirsiniz</CardDescription>
+          <CardTitle>Referans Kartı / Reference Card</CardTitle>
+          <CardDescription>Hızlı başvuru için -- yazdırıp yanınızda taşıyabilirsiniz</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="p-3 bg-nomad-surface rounded-lg border border-nomad-border">
-              <h4 className="font-medium text-nomad-green mb-1">Adim Sayma</h4>
-              <p className="text-xs text-nomad-slate">Adim x 0.75m = metre</p>
-              <p className="text-xs text-nomad-slate">1000 adim ≈ 750m</p>
+              <h4 className="font-medium text-nomad-green mb-1">Adım Sayma</h4>
+              <p className="text-xs text-nomad-slate">Adım x 0.75m = metre</p>
+              <p className="text-xs text-nomad-slate">1000 adım ≈ 750m</p>
             </div>
             <div className="p-3 bg-nomad-surface rounded-lg border border-nomad-border">
-              <h4 className="font-medium text-blue-400 mb-1">Zaman Bazli</h4>
-              <p className="text-xs text-nomad-slate">Duz: 83m/dk | Yukari: 50m/dk | Asagi: 100m/dk</p>
+              <h4 className="font-medium text-blue-400 mb-1">Zaman Bazlı</h4>
+              <p className="text-xs text-nomad-slate">Düz: 83m/dk | Yukarı: 50m/dk | Aşağı: 100m/dk</p>
             </div>
             <div className="p-3 bg-nomad-surface rounded-lg border border-nomad-border">
-              <h4 className="font-medium text-cyan-400 mb-1">Ses Yolculugu</h4>
+              <h4 className="font-medium text-cyan-400 mb-1">Ses Yolculuğu</h4>
               <p className="text-xs text-nomad-slate">Saniye / 3 = km</p>
               <p className="text-xs text-nomad-slate">3 saniye ≈ 1 km</p>
             </div>
             <div className="p-3 bg-nomad-surface rounded-lg border border-nomad-border">
-              <h4 className="font-medium text-rose-400 mb-1">Gorunen Ufuk</h4>
-              <p className="text-xs text-nomad-slate">3.57 x √yukseklik(m) = km</p>
+              <h4 className="font-medium text-rose-400 mb-1">Görünen Ufuk</h4>
+              <p className="text-xs text-nomad-slate">3.57 x √yükseklik(m) = km</p>
               <p className="text-xs text-nomad-slate">Deniz seviyesi: ~5 km</p>
             </div>
           </div>
@@ -457,11 +457,11 @@ export default function MesafeTahminPage() {
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Neden OneMLI / Why It's Important</h4>
+            <h4 className="text-sm font-medium">Neden Önemli / Why It's Important</h4>
           </div>
           <p className="text-sm text-nomad-slate">
-            GPS olmadan mesafe tahmin edebilmek, acil durumlarda hayati oneme sahiptir. Yuruyus rotasi planlama,
-            yardim mesafesini belirleme ve guvenli bolgeye ulasma gibi durumlarda bu yontemler kullanisli olacaktir.
+            GPS olmadan mesafe tahmin edebilmek, acil durumlarda hayati öneme sahiptir. Yürüyüş rotası planlama,
+            yardım mesafesini belirleme ve güvenli bölgeye ulaşma gibi durumlarda bu yöntemler kullanışlı olacaktır.
           </p>
         </CardContent>
       </Card>

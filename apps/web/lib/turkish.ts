@@ -9,6 +9,9 @@ const TURKISH_MAP: Record<string, string> = {
 
 export function normalizeTurkish(text: string): string {
   return text
+    // JS `'İ'.toLowerCase()` yields 'i' + U+0307 (combining dot above); strip any
+    // combining marks so case-folded Turkish text still matches its ASCII form.
+    .replace(/[̀-ͯ]/g, '')
     .split('')
     .map((ch) => TURKISH_MAP[ch] ?? ch)
     .join('');

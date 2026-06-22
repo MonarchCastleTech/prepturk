@@ -33,8 +33,8 @@ const allProvinces = [
   { code: '06', name: 'Ankara' },
   { code: '07', name: 'Antalya' },
   { code: '16', name: 'Bursa' },
-  { code: '34', name: 'Istanbul' },
-  { code: '35', name: 'Izmir' },
+  { code: '34', name: 'İstanbul' },
+  { code: '35', name: 'İzmir' },
   { code: '38', name: 'Kayseri' },
   { code: '42', name: 'Konya' },
   { code: '55', name: 'Samsun' },
@@ -42,12 +42,12 @@ const allProvinces = [
 ];
 
 const packContents = [
-  { label: 'Il bazli mevzuat ozetleri', icon: FileText },
-  { label: 'Yerel afet planlari', icon: AlertTriangle },
-  { label: 'Acil toplanma alanlari', icon: Map },
-  { label: 'Ilce saglik kurumlari', icon: BookOpen },
-  { label: 'Egitim kurumlari listesi', icon: Shield },
-  { label: 'Kritik altyapi bilgileri', icon: Info },
+  { label: 'İl bazlı mevzuat özetleri', icon: FileText },
+  { label: 'Yerel afet planları', icon: AlertTriangle },
+  { label: 'Acil toplanma alanları', icon: Map },
+  { label: 'İlçe sağlık kurumları', icon: BookOpen },
+  { label: 'Eğitim kurumları listesi', icon: Shield },
+  { label: 'Kritik altyapı bilgileri', icon: Info },
 ];
 
 export default function ProvincePacksPage() {
@@ -66,9 +66,9 @@ export default function ProvincePacksPage() {
           <p className="shell-kicker">Yerel paketler</p>
           <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
-              <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Il Paketleri</h1>
+              <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">İl Paketleri</h1>
               <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-                Il icerikleri, surum durumu ve belge kapsami tek envanter gorunumunde izleniyor.
+                İl içerikleri, sürüm durumu ve belge kapsamı tek envanter görünümünde izleniyor.
               </p>
             </div>
           </div>
@@ -76,19 +76,19 @@ export default function ProvincePacksPage() {
 
         <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
           <div className="rounded-[1.5rem] border border-white/8 bg-black/20 px-4 py-4">
-            <p className="shell-muted-label">Hazir kapsam</p>
+            <p className="shell-muted-label">Hazır kapsam</p>
             <p className="mt-2 text-3xl font-semibold text-white">{allProvinces.length}</p>
             <p className="mt-2 text-sm text-slate-300">Kurulum paketiyle gelen il seti</p>
           </div>
           <div className="rounded-[1.5rem] border border-emerald-500/20 bg-emerald-500/10 px-4 py-4">
             <p className="shell-muted-label">Etkin paket</p>
             <p className="mt-2 text-3xl font-semibold text-white">{activePackCodes.size}</p>
-            <p className="mt-2 text-sm text-emerald-100/80">Aktif olan il icerigi</p>
+            <p className="mt-2 text-sm text-emerald-100/80">Aktif olan il içeriği</p>
           </div>
           <div className="rounded-[1.5rem] border border-white/8 bg-black/20 px-4 py-4">
-            <p className="shell-muted-label">Calisma modu</p>
-            <p className="mt-2 text-xl font-semibold text-white">Tam cevrimdisi</p>
-            <p className="mt-2 text-sm text-slate-300">Ek indirme veya dis baglanti gerekmez</p>
+            <p className="shell-muted-label">Çalışma modu</p>
+            <p className="mt-2 text-xl font-semibold text-white">Tam çevrimdışı</p>
+            <p className="mt-2 text-sm text-slate-300">Ek indirme veya dış bağlantı gerekmez</p>
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function ProvincePacksPage() {
                   <div>
                     <CardTitle className="text-lg text-white">{province.name}</CardTitle>
                     <p className="mt-1 text-sm text-slate-300">
-                      {isActive ? 'Etkin ve calisma yuzeyine dahil' : 'Etkinlestirme bekliyor'}
+                      {isActive ? 'Etkin ve çalışma yüzeyine dahil' : 'Etkinleştirme bekliyor'}
                     </p>
                   </div>
                   <Badge variant="outline" className="text-xs">
@@ -125,13 +125,13 @@ export default function ProvincePacksPage() {
                       : 'rounded-2xl border border-sky-500/20 bg-sky-500/10 px-3 py-2 text-sm text-sky-100'
                   }
                 >
-                  {isActive ? 'Aktif ve erisilebilir' : 'Etkinlestirme bekliyor'}
+                  {isActive ? 'Aktif ve erişilebilir' : 'Etkinleştirme bekliyor'}
                 </div>
 
                 {isActive && pack ? (
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="rounded-xl border border-white/8 bg-black/15 p-3">
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Surum</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Sürüm</p>
                       <p className="mt-2 font-semibold text-white">{pack.version}</p>
                     </div>
                     <div className="rounded-xl border border-white/8 bg-black/15 p-3">
@@ -139,13 +139,13 @@ export default function ProvincePacksPage() {
                       <p className="mt-2 font-semibold text-white">{pack.included_documents_count}</p>
                     </div>
                     <div className="col-span-2 rounded-xl border border-white/8 bg-black/15 p-3">
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Son guncelleme</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Son güncelleme</p>
                       <p className="mt-2 font-semibold text-white">{formatTurkishDate(pack.updated_at)}</p>
                     </div>
                   </div>
                 ) : (
                   <p className="text-sm leading-6 text-slate-300">
-                    Bu il icerigi kurulumla birlikte gelir. Dis baglanti olmadan kullanilabilir ve gerektiginde yerel olarak etkinlestirilir.
+                    Bu il içeriği kurulumla birlikte gelir. Dış bağlantı olmadan kullanılabilir ve gerektiğinde yerel olarak etkinleştirilir.
                   </p>
                 )}
               </CardContent>
@@ -158,7 +158,7 @@ export default function ProvincePacksPage() {
         <div className="rounded-[1.75rem] border border-white/8 bg-[linear-gradient(180deg,rgba(19,26,33,0.95),rgba(14,20,25,0.95))] p-5 shadow-panel sm:p-6">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-white">
             <Database className="h-5 w-5 text-emerald-300" />
-            Paket icerikleri
+            Paket içerikleri
           </h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {packContents.map((item) => (
@@ -179,11 +179,11 @@ export default function ProvincePacksPage() {
             Hak manifestosu
           </h2>
           <div className="mt-5 space-y-3 rounded-2xl border border-white/8 bg-black/15 p-5 text-sm leading-6 text-slate-300">
-            <p>Tum paket icerikleri kamu yararina acik kaynaklardan derlenmistir.</p>
-            <p>Mevzuat belgeleri resmi yayinlardan, afet planlari yerel kurum arsivlerinden alinir.</p>
-            <p>Egitim ve saglik icerikleri baglanti gerektirmeden yerel kullanim icin hazirlanir.</p>
+            <p>Tüm paket içerikleri kamu yararına açık kaynaklardan derlenmiştir.</p>
+            <p>Mevzuat belgeleri resmi yayınlardan, afet planları yerel kurum arşivlerinden alınır.</p>
+            <p>Eğitim ve sağlık içerikleri bağlantı gerektirmeden yerel kullanım için hazırlanır.</p>
             <p className="border-t border-white/8 pt-3 text-xs text-slate-400">
-              Bu icerikler acil durum, egitim ve kamusal hazirlik amacli ucretsiz kullanim icin paketlenmistir.
+              Bu içerikler acil durum, eğitim ve kamusal hazırlık amaçlı ücretsiz kullanım için paketlenmiştir.
             </p>
           </div>
         </div>

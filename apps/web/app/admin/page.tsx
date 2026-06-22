@@ -80,9 +80,9 @@ export default function AdminPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Settings className="h-6 w-6 text-nomad-green" />
-            Yonetim Paneli
+            Yönetim Paneli
           </h1>
-          <p className="text-nomad-slate text-sm">Sistem yonetimi ve yapilandirma</p>
+          <p className="text-nomad-slate text-sm">Sistem yönetimi ve yapılandırma</p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm">
@@ -91,7 +91,7 @@ export default function AdminPage() {
           </Button>
           <Button variant="outline" size="sm">
             <Upload className="h-4 w-4 mr-1" />
-            Geri Yukle
+            Geri Yükle
           </Button>
         </div>
       </div>
@@ -108,11 +108,11 @@ export default function AdminPage() {
           </TabsTrigger>
           <TabsTrigger value="review">
             <ClipboardList className="h-4 w-4 mr-1" />
-            Inleme
+            İnceleme
           </TabsTrigger>
           <TabsTrigger value="users">
             <Users className="h-4 w-4 mr-1" />
-            Kullanicilar
+            Kullanıcılar
           </TabsTrigger>
           <TabsTrigger value="settings">
             <Settings className="h-4 w-4 mr-1" />
@@ -180,7 +180,7 @@ export default function AdminPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleToggleSource(source)}
-                          title={source.is_active ? 'Devre disi birak' : 'Aktif et'}
+                          title={source.is_active ? 'Devre dışı bırak' : 'Aktif et'}
                         >
                           {source.is_active ? <XCircle className="h-4 w-4 text-amber-400" /> : <CheckCircle className="h-4 w-4 text-green-400" />}
                         </Button>
@@ -191,8 +191,8 @@ export default function AdminPage() {
               ) : (
                 <div className="text-center py-12">
                   <Database className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-                  <p className="text-nomad-slate">Henuz kaynak eklenmemis</p>
-                  <Button className="mt-4">Ilk Kaynagi Ekle</Button>
+                  <p className="text-nomad-slate">Henüz kaynak eklenmemiş</p>
+                  <Button className="mt-4">İlk Kaynağı Ekle</Button>
                 </div>
               )}
             </CardContent>
@@ -204,7 +204,7 @@ export default function AdminPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
                 <Activity className="h-4 w-4 text-nomad-green" />
-                Senkronizasyon Loglari
+                Senkronizasyon Logları
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -228,7 +228,7 @@ export default function AdminPage() {
                       <div className="flex items-center gap-4 text-xs text-nomad-slate">
                         <span>{run.documents_indexed} indexlendi</span>
                         {run.documents_failed > 0 && (
-                          <span className="text-red-400">{run.documents_failed} basarisiz</span>
+                          <span className="text-red-400">{run.documents_failed} başarısız</span>
                         )}
                         {run.started_at && <span>{formatTurkishDate(run.started_at)}</span>}
                       </div>
@@ -238,7 +238,7 @@ export default function AdminPage() {
               ) : (
                 <div className="text-center py-12">
                   <RefreshCw className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-                  <p className="text-nomad-slate">Henuz senkronizasyon gecmisi yok</p>
+                  <p className="text-nomad-slate">Henüz senkronizasyon geçmişi yok</p>
                 </div>
               )}
             </CardContent>
@@ -250,14 +250,14 @@ export default function AdminPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
                 <ClipboardList className="h-4 w-4 text-nomad-green" />
-                Inleme Sirasi
+                İnceleme Sırası
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="text-center py-12">
                 <ClipboardList className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-                <p className="text-nomad-slate">Inleme bekleyen belge yok</p>
-                <p className="text-xs text-nomad-slate mt-2">Otomatik inleme sistemi tum belgeleri kontrol eder</p>
+                <p className="text-nomad-slate">İnceleme bekleyen belge yok</p>
+                <p className="text-xs text-nomad-slate mt-2">Otomatik inceleme sistemi tüm belgeleri kontrol eder</p>
               </div>
             </CardContent>
           </Card>
@@ -269,18 +269,18 @@ export default function AdminPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-base flex items-center gap-2">
                   <Users className="h-4 w-4 text-nomad-green" />
-                  Kullanici Yonetimi
+                  Kullanıcı Yönetimi
                 </CardTitle>
                 <Button size="sm">
                   <Users className="h-4 w-4 mr-1" />
-                  Yeni Kullanici
+                  Yeni Kullanıcı
                 </Button>
               </div>
             </CardHeader>
             <CardContent>
               <div className="text-center py-12">
                 <Shield className="h-12 w-12 text-nomad-slate mx-auto mb-4" />
-                <p className="text-nomad-slate">Kullanici yonetimi burada yapilandirilacak</p>
+                <p className="text-nomad-slate">Kullanıcı yönetimi burada yapılandırılacak</p>
               </div>
             </CardContent>
           </Card>
@@ -294,13 +294,13 @@ export default function AdminPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Uygulama Adi</label>
-                  <Input defaultValue="prepturk" />
+                  <label className="block text-sm font-medium mb-1.5">Uygulama Adı</label>
+                  <Input defaultValue="PrepTürk" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Varsayilan Dil</label>
+                  <label className="block text-sm font-medium mb-1.5">Varsayılan Dil</label>
                   <select className="w-full px-3 py-2 bg-nomad-surface border border-nomad-border rounded-lg text-foreground text-sm">
-                    <option value="tr">Turkce</option>
+                    <option value="tr">Türkçe</option>
                     <option value="en">English</option>
                   </select>
                 </div>
@@ -310,7 +310,7 @@ export default function AdminPage() {
                     <option value="10gb">10 GB</option>
                     <option value="50gb" selected>50 GB</option>
                     <option value="200gb">200 GB</option>
-                    <option value="unlimited">Sinirsiz</option>
+                    <option value="unlimited">Sınırsız</option>
                   </select>
                 </div>
                 <Button>Kaydet</Button>
@@ -319,29 +319,29 @@ export default function AdminPage() {
 
             <Card className="border-nomad-border">
               <CardHeader className="pb-3">
-                <CardTitle className="text-base">Yedekleme ve Geri Yukleme</CardTitle>
+                <CardTitle className="text-base">Yedekleme ve Geri Yükleme</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
                   <div className="flex items-center gap-2 mb-2">
                     <HardDrive className="h-4 w-4 text-nomad-green" />
-                    <span className="text-sm font-medium">Veritabani Yedegi</span>
+                    <span className="text-sm font-medium">Veritabanı Yedeği</span>
                   </div>
-                  <p className="text-xs text-nomad-slate mb-3">Tum veritabani verilerini yedekleyin</p>
+                  <p className="text-xs text-nomad-slate mb-3">Tüm veritabanı verilerini yedekleyin</p>
                   <Button variant="outline" size="sm" className="w-full">
                     <Download className="h-3.5 w-3.5 mr-1" />
-                    Yedek Indir
+                    Yedek İndir
                   </Button>
                 </div>
                 <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
                   <div className="flex items-center gap-2 mb-2">
                     <Upload className="h-4 w-4 text-nomad-blue" />
-                    <span className="text-sm font-medium">Yedek Geri Yukle</span>
+                    <span className="text-sm font-medium">Yedek Geri Yükle</span>
                   </div>
-                  <p className="text-xs text-nomad-slate mb-3">Daha once alinan yedegi geri yukleyin</p>
+                  <p className="text-xs text-nomad-slate mb-3">Daha önce alınan yedeği geri yükleyin</p>
                   <Button variant="outline" size="sm" className="w-full">
                     <Upload className="h-3.5 w-3.5 mr-1" />
-                    Yedek Sec
+                    Yedek Seç
                   </Button>
                 </div>
               </CardContent>

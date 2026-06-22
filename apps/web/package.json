@@ -6,11 +6,14 @@
     "dev": "next dev -p 3000",
     "prebuild": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "node scripts/package-standalone.mjs",
+    "start": "node .next/standalone/server.js",
+    "start:next": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
     "test": "jest",
-    "test:smoke": "jest --runTestsByPath components/__tests__/Sidebar.test.tsx components/__tests__/TopBar.test.tsx"
+    "test:ci": "jest --ci --runInBand",
+    "test:smoke": "jest --runInBand components/__tests__"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",

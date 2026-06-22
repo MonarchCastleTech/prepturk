@@ -30,16 +30,16 @@ interface RegionData {
 
 const REGIONS: RegionData[] = [
   {
-    name: 'Istanbul / Marmara',
+    name: 'İstanbul / Marmara',
     nameEn: 'Istanbul / Marmara',
     tempRange: '0°C ila 10°C',
     tempRangeEn: '0°C to 10°C',
-    description: 'Nemli soguk, ruzgar hissi artirir. Yagmur ve kar arisik.',
+    description: 'Nemli soğuk, rüzgar hissi artırır. Yağmur ve kar karışık.',
     descriptionEn: 'Humid cold, wind chill increases effect. Mixed rain and snow.',
     tips: [
-      { tr: 'Ruzgar gecirmez katman giy', en: 'Wear windproof layers' },
-      { tr: 'Nem yalitim azaltir, kuru tut', en: 'Humidity reduces insulation, keep dry' },
-      { tr: 'Pencerelere plastik film yapistir', en: 'Apply plastic film to windows' },
+      { tr: 'Rüzgar geçirmez katman giy', en: 'Wear windproof layers' },
+      { tr: 'Nem yalıtımı azaltır, kuru tut', en: 'Humidity reduces insulation, keep dry' },
+      { tr: 'Pencerelere plastik film yapıştır', en: 'Apply plastic film to windows' },
     ],
     icon: Wind,
   },
@@ -48,11 +48,11 @@ const REGIONS: RegionData[] = [
     nameEn: 'Aegean',
     tempRange: '5°C ila 15°C',
     tempRangeEn: '5°C to 15°C',
-    description: 'Iliman, daha az sert. gece donlari olabilir.',
+    description: 'Ilıman, daha az sert. Gece donları olabilir.',
     descriptionEn: 'Milder, less severe. Night frosts possible.',
     tips: [
-      { tr: 'Gece sicaklik dususu icin hazirlikli ol', en: 'Be prepared for night temperature drops' },
-      { tr: 'Katli giyinme yeterli olabilir', en: 'Layered clothing may be sufficient' },
+      { tr: 'Gece sıcaklık düşüşü için hazırlıklı ol', en: 'Be prepared for night temperature drops' },
+      { tr: 'Katlı giyinme yeterli olabilir', en: 'Layered clothing may be sufficient' },
     ],
     icon: Wind,
   },
@@ -61,40 +61,40 @@ const REGIONS: RegionData[] = [
     nameEn: 'Mediterranean',
     tempRange: '5°C ila 15°C',
     tempRangeEn: '5°C to 15°C',
-    description: 'En iliman bolge. Nadiren don.',
+    description: 'En ilıman bölge. Nadiren don.',
     descriptionEn: 'Mildest region. Rarely freezing.',
     tips: [
-      { tr: 'Hafif isinma yeterli', en: 'Light heating is sufficient' },
-      { tr: 'Yagisli gunler icin hazirlikli ol', en: 'Be prepared for rainy days' },
+      { tr: 'Hafif ısınma yeterli', en: 'Light heating is sufficient' },
+      { tr: 'Yağışlı günler için hazırlıklı ol', en: 'Be prepared for rainy days' },
     ],
     icon: Sun,
   },
   {
-    name: 'Iceri Anadolu (Ankara)',
+    name: 'İç Anadolu (Ankara)',
     nameEn: 'Central Anatolia (Ankara)',
     tempRange: '-15°C ila 5°C',
     tempRangeEn: '-15°C to 5°C',
-    description: 'Sert ve kuru soguk. Buyuk sicaklik farklari.',
+    description: 'Sert ve kuru soğuk. Büyük sıcaklık farkları.',
     descriptionEn: 'Harsh, dry cold. Large temperature differences.',
     tips: [
-      { tr: 'Agir isinma sart, birden fazla yontem kullan', en: 'Heavy heating essential, use multiple methods' },
-      { tr: 'Su borularini donmaya karsi yalit', en: 'Insulate water pipes against freezing' },
-      { tr: 'Kapi ve pencereleri cift katman yalit', en: 'Double-layer insulate doors and windows' },
+      { tr: 'Ağır ısınma şart, birden fazla yöntem kullan', en: 'Heavy heating essential, use multiple methods' },
+      { tr: 'Su borularını donmaya karşı yalıt', en: 'Insulate water pipes against freezing' },
+      { tr: 'Kapı ve pencereleri çift katman yalıt', en: 'Double-layer insulate doors and windows' },
     ],
     icon: Snowflake,
   },
   {
-    name: 'Dogu Anadolu (Erzurum, Van)',
+    name: 'Doğu Anadolu (Erzurum, Van)',
     nameEn: 'Eastern Anatolia (Erzurum, Van)',
     tempRange: '-30°C ila -5°C',
     tempRangeEn: '-30°C to -5°C',
-    description: 'Asiri soguk. Hayati tehlike. Hazirlik sart.',
+    description: 'Aşırı soğuk. Hayati tehlike. Hazırlık şart.',
     descriptionEn: 'Extreme cold. Life-threatening. Preparation essential.',
     tips: [
-      { tr: 'Mumkunse tek bir odada toplan, isit', en: 'If possible, gather in one room, heat it' },
-      { tr: 'Katli battaniye, uyku tulumu kullan', en: 'Use layered blankets, sleeping bags' },
-      { tr: 'Sicak icecekler icin su hazirla', en: 'Prepare water for hot drinks' },
-      { tr: 'Hipotermi belirtilerini tanimayi ogren', en: 'Learn to recognize hypothermia symptoms' },
+      { tr: 'Mümkünse tek bir odada toplan, ısıt', en: 'If possible, gather in one room, heat it' },
+      { tr: 'Katlı battaniye, uyku tulumu kullan', en: 'Use layered blankets, sleeping bags' },
+      { tr: 'Sıcak içecekler için su hazırla', en: 'Prepare water for hot drinks' },
+      { tr: 'Hipotermi belirtilerini tanımayı öğren', en: 'Learn to recognize hypothermia symptoms' },
     ],
     icon: Snowflake,
   },
@@ -103,12 +103,12 @@ const REGIONS: RegionData[] = [
     nameEn: 'Black Sea',
     tempRange: '0°C ila 10°C',
     tempRangeEn: '0°C to 10°C',
-    description: 'Cok nemli, hissedilen sicaklik daha dusuk.',
+    description: 'Çok nemli, hissedilen sıcaklık daha düşük.',
     descriptionEn: 'Very humid, feels colder than actual temperature.',
     tips: [
-      { tr: 'Nem yalitim azaltir, ekstra katman kullan', en: 'Humidity reduces insulation, use extra layers' },
-      { tr: 'Kuf onleyici havalandirma yap', en: 'Ventilate to prevent mold' },
-      { tr: 'Nem alici kullan (tuz, kirec)', en: 'Use dehumidifiers (salt, lime)' },
+      { tr: 'Nem yalıtımı azaltır, ekstra katman kullan', en: 'Humidity reduces insulation, use extra layers' },
+      { tr: 'Küf önleyici havalandırma yap', en: 'Ventilate to prevent mold' },
+      { tr: 'Nem alıcı kullan (tuz, kireç)', en: 'Use dehumidifiers (salt, lime)' },
     ],
     icon: Droplets,
   },
@@ -136,7 +136,7 @@ export default function BarinakIsinmaPage() {
         <header className="mb-6 flex items-center justify-between flex-wrap gap-3">
           <div>
             <h1 className="text-3xl font-bold text-nomad-green mb-1">
-              Barinak ve Isinma Rehberi
+              Barınak ve Isınma Rehberi
             </h1>
             <p className="text-nomad-slate text-sm">
               Shelter & Warmth Guide -- Turkey Climate Zones
@@ -144,7 +144,7 @@ export default function BarinakIsinmaPage() {
           </div>
           <button onClick={printPage} className="btn-secondary flex items-center gap-2 no-print">
             <Printer className="h-4 w-4" />
-            Yazdir / Print
+            Yazdır / Print
           </button>
         </header>
 
@@ -157,7 +157,7 @@ export default function BarinakIsinmaPage() {
             <div className="flex items-center gap-3">
               <Flame className="h-6 w-6 text-orange-400" />
               <div>
-                <h2 className="text-xl font-bold text-white">Dogaçlama Isinma</h2>
+                <h2 className="text-xl font-bold text-white">Doğaçlama Isınma</h2>
                 <p className="text-nomad-slate text-sm">Improvised Heating</p>
               </div>
             </div>
@@ -174,31 +174,31 @@ export default function BarinakIsinmaPage() {
               <div>
                 <h3 className="text-lg font-semibold text-green-400 mb-3 flex items-center gap-2">
                   <CheckSquare className="h-5 w-5" />
-                  Guvenli Yontemler / Safe Methods
+                  Güvenli Yöntemler / Safe Methods
                 </h3>
                 <div className="space-y-4">
                   <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
-                    <h4 className="font-medium text-white mb-2">Mum ve Tencere Yontemi / Candle Heater</h4>
+                    <h4 className="font-medium text-white mb-2">Mum ve Tencere Yöntemi / Candle Heater</h4>
                     <p className="text-sm text-foreground mb-2">
-                      Tercova cicek cogu icine ters cevrilmis, mum ustune yerlestirilir.
-                      Teracotta isiyi emer ve yayar. Kucuk alanda 1-2°C art saglar.
+                      Terracotta çiçek saksısının içine ters çevrilmiş, mum üstüne yerleştirilir.
+                      Terracotta ısıyı emer ve yayar. Küçük alanda 1-2°C artış sağlar.
                     </p>
                     <p className="text-xs text-nomad-slate">
                       Terracotta pot inverted over candle. Terracotta absorbs and radiates heat.
                       Provides 1-2°C increase in small area.
                     </p>
                     <ol className="mt-2 space-y-1 text-sm text-foreground">
-                      <li>1. Buyuk mum (7-10 saatlik) yak</li>
-                      <li>2. Uzerine kucuk teracotta cogu yerlestir (delik acik)</li>
-                      <li>3. Uzerine buyuk teracotta cogu ters cevir</li>
-                      <li>4. Metal civata ile ust uste tut</li>
+                      <li>1. Büyük mum (7-10 saatlik) yak</li>
+                      <li>2. Üzerine küçük terracotta saksı yerleştir (delik açık)</li>
+                      <li>3. Üzerine büyük terracotta saksıyı ters çevir</li>
+                      <li>4. Metal cıvata ile üst üste tut</li>
                     </ol>
                     <div className="mt-3 bg-red-950/50 border border-red-800 rounded-lg p-3">
                       <div className="flex items-start gap-2">
                         <AlertTriangle className="h-4 w-4 text-red-400 mt-0.5 shrink-0" />
                         <div>
                           <p className="text-red-300 text-sm font-medium">
-                            CO UYARISI: Kapali alanda mum yakmak karbonmonoks uretir.
+                            CO UYARISI: Kapalı alanda mum yakmak karbonmonoksit üretir.
                           </p>
                           <p className="text-red-400 text-xs">
                             CO WARNING: Burning candles in enclosed space produces carbon monoxide.
@@ -209,27 +209,27 @@ export default function BarinakIsinmaPage() {
                   </div>
 
                   <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
-                    <h4 className="font-medium text-white mb-2">Sicak Su Torbasi / Hot Water Bottle</h4>
+                    <h4 className="font-medium text-white mb-2">Sıcak Su Torbası / Hot Water Bottle</h4>
                     <p className="text-sm text-foreground mb-2">
-                      Sicak su ile doldurulan sise veya torba, yatak/icinde isinma icin kullanilir.
-                      4-6 saat sicaklik verir.
+                      Sıcak su ile doldurulan şişe veya torba, yatak/kişi ısıtma için kullanılır.
+                      4-6 saat sıcaklık verir.
                     </p>
                     <p className="text-xs text-nomad-slate">
                       Bottle or bag filled with hot water, used for bed/person heating.
                       Provides 4-6 hours of warmth.
                     </p>
                     <ol className="mt-2 space-y-1 text-sm text-foreground">
-                      <li>1. Cam siseyi sicak (kaynar degil) su ile doldur</li>
-                      <li>2. Bez veya havluya sar (yanik onlemek icin)</li>
-                      <li>3. Yatak ayak ucuna veya karina yerlestir</li>
+                      <li>1. Cam şişeyi sıcak (kaynar değil) su ile doldur</li>
+                      <li>2. Bez veya havluya sar (yanık önlemek için)</li>
+                      <li>3. Yatak ayak ucuna veya karnına yerleştir</li>
                     </ol>
                   </div>
 
                   <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
-                    <h4 className="font-medium text-white mb-2">Katli Battaniye / Layered Blankets</h4>
+                    <h4 className="font-medium text-white mb-2">Katlı Battaniye / Layered Blankets</h4>
                     <p className="text-sm text-foreground mb-2">
-                      Vucut isisini haps icin kat kat battaniye kullan.
-                      Alti katman: battaniye, yorgan, elbise, vs.
+                      Vücut ısısını hapsetmek için kat kat battaniye kullan.
+                      Alt katmanlar: battaniye, yorgan, elbise, vs.
                     </p>
                     <p className="text-xs text-nomad-slate">
                       Use layered blankets to trap body heat.
@@ -243,16 +243,16 @@ export default function BarinakIsinmaPage() {
               <div>
                 <h3 className="text-lg font-semibold text-red-400 mb-3 flex items-center gap-2">
                   <X className="h-5 w-5" />
-                  TEHLIKELI Yontemler -- ASLA YAPMA / DANGEROUS -- DO NOT USE
+                  TEHLİKELİ Yöntemler -- ASLA YAPMA / DANGEROUS -- DO NOT USE
                 </h3>
                 <div className="space-y-3">
                   <div className="bg-red-950/50 border border-red-800 rounded-lg p-4">
                     <div className="flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-red-300 font-medium">Firinda isinma / Using oven for heating</p>
+                        <p className="text-red-300 font-medium">Fırında ısınma / Using oven for heating</p>
                         <p className="text-red-400 text-xs mt-1">
-                          Gaz firinlari CO uretir, yangin riski vardir. ASLA kullanma.
+                          Gaz fırınları CO üretir, yangın riski vardır. ASLA kullanma.
                         </p>
                         <p className="text-red-500 text-xs">
                           Gas ovens produce CO, fire risk. NEVER use.
@@ -264,9 +264,9 @@ export default function BarinakIsinmaPage() {
                     <div className="flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-red-300 font-medium">Icerde komur yakma / Burning charcoal indoors</p>
+                        <p className="text-red-300 font-medium">İçerde kömür yakma / Burning charcoal indoors</p>
                         <p className="text-red-400 text-xs mt-1">
-                          Komur kapali alanda olumcul CO uretir. Her yil olumler oluyor.
+                          Kömür kapalı alanda ölümcül CO üretir. Her yıl ölümler oluyor.
                         </p>
                         <p className="text-red-500 text-xs">
                           Charcoal produces deadly CO indoors. Deaths occur every year.
@@ -278,9 +278,9 @@ export default function BarinakIsinmaPage() {
                     <div className="flex items-start gap-2">
                       <AlertTriangle className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-red-300 font-medium">Havasiz dogalgaz sobasi / Unvented gas heater</p>
+                        <p className="text-red-300 font-medium">Havasız doğalgaz sobası / Unvented gas heater</p>
                         <p className="text-red-400 text-xs mt-1">
-                          Havalandirma olmadan dogalgaz sobalari CO zehirlenmesine yol acar.
+                          Havalandırma olmadan doğalgaz sobaları CO zehirlenmesine yol açar.
                         </p>
                         <p className="text-red-500 text-xs">
                           Gas heaters without ventilation lead to CO poisoning.
@@ -297,26 +297,26 @@ export default function BarinakIsinmaPage() {
                   <AlertTriangle className="h-8 w-8 text-red-400 shrink-0" />
                   <div>
                     <h4 className="text-lg font-bold text-red-300 mb-2">
-                      KARBONMONOKS UYARISI
+                      KARBONMONOKSİT UYARISI
                     </h4>
                     <h5 className="text-sm font-medium text-red-400 mb-3">
                       CARBON MONOXIDE WARNING
                     </h5>
                     <p className="text-red-300 text-sm mb-2">
-                      Karbonmonoks kokusuzdur, renksizdir. Zehirlenme belirtileri:
+                      Karbonmonoksit kokusuzdur, renksizdir. Zehirlenme belirtileri:
                     </p>
                     <p className="text-red-400 text-xs mb-3">
                       Carbon monoxide is odorless, colorless. Poisoning symptoms:
                     </p>
                     <ul className="space-y-1 text-red-300 text-sm">
-                      <li>- Bas agrisi / Headache</li>
-                      <li>- Bulanti / Nausea</li>
-                      <li>- Bas donmesi / Dizziness</li>
+                      <li>- Baş ağrısı / Headache</li>
+                      <li>- Bulantı / Nausea</li>
+                      <li>- Baş dönmesi / Dizziness</li>
                       <li>- Halsizlik / Weakness</li>
-                      <li>- Bilinc kaybi / Loss of consciousness</li>
+                      <li>- Bilinç kaybı / Loss of consciousness</li>
                     </ul>
                     <p className="text-red-300 text-sm font-medium mt-3">
-                      Suphelenirsen: HEMEN disari cik, 112&apos;yi ara.
+                      Şüphelenirsen: HEMEN dışarı çık, 112&apos;yi ara.
                     </p>
                     <p className="text-red-400 text-xs">
                       If suspected: Leave IMMEDIATELY, call 112.
@@ -337,7 +337,7 @@ export default function BarinakIsinmaPage() {
             <div className="flex items-center gap-3">
               <Thermometer className="h-6 w-6 text-blue-400" />
               <div>
-                <h2 className="text-xl font-bold text-white">Yalitma Teknikleri</h2>
+                <h2 className="text-xl font-bold text-white">Yalıtım Teknikleri</h2>
                 <p className="text-nomad-slate text-sm">Insulation Techniques</p>
               </div>
             </div>
@@ -352,12 +352,12 @@ export default function BarinakIsinmaPage() {
             <div className="px-5 pb-5 space-y-4">
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Pencere Yalitim / Window Insulation
+                  Pencere Yalıtımı / Window Insulation
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Plastik film: Pencere cercevesine bantla yapistir (cift cam etkisi)</li>
-                  <li>- Gazete: Camlara gazete yapistir (ucuz, etkili)</li>
-                  <li>- Battaniye: Kalin battaniyeni pencereye as</li>
+                  <li>- Plastik film: Pencere çerçevesine bantla yapıştır (çift cam etkisi)</li>
+                  <li>- Gazete: Camlara gazete yapıştır (ucuz, etkili)</li>
+                  <li>- Battaniye: Kalın battaniyeni pencereye as</li>
                   <li>- Plastic film: Tape to window frame (double-pane effect)</li>
                   <li>- Newspaper: Apply newspaper to glass (cheap, effective)</li>
                   <li>- Blanket: Hang thick blanket over window</li>
@@ -365,12 +365,12 @@ export default function BarinakIsinmaPage() {
               </div>
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Kapi Yalitim / Door Draft Stopping
+                  Kapı Yalıtımı / Door Draft Stopping
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Havlu rulo: Kapi altina havlu rulo yerlestir</li>
-                  <li>- Fitil kaplama: Kapi cevre fitil kaplama</li>
-                  <li>- Battaniye: Kapi arkasina battaniye as</li>
+                  <li>- Havlu rulo: Kapı altına havlu rulo yerleştir</li>
+                  <li>- Fitil kaplama: Kapı çevresine fitil kaplama</li>
+                  <li>- Battaniye: Kapı arkasına battaniye as</li>
                   <li>- Towel roll: Place rolled towel under door</li>
                   <li>- Weather stripping: Apply weather stripping around door</li>
                   <li>- Blanket: Hang blanket behind door</li>
@@ -378,12 +378,12 @@ export default function BarinakIsinmaPage() {
               </div>
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Zemin Yalitim / Floor Insulation
+                  Zemin Yalıtımı / Floor Insulation
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Karton: Zemin karton kapla (yukari isi kaybi azalir)</li>
-                  <li>- Hali: Ekstra hali veya kilim kullan</li>
-                  <li>- Gazete: Kat kat gazete ser (gecici yontem)</li>
+                  <li>- Karton: Zemini karton ile kapla (yukarı ısı kaybı azalır)</li>
+                  <li>- Halı: Ekstra halı veya kilim kullan</li>
+                  <li>- Gazete: Kat kat gazete ser (geçici yöntem)</li>
                   <li>- Cardboard: Cover floor with cardboard (reduces upward heat loss)</li>
                   <li>- Rug: Use extra rugs or carpets</li>
                   <li>- Newspaper: Lay layered newspaper (temporary method)</li>
@@ -391,11 +391,11 @@ export default function BarinakIsinmaPage() {
               </div>
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Tavan Isi Tutma / Ceiling Heat Retention
+                  Tavan Isı Tutma / Ceiling Heat Retention
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Battaniye: Tavaya battaniye as (isi yukari kacmaz)</li>
-                  <li>- Alumin folyo: Tavana alumin folyo yapistir (isi yansitir)</li>
+                  <li>- Battaniye: Tavana battaniye as (ısı yukarı kaçmaz)</li>
+                  <li>- Alüminyum folyo: Tavana alüminyum folyo yapıştır (ısı yansıtır)</li>
                   <li>- Blanket: Hang blanket from ceiling (prevents heat rising)</li>
                   <li>- Aluminum foil: Apply foil to ceiling (reflects heat)</li>
                 </ul>
@@ -413,7 +413,7 @@ export default function BarinakIsinmaPage() {
             <div className="flex items-center gap-3">
               <Snowflake className="h-6 w-6 text-cyan-400" />
               <div>
-                <h2 className="text-xl font-bold text-white">Bolgesel Kis Hayatta Kalma</h2>
+                <h2 className="text-xl font-bold text-white">Bölgesel Kış Hayatta Kalma</h2>
                 <p className="text-nomad-slate text-sm">Regional Winter Survival</p>
               </div>
             </div>
@@ -468,7 +468,7 @@ export default function BarinakIsinmaPage() {
             <div className="flex items-center gap-3">
               <Sun className="h-6 w-6 text-yellow-400" />
               <div>
-                <h2 className="text-xl font-bold text-white">Yazin Serinletme</h2>
+                <h2 className="text-xl font-bold text-white">Yazın Serinletme</h2>
                 <p className="text-nomad-slate text-sm">Summer Cooling</p>
               </div>
             </div>
@@ -483,12 +483,12 @@ export default function BarinakIsinmaPage() {
             <div className="px-5 pb-5 space-y-4">
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Dogal Havalandirma / Natural Ventilation
+                  Doğal Havalandırma / Natural Ventilation
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Sabah ve aksam erken saatlerde pencereleri ac (05:00-08:00, 20:00-23:00)</li>
-                  <li>- Gunduz gunes alan pencereleri kapat (perde veya panjur)</li>
-                  <li>- Capraz havalandirma: pencerelerin iki yanini ac (ruzgar akimi)</li>
+                  <li>- Sabah ve akşam erken saatlerde pencereleri aç (05:00-08:00, 20:00-23:00)</li>
+                  <li>- Gündüz güneş alan pencereleri kapat (perde veya panjur)</li>
+                  <li>- Çapraz havalandırma: pencerelerin iki yanını aç (rüzgar akımı)</li>
                   <li>- Open windows in early morning and evening (05:00-08:00, 20:00-23:00)</li>
                   <li>- Close sun-facing windows during day (curtains or shutters)</li>
                   <li>- Cross ventilation: open windows on both sides (airflow)</li>
@@ -496,12 +496,12 @@ export default function BarinakIsinmaPage() {
               </div>
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Buharlasma ile Serinletme / Evaporative Cooling
+                  Buharlaşma ile Serinletme / Evaporative Cooling
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Islak bez yontemi: Kapi/pencereye islatilmis bez as</li>
-                  <li>- Zemin islatma: Zemin su ile islat (buharlasma ile sogutur)</li>
-                  <li>- Kisisel: Bilek ve ense islak bez ile serinlet</li>
+                  <li>- Islak bez yöntemi: Kapı/pencereye ıslatılmış bez as</li>
+                  <li>- Zemin ıslatma: Zemini su ile ıslat (buharlaşma ile soğutur)</li>
+                  <li>- Kişisel: Bilek ve enseyi ıslak bez ile serinlet</li>
                   <li>- Wet cloth method: Hang wet cloth on door/window</li>
                   <li>- Floor wetting: Wet the floor with water (cools by evaporation)</li>
                   <li>- Personal: Cool wrists and neck with wet cloth</li>
@@ -509,12 +509,12 @@ export default function BarinakIsinmaPage() {
               </div>
               <div className="bg-nomad-bg rounded-lg p-4 border border-nomad-border">
                 <h3 className="font-medium text-white mb-2">
-                  Golge Yonetimi / Shade Management
+                  Gölge Yönetimi / Shade Management
                 </h3>
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>- Dis mekanlarda golge alanlar olustur (brand, ortu)</li>
-                  <li>- Pencerelere alumin folyo yapistir (gunes isigini yansitir)</li>
-                  <li>- Agac yapraklari dogal golge saglar (mumkunse)</li>
+                  <li>- Dış mekanlarda gölge alanlar oluştur (tente, örtü)</li>
+                  <li>- Pencerelere alüminyum folyo yapıştır (güneş ışığını yansıtır)</li>
+                  <li>- Ağaç yaprakları doğal gölge sağlar (mümkünse)</li>
                   <li>- Create shaded areas outdoors (awning, cover)</li>
                   <li>- Apply aluminum foil to windows (reflects sunlight)</li>
                   <li>- Tree leaves provide natural shade (if possible)</li>
@@ -525,17 +525,17 @@ export default function BarinakIsinmaPage() {
                   <AlertTriangle className="h-4 w-4 text-red-400 mt-0.5 shrink-0" />
                   <div>
                     <h4 className="text-red-300 font-medium text-sm">
-                      Sicak Carpmasi Belirtileri / Heat Stroke Symptoms
+                      Sıcak Çarpması Belirtileri / Heat Stroke Symptoms
                     </h4>
                     <ul className="text-red-400 text-xs mt-2 space-y-1">
-                      <li>- Yuksek vucut sicakligi (40°C+) / High body temperature</li>
-                      <li>- Kuru, kizari deri / Dry, flushed skin</li>
-                      <li>- Hizli ve guclu nabiz / Rapid, strong pulse</li>
-                      <li>- Bas donmesi, bulanti / Dizziness, nausea</li>
-                      <li>- Bilinc karisikligi / Confusion</li>
+                      <li>- Yüksek vücut sıcaklığı (40°C+) / High body temperature</li>
+                      <li>- Kuru, kızarık deri / Dry, flushed skin</li>
+                      <li>- Hızlı ve güçlü nabız / Rapid, strong pulse</li>
+                      <li>- Baş dönmesi, bulantı / Dizziness, nausea</li>
+                      <li>- Bilinç karışıklığı / Confusion</li>
                     </ul>
                     <p className="text-red-300 text-sm font-medium mt-2">
-                      Ilk yardim: Golgeye al, susu ver, vucudu islak bez ile sogut, 112&apos;yi ara.
+                      İlk yardım: Gölgeye al, su ver, vücudu ıslak bez ile soğut, 112&apos;yi ara.
                     </p>
                     <p className="text-red-400 text-xs">
                       First aid: Move to shade, give water, cool body with wet cloth, call 112.

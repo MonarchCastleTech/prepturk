@@ -7,6 +7,7 @@ import TopBar from './TopBar';
 import CommandPalette from './CommandPalette';
 import EmergencyPanel from './EmergencyPanel';
 import SOSButton from './SOSButton';
+import InstallPrompt from './InstallPrompt';
 import { TourOverlay } from '../lib/tour';
 import { useEasyModeStore, usePowerStore, useUiStore } from '../lib/stores';
 import { cn } from '../lib/utils';
@@ -48,6 +49,7 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
         {children}
         <SOSButton />
         <TourOverlay />
+        <InstallPrompt />
       </>
     );
   }
@@ -80,6 +82,7 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
       <EmergencyPanel />
       <SOSButton />
       <TourOverlay />
+      <InstallPrompt />
     </div>
   );
 }

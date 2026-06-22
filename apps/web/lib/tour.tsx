@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { create } from 'zustand';
 import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { Button } from '../components/ui/Button';
-import { cn } from './utils';
 
 export interface TourStep {
   id: string;
@@ -16,37 +15,37 @@ export interface TourStep {
 export const TOUR_STEPS: TourStep[] = [
   {
     id: 'welcome',
-    title: "PrepTurk'e Hos Geldiniz!",
-    description: 'Sistem turu basliyor. Neler yapabileceginizi gosterelim.',
+    title: "PrepTürk'e Hoş Geldiniz!",
+    description: 'Sistem turu başlıyor. Neler yapabileceğinizi birlikte gösterelim.',
   },
   {
     id: 'search',
-    title: 'Her Seyi Arayabilirsiniz',
-    description: 'Arama cubugundan belgeleri, rehberleri ve bilgi bulabilirsiniz.',
+    title: 'Her Şeyi Arayabilirsiniz',
+    description: 'Arama çubuğundan belgelere, rehberlere ve tüm bilgilere ulaşabilirsiniz.',
     targetSelector: '[data-tour="search"]',
   },
   {
     id: 'ai',
-    title: 'AI Asistan',
-    description: 'Sorularinizi sorun. Yapay zeka yerel belgelerden alinti yaparak cevap verir.',
+    title: 'Yapay Zekâ Asistanı',
+    description: 'Sorularınızı sorun. Yapay zekâ yerel belgelerden alıntı yaparak yanıt verir.',
     targetSelector: '[data-tour="ai"]',
   },
   {
     id: 'emergency',
     title: 'Acil Durum Butonu',
-    description: 'Kirmizi SOS butonu her zaman sag alttadir. Acil numaralara tek tikla ulasirsiniz.',
+    description: 'Kırmızı SOS butonu her zaman sağ alttadır. Acil numaralara tek tıkla ulaşırsınız.',
     targetSelector: '[data-tour="sos"]',
   },
   {
     id: 'documents',
-    title: 'Belge Kutuphanesi',
-    description: 'Resmi belgeler, afet rehberleri, egitim materyalleri burada.',
+    title: 'Belge Kütüphanesi',
+    description: 'Resmî belgeler, afet rehberleri ve eğitim materyalleri burada toplanır.',
     targetSelector: '[data-tour="documents"]',
   },
   {
     id: 'settings',
     title: 'Ayarlar',
-    description: 'Kolay mod, dil, tema ve diger ayarlari buradan yapabilirsiniz.',
+    description: 'Kolay mod, dil, tema ve diğer ayarları buradan yönetebilirsiniz.',
     targetSelector: '[data-tour="settings"]',
   },
 ];
@@ -230,11 +229,11 @@ export function TourOverlay() {
             >
               {currentStep === TOUR_STEPS.length - 1 ? (
                 <>
-                  Basla <Play className="h-4 w-4 ml-1" />
+                  Başla <Play className="h-4 w-4 ml-1" />
                 </>
               ) : (
                 <>
-                  Ileri <ChevronRight className="h-4 w-4 ml-1" />
+                  İleri <ChevronRight className="h-4 w-4 ml-1" />
                 </>
               )}
             </Button>

@@ -24,146 +24,146 @@ interface NavMethod {
 const METHODS: NavMethod[] = [
   {
     id: 'polaris',
-    name: 'Kutup Yildizi (Polaris)',
+    name: 'Kutup Yıldızı (Polaris)',
     nameEn: 'North Star (Polaris)',
     icon: <Star className="h-7 w-7 text-yellow-300" />,
-    description: 'Kutup Yildizi (Polaris) her zaman Kuzey\'i gosterir. Turkiye\'de (36-42K enlemlerinde) yil boyunca gorulebilir.',
+    description: 'Kutup Yıldızı (Polaris) her zaman Kuzey\'i gösterir. Türkiye\'de (36-42K enlemlerinde) yıl boyunca görülebilir.',
     howTo: [
-      'Coban Yildizi (Big Dipper) bulun -- kucuk ayi seklinde 7 yildiz',
-      'Coban Yildizi\'nin "kase" kismindaki son iki yildizi bulun (dis kenar)',
-      'Bu iki yildizi birlestiren cizgiyi 5 kat uzatin',
-      'Bu cizginin sonunda parlak bir yildiz goreceksiniz -- bu Polaris',
-      'Polaris\'in oldugu yon KUZEU\'dir',
-      'Polaris\'e baktiginizda: Sag = Dogu, Sol = Bati, Arka = Guney',
+      'Çoban Yıldızı (Big Dipper) bulun -- küçük ayı şeklinde 7 yıldız',
+      'Çoban Yıldızı\'nın "kase" kısmındaki son iki yıldızı bulun (dış kenar)',
+      'Bu iki yıldızı birleştiren çizgiyi 5 kat uzatın',
+      'Bu çizginin sonunda parlak bir yıldız göreceksiniz -- bu Polaris',
+      'Polaris\'in olduğu yön KUZEY\'dir',
+      'Polaris\'e baktığınızda: Sağ = Doğu, Sol = Batı, Arka = Güney',
     ],
-    turkeyContext: 'Turkiye\'de Polaris, ufuktan yaklasik 36-42 derece yukselikte gorunur (enlemimize esit). Istanbul\'da ~41 derece, Antalya\'da ~36 derece.',
+    turkeyContext: 'Türkiye\'de Polaris, ufuktan yaklaşık 36-42 derece yükseklikte görünür (enlemimize eşit). İstanbul\'da ~41 derece, Antalya\'da ~36 derece.',
     tips: [
-      'Polaris cok parlak degildir -- Coban Yildizi ile bulmak en kolay yoldur',
-      'Kuzey Yarim Kure\'de her zaman gorunur (hava aciksa)',
+      'Polaris çok parlak değildir -- Çoban Yıldızı ile bulmak en kolay yoldur',
+      'Kuzey Yarım Küre\'de her zaman görünür (hava açıksa)',
       'Polaris\'e bakarak Kuzey\'i 1 derece hassasiyetle bulabilirsiniz',
-      'Bulutlu hava veya isik kirliligi gorunurlugu azaltir',
+      'Bulutlu hava veya ışık kirliliği görünürlüğü azaltır',
     ],
-    bestTime: 'Yil boyunca, gece, acik hava',
+    bestTime: 'Yıl boyunca, gece, açık hava',
   },
   {
     id: 'sun-position',
-    name: 'Gunes Pozisyonu',
+    name: 'Güneş Pozisyonu',
     nameEn: 'Sun Position Method',
     icon: <Sun className="h-7 w-7 text-orange-400" />,
-    description: 'Turkiye 36-42K enlemlerinde oldugu icin, oglen vakti Gunes her zaman GUNEY\'de olur. Golge KUZEU\'yu gosterir.',
+    description: 'Türkiye 36-42K enlemlerinde olduğu için, öğlen vakti Güneş her zaman GÜNEY\'de olur. Gölge KUZEY\'i gösterir.',
     howTo: [
-      'Oglen vakti (12:00-13:00) Gunes\'in oldugu yon GUNEY\'dir',
-      'Golgeniz KUZEU\'yu gosterir',
-      'Sabah (06:00 civari): Gunes DOGU\'da dogar',
-      'Aksam (18:00 civari): Gunes BATI\'da batar',
-      'Kis gunundogusu: Guneydogu, batar: Guneybati',
-      'Yaz gunundogusu: Kuzeydogu, batar: Kuzeybati',
+      'Öğlen vakti (12:00-13:00) Güneş\'in olduğu yön GÜNEY\'dir',
+      'Gölgeniz KUZEY\'i gösterir',
+      'Sabah (06:00 civarı): Güneş DOĞU\'da doğar',
+      'Akşam (18:00 civarı): Güneş BATI\'da batar',
+      'Kış günündoğusu: Güneydoğu, batar: Güneybatı',
+      'Yaz günündoğusu: Kuzeydoğu, batar: Kuzeybatı',
     ],
-    turkeyContext: 'Turkiye UTC+3 saat diliminde. Gercek oglen saati yaz saati uygulamasi nedeniyle 13:00 civarindadir. Golge oglen en kisa oldugu anda tam kuzeyi gosterir.',
+    turkeyContext: 'Türkiye UTC+3 saat diliminde. Gerçek öğlen saati yaz saati uygulaması nedeniyle 13:00 civarındadır. Gölge öğlen en kısa olduğu anda tam kuzeyi gösterir.',
     tips: [
-      'Golgeniz solunuzdaysa: Yuzunuz guney, arkaniz kuzey',
-      'Golgeniz saginizdaysa: Yuzunuz kuzey, arkaniz guney',
-      'Sabah: Gunes solunuzda -> yuzunuz kuzey',
-      'Aksam: Gunes saginizda -> yuzunuz kuzey',
+      'Gölgeniz solunuzdaysa: Yüzünüz güney, arkanız kuzey',
+      'Gölgeniz sağınızdaysa: Yüzünüz kuzey, arkanız güney',
+      'Sabah: Güneş solunuzda -> yüzünüz kuzey',
+      'Akşam: Güneş sağınızda -> yüzünüz kuzey',
     ],
-    bestTime: 'Gunduz, ozellikle oglen vakti',
+    bestTime: 'Gündüz, özellikle öğlen vakti',
   },
   {
     id: 'stick-shadow',
-    name: 'Cop Golge Yontemi',
+    name: 'Çöp Gölge Yöntemi',
     nameEn: 'Stick Shadow Method',
     icon: <Compass className="h-7 w-7 text-amber-400" />,
-    description: 'Yere bir cop dikin, golge ucunu isaretleyin. 15 dakika sonra tekrar isaretleyin. Cizgi DOGU-BATI yonundedir.',
+    description: 'Yere bir çöp dikin, gölge ucunu işaretleyin. 15 dakika sonra tekrar işaretleyin. Çizgi DOĞU-BATI yönündedir.',
     howTo: [
-      'Duz bir zemine 60-100 cm uzunlugunda bir cop veya dal dikin',
-      'Golgenin ucuna bir tas veya isaret koyun (1. isaret)',
-      'En az 15 dakika bekleyin (golge hareket edecek)',
-      'Golgenin yeni ucunu isaretleyin (2. isaret)',
-      'Iki isareti birlestiren cizgi DOGU-BATI cizgisidir',
-      'Ilk isaret BATI, ikinci isaret DOGU\'dur',
-      'Bu cizgiye dik olan cizgi KUZEU-GUNEY cizgisidir',
+      'Düz bir zemine 60-100 cm uzunluğunda bir çöp veya dal dikin',
+      'Gölgenin ucuna bir taş veya işaret koyun (1. işaret)',
+      'En az 15 dakika bekleyin (gölge hareket edecek)',
+      'Gölgenin yeni ucunu işaretleyin (2. işaret)',
+      'İki işareti birleştiren çizgi DOĞU-BATI çizgisidir',
+      'İlk işaret BATI, ikinci işaret DOĞU\'dur',
+      'Bu çizgiye dik olan çizgi KUZEY-GÜNEY çizgisidir',
     ],
-    turkeyContext: 'Turkiye\'de bu yontem sabah 09:00 - ogleden sonra 15:00 arasinda en dogru sonuclari verir. Oglen civarinda golgeler daha kisa oldugu icin daha hassas okuma yapilabilir.',
+    turkeyContext: 'Türkiye\'de bu yöntem sabah 09:00 - öğleden sonra 15:00 arasında en doğru sonuçları verir. Öğlen civarında gölgeler daha kısa olduğu için daha hassas okuma yapılabilir.',
     tips: [
-      'Ne kadar uzun beklerseniz (30-60 dk), o kadar dogru olur',
-      'Daha uzun cop = daha uzun golge = daha kolay okuma',
-      'Golgesi dusmeyen bulutlu gunlerde calismaz',
-      'Egitimli zeminde dogruluk azalir -- duz zemin bulun',
+      'Ne kadar uzun beklerseniz (30-60 dk), o kadar doğru olur',
+      'Daha uzun çöp = daha uzun gölge = daha kolay okuma',
+      'Gölgesi düşmeyen bulutlu günlerde çalışmaz',
+      'Eğimli zeminde doğruluk azalır -- düz zemin bulun',
     ],
-    bestTime: 'Gunduz, 09:00-15:00, acik hava',
+    bestTime: 'Gündüz, 09:00-15:00, açık hava',
   },
   {
     id: 'moon-phase',
-    name: 'Ay Fazlari ile Navigasyon',
+    name: 'Ay Fazları ile Navigasyon',
     nameEn: 'Moon Phase Navigation',
     icon: <Moon className="h-7 w-7 text-blue-300" />,
-    description: 'Ay\'in fazina gore yon bulabilirsiniz. Artan Ay: sag taraf aydinlik, gece yarısından sonra batar. Eksilen Ay: sol taraf aydinlik, gece yarısından sonra dogar.',
+    description: 'Ay\'ın fazına göre yön bulabilirsiniz. Artan Ay: sağ taraf aydınlık, gece yarısından sonra batar. Eksilen Ay: sol taraf aydınlık, gece yarısından sonra doğar.',
     howTo: [
-      'Ay\'in seklini gozlemleyin:',
-      '  - Artan Ay (hilal): Sag taraf aydinlik -- DOGU\'ya bakar',
-      '  - Dolunay: Tam aydinlik -- Gunes\'in karsisinda',
-      '  - Eksilen Ay: Sol taraf aydinlik -- BATI\'ya bakar',
-      'Artan Ay: Gunes batarak doguda gorunur, gece oncesi batar',
-      'Dolunay: Gunes batarak dogar, sabah batar',
-      'Eksilen Ay: Gece yarisinda dogar, sabah batida gorunur',
+      'Ay\'ın şeklini gözlemleyin:',
+      '  - Artan Ay (hilal): Sağ taraf aydınlık -- DOĞU\'ya bakar',
+      '  - Dolunay: Tam aydınlık -- Güneş\'in karşısında',
+      '  - Eksilen Ay: Sol taraf aydınlık -- BATI\'ya bakar',
+      'Artan Ay: Güneş batarak doğuda görünür, gece öncesi batar',
+      'Dolunay: Güneş batarak doğar, sabah batar',
+      'Eksilen Ay: Gece yarısında doğar, sabah batıda görünür',
     ],
-    turkeyContext: 'Turkiye\'de Ay guney gokyuzunden gecer. Ay\'in en yuksek noktasi (culmination) guney yonunu gosterir. Turkiye enlemlerinde Ay, ufuktan maksimum 36-42 derece yukselir.',
+    turkeyContext: 'Türkiye\'de Ay güney gökyüzünden geçer. Ay\'ın en yüksek noktası (culmination) güney yönünü gösterir. Türkiye enlemlerinde Ay, ufuktan maksimum 36-42 derece yükselir.',
     tips: [
-      'Dolunay geceleri gok yuzu aydinlik olur -- yildiz navigasyonu zorlasir',
-      'Yeni Ay geceleri gok yuzu karanlik -- yildizlar daha iyi gorunur',
-      'Ay dogarken ve batarken yon bulma icin en iyi zamandir',
-      'Ay\'in golgesi de yon belirlemek icin kullanilabilir (Gunes gibi)',
+      'Dolunay geceleri gök yüzü aydınlık olur -- yıldız navigasyonu zorlaşır',
+      'Yeni Ay geceleri gök yüzü karanlık -- yıldızlar daha iyi görünür',
+      'Ay doğarken ve batarken yön bulma için en iyi zamandır',
+      'Ay\'ın gölgesi de yön belirlemek için kullanılabilir (Güneş gibi)',
     ],
-    bestTime: 'Gece, Ay gorunur oldugunda',
+    bestTime: 'Gece, Ay görünür olduğunda',
   },
   {
     id: 'watch-method',
-    name: 'Saat Yontemi',
+    name: 'Saat Yöntemi',
     nameEn: 'Watch Method',
     icon: <Clock className="h-7 w-7 text-purple-400" />,
-    description: 'Analog saat kullanarak yon bulun. Akrep\'i Gunes\'e dogru cevirin. Akrep ile 12 arasindaki aci GUNEY\'i gosterir.',
+    description: 'Analog saat kullanarak yön bulun. Akrep\'i Güneş\'e doğru çevirin. Akrep ile 12 arasındaki açı GÜNEY\'i gösterir.',
     howTo: [
       'Analog saatinizi (akrep-kollu) yatay tutun',
-      'Akrebi Gunes\'e dogru cevirin (Gunes\'e isaret ettirin)',
-      'Akrep ile 12 sayisi arasindaki acinin ortasi GUNEY\'dir',
-      'Gunenin karsi tarafi KUZEU\'dur',
-      'Ogleden sonra (12:00 sonra): Akrep ile 12 arasindaki kucuk aciyi bulun',
-      'Ogleden once: Ayni yontem, farkli taraf',
+      'Akrebi Güneş\'e doğru çevirin (Güneş\'e işaret ettirin)',
+      'Akrep ile 12 sayısı arasındaki açının ortası GÜNEY\'dir',
+      'Güneşin karşı tarafı KUZEY\'dir',
+      'Öğleden sonra (12:00 sonra): Akrep ile 12 arasındaki küçük açıyı bulun',
+      'Öğleden önce: Aynı yöntem, farklı taraf',
     ],
-    turkeyContext: 'Turkiye UTC+3 saat diliminde oldugu icin, gercek gunes zamani ile saat zamani arasinda yaklasik 1-2 saat fark vardir. Yaz saati uygulamasinda bu fark daha fazladir. Dogru sonuc icin saati 1 saat geri alin (UTC+2).',
+    turkeyContext: 'Türkiye UTC+3 saat diliminde olduğu için, gerçek güneş zamanı ile saat zamanı arasında yaklaşık 1-2 saat fark vardır. Yaz saati uygulamasında bu fark daha fazladır. Doğru sonuç için saati 1 saat geri alın (UTC+2).',
     tips: [
-      'Dijital saat is ise: yere bir cizgi cizin ve saat yelpazesi yapin',
-      'Kuzey Yarim Kure\'de bu yontem calisir',
-      'Ekvatora yaklastikca dogruluk azalir',
-      'Oglen vakti en az dogru cunku Gunes tam tepede',
-      'Bulutlu gunlerde calismaz',
+      'Dijital saat ise: yere bir çizgi çizin ve saat yelpazesi yapın',
+      'Kuzey Yarım Küre\'de bu yöntem çalışır',
+      'Ekvatora yaklaştıkça doğruluk azalır',
+      'Öğlen vakti en az doğru çünkü Güneş tam tepede',
+      'Bulutlu günlerde çalışmaz',
     ],
-    bestTime: 'Gunduz, Gunes gorunur oldugunda, sabah veya aksam',
+    bestTime: 'Gündüz, Güneş görünür olduğunda, sabah veya akşam',
   },
   {
     id: 'emergency-direction',
-    name: 'Acil Durum Yon Bulma',
+    name: 'Acil Durum Yön Bulma',
     nameEn: 'Emergency Direction Finding',
     icon: <Eye className="h-7 w-7 text-red-400" />,
-    description: 'Arac veya alet olmadan yon bulma: doga belirtilerini kullanarak.',
+    description: 'Araç veya alet olmadan yön bulma: doğa belirtilerini kullanarak.',
     howTo: [
-      'Agac yosunlari: Genellikle KUZEU yonunde daha yogun (nemli taraf)',
-      'Karincalar: Yuvalari genellikle GUNEY yonunde (sicak taraf)',
-      'Agac govdesi: Kabuk KUZEU yonunde daha kalin ve nemli',
-      'Yapraklar: GUNEY yonunde daha yesil ve yogun',
-      'Kardan erime: GUNEY yamaclarda daha hizli erir',
-      'Evler ve binalar: Cati panelleri ve gunes panelleri GUNEY yonunde',
-      'Uydu antenleri: GUNEY yonunde (Turkiye\'de Gunes uydularina)',
+      'Ağaç yosunları: Genellikle KUZEY yönünde daha yoğun (nemli taraf)',
+      'Karıncalar: Yuvaları genellikle GÜNEY yönünde (sıcak taraf)',
+      'Ağaç gövdesi: Kabuk KUZEY yönünde daha kalın ve nemli',
+      'Yapraklar: GÜNEY yönünde daha yeşil ve yoğun',
+      'Kardan erime: GÜNEY yamaçlarda daha hızlı erir',
+      'Evler ve binalar: Çatı panelleri ve güneş panelleri GÜNEY yönünde',
+      'Uydu antenleri: GÜNEY yönünde (Türkiye\'de Güneş uydularına)',
     ],
-    turkeyContext: 'Turkiye\'de hakim ruzgarlar genellikle kuzeyden (Poyraz) ve guneyden (Lodos) eser. Agaclardaki egilme yonu hakim ruzgar yonunu gosterir. Karadeniz bolgesinde kuzey yonundeki yosunlar daha belirgindir.',
+    turkeyContext: 'Türkiye\'de hakim rüzgarlar genellikle kuzeyden (Poyraz) ve güneyden (Lodos) eser. Ağaçlardaki eğilme yönü hakim rüzgar yönünü gösterir. Karadeniz bölgesinde kuzey yönündeki yosunlar daha belirgindir.',
     tips: [
-      'Bu yontemler yaklasik yon verir -- hassas degildir',
-      'Birden fazla belirti kullanin ve ortalamasini alin',
-      'Bolgeye gore farklilik gosterir (mikroklima)',
-      'Sehir icinde binalar ve yollar daha guvenli yon gosterir',
-      'Cep telefonunuzun pusulasi calisiyorsa en dogru sonuc odur',
+      'Bu yöntemler yaklaşık yön verir -- hassas değildir',
+      'Birden fazla belirti kullanın ve ortalamasını alın',
+      'Bölgeye göre farklılık gösterir (mikroklima)',
+      'Şehir içinde binalar ve yollar daha güvenli yön gösterir',
+      'Cep telefonunuzun pusulası çalışıyorsa en doğru sonuç odur',
     ],
-    bestTime: 'Her zaman, ancak en az dogru yontemdir',
+    bestTime: 'Her zaman, ancak en az doğru yöntemdir',
   },
 ];
 
@@ -177,8 +177,8 @@ export default function YildizNavigasyonPage() {
     return (
       <div className="max-w-2xl mx-auto space-y-6 p-6">
         <div className="text-center border-b-2 border-black pb-4">
-          <h1 className="text-2xl font-bold">Yildiz Navigasyon -- Referans Karti</h1>
-          <p className="text-sm text-gray-600">Celestial Navigation Reference Card -- Turkiye (36-42K)</p>
+          <h1 className="text-2xl font-bold">Yıldız Navigasyon -- Referans Kartı</h1>
+          <p className="text-sm text-gray-600">Celestial Navigation Reference Card -- Türkiye (36-42K)</p>
         </div>
 
         {METHODS.map((method) => (
@@ -194,7 +194,7 @@ export default function YildizNavigasyonPage() {
         ))}
 
         <div className="text-xs text-gray-500 text-center pt-4 border-t border-gray-300">
-          PrepTurk Yildiz Navigasyon -- {new Date().toLocaleDateString('tr-TR')}
+          PrepTürk Yıldız Navigasyon -- {new Date().toLocaleDateString('tr-TR')}
         </div>
       </div>
     );
@@ -206,14 +206,14 @@ export default function YildizNavigasyonPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Star className="h-7 w-7 text-yellow-300" />
-            Yildiz Navigasyon
+            Yıldız Navigasyon
           </h1>
-          <p className="text-nomad-slate text-sm">Celestial Navigation Guide -- Turkiye (36-42K Enlem)</p>
+          <p className="text-nomad-slate text-sm">Celestial Navigation Guide -- Türkiye (36-42K Enlem)</p>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={() => setShowPrintView(true)}>
             <Printer className="h-4 w-4 mr-1" />
-            Referans Karti
+            Referans Kartı
           </Button>
         </div>
       </div>
@@ -223,8 +223,8 @@ export default function YildizNavigasyonPage() {
         <CardContent className="p-3 flex items-center gap-2 text-sm">
           <MapPin className="h-4 w-4 text-nomad-green flex-shrink-0" />
           <span className="text-nomad-slate">
-            Turkiye: 36-42 derece Kuzey enlemi. Polaris ufuktan 36-42 derece yukselikte gorunur.
-            Gunes oglen her zaman guneyde, golge kuzeyi gosterir.
+            Türkiye: 36-42 derece Kuzey enlemi. Polaris ufuktan 36-42 derece yükseklikte görünür.
+            Güneş öğlen her zaman güneyde, gölge kuzeyi gösterir.
           </span>
         </CardContent>
       </Card>
@@ -267,7 +267,7 @@ export default function YildizNavigasyonPage() {
             <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
               <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                 <Lightbulb className="h-4 w-4 text-nomad-green" />
-                Nasil Yapilir / How To
+                Nasıl Yapılır / How To
               </h4>
               <ol className="space-y-2">
                 {selected.howTo.map((step, i) => (
@@ -283,14 +283,14 @@ export default function YildizNavigasyonPage() {
             <div className="p-4 bg-blue-950/30 border border-blue-800 rounded-lg">
               <h4 className="text-sm font-semibold text-blue-300 mb-1 flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                Turkiye Baglami / Turkey Context
+                Türkiye Bağlamı / Turkey Context
               </h4>
               <p className="text-sm text-blue-200">{selected.turkeyContext}</p>
             </div>
 
             {/* Tips */}
             <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
-              <h4 className="text-sm font-semibold mb-3">Ipuclari / Tips</h4>
+              <h4 className="text-sm font-semibold mb-3">İpuçları / Tips</h4>
               <ul className="space-y-2">
                 {selected.tips.map((tip, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">
@@ -316,8 +316,8 @@ export default function YildizNavigasyonPage() {
       {/* Quick Reference Card */}
       <Card className="border-nomad-border bg-nomad-bg">
         <CardHeader>
-          <CardTitle>Hizli Basvuru / Quick Reference</CardTitle>
-          <CardDescription>Tum yontemlerin ozeti</CardDescription>
+          <CardTitle>Hızlı Başvuru / Quick Reference</CardTitle>
+          <CardDescription>Tüm yöntemlerin özeti</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
@@ -342,13 +342,13 @@ export default function YildizNavigasyonPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Star className="h-5 w-5 text-yellow-300" />
-            Coban Yildizi ve Polaris Diyagrami
+            Çoban Yıldızı ve Polaris Diyagramı
           </CardTitle>
           <CardDescription>Big Dipper and Polaris Star Diagram Description</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
-            <h4 className="text-sm font-semibold mb-3">Coban Yildizi (Big Dipper) Sekli</h4>
+            <h4 className="text-sm font-semibold mb-3">Çoban Yıldızı (Big Dipper) Şekli</h4>
             <pre className="text-xs text-nomad-slate font-mono overflow-x-auto">
 {`        (Dubhe) *-----------* (Merak)
                      |           |
@@ -361,10 +361,10 @@ export default function YildizNavigasyonPage() {
                      |
                      * (Alkaid)
 
-  Kaseyi olusturan son iki yildiz (Dubhe ve Merak)
-  arasindaki cizgiyi 5 kat uzatin --> Polaris!
+  Kaseyi oluşturan son iki yıldız (Dubhe ve Merak)
+  arasındaki çizgiyi 5 kat uzatın --> Polaris!
 
-  Polaris (Kutup Yildizi)
+  Polaris (Kutup Yıldızı)
         *
        /
       / 5x mesafe
@@ -377,38 +377,38 @@ export default function YildizNavigasyonPage() {
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
             <h4 className="text-sm font-semibold mb-3">Yon Pusulasi / Direction Compass</h4>
             <pre className="text-xs text-nomad-slate font-mono text-center">
-{`            KUZEU (North)
+{`            KUZEY (North)
                 ↑
                 | Polaris
                 |
                 |
-BATI (West) ←---+---> DOGU (East)
+BATI (West) ←---+---> DOĞU (East)
                 |
                 |
                 |
-            GUNEY (South)
+            GÜNEY (South)
                 ↓
-              (Gunes oglen)
+              (Güneş öğlen)
 `}
             </pre>
           </div>
 
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
-            <h4 className="text-sm font-semibold mb-3">Ay Fazlari / Moon Phases</h4>
+            <h4 className="text-sm font-semibold mb-3">Ay Fazları / Moon Phases</h4>
             <pre className="text-xs text-nomad-slate font-mono text-center">
-{`Yeni Ay    -->  (      --> Gorunmez
+{`Yeni Ay    -->  (      --> Görünmez
   |
   v
-Artan Ay   -->  )      --> Sag aydinlik, dogu yonu
+Artan Ay   -->  )      --> Sağ aydınlık, doğu yönü
   |
   v
-Dolunay    -->  (O)     --> Tam aydinlik, gunes karsisi
+Dolunay    -->  (O)     --> Tam aydınlık, güneş karşısı
   |
   v
-Eksilen Ay -->  (      --> Sol aydinlik, bati yonu
+Eksilen Ay -->  (      --> Sol aydınlık, batı yönü
   |
   v
-Yeni Ay    -->  (      --> Dongu basa doner
+Yeni Ay    -->  (      --> Döngü başa döner
 `}
             </pre>
           </div>
@@ -420,12 +420,12 @@ Yeni Ay    -->  (      --> Dongu basa doner
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Onemli Not / Important Note</h4>
+            <h4 className="text-sm font-medium">Önemli Not / Important Note</h4>
           </div>
           <p className="text-sm text-nomad-slate">
-            Yildiz navigasyon yontemleri binlerce yildir kullanilmaktadir. Turkiye'nin kuzey yarim kuredeki konumu (36-42K),
-            Polaris'in her zaman gorunur olmasini saglar. Bu yontemler GPS olmadiginda veya calismadiginda
-            yon bulmak icin guvenilirdir. Ancak hassasiyetleri profesyonel navigasyon cihazlari kadar degildir.
+            Yıldız navigasyon yöntemleri binlerce yıldır kullanılmaktadır. Türkiye'nin kuzey yarım küredeki konumu (36-42K),
+            Polaris'in her zaman görünür olmasını sağlar. Bu yöntemler GPS olmadığında veya çalışmadığında
+            yön bulmak için güvenilirdir. Ancak hassasiyetleri profesyonel navigasyon cihazları kadar değildir.
           </p>
           <p className="text-xs text-nomad-slate">
             (Star navigation methods have been used for thousands of years. Turkey's northern hemisphere position (36-42N)

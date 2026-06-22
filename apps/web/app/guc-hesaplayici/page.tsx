@@ -36,12 +36,12 @@ const PROVINCE_SUN_HOURS: Record<string, number> = {
 };
 
 const DEVICE_TEMPLATES = [
-  { id: 'phone', name: 'Telefon Sarji', nameEn: 'Phone Charging', icon: <Battery className="h-5 w-5 text-green-400" />, watts: 5 },
+  { id: 'phone', name: 'Telefon Şarjı', nameEn: 'Phone Charging', icon: <Battery className="h-5 w-5 text-green-400" />, watts: 5 },
   { id: 'led', name: 'LED Ampul', nameEn: 'LED Light', icon: <Lightbulb className="h-5 w-5 text-yellow-400" />, watts: 10 },
   { id: 'laptop', name: 'Laptop', nameEn: 'Laptop', icon: <Monitor className="h-5 w-5 text-blue-400" />, watts: 45 },
   { id: 'radio', name: 'Radyo', nameEn: 'Radio', icon: <Radio className="h-5 w-5 text-purple-400" />, watts: 5 },
-  { id: 'fridge', name: 'Mini Buzdolabi', nameEn: 'Mini Fridge', icon: <Refrigerator className="h-5 w-5 text-cyan-400" />, watts: 80 },
-  { id: 'pump', name: 'Su Pompasi', nameEn: 'Water Pump', icon: <Droplets className="h-5 w-5 text-blue-400" />, watts: 200 },
+  { id: 'fridge', name: 'Mini Buzdolabı', nameEn: 'Mini Fridge', icon: <Refrigerator className="h-5 w-5 text-cyan-400" />, watts: 80 },
+  { id: 'pump', name: 'Su Pompası', nameEn: 'Water Pump', icon: <Droplets className="h-5 w-5 text-blue-400" />, watts: 200 },
 ];
 
 const STORAGE_KEY = 'prepturk:powerSetup';
@@ -124,9 +124,9 @@ export default function GucHesaplayiciPage() {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Zap className="h-7 w-7 text-yellow-400" />
-            Guc Hesaplayici
+            Güç Hesaplayıcı
           </h1>
-          <p className="text-nomad-slate text-sm">Offline Power Calculator -- "Kurdumla ne calistirabilirim?"</p>
+          <p className="text-nomad-slate text-sm">Offline Power Calculator -- "Kurdumla ne çalıştırabilirim?"</p>
         </div>
         <Button size="sm" onClick={handleSave}>
           <Save className="h-4 w-4 mr-1" />
@@ -139,10 +139,10 @@ export default function GucHesaplayiciPage() {
         <CardContent className="p-4 flex items-start gap-3">
           <AlertTriangle className="h-6 w-6 text-amber-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-amber-300">Gercek Kontrolu / Reality Check</p>
+            <p className="font-bold text-amber-300">Gerçek Kontrolü / Reality Check</p>
             <p className="text-amber-200 text-sm mt-1">
-              Pazarlama iddealari iyimserdir -- dereceli kapasitenin %60-75'ini bekleyin.
-              Gunes panelleri etiket degerinden daha az enerji uretir.
+              Pazarlama iddiaları iyimserdir -- dereceli kapasitenin %60-75'ini bekleyin.
+              Güneş panelleri etiket değerinden daha az enerji üretir.
             </p>
             <p className="text-amber-200/70 text-xs mt-1">
               (Marketing claims are optimistic -- expect 60-75% of rated capacity.)
@@ -156,7 +156,7 @@ export default function GucHesaplayiciPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BatteryCharging className="h-5 w-5 text-nomad-green" />
-            Kurulum Yapilandirmasi / Setup Configuration
+            Kurulum Yapılandırması / Setup Configuration
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -172,7 +172,7 @@ export default function GucHesaplayiciPage() {
               className="w-full h-10 rounded-md border border-nomad-border bg-nomad-surface px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-nomad-green"
             >
               {Object.keys(PROVINCE_SUN_HOURS).map((p) => (
-                <option key={p} value={p}>{p} ({PROVINCE_SUN_HOURS[p]} saat/gun)</option>
+                <option key={p} value={p}>{p} ({PROVINCE_SUN_HOURS[p]} saat/gün)</option>
               ))}
             </select>
           </div>
@@ -181,11 +181,11 @@ export default function GucHesaplayiciPage() {
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
             <h4 className="text-sm font-medium mb-3 flex items-center gap-2">
               <Sun className="h-4 w-4 text-yellow-400" />
-              Gunes Panelleri / Solar Panels
+              Güneş Panelleri / Solar Panels
             </h4>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Panel Sayisi / Count</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Panel Sayısı / Count</label>
                 <input
                   type="number"
                   value={setup.panelCount}
@@ -195,7 +195,7 @@ export default function GucHesaplayiciPage() {
                 />
               </div>
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Panel Wattaji / Wattage Each</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Panel Wattajı / Wattage Each</label>
                 <div className="flex gap-1">
                   <input
                     type="number"
@@ -217,7 +217,7 @@ export default function GucHesaplayiciPage() {
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
             <h4 className="text-sm font-medium mb-3 flex items-center gap-2">
               <Battery className="h-4 w-4 text-blue-400" />
-              Akü Bankasi / Battery Bank
+              Akü Bankası / Battery Bank
             </h4>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -255,11 +255,11 @@ export default function GucHesaplayiciPage() {
           <div className="p-4 bg-nomad-bg rounded-lg border border-nomad-border">
             <h4 className="text-sm font-medium mb-3 flex items-center gap-2">
               <Zap className="h-4 w-4 text-purple-400" />
-              Inverter
+              İnverter
             </h4>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-xs text-nomad-slate mb-1 block">Watt Degeri / Wattage</label>
+                <label className="text-xs text-nomad-slate mb-1 block">Watt Değeri / Wattage</label>
                 <div className="flex gap-1">
                   <input
                     type="number"
@@ -293,14 +293,14 @@ export default function GucHesaplayiciPage() {
       {/* Energy Summary */}
       <Card className="border-nomad-green/50 bg-nomad-green/5">
         <CardHeader>
-          <CardTitle>Gunluk Enerji Ozeti / Daily Energy Summary</CardTitle>
+          <CardTitle>Günlük Enerji Özeti / Daily Energy Summary</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
               <Sun className="h-6 w-6 text-yellow-400 mx-auto mb-1" />
               <p className="text-2xl font-bold text-yellow-400">{Math.round(dailyGeneration)}</p>
-              <p className="text-xs text-nomad-slate">Uretim Wh/gun</p>
+              <p className="text-xs text-nomad-slate">Üretim Wh/gün</p>
               <p className="text-xs text-nomad-slate">Generation Wh/day</p>
             </div>
             <div className="text-center">
@@ -312,7 +312,7 @@ export default function GucHesaplayiciPage() {
             <div className="text-center">
               <Zap className="h-6 w-6 text-nomad-green mx-auto mb-1" />
               <p className="text-2xl font-bold text-nomad-green">{Math.round(availableEnergy)}</p>
-              <p className="text-xs text-nomad-slate">Kullanilabilir</p>
+              <p className="text-xs text-nomad-slate">Kullanılabilir</p>
               <p className="text-xs text-nomad-slate">Available Wh</p>
             </div>
             <div className="text-center">
@@ -328,7 +328,7 @@ export default function GucHesaplayiciPage() {
           {/* Usage Bar */}
           <div className="mt-4">
             <div className="flex justify-between text-xs text-nomad-slate mb-1">
-              <span>Kullanim / Usage: %{coveragePercent.toFixed(0)}</span>
+              <span>Kullanım / Usage: %{coveragePercent.toFixed(0)}</span>
               <span>{Math.round(totalDeviceConsumption)} / {Math.round(availableEnergy)} Wh</span>
             </div>
             <div className="w-full bg-nomad-surface rounded-full h-4 overflow-hidden">
@@ -346,8 +346,8 @@ export default function GucHesaplayiciPage() {
       {/* Device Run Times */}
       <Card className="border-nomad-border">
         <CardHeader>
-          <CardTitle>Neler Calistirabilirsiniz? / What Can You Run?</CardTitle>
-          <CardDescription>Gercekci sureler, pazarlama degil / Realistic runtimes, not marketing</CardDescription>
+          <CardTitle>Neler Çalıştırabilirsiniz? / What Can You Run?</CardTitle>
+          <CardDescription>Gerçekçi süreler, pazarlama değil / Realistic runtimes, not marketing</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -363,13 +363,13 @@ export default function GucHesaplayiciPage() {
                   </div>
                   {!device.canRun && (
                     <span className="text-xs text-red-400 bg-red-900/30 px-2 py-1 rounded">
-                      Inverter asiri yuklenme
+                      İnverter aşırı yüklenme
                     </span>
                   )}
                 </div>
 
                 <div className="flex items-center gap-3 mb-2">
-                  <label className="text-xs text-nomad-slate">Gunluk kullanim saati:</label>
+                  <label className="text-xs text-nomad-slate">Günlük kullanım saati:</label>
                   <input
                     type="range"
                     min="0"
@@ -384,17 +384,17 @@ export default function GucHesaplayiciPage() {
 
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div>
-                    <p className="text-nomad-slate">Gunluk tuketim / Daily: <span className="text-foreground font-medium">{device.dailyWh} Wh</span></p>
+                    <p className="text-nomad-slate">Günlük tüketim / Daily: <span className="text-foreground font-medium">{device.dailyWh} Wh</span></p>
                   </div>
                   <div>
-                    <p className="text-nomad-slate">Calisma suresi / Runtime: <span className={`font-bold ${device.runtimeHours < 4 ? 'text-red-400' : device.runtimeHours < 12 ? 'text-amber-400' : 'text-nomad-green'}`}>{device.runtimeHours} saat</span></p>
+                    <p className="text-nomad-slate">Çalışma süresi / Runtime: <span className={`font-bold ${device.runtimeHours < 4 ? 'text-red-400' : device.runtimeHours < 12 ? 'text-amber-400' : 'text-nomad-green'}`}>{device.runtimeHours} saat</span></p>
                   </div>
                 </div>
 
                 {/* Reality check */}
                 {device.runtimeHours < 2 && device.hoursPerDay > 0 && (
                   <p className="text-xs text-red-400 mt-2">
-                    Uyari: Bu cihaz mevcut gucle gercekci olarak {device.runtimeHours.toFixed(1)} saat calisir. Gunluk {device.hoursPerDay} saat kullanmak icin daha fazla panel veya akü gerekir.
+                    Uyarı: Bu cihaz mevcut güçle gerçekçi olarak {device.runtimeHours.toFixed(1)} saat çalışır. Günlük {device.hoursPerDay} saat kullanmak için daha fazla panel veya akü gerekir.
                   </p>
                 )}
               </div>
@@ -408,7 +408,7 @@ export default function GucHesaplayiciPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MapPin className="h-5 w-5 text-nomad-green" />
-            Eyalet Gunes Saatleri / Province Sun Hours
+            Eyalet Güneş Saatleri / Province Sun Hours
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -433,16 +433,16 @@ export default function GucHesaplayiciPage() {
         <CardContent className="p-4 space-y-2">
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-nomad-green" />
-            <h4 className="text-sm font-medium">Hesaplama Formulleri / Calculation Formulas</h4>
+            <h4 className="text-sm font-medium">Hesaplama Formülleri / Calculation Formulas</h4>
           </div>
           <div className="space-y-1 text-xs text-nomad-slate">
-            <p><span className="text-foreground">Panel uretimi:</span> Panel Sayisi x Watt x Gunes Saati x 0.75 verim</p>
-            <p><span className="text-foreground">Akü depolama:</span> Ah x Voltaj x 0.8 (bosaltma derinligi)</p>
-            <p><span className="text-foreground">Kullanilabilir:</span> Uretim + Depolama - Kayiplar</p>
-            <p><span className="text-foreground">Cihaz calisma suresi:</span> Kullanilabilir Enerji / Cihaz Wattaji</p>
+            <p><span className="text-foreground">Panel üretimi:</span> Panel Sayısı x Watt x Güneş Saati x 0.75 verim</p>
+            <p><span className="text-foreground">Akü depolama:</span> Ah x Voltaj x 0.8 (boşaltma derinliği)</p>
+            <p><span className="text-foreground">Kullanılabilir:</span> Üretim + Depolama - Kayıplar</p>
+            <p><span className="text-foreground">Cihaz çalışma süresi:</span> Kullanılabilir Enerji / Cihaz Wattajı</p>
           </div>
           <p className="text-xs text-nomad-slate mt-2">
-            Not: Gercek degerler hava durumu, panel yasi, sicaklik ve golegelen bagli olarak %10-20 degisebilir.
+            Not: Gerçek değerler hava durumu, panel yaşı, sıcaklık ve gölgeye bağlı olarak %10-20 değişebilir.
           </p>
         </CardContent>
       </Card>
