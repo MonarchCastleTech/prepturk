@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="apps/web/public/logo.png" alt="PrepTürk logo" width="160"/>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/monarchcastletech/prepturk/master/docs/logo-dark.png"><img src="docs/logo.png" alt="PrepTurk logo" width="160"/></picture>
   <!-- CODEX: an optional brand-standard variant can be generated at docs/logo.png; the live product logo at apps/web/public/logo.png is referenced here. -->
 
   # PrepTürk
