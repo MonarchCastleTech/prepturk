@@ -150,7 +150,9 @@ The preview is maintained as a repository asset; the live interface or generated
 
 ## Data and methodology
 
-See [docs/rights-and-provenance.md](docs/rights-and-provenance.md) and the implementation files in this repository. Source dates, transformation steps, and known gaps must travel with analytical outputs.
+- [docs/rights-and-provenance.md](docs/rights-and-provenance.md)
+
+These repository-specific sources define the methodology or provenance boundary. Source dates, transformation steps, and known gaps must travel with analytical outputs.
 
 ## Update frequency
 
@@ -162,21 +164,13 @@ Release-driven. Offline corpus refresh is an operator-controlled action, not an 
 docker compose up --build
 ```
 
-```shell
-python -m pytest -q tests/test_repository_hygiene.py
-```
-
 Run only in a trusted development environment and review repository-specific prerequisites before using networked or hardware features.
 
 ## Architecture
 
-- `apps/` — implementation or data module.
-- `capture_logo.py` — repository entry point or configuration.
-- `content/` — implementation or data module.
-- `dashboard-after-hierarchy-fix.png` — repository entry point or configuration.
-- `dashboard-shell-after-redesign.png` — repository entry point or configuration.
-- `dashboard-shell-final-2.png` — repository entry point or configuration.
-- `dashboard-shell-final.png` — repository entry point or configuration.
+- `apps/api/` — repository-specific implementation, data, or configuration boundary.
+- `apps/web/` — repository-specific implementation, data, or configuration boundary.
+- `apps/worker/` — repository-specific implementation, data, or configuration boundary.
 
 ## Tests
 
