@@ -67,7 +67,7 @@ async def _log_event(
         document_id=document_id,
         event_type=event_type,
         message=message,
-        metadata=metadata or {},
+        metadata_=metadata or {},
     )
     session.add(ie)
 
@@ -357,7 +357,7 @@ async def run_ingestion_for_manifest(manifest_data: Dict[str, Any]) -> Dict[str,
                                 document_id=document.id,
                                 chunk_index=idx,
                                 content=chunk_content,
-                                metadata={
+                                metadata_={
                                     "source": manifest_name,
                                     "document_slug": document.slug,
                                 },
@@ -399,7 +399,7 @@ async def run_ingestion_for_manifest(manifest_data: Dict[str, Any]) -> Dict[str,
                         run_id=run.id,
                         event_type="error",
                         message=error_msg,
-                        metadata={"index": i},
+                        metadata_={"index": i},
                     )
                     session.add(error_event)
 

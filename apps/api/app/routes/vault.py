@@ -1,17 +1,16 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_, or_, delete
-from typing import Optional
-import uuid
-import os
 import hashlib
-from datetime import datetime, timezone
+import os
+import uuid
 
+from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile, status
+from sqlalchemy import func, select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.core.config import get_settings
 from app.db.database import get_db
-from app.db.models import User, Document, Role, SourceManifest, IngestionRun, Note, ProvincePack, Setting, VaultFile
+from app.db.models import User, VaultFile
 from app.schemas import *
 from app.security.auth import get_local_device_operator
-from app.core.config import get_settings
 
 router = APIRouter()
 settings = get_settings()
@@ -68,14 +67,14 @@ def _decrypt_file(encrypted_path: str, output_path: str, key: bytes) -> int:
 
 def _get_encryption_key(user_id: uuid.UUID) -> bytes:
     """Derive an encryption key from the app secret and user ID."""
-    key_material = f"{settings.app_secret_key}-user-{user_id}".encode("utf-8")
+    key_material = f"{settings.app_secret_key}-user-{user_id}".encode()
     return hashlib.sha256(key_material).digest()
 
 
 @router.post("/upload", response_model=dict, status_code=status.HTTP_201_CREATED)
 async def upload_vault_file(
     file: UploadFile = File(...),
-    tags: Optional[str] = Query(None, description="Comma-separated tags"),
+    tags: str | None = Query(None, description="Comma-separated tags"),
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_local_device_operator),
 ):
@@ -130,8 +129,8 @@ async def upload_vault_file(
 async def list_vault_files(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
-    tag: Optional[str] = None,
-    search: Optional[str] = None,
+    tag: str | None = None,
+    search: str | None = None,
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_local_device_operator),
 ):
@@ -161,7 +160,7 @@ async def list_vault_files(
             "sha256": f.sha256,
             "encryption_algorithm": f.encryption_algorithm,
             "mime_type": f.mime_type,
-            "metadata": f.metadata,
+            "metadata": f.metadata_,
             "tags": f.tags,
             "is_indexed": f.is_indexed,
             "created_at": f.created_at,
@@ -173,8 +172,8 @@ async def list_vault_files(
 
 @router.get("/total-count")
 async def get_vault_files_total_count(
-    tag: Optional[str] = None,
-    search: Optional[str] = None,
+    tag: str | None = None,
+    search: str | None = None,
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_local_device_operator),
 ):
@@ -199,9 +198,7 @@ async def download_vault_file(
     """Download and decrypt a vault file."""
     from fastapi.responses import StreamingResponse
 
-    result = await db.execute(
-        select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id)
-    )
+    result = await db.execute(select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id))
     vault_file = result.scalar_one_or_none()
     if not vault_file:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Sifreli dosya bulunamadi")
@@ -240,9 +237,7 @@ async def delete_vault_file(
     current_user: User = Depends(get_local_device_operator),
 ):
     """Delete a vault file."""
-    result = await db.execute(
-        select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id)
-    )
+    result = await db.execute(select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id))
     vault_file = result.scalar_one_or_none()
     if not vault_file:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Sifreli dosya bulunamadi")
@@ -263,9 +258,7 @@ async def update_vault_file_tags(
     current_user: User = Depends(get_local_device_operator),
 ):
     """Update vault file tags."""
-    result = await db.execute(
-        select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id)
-    )
+    result = await db.execute(select(VaultFile).where(VaultFile.id == file_id, VaultFile.user_id == current_user.id))
     vault_file = result.scalar_one_or_none()
     if not vault_file:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Sifreli dosya bulunamadi")

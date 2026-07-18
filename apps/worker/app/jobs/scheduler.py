@@ -20,7 +20,7 @@ def _load_manifests(manifest_dir: str) -> Dict[str, Dict[str, Any]]:
     manifests: Dict[str, Dict[str, Any]] = {}
     pattern = os.path.join(manifest_dir, "*.yaml")
 
-    for filepath in glob.glob(pattern):
+    for filepath in sorted(glob.glob(pattern)):
         try:
             with open(filepath, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f)

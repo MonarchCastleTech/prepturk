@@ -30,7 +30,7 @@
 
 **PrepTürk**, Türkiye'nin risk profili için özel olarak tasarlanmış tavizsiz, önceliği çevrimdışı kullanım olan bir istihbarat ve hayatta kalma platformudur. Bu bir bulut hizmeti değildir. Tamamen kendi donanımınız üzerinde çalışan egemen bir komuta merkezidir.
 
-Bir kez senkronize edildikten sonra PrepTürk **sıfır internet bağlantısı** gerektirir ve şunları sağlar:
+Yerel içerik ve modeller hazırlandıktan sonra PrepTürk, dış internet bağımlılığı olmadan çalışmaya devam edebilir. Ağ yalıtımı, dağıtım ortamındaki güvenlik duvarı ve ana makine kontrolleriyle ayrıca doğrulanmalıdır. Sistem şunları sağlar:
 *   Resmi hükümet yönergelerine anında erişim (AFAD, Sağlık Bakanlığı, MEB).
 *   Yerel belge depolarında yapay zeka destekli anlamsal (semantic) arama.
 *   Türkiye gerçeklerine uyarlanmış hayat kurtaran tıbbi ve hayatta kalma protokolleri.
@@ -93,7 +93,7 @@ PrepTürk, aşırı taşınabilirlik ve düşük kaynak kullanımı için tasarl
 
 Verilerinize ve güvenliğinize en yüksek paranoyayla yaklaşıyoruz.
 
-*   **İnternetsiz (Airgap) Mod**: Kesin bir `AIRGAP_MODE` yapılandırması, arka plan çalışanlarından gelen tüm dış ağ isteklerini tamamen devre dışı bırakır.
+*   **İnternetsiz (Airgap) Mod**: `AIRGAP_MODE`, arka plan çalışanlarındaki zamanlanmış dış kaynak alımını devre dışı bırakır. Gerçek dış ağ yalıtımı, ana makine, konteyner ve güvenlik duvarı kurallarıyla uygulanır.
 *   **Ağ İzolasyonu**: API, tarayıcının harici analitik, yazı tipi veya izleme komut dosyalarını aramasını önleyen agresif bir `Content-Security-Policy (CSP)` uygular.
 *   **Sadece Yerel Yazı Tipleri**: Google Yazı Tiplerine güvenilmez. UI, çevrimdışı ortamda kusursuz oluşturma sağlamak için yerel sistem yazı tiplerini kullanır.
 *   **Telemetri Yok**: Next.js telemetrisi kalıcı olarak devre dışıdır.

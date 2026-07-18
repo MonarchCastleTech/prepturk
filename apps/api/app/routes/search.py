@@ -1,12 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_, or_, text, case
-from typing import Optional
+import os
 import uuid
 from datetime import datetime
 
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy import and_, case, func, or_, select, text
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.db.database import get_db
-from app.db.models import User, Document, Role, SourceManifest, IngestionRun, Note, ProvincePack, Setting
+from app.db.models import Document, User
 from app.schemas import *
 from app.security.auth import get_local_device_operator
 
@@ -14,25 +15,37 @@ router = APIRouter()
 
 # Allowlisted filterable fields (prevent probing sensitive fields)
 ALLOWED_FILTER_FIELDS = {
-    "category", "province", "institution", "trust_level", "storage_mode",
-    "rights_status", "language", "review_status", "topic_tags", "source_domain",
-    "country", "district", "subcategory", "emergency_relevance", "child_safe",
+    "category",
+    "province",
+    "institution",
+    "trust_level",
+    "storage_mode",
+    "rights_status",
+    "language",
+    "review_status",
+    "topic_tags",
+    "source_domain",
+    "country",
+    "district",
+    "subcategory",
+    "emergency_relevance",
+    "child_safe",
 }
 
 # Turkish character normalization mapping
 TURKISH_NORMALIZATION = {
-    "\u0131": "i",   # dotless i -> i
-    "\u0130": "i",   # dotted I -> i
-    "\u015f": "s",   # s-cedilla -> s
-    "\u015e": "s",   # S-cedilla -> s
-    "\u011f": "g",   # g-breve -> g
-    "\u011e": "g",   # G-breve -> g
-    "\u00f6": "o",   # o-umlaut -> o
-    "\u00d6": "o",   # O-umlaut -> o
-    "\u00fc": "u",   # u-umlaut -> u
-    "\u00dc": "u",   # U-umlaut -> u
-    "\u00e7": "c",   # c-cedilla -> c
-    "\u00c7": "c",   # C-cedilla -> c
+    "\u0131": "i",  # dotless i -> i
+    "\u0130": "i",  # dotted I -> i
+    "\u015f": "s",  # s-cedilla -> s
+    "\u015e": "s",  # S-cedilla -> s
+    "\u011f": "g",  # g-breve -> g
+    "\u011e": "g",  # G-breve -> g
+    "\u00f6": "o",  # o-umlaut -> o
+    "\u00d6": "o",  # O-umlaut -> o
+    "\u00fc": "u",  # u-umlaut -> u
+    "\u00dc": "u",  # U-umlaut -> u
+    "\u00e7": "c",  # c-cedilla -> c
+    "\u00c7": "c",  # C-cedilla -> c
 }
 
 
@@ -73,12 +86,14 @@ def _get_search_order_by(sort_by: str, normalized_query: str):
     return [relevance_rank, Document.created_at.desc(), Document.id.desc()]
 
 
+
 import httpx
-import asyncio
+
 from app.core.config import get_settings
 
 settings = get_settings()
 KIWIX_URL = os.getenv("KIWIX_URL", "http://kiwix:8080")
+
 
 @router.post("/", response_model=SearchResponse)
 async def search_documents(
@@ -171,13 +186,13 @@ async def search_documents(
                             )
                         )
         except Exception:
-            pass # Fail silently if Kiwix is not running
+            pass  # Fail silently if Kiwix is not running
 
-    total = len(results) # Simplified for combined search
+    total = len(results)  # Simplified for combined search
     total_pages = max(1, (total + request.page_size - 1) // request.page_size)
 
     return SearchResponse(
-        results=results[:request.page_size],
+        results=results[: request.page_size],
         total=total,
         page=request.page,
         page_size=request.page_size,
@@ -189,9 +204,9 @@ async def search_documents(
 
 @router.get("/facets", response_model=dict)
 async def get_search_facets(
-    query: Optional[str] = None,
-    category: Optional[str] = None,
-    province: Optional[str] = None,
+    query: str | None = None,
+    category: str | None = None,
+    province: str | None = None,
     official_only: bool = False,
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_local_device_operator),

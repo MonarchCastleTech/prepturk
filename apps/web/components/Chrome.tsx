@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Sidebar from './Sidebar';
-import TopBar from './TopBar';
-import CommandPalette from './CommandPalette';
-import EmergencyPanel from './EmergencyPanel';
-import SOSButton from './SOSButton';
-import InstallPrompt from './InstallPrompt';
-import { TourOverlay } from '../lib/tour';
-import { useEasyModeStore, usePowerStore, useUiStore } from '../lib/stores';
-import { cn } from '../lib/utils';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Sidebar from "./Sidebar";
+import TopBar from "./TopBar";
+import CommandPalette from "./CommandPalette";
+import EmergencyPanel from "./EmergencyPanel";
+import SOSButton from "./SOSButton";
+import InstallPrompt from "./InstallPrompt";
+import GovernanceFooter from "./GovernanceFooter";
+import { TourOverlay } from "../lib/tour";
+import { useEasyModeStore, usePowerStore, useUiStore } from "../lib/stores";
+import { cn } from "../lib/utils";
 
-const NO_CHROME_PATHS = ['/login', '/setup', '/acil'];
+const NO_CHROME_PATHS = ["/login", "/setup", "/acil"];
 
 export default function Chrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -28,18 +29,18 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (isEasyMode) {
-      document.documentElement.classList.add('easy-mode');
+      document.documentElement.classList.add("easy-mode");
     } else {
-      document.documentElement.classList.remove('easy-mode');
+      document.documentElement.classList.remove("easy-mode");
     }
     if (isLowPower) {
-      document.documentElement.classList.add('low-power-mode');
+      document.documentElement.classList.add("low-power-mode");
     } else {
-      document.documentElement.classList.remove('low-power-mode');
+      document.documentElement.classList.remove("low-power-mode");
     }
     return () => {
-      document.documentElement.classList.remove('easy-mode');
-      document.documentElement.classList.remove('low-power-mode');
+      document.documentElement.classList.remove("easy-mode");
+      document.documentElement.classList.remove("low-power-mode");
     };
   }, [isEasyMode, isLowPower]);
 
@@ -56,8 +57,14 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-nomad-bg">
-      <Sidebar mobileNavOpen={mobileNavOpen} onMobileNavClose={() => setMobileNavOpen(false)} />
-      <TopBar mobileNavOpen={mobileNavOpen} onMobileNavToggle={() => setMobileNavOpen((open) => !open)} />
+      <Sidebar
+        mobileNavOpen={mobileNavOpen}
+        onMobileNavClose={() => setMobileNavOpen(false)}
+      />
+      <TopBar
+        mobileNavOpen={mobileNavOpen}
+        onMobileNavToggle={() => setMobileNavOpen((open) => !open)}
+      />
       {mobileNavOpen && (
         <button
           type="button"
@@ -68,15 +75,16 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
       )}
       <div
         className={cn(
-          'min-h-screen transition-[padding] duration-300',
+          "min-h-screen transition-[padding] duration-300",
           isEasyMode || sidebarOpen
-            ? 'lg:pl-[var(--shell-sidebar-width)]'
-            : 'lg:pl-[var(--shell-sidebar-collapsed-width)]'
+            ? "lg:pl-[var(--shell-sidebar-width)]"
+            : "lg:pl-[var(--shell-sidebar-collapsed-width)]",
         )}
       >
         <main className="px-4 pb-8 pt-[calc(var(--shell-topbar-height)+1rem)] sm:px-6 lg:px-8">
           {children}
         </main>
+        <GovernanceFooter />
       </div>
       <CommandPalette />
       <EmergencyPanel />

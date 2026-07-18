@@ -1,24 +1,38 @@
-from fastapi import FastAPI, Depends, HTTPException, status, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import JSONResponse
-from starlette.middleware.base import BaseHTTPMiddleware
 from contextlib import asynccontextmanager
-import os
+
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from app.core.config import get_settings
-from app.db.database import engine, Base
-from app.routes import auth, users, documents, search, sources, ingestion, review
-from app.routes import province_packs, notes, vault, ai_chat, maps, exports, settings, dashboard, hardware
-from app.security.auth import get_current_active_user
+from app.db.database import Base, engine
+from app.routes import (
+    ai_chat,
+    auth,
+    dashboard,
+    documents,
+    exports,
+    ingestion,
+    maps,
+    notes,
+    province_packs,
+    review,
+    search,
+    sources,
+    users,
+    vault,
+)
+from app.routes import (
+    settings as settings_routes,
+)
 
 settings = get_settings()
 
 
-# Network Isolation Middleware -- BLOCKS all outbound requests
-# This ensures the API NEVER connects to the internet at runtime.
+# Browser-facing network policy headers. Actual egress isolation must also be
+# enforced by the deployment network and AIRGAP_MODE worker configuration.
 class NetworkIsolationMiddleware(BaseHTTPMiddleware):
-    """Blocks all outbound HTTP/HTTPS connections. Ensures zero internet connectivity."""
+    """Apply same-origin browser policy and disclose configured runtime mode."""
 
     async def dispatch(self, request: Request, call_next):
         response = await call_next(request)
@@ -42,9 +56,10 @@ class NetworkIsolationMiddleware(BaseHTTPMiddleware):
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Referrer-Policy"] = "no-referrer"
         response.headers["Permissions-Policy"] = (
-            "geolocation=(), camera=(), microphone=(), "
-            "payment=(), usb=(), magnetometer=(), gyroscope=()"
+            "geolocation=(), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), gyroscope=()"
         )
+        response.headers["X-PrepTurk-Airgap-Mode"] = str(settings.airgap_mode).lower()
+        response.headers["X-PrepTurk-Network-Policy"] = "deployment-enforced"
         return response
 
 
@@ -83,7 +98,7 @@ app.add_middleware(
     expose_headers=["X-TOTP-Required"],
 )
 
-# Network Isolation -- ZERO internet connectivity at runtime
+# Browser policy headers and explicit runtime-mode disclosure
 app.add_middleware(NetworkIsolationMiddleware)
 
 # Include routers
@@ -100,17 +115,28 @@ app.include_router(vault.router, prefix="/api/vault", tags=["vault"])
 app.include_router(ai_chat.router, prefix="/api/ai", tags=["ai"])
 app.include_router(maps.router, prefix="/api/maps", tags=["maps"])
 app.include_router(exports.router, prefix="/api/exports", tags=["exports"])
-app.include_router(settings.router, prefix="/api/settings", tags=["settings"])
+app.include_router(settings_routes.router, prefix="/api/settings", tags=["settings"])
 app.include_router(dashboard.router, prefix="/api/dashboard", tags=["dashboard"])
 
 
 @app.get("/api/health")
 async def health_check():
+    return runtime_contract()
+
+
+def runtime_contract() -> dict[str, str | bool]:
+    """Return a deterministic, non-secret runtime capability contract."""
     return {
         "status": "ok",
         "app": "prepturk",
+        "service": "prepturk-api",
         "version": "0.1.0",
+        "contract_version": "1",
         "env": settings.app_env,
+        "airgap_mode": settings.airgap_mode,
+        "outbound_ingestion_enabled": not settings.airgap_mode,
+        "authentication": "bearer-token",
+        "authorization": "role-based",
     }
 
 

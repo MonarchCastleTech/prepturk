@@ -1,13 +1,23 @@
+import enum
+import uuid
+
 from sqlalchemy import (
-    Boolean, Column, DateTime, Enum, Float, ForeignKey, Integer, LargeBinary,
-    String, Text, Index, UniqueConstraint, func
+    Boolean,
+    Column,
+    DateTime,
+    Enum,
+    Float,
+    ForeignKey,
+    Integer,
+    String,
+    Text,
+    UniqueConstraint,
+    func,
 )
-from sqlalchemy.dialects.postgresql import UUID, JSONB, INET, ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY, INET, JSONB, UUID
 from sqlalchemy.orm import relationship
 
 from app.db.database import Base
-import uuid
-import enum
 
 
 # Enums
@@ -237,7 +247,7 @@ class DocumentChunk(Base):
     token_count = Column(Integer)
     embedding_model = Column(String(100))
     qdrant_point_id = Column(String(255))
-    metadata = Column(JSONB, default={})
+    metadata_ = Column("metadata", JSONB, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     document = relationship("Document", back_populates="chunks")
@@ -291,7 +301,7 @@ class IngestionRun(Base):
     documents_indexed = Column(Integer, default=0)
     documents_failed = Column(Integer, default=0)
     error_log = Column(Text)
-    metadata = Column(JSONB, default={})
+    metadata_ = Column("metadata", JSONB, default=dict)
 
     source = relationship("SourceManifest", back_populates="ingestion_runs")
     events = relationship("IngestionEvent", back_populates="run")
@@ -305,7 +315,7 @@ class IngestionEvent(Base):
     document_id = Column(UUID(as_uuid=True), ForeignKey("documents.id"))
     event_type = Column(String(50))
     message = Column(Text)
-    metadata = Column(JSONB, default={})
+    metadata_ = Column("metadata", JSONB, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     run = relationship("IngestionRun", back_populates="events")
@@ -437,7 +447,7 @@ class VaultFile(Base):
     sha256 = Column(String(64))
     encryption_algorithm = Column(String(50), default="aes-256-gcm")
     mime_type = Column(String(100))
-    metadata = Column(JSONB, default={})
+    metadata_ = Column("metadata", JSONB, default=dict)
     tags = Column(ARRAY(String), default=[])
     is_indexed = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
