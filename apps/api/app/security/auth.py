@@ -2,9 +2,10 @@ import sys
 import uuid
 from datetime import UTC, datetime, timedelta
 
+import jwt
 from fastapi import Cookie, Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from jose import JWTError, jwt
+from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
@@ -51,7 +52,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
 def decode_access_token(token: str) -> dict:
     try:
         return jwt.decode(token, settings.app_secret_key, algorithms=["HS256"])
-    except JWTError:
+    except InvalidTokenError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Gecerli bir oturum saglanmadi",

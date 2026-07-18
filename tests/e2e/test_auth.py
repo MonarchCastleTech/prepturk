@@ -1,10 +1,10 @@
 """E2E tests for authentication flows."""
-import pytest
 import uuid
 from datetime import datetime, timedelta, timezone
 
 import httpx
-from jose import jwt
+import jwt
+import pytest
 
 BASE_URL = "http://localhost:8000"
 TEST_SECRET = "test-e2e-secret-key-for-authentication"
@@ -18,6 +18,16 @@ def create_token(user_id: uuid.UUID, secret: str = TEST_SECRET, expires_in_hours
 def create_expired_token(user_id: uuid.UUID, secret: str = TEST_SECRET) -> str:
     expire = datetime.now(timezone.utc) - timedelta(hours=1)
     return jwt.encode({"sub": str(user_id), "exp": expire}, secret, algorithm="HS256")
+
+
+def test_token_helpers_issue_hs256_tokens():
+    user_id = uuid.uuid4()
+    token = create_token(user_id)
+
+    assert jwt.get_unverified_header(token)["alg"] == "HS256"
+    assert jwt.decode(token, TEST_SECRET, algorithms=["HS256"])["sub"] == str(user_id)
+    with pytest.raises(jwt.ExpiredSignatureError):
+        jwt.decode(create_expired_token(user_id), TEST_SECRET, algorithms=["HS256"])
 
 
 class TestUserRegistration:
