@@ -2,10 +2,11 @@
 
 import uuid
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock
 
+import jwt
 import pytest
-from jose import jwt
 from passlib.context import CryptContext
 
 from app.core.config import get_settings
@@ -18,6 +19,16 @@ from app.security.auth import (
 )
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+
+def test_jwt_dependency_excludes_unpatchable_ecdsa_chain():
+    api_root = Path(__file__).resolve().parents[1]
+    pyproject = (api_root / "pyproject.toml").read_text(encoding="utf-8")
+    lockfile = (api_root / "uv.lock").read_text(encoding="utf-8")
+
+    assert '"PyJWT>=2.10.1,<3.0"' in pyproject
+    assert "python-jose" not in pyproject
+    assert 'name = "ecdsa"' not in lockfile
 
 
 class TestPasswordHashing:
@@ -100,6 +111,20 @@ class TestAccessToken:
 
         with pytest.raises(HTTPException):
             decode_access_token(token)
+
+    def test_decode_rejects_non_hs256_token(self):
+        token = jwt.encode(
+            {"sub": "user-123", "exp": datetime.now(UTC) + timedelta(hours=1)},
+            get_settings().app_secret_key,
+            algorithm="HS384",
+        )
+        from fastapi import HTTPException
+
+        with pytest.raises(HTTPException) as exc_info:
+            decode_access_token(token)
+
+        assert exc_info.value.status_code == 401
+        assert exc_info.value.headers == {"WWW-Authenticate": "Bearer"}
 
     def test_decode_malformed_token_raises(self):
         from fastapi import HTTPException
