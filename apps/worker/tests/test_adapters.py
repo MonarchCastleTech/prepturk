@@ -92,7 +92,7 @@ class TestPdfAdapter:
         # Even with invalid PDF, it should return a dict with expected keys
         assert "title" in result
         assert "source_url" in result
-        assert "mime_type" == "application/pdf"
+        assert result["mime_type"] == "application/pdf"
 
 
 class TestRateLimiter:

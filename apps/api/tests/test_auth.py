@@ -1,21 +1,21 @@
 """Unit tests for authentication module."""
-import pytest
-import uuid
-from datetime import datetime, timedelta, timezone
-from unittest.mock import AsyncMock, MagicMock, patch
 
+import uuid
+from datetime import UTC, datetime, timedelta
+from unittest.mock import AsyncMock, MagicMock
+
+import pytest
 from jose import jwt
 from passlib.context import CryptContext
 
+from app.core.config import get_settings
 from app.security.auth import (
-    get_password_hash,
-    verify_password,
     create_access_token,
     decode_access_token,
+    get_password_hash,
+    verify_password,
     verify_totp,
 )
-from app.core.config import get_settings
-
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -69,8 +69,8 @@ class TestAccessToken:
         delta = timedelta(hours=2)
         token = create_access_token({"sub": "user-123"}, expires_delta=delta)
         payload = jwt.decode(token, get_settings().app_secret_key, algorithms=["HS256"])
-        exp = datetime.fromtimestamp(payload["exp"])
-        assert exp > datetime.utcnow() + timedelta(hours=1)
+        exp = datetime.fromtimestamp(payload["exp"], tz=UTC)
+        assert exp > datetime.now(UTC) + timedelta(hours=1)
 
     def test_decode_valid_token(self):
         user_id = str(uuid.uuid4())
@@ -86,6 +86,7 @@ class TestAccessToken:
             algorithm="HS256",
         )
         from fastapi import HTTPException
+
         with pytest.raises(HTTPException):
             decode_access_token(token)
 
@@ -96,11 +97,13 @@ class TestAccessToken:
             algorithm="HS256",
         )
         from fastapi import HTTPException
+
         with pytest.raises(HTTPException):
             decode_access_token(token)
 
     def test_decode_malformed_token_raises(self):
         from fastapi import HTTPException
+
         with pytest.raises(HTTPException):
             decode_access_token("not-a-valid-token")
 
@@ -108,6 +111,7 @@ class TestAccessToken:
 class TestTOTPVerification:
     def test_valid_totp(self):
         import pyotp
+
         secret = pyotp.random_base32()
         totp = pyotp.TOTP(secret)
         token = totp.now()
@@ -115,21 +119,22 @@ class TestTOTPVerification:
 
     def test_invalid_totp_code(self):
         import pyotp
+
         secret = pyotp.random_base32()
         assert verify_totp("000000", secret) is False
 
     def test_totp_changes_over_time(self):
         import pyotp
+
         secret = pyotp.random_base32()
         totp = pyotp.TOTP(secret)
-        code1 = totp.now()
-        import time
-        time.sleep(31)
-        code2 = totp.now()
+        code1 = totp.at(1_000_000_000)
+        code2 = totp.at(1_000_000_031)
         assert code1 != code2
 
     def test_totp_six_digits(self):
         import pyotp
+
         secret = pyotp.random_base32()
         totp = pyotp.TOTP(secret)
         token = totp.now()
@@ -140,8 +145,9 @@ class TestTOTPVerification:
 class TestCurrentUser:
     @pytest.mark.asyncio
     async def test_get_current_user_success(self):
-        from app.security.auth import get_current_user
         from fastapi.security import HTTPAuthorizationCredentials
+
+        from app.security.auth import get_current_user
 
         user_id = uuid.uuid4()
         token = create_access_token({"sub": str(user_id)})
@@ -163,9 +169,10 @@ class TestCurrentUser:
 
     @pytest.mark.asyncio
     async def test_get_current_user_inactive(self):
-        from app.security.auth import get_current_user
-        from fastapi.security import HTTPAuthorizationCredentials
         from fastapi import HTTPException
+        from fastapi.security import HTTPAuthorizationCredentials
+
+        from app.security.auth import get_current_user
 
         user_id = uuid.uuid4()
         token = create_access_token({"sub": str(user_id)})
@@ -196,8 +203,9 @@ class TestCurrentUser:
 
     @pytest.mark.asyncio
     async def test_get_current_active_user_inactive(self):
-        from app.security.auth import get_current_active_user
         from fastapi import HTTPException
+
+        from app.security.auth import get_current_active_user
 
         mock_user = MagicMock()
         mock_user.is_active = False
@@ -210,7 +218,6 @@ class TestRoleChecking:
     @pytest.mark.asyncio
     async def test_require_admin_success(self):
         from app.security.auth import require_admin
-        from app.db.models import Role
 
         user_id = uuid.uuid4()
         mock_user = MagicMock()
@@ -230,8 +237,9 @@ class TestRoleChecking:
 
     @pytest.mark.asyncio
     async def test_require_admin_non_admin_fails(self):
-        from app.security.auth import require_admin
         from fastapi import HTTPException
+
+        from app.security.auth import require_admin
 
         mock_user = MagicMock()
         mock_user.id = uuid.uuid4()
@@ -266,6 +274,6 @@ class TestSessionManagement:
         settings = get_settings()
         token = create_access_token({"sub": "user-123"})
         payload = jwt.decode(token, settings.app_secret_key, algorithms=["HS256"])
-        exp = datetime.fromtimestamp(payload["exp"])
-        expected_max = datetime.utcnow() + timedelta(hours=settings.session_max_age_hours)
+        exp = datetime.fromtimestamp(payload["exp"], tz=UTC)
+        expected_max = datetime.now(UTC) + timedelta(hours=settings.session_max_age_hours)
         assert exp <= expected_max + timedelta(seconds=5)

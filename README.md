@@ -14,12 +14,12 @@
   ![airgap](https://img.shields.io/badge/airgap-default--on-critical)
 </div>
 
-> **Executive summary** — PrepTürk is a high-availability, airgapped intelligence and survival orchestration platform engineered for the Republic of Türkiye's geographic and geopolitical risk profile. It turns consumer-grade hardware — a Raspberry Pi, laptop, or home server — into a hardened command center that runs a local LLM over verified government documents, drives real radio and mesh hardware, and operates with **zero internet connectivity**. It serves households, community responders, and field operators who must keep working when the cloud, the grid, and the cell network are gone.
+> **Executive summary** — PrepTürk is a high-availability, offline-first intelligence and survival orchestration platform engineered for the Republic of Türkiye's geographic and geopolitical risk profile. It turns consumer-grade hardware — a Raspberry Pi, laptop, or home server — into a local command center that runs an LLM over verified government documents and integrates radio and mesh hardware. After local content and models are provisioned, it can continue operating without an external internet dependency; verified network isolation still requires operator-managed host and deployment controls.
 
 ## ✨ Highlights
 
 - **Sovereign local AI** — Retrieval-augmented generation over a library of **36 verified Turkish government source manifests** (AFAD, Ministry of Health, MEB, NDK, MGM, MTA, and more), served entirely on-device via **Ollama** with **Qdrant** semantic search. No queries ever leave the box.
-- **Airgap-by-default** — `AIRGAP_MODE` ships enabled; a software-level lock prevents outbound network requests from backend workers. Telemetry is stripped and fonts are served locally.
+- **Airgap-aware by default** — `AIRGAP_MODE` ships enabled and disables scheduled outbound ingestion in backend workers. Host, container, and firewall controls enforce egress isolation. Telemetry is stripped and fonts are served locally.
 - **Physical-layer integration** — Native interfaces for **RTL-SDR** (emergency frequency scanning, NOAA weather imagery) and **Meshtastic** LoRa mesh for off-grid SOS and community sync.
 - **Verified civil-defense protocols** — AFAD CBRN ("Siyah Alarm") and air-raid ("Kırmızı Alarm") procedures, first-aid libraries, and a conservative medical triage assistant.
 - **Provenance-first content pipeline** — every document carries source, rights status, and a content hash; storage mode (mirrored / cached / pointer-only) is governed per-source to respect redistribution rights.
@@ -79,7 +79,7 @@ Every record carries its source, rights status, and a content hash for integrity
 
 ## 🔒 OPSEC & hardening
 
-PrepTürk follows a **paranoid-by-default** model: airgap enforcement at the worker layer, telemetry stripped from the frontend, a fully local font stack (no external CDNs), and an AES-256-GCM encrypted local enclave for family documents. Database and vector-store ports are not exposed to the host by default.
+PrepTürk follows a **defense-in-depth** model: airgap-aware worker scheduling combined with deployment-level egress controls, telemetry stripped from the frontend, a fully local font stack (no external CDNs), and an AES-256-GCM encrypted local enclave for family documents. Database and vector-store ports are not exposed to the host by default.
 
 ## 🚀 Getting started
 
@@ -130,7 +130,7 @@ Licensed under **AGPL-3.0** — see [`LICENSE`](LICENSE).
 
 ![Monarch Castle Technologies approved lockup](docs/brand/organization-lockup.png)
 
-Türkiye's sovereign, airgapped preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh that run with zero internet.
+Türkiye's sovereign, offline-first preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh designed to continue after local provisioning without an external internet dependency.
 
 ![Lifecycle: Active](docs/lifecycle-active.svg)
 

@@ -1,19 +1,18 @@
-from datetime import datetime, timedelta, timezone
-from typing import Optional
-import uuid
 import sys
+import uuid
+from datetime import UTC, datetime, timedelta
 
-from jose import jwt, JWTError
+from fastapi import Cookie, Depends, HTTPException, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from jose import JWTError, jwt
 from passlib.context import CryptContext
-from fastapi import Depends, HTTPException, status, Request, Cookie
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.config import get_settings, Settings
+from app.core.config import get_settings
 from app.db.database import get_db
-from app.db.models import User, Session, Role, UserRole
+from app.db.models import Role, User, UserRole
 
 settings = get_settings()
 
@@ -42,11 +41,9 @@ def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
+def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + (
-        expires_delta or timedelta(hours=settings.session_max_age_hours)
-    )
+    expire = datetime.now(UTC) + (expires_delta or timedelta(hours=settings.session_max_age_hours))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, settings.app_secret_key, algorithm="HS256")
 
@@ -63,10 +60,9 @@ def decode_access_token(token: str) -> dict:
 
 
 async def get_current_user(
-    request: Request | None = None,
     db: AsyncSession = Depends(get_db),
-    cookie_token: Optional[str] = Cookie(None, alias="auth_token"),
-    credentials: Optional[HTTPAuthorizationCredentials] = Depends(HTTPBearer(auto_error=False)),
+    cookie_token: str | None = Cookie(None, alias="auth_token"),
+    credentials: HTTPAuthorizationCredentials | None = Depends(HTTPBearer(auto_error=False)),
 ) -> User:
     # Try Bearer token first, fall back to cookie
     token = None
@@ -99,9 +95,7 @@ async def get_current_user(
 
 async def _ensure_device_operator(db: AsyncSession) -> User:
     result = await db.execute(
-        select(User).where(
-            (User.username == DEVICE_OPERATOR_USERNAME) | (User.email == DEVICE_OPERATOR_EMAIL)
-        )
+        select(User).where((User.username == DEVICE_OPERATOR_USERNAME) | (User.email == DEVICE_OPERATOR_EMAIL))
     )
     user = result.scalar_one_or_none()
     if user:
@@ -126,9 +120,7 @@ async def _ensure_device_operator(db: AsyncSession) -> User:
     except IntegrityError:
         await db.rollback()
         result = await db.execute(
-            select(User).where(
-                (User.username == DEVICE_OPERATOR_USERNAME) | (User.email == DEVICE_OPERATOR_EMAIL)
-            )
+            select(User).where((User.username == DEVICE_OPERATOR_USERNAME) | (User.email == DEVICE_OPERATOR_EMAIL))
         )
         user = result.scalar_one()
     else:
@@ -138,14 +130,12 @@ async def _ensure_device_operator(db: AsyncSession) -> User:
 
 
 async def get_local_device_operator(
-    request: Request | None = None,
     db: AsyncSession = Depends(get_db),
-    cookie_token: Optional[str] = Cookie(None, alias="auth_token"),
-    credentials: Optional[HTTPAuthorizationCredentials] = Depends(HTTPBearer(auto_error=False)),
+    cookie_token: str | None = Cookie(None, alias="auth_token"),
+    credentials: HTTPAuthorizationCredentials | None = Depends(HTTPBearer(auto_error=False)),
 ) -> User:
     if credentials or cookie_token:
         return await get_current_user(
-            request=request,
             db=db,
             cookie_token=cookie_token,
             credentials=credentials,
@@ -165,9 +155,7 @@ async def require_role(required_role: str):
         current_user: User = Depends(get_current_active_user),
         db: AsyncSession = Depends(get_db),
     ):
-        result = await db.execute(
-            select(Role).join(UserRole).where(UserRole.user_id == current_user.id)
-        )
+        result = await db.execute(select(Role).join(UserRole).where(UserRole.user_id == current_user.id))
         user_roles = result.scalars().all()
         role_names = {role.name for role in user_roles}
         if "admin" not in role_names and required_role not in role_names:
@@ -181,9 +169,7 @@ async def require_admin(
     current_user: User = Depends(get_current_active_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(Role).join(UserRole).where(UserRole.user_id == current_user.id)
-    )
+    result = await db.execute(select(Role).join(UserRole).where(UserRole.user_id == current_user.id))
     user_roles = result.scalars().all()
     if not any(role.name == "admin" for role in user_roles):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Yonetici yetkisi gerekli")

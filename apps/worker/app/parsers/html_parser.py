@@ -35,16 +35,16 @@ def parse_html_content(html: str, url: str = "") -> Dict[str, Any]:
             include_tables=True,
             include_links=False,
             favor_precision=True,
-            language="tr",
+            target_language="tr",
         )
 
         # Extract metadata
-        downloaded = trafilatura.extract(
+        downloaded = trafilatura.bare_extraction(
             html,
             include_comments=False,
             include_tables=False,
             include_links=False,
-            output_format="python",
+            as_dict=True,
         )
 
         title = ""

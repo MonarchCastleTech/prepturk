@@ -1,4 +1,4 @@
-"""Unit tests for ingestion adapters."""
+"""Worker unit tests for ingestion adapters."""
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 from datetime import datetime

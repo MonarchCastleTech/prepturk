@@ -16,7 +16,7 @@ LICENSE_DECISION = "preserve-agpl"
 
 def test_repository_hygiene_documentation_contract():
     assert MATCH, "README must include the managed repository-hygiene block"
-    assert "Türkiye's sovereign, airgapped preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh that run with zero internet." in CONTRACT
+    assert "Türkiye's sovereign, offline-first preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh designed to continue after local provisioning without an external internet dependency." in CONTRACT
     assert "lifecycle-active" in CONTRACT
     assert re.search(r"not publicly deployed", CONTRACT, re.I)
     for heading in HEADINGS:

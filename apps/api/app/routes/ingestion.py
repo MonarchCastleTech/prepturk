@@ -1,13 +1,17 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, and_, or_
-from typing import Optional
 import uuid
 
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from sqlalchemy import func, select
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.db.database import get_db
-from app.db.models import User, Document, Role, SourceManifest, IngestionRun, Note, ProvincePack, Setting, IngestionEvent
+from app.db.models import (
+    IngestionEvent,
+    IngestionRun,
+    User,
+)
 from app.schemas import *
-from app.security.auth import get_current_active_user, require_admin
+from app.security.auth import get_current_active_user
 
 router = APIRouter()
 
@@ -16,8 +20,8 @@ router = APIRouter()
 async def list_ingestion_runs(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
-    source_id: Optional[uuid.UUID] = None,
-    status_filter: Optional[str] = Query(None, alias="status"),
+    source_id: uuid.UUID | None = None,
+    status_filter: str | None = Query(None, alias="status"),
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_current_active_user),
 ):
@@ -44,8 +48,8 @@ async def list_ingestion_runs(
 
 @router.get("/runs/total-count")
 async def get_runs_total_count(
-    source_id: Optional[uuid.UUID] = None,
-    status_filter: Optional[str] = Query(None, alias="status"),
+    source_id: uuid.UUID | None = None,
+    status_filter: str | None = Query(None, alias="status"),
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_current_active_user),
 ):
@@ -86,7 +90,7 @@ async def get_ingestion_run(
         "documents_indexed": run_data.documents_indexed,
         "documents_failed": run_data.documents_failed,
         "error_log": run.error_log,
-        "metadata": run.metadata,
+        "metadata": run.metadata_,
     }
 
 
@@ -95,7 +99,7 @@ async def get_ingestion_run_events(
     run_id: uuid.UUID,
     page: int = Query(1, ge=1),
     page_size: int = Query(50, ge=1, le=200),
-    event_type: Optional[str] = None,
+    event_type: str | None = None,
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_current_active_user),
 ):
@@ -122,7 +126,7 @@ async def get_ingestion_run_events(
             "document_id": e.document_id,
             "event_type": e.event_type,
             "message": e.message,
-            "metadata": e.metadata,
+            "metadata": e.metadata_,
             "created_at": e.created_at,
         }
         for e in events
@@ -132,7 +136,7 @@ async def get_ingestion_run_events(
 @router.get("/runs/{run_id}/events/total-count")
 async def get_events_total_count(
     run_id: uuid.UUID,
-    event_type: Optional[str] = None,
+    event_type: str | None = None,
     db: AsyncSession = Depends(get_db),
     _current_user: User = Depends(get_current_active_user),
 ):
