@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use PrepTürk, cite the exact repository commit and relevant data snapshot."
+title: "PrepTürk"
+type: software
+authors:
+  - name: "Monarch Castle Technologies"
+repository-code: "https://github.com/MonarchCastleTech/prepturk"
+license: "AGPL-3.0-or-later"

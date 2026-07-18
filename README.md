@@ -123,3 +123,89 @@ Licensed under **AGPL-3.0** — see [`LICENSE`](LICENSE).
   © 2026 Monarch Castle Holdings · Ankara, Türkiye<br/>
   <sub>🏰 Monarch Castle Holdings — turning open-source noise into lawful, verified, decision-grade intelligence.</sub>
 </div>
+
+---
+
+<!-- repository-hygiene:start -->
+
+![Monarch Castle Technologies approved lockup](docs/brand/organization-lockup.png)
+
+Türkiye's sovereign, airgapped preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh that run with zero internet.
+
+![Lifecycle: Active](docs/lifecycle-active.svg)
+
+## Repository status
+
+Lifecycle: **Active**. The badge and this statement describe maintenance status, not service availability.
+
+## Public access
+
+This repository is **not publicly deployed**. Use the local quick-start instructions below.
+
+## Screenshots
+
+![PrepTürk repository preview](docs/social-preview.png)
+
+The preview is maintained as a repository asset; the live interface or generated output remains authoritative.
+
+## Data and methodology
+
+See [docs/rights-and-provenance.md](docs/rights-and-provenance.md) and the implementation files in this repository. Source dates, transformation steps, and known gaps must travel with analytical outputs.
+
+## Update frequency
+
+Release-driven. Offline corpus refresh is an operator-controlled action, not an automatic internet dependency.
+
+## Quick start
+
+```shell
+docker compose up --build
+```
+
+```shell
+python -m pytest -q tests/test_repository_hygiene.py
+```
+
+Run only in a trusted development environment and review repository-specific prerequisites before using networked or hardware features.
+
+## Architecture
+
+- `apps/` — implementation or data module.
+- `capture_logo.py` — repository entry point or configuration.
+- `content/` — implementation or data module.
+- `dashboard-after-hierarchy-fix.png` — repository entry point or configuration.
+- `dashboard-shell-after-redesign.png` — repository entry point or configuration.
+- `dashboard-shell-final-2.png` — repository entry point or configuration.
+- `dashboard-shell-final.png` — repository entry point or configuration.
+
+## Tests
+
+```shell
+python -m pytest -q tests/test_repository_hygiene.py
+```
+
+## Provenance
+
+Original software history is maintained in Git. External datasets, reports, trademarks, screenshots, and assets are not relicensed by this repository; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before reuse.
+
+## Forecast limitations
+
+This repository does not publish a guaranteed forecast. Any scenarios, scores, or forward-looking language are analytical aids, not facts or advice; review source dates and methodology before use.
+
+## Security
+
+Do not publish vulnerabilities in an issue. Use GitHub's private vulnerability-reporting flow when available, or follow the [organization security policy](https://github.com/MonarchCastleTech/.github/security/policy).
+
+## License
+
+Original repository code and documentation are available under **AGPL-3.0-or-later**; see [LICENSE](LICENSE). That license does not override third-party terms documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Citation
+
+Use the machine-readable [CITATION.cff](CITATION.cff). Cite the specific commit and, for analytical use, record the data or model snapshot date.
+
+## Masterbrand endorsement
+
+PrepTürk is a Monarch Castle Technologies project. **Part of Monarch Castle Technologies.**
+
+<!-- repository-hygiene:end -->
