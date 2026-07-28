@@ -6,7 +6,11 @@ export default function GovernanceFooter() {
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex min-w-0 items-center gap-3">
-          <img src="/logo.svg" alt="PrepTürk" className="h-8 w-8 shrink-0" />
+          <img
+            src="/prepturk-logo-dark.png"
+            alt="PrepTürk"
+            className="h-10 w-auto max-w-[11rem] shrink-0 object-contain"
+          />
           <div className="min-w-0">
             <p className="font-medium text-slate-200">
               PrepTürk · Egemen hazırlık bilgi sistemi

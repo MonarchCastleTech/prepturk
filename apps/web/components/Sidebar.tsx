@@ -234,9 +234,11 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
         {showLabels ? (
           <div className="min-w-0 space-y-2.5">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)] overflow-hidden">
-                <Image src="/logo.svg" alt="PrepTürk Logo" width={28} height={28} className="object-contain" />
-              </div>
+              <img
+                src="/prepturk-logo-dark.png"
+                alt="PrepTürk"
+                className="h-10 w-auto max-w-[11rem] shrink-0 object-contain"
+              />
               <div className="min-w-0">
                 <p className="shell-kicker">PrepTürk</p>
                 <p className="truncate text-base font-semibold text-white">Çevrimdışı Sistem</p>
@@ -259,7 +261,7 @@ export default function Sidebar({ mobileNavOpen = false, onMobileNavClose }: Sid
           </div>
         ) : (
           <div className="flex h-11 w-11 items-center justify-center rounded-[1.2rem] border border-nomad-green/20 bg-nomad-green/12 shadow-[0_10px_26px_rgba(21,34,28,0.35)] overflow-hidden">
-            <Image src="/logo.svg" alt="PrepTürk Logo" width={28} height={28} className="object-contain" />
+            <Image src="/logo.svg" alt="PrepTürk Logo" width={28} height={28} className="h-full w-full object-contain" />
           </div>
         )}
         <button

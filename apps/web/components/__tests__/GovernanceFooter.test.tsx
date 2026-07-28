@@ -7,7 +7,7 @@ describe("GovernanceFooter", () => {
 
     expect(screen.getByRole("img", { name: "PrepTürk" })).toHaveAttribute(
       "src",
-      "/logo.svg",
+      "/prepturk-logo-dark.png",
     );
     expect(screen.getByText("Türkçe birincil arayüz")).toBeInTheDocument();
     expect(
