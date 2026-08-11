@@ -10,6 +10,7 @@ from difflib import SequenceMatcher
 logger = logging.getLogger(__name__)
 
 CONTENT_DIR = Path(os.getenv("CONTENT_DIR", "content/manifests"))
+KIWIX_URL = os.getenv("KIWIX_URL", "http://kiwix:8080")
 
 
 class SearchService:
