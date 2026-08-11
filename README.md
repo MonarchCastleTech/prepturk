@@ -10,7 +10,7 @@
   ![status](https://img.shields.io/badge/status-active-brightgreen)
   ![division](https://img.shields.io/badge/Emergency%20Intelligence-0b1f3a)
   ![Monarch Castle](https://img.shields.io/badge/Monarch%20Castle-Holdings-1f6feb)
-  ![license](https://img.shields.io/badge/license-AGPL--3.0-lightgrey)
+  ![license](https://img.shields.io/badge/license-MIT-lightgrey)
   ![airgap](https://img.shields.io/badge/airgap-default--on-critical)
 </div>
 
@@ -114,7 +114,7 @@ PrepTürk is a self-hosted, airgapped stack — it is **not** a hosted web servi
 
 ## ⚖️ License & responsibility
 
-Licensed under **AGPL-3.0** — see [`LICENSE`](LICENSE).
+Licensed under **MIT** — see [`LICENSE`](LICENSE).
 
 > **Important:** PrepTürk is a supplementary tool. In any emergency within the Republic of Türkiye, **always prioritize official government directives and call 112**. This software is provided "as is", without warranty of any kind.
 
@@ -192,7 +192,7 @@ Do not publish vulnerabilities in an issue. Use GitHub's private vulnerability-r
 
 ## License
 
-Original repository code and documentation are available under **AGPL-3.0-or-later**; see [LICENSE](LICENSE). That license does not override third-party terms documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Original repository code and documentation are available under **MIT**; see [LICENSE](LICENSE). That license does not override third-party terms documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Citation
 
