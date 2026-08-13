@@ -181,4 +181,6 @@ def verify_totp(token: str, secret: str) -> bool:
     import pyotp
 
     totp = pyotp.TOTP(secret)
-    return totp.verify(token)
+    # Accept one adjacent interval so a code generated at the end of a
+    # 30-second window remains valid while the request is processed.
+    return totp.verify(token, valid_window=1)
