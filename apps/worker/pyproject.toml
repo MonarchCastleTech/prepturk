@@ -18,7 +18,7 @@ dependencies = [
     "pyyaml>=6.0.2",
     "python-slugify>=8.0.4",
     "aiofiles>=24.1.0",
-    "cryptography>=44.0.0",
+    "cryptography==50.0.0",
     "apscheduler>=3.10.4",
     "tiktoken>=0.8.0",
 ]
