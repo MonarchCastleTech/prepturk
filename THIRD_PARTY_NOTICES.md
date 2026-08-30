@@ -2,7 +2,7 @@
 
 ## Scope of the root license
 
-The root `LICENSE` applies to original software and documentation contributed to this repository under AGPL-3.0-or-later. It does **not** grant rights to third-party datasets, reports, model outputs, fonts, maps, screenshots, trademarks, or other externally sourced assets.
+The root `LICENSE` applies to original software and documentation contributed to this repository under MIT. That MIT grant does **not** grant rights to third-party datasets, reports, model outputs, fonts, maps, screenshots, trademarks, or other externally sourced assets.
 
 Monarch Castle Technologies and Strategic Data Company of Ankara names and logos are brand assets; no trademark permission is granted by the software license.
 
@@ -10,7 +10,7 @@ Monarch Castle Technologies and Strategic Data Company of Ankara names and logos
 
 Review [docs/rights-and-provenance.md](docs/rights-and-provenance.md) and source metadata embedded with any dataset before copying or redistributing it. Upstream terms, attribution requirements, and source dates remain controlling. Absence of a separate data-license file must not be interpreted as a public-domain or MIT declaration.
 
-Rights review: The repository's existing AGPL-3.0-or-later intent was preserved; organization automation does not expand rights in ingested content.
+Rights review: The repository's root software license is MIT; organization automation does not expand rights in ingested content.
 
 Reviewed exclusions:
 

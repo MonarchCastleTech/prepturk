@@ -14,7 +14,7 @@
 >
 > _Şebekenin çökeceğini varsayın. Verinize sahip çıkın. Topluluğunuzu koruyun._
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-blue.svg)](https://www.postgresql.org/)
@@ -137,7 +137,7 @@ PrepTürk, Türk halkının dayanıklılığına adanmış açık kaynaklı bir 
 
 ## ⚖️ Lisans ve Sorumluluk Reddi
 
-**PrepTürk**, [AGPL-3.0 Lisansı](LICENSE) altındadır.
+**PrepTürk**, [MIT Lisansı](LICENSE) altındadır.
 
 **SORUMLULUK REDDİ:** Bu yazılım yalnızca bilgilendirme ve hazırlık amacıyla sağlanmıştır. Resmi acil durum hizmetlerinin, profesyonel tıbbi tavsiyelerin veya hükümet yönergelerinin yerine geçmez. Türkiye'deki herhangi bir acil durumda **her zaman 112'yi arayın** ve AFAD ile yerel yetkililerin talimatlarını izleyin.
 

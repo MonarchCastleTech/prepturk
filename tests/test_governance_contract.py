@@ -18,14 +18,19 @@ def test_restrained_brand_endorsement_and_language_contract() -> None:
 
     assert "GovernanceFooter" in chrome
     assert "<GovernanceFooter />" in chrome
-    assert 'src="/logo.svg"' in footer
+    assert 'src="/prepturk-logo-dark.png"' in footer
+    assert (ROOT / "apps/web/public/prepturk-logo-dark.png").is_file()
     assert 'alt="PrepTürk"' in footer
     assert "Part of Monarch Castle Technologies." in footer
     assert "Türkçe birincil arayüz" in footer
     assert 'lang="tr"' in layout
 
     for filename in ("README.md", "README.tr.md", "README.ar.md", "README.ru.md"):
-        assert (ROOT / filename).is_file()
+        path = ROOT / filename
+        assert path.is_file()
+        readme = path.read_text(encoding="utf-8")
+        assert "MIT" in readme
+        assert "AGPL" not in readme
 
 
 def test_sovereign_offline_wording_is_precise_not_absolute() -> None:
@@ -90,5 +95,5 @@ def test_ci_targets_the_real_default_branch_and_license_is_unchanged() -> None:
     workflow = read(".github/workflows/ci.yml")
     assert "branches: [master]" in workflow
     assert sha256((ROOT / "LICENSE").read_bytes()).hexdigest() == (
-        "8646d06b972a0f4727975e00c53118f8625b49a009a07b02c57045686c7f5100"
+        "bd0085e5779b3df1608e53a577581787cb79cca2c2713669b6130ded9a25c40c"
     )

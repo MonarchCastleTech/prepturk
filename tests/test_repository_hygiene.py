@@ -11,7 +11,7 @@ METHODOLOGY_EVIDENCE = ["docs/rights-and-provenance.md"]
 QUICK_START_COMMANDS = ["docker compose up --build"]
 ARCHITECTURE_IDENTIFIERS = ["apps/api/","apps/web/","apps/worker/"]
 THIRD_PARTY_EXCLUSIONS = ["AFAD, health, Kiwix, and operator-ingested corpora","logos, trademarks, screenshots, models, and external assets"]
-LICENSE_DECISION = "preserve-agpl"
+LICENSE_DECISION = "preserve-mit"
 
 
 def test_repository_hygiene_documentation_contract():
@@ -56,6 +56,7 @@ def test_repository_hygiene_citation_rights_and_https_policy():
     citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     assert re.search(r"^cff-version: 1\.2\.0", citation, re.M)
     assert re.search(r"^title:", citation, re.M)
+    assert re.search(r'^license: ["\']?MIT["\']?$', citation, re.M)
     license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
     notice = (ROOT / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
     if LICENSE_DECISION.endswith("mit"):
@@ -64,6 +65,8 @@ def test_repository_hygiene_citation_rights_and_https_policy():
         assert re.search(r"Apache License\s+Version 2\.0", license_text)
     if LICENSE_DECISION == "preserve-agpl":
         assert "GNU AFFERO GENERAL PUBLIC LICENSE" in license_text
+    assert "under MIT" in notice
+    assert "does not expand rights in ingested content" in notice
     for exclusion in THIRD_PARTY_EXCLUSIONS:
         assert exclusion in notice
     allowed_http = ("http://localhost", "")

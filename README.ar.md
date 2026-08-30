@@ -14,7 +14,7 @@
 >
 > _افترض أن الشبكة ستفشل. امتلك بياناتك. احمِ مجتمعك._
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Offline-First](https://img.shields.io/badge/Airgapped-Ready-orange.svg)](#offline-first-design)
 
 ---
