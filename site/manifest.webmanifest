@@ -1,0 +1,20 @@
+{
+  "name": "PrepTürk Çevrimdışı Acil Hazırlık Alanı",
+  "short_name": "PrepTürk",
+  "description": "Türkiye için çevrimdışı acil hazırlık kılavuzu ve yerel hane planı.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07111b",
+  "theme_color": "#07111b",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}

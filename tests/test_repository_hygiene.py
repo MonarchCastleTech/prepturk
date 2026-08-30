@@ -18,7 +18,9 @@ def test_repository_hygiene_documentation_contract():
     assert MATCH, "README must include the managed repository-hygiene block"
     assert "Türkiye's sovereign, offline-first preparedness command center — local AI (RAG over verified AFAD/Health docs), SDR, and Meshtastic mesh designed to continue after local provisioning without an external internet dependency." in CONTRACT
     assert "lifecycle-active" in CONTRACT
-    assert re.search(r"not publicly deployed", CONTRACT, re.I)
+    assert "https://monarchcastletech.github.io/prepturk/" in CONTRACT
+    assert "GitHub Pages serves only `site/`" in CONTRACT
+    assert "full Next.js/API/worker/database stack remains local" in CONTRACT
     for heading in HEADINGS:
         assert f"## {heading}" in CONTRACT
     for evidence in METHODOLOGY_EVIDENCE:

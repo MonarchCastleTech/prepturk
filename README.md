@@ -1,6 +1,5 @@
 <div align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/monarchcastletech/prepturk/master/docs/logo-dark.png"><img src="docs/logo.png" alt="PrepTurk logo" width="160"/></picture>
-  <!-- CODEX: an optional brand-standard variant can be generated at docs/logo.png; the live product logo at apps/web/public/logo.png is referenced here. -->
 
   # PrepTürk
   ### Türkiye's sovereign, airgapped preparedness command center
@@ -15,6 +14,8 @@
 </div>
 
 > **Executive summary** — PrepTürk is a high-availability, offline-first intelligence and survival orchestration platform engineered for the Republic of Türkiye's geographic and geopolitical risk profile. It turns consumer-grade hardware — a Raspberry Pi, laptop, or home server — into a local command center that runs an LLM over verified government documents and integrates radio and mesh hardware. After local content and models are provisioned, it can continue operating without an external internet dependency; verified network isolation still requires operator-managed host and deployment controls.
+
+**Public workspace:** [monarchcastletech.github.io/prepturk](https://monarchcastletech.github.io/prepturk/) provides a keyless static preparedness guide, 81-province selector, and device-local checklist. It works offline after a successful first load. It has no live alert feed and does not expose the API, AI, database, ingestion, radio, or mesh services described below.
 
 ## ✨ Highlights
 
@@ -105,7 +106,7 @@ make lint      # ruff + mypy + ESLint + Prettier
 make backup    # snapshot data; make restore to recover
 ```
 
-PrepTürk is a self-hosted, airgapped stack — it is **not** a hosted web service and intentionally ships no public cloud endpoint.
+The full PrepTürk stack is self-hosted and intentionally has no public API endpoint. The separate GitHub Pages workspace is a static, account-free companion; it does not replace the local Docker deployment.
 
 ## 🧱 Part of Monarch Castle
 
@@ -140,7 +141,7 @@ Lifecycle: **Active**. The badge and this statement describe maintenance status,
 
 ## Public access
 
-This repository is **not publicly deployed**. Use the local quick-start instructions below.
+The static emergency-preparedness workspace is deployed at [monarchcastletech.github.io/prepturk](https://monarchcastletech.github.io/prepturk/). GitHub Pages serves only `site/`; the full Next.js/API/worker/database stack remains local and uses the quick-start instructions below.
 
 ## Screenshots
 
@@ -176,7 +177,11 @@ Run only in a trusted development environment and review repository-specific pre
 
 ```shell
 python -m pytest -q tests/test_repository_hygiene.py
+node --test tests/site/*.test.mjs
+node scripts/check_pages_site.mjs site
 ```
+
+`.github/workflows/pages.yml` runs deterministic content/offline checks, a local artifact smoke test, deployment, and post-deploy HTTP verification. No account secret or third-party API key is required.
 
 ## Provenance
 
