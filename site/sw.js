@@ -1,10 +1,14 @@
-const CACHE_NAME = "prepturk-pages-2026-08-30-v1";
+const CACHE_NAME = "prepturk-pages-2026-10-02-v2";
 const PRECACHE = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./favicon.ico",
   "./assets/style.css",
+  "./assets/monarch/design.css",
+  "./assets/monarch/fonts/IBMPlexSans-Regular.woff2",
+  "./assets/monarch/fonts/IBMPlexSans-SemiBold.woff2",
+  "./assets/monarch/fonts/IBMPlexMono-Regular.woff2",
   "./assets/app.mjs",
   "./assets/data.mjs",
   "./assets/prepturk-logo.png",

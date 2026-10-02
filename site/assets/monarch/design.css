@@ -1,0 +1,38 @@
+/* Monarch Castle public product design, version 2026.10. Source: main site. */
+@font-face{font-family:"IBM Plex Sans";src:url("./fonts/IBMPlexSans-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url("./fonts/IBMPlexSans-SemiBold.woff2") format("woff2");font-weight:600 800;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("./fonts/IBMPlexMono-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{--monarch-shell-height:3.5rem;--monarch-navy:#0B1726;--monarch-paper:#F4F6F8;--monarch-steel:#315E7C;--monarch-bronze:#9B8357}
+body.monarch-product{
+ --bg:#0B1726;--bg-primary:#0B1726;--bg-secondary:#122232;--bg-panel:#122232;--bg-panel-soft:#162A3B;--bg-card:#122232;--bg-hover:#1D3345;--bg-map:#0B1726;--ocean:#0B1726;--bg-deep:#080F18;--panel:#122232;--panel-2:#162A3B;--panel-soft:#162A3B;--panel-raised:#162A3B;--card:#122232;--elev:#122232;
+ --border:#314252;--border-2:#4D6376;--border-soft:#243746;--border-strong:#4D6376;--line:#314252;
+ --text:#F4F6F8;--text-primary:#F4F6F8;--text-secondary:#BECBD5;--text-2:#A8B6C4;--text-3:#8498AA;--text-muted:#A8B6C4;--text-faint:#8498AA;--muted:#A8B6C4;--faint:#8498AA;
+ --accent:#A2C4D5;--accent-hover:#D6E4ED;--accent-soft:rgba(162,196,213,.12);--signal:#A2C4D5;--signal-strong:#D6E4ED;
+ --sans:"IBM Plex Sans",Arial,sans-serif;--serif:var(--sans);--mono:"IBM Plex Mono",monospace;--font-sans:var(--sans);--font-serif:var(--sans);--font-heading:var(--sans);--font-body:var(--sans);--font-mono:var(--mono);
+ font-family:var(--sans);background:var(--bg);font-variant-numeric:tabular-nums;
+}
+.monarch-product h1,.monarch-product h2,.monarch-product h3,.monarch-product h4{font-family:"IBM Plex Sans",Arial,sans-serif!important;letter-spacing:-.025em}
+.monarch-product .topbar,.monarch-product .header,.monarch-product .site-nav{background:#0B1726;border-color:#314252}
+.monarch-product :focus-visible{outline:3px solid #B99558;outline-offset:3px}
+.monarch-shell{box-sizing:border-box!important;height:var(--monarch-shell-height)!important;min-height:var(--monarch-shell-height)!important;width:100%!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:1.5rem!important;padding:0 1.5rem!important;background:#0B1726!important;border:0!important;border-bottom:1px solid #314252!important;color:#F4F6F8!important;position:relative;z-index:150;font:400 12px/1.4 "IBM Plex Sans",Arial,sans-serif!important;flex-shrink:0}
+.monarch-shell *{box-sizing:border-box}
+.monarch-shell-brand{display:flex!important;align-items:center!important;gap:.7rem!important;color:#F4F6F8!important;text-decoration:none!important;white-space:nowrap!important;font-weight:600!important;font-size:13px!important}
+.monarch-shell-product{font:400 10px/1.4 "IBM Plex Mono",monospace!important;letter-spacing:0!important;text-transform:none!important;color:#A8B6C4!important;border-left:1px solid #314252!important;padding-left:.7rem!important;max-width:21rem;overflow:hidden;text-overflow:ellipsis}
+.monarch-shell nav{display:flex!important;align-items:center!important;gap:1.4rem!important;position:static!important;width:auto!important;background:transparent!important;margin:0!important;padding:0!important;border:0!important}
+.monarch-shell a{color:#BECBD5!important;text-decoration:none!important;white-space:nowrap!important;font-size:12px!important;line-height:1.4!important;letter-spacing:0!important;text-transform:none!important}
+.monarch-shell a:hover{text-decoration:underline!important;color:#FFF!important}
+.monarch-shell .monarch-shell-keep{padding:.45rem .7rem!important;border:1px solid #8293A3!important;color:#F4F6F8!important}
+.monarch-shell details{display:none;position:relative}
+.monarch-shell summary{cursor:pointer;padding:.5rem;font-size:12px}
+.monarch-product-surface{position:relative;transform:translateZ(0);height:calc(100dvh - var(--monarch-shell-height));min-height:0;overflow:hidden}
+.monarch-product-surface #root,.monarch-product-surface .esg-app{height:100%;min-height:0}
+.monarch-product-surface .min-h-screen{min-height:100%!important}
+.monarch-product-surface .h-screen,.monarch-product-surface .h-dvh{height:100%!important}
+body[data-monarch-product="nuclear-energy-intelligence"] .site-nav{top:var(--monarch-shell-height)}
+body[data-monarch-product="georisk"]>.monarch-shell{position:fixed;top:0}
+body[data-monarch-product="georisk"] .shell-topbar{top:var(--monarch-shell-height)}
+body[data-monarch-product="georisk"] .shell-sidebar{top:calc(4rem + var(--monarch-shell-height));height:calc(100dvh - 4rem - var(--monarch-shell-height))}
+body[data-monarch-product="georisk"] main.min-h-screen{padding-top:calc(4rem + var(--monarch-shell-height))}
+@media(max-width:900px){.monarch-shell-product{max-width:14rem}.monarch-shell>nav{display:none!important}.monarch-shell details{display:block}.monarch-shell details[open]>nav{position:absolute!important;right:0!important;top:2.3rem!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:1rem!important;width:12rem!important;padding:1.25rem!important;background:#0B1726!important;border:1px solid #314252!important;z-index:200}}
+@media(max-width:480px){.monarch-shell{padding:0 1rem!important;gap:.5rem!important}.monarch-shell-product{display:none}.monarch-shell-brand{font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.monarch-product *,.monarch-product *::before,.monarch-product *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
